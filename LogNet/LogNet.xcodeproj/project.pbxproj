@@ -1,0 +1,505 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EAE50A5C1D12CEEB00B4329B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE50A5B1D12CEEB00B4329B /* AppDelegate.swift */; };
+		EAE50A5E1D12CEEB00B4329B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE50A5D1D12CEEB00B4329B /* ViewController.swift */; };
+		EAE50A611D12CEEB00B4329B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAE50A5F1D12CEEB00B4329B /* Main.storyboard */; };
+		EAE50A631D12CEEB00B4329B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAE50A621D12CEEB00B4329B /* Assets.xcassets */; };
+		EAE50A661D12CEEB00B4329B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAE50A641D12CEEB00B4329B /* LaunchScreen.storyboard */; };
+		EAE50A711D12CEEC00B4329B /* LogNetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE50A701D12CEEC00B4329B /* LogNetTests.swift */; };
+		EAE50A7C1D12CEEC00B4329B /* LogNetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE50A7B1D12CEEC00B4329B /* LogNetUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EAE50A6D1D12CEEC00B4329B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EAE50A501D12CEEB00B4329B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EAE50A571D12CEEB00B4329B;
+			remoteInfo = LogNet;
+		};
+		EAE50A781D12CEEC00B4329B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EAE50A501D12CEEB00B4329B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EAE50A571D12CEEB00B4329B;
+			remoteInfo = LogNet;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EAE50A581D12CEEB00B4329B /* LogNet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LogNet.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAE50A5B1D12CEEB00B4329B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EAE50A5D1D12CEEB00B4329B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EAE50A601D12CEEB00B4329B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EAE50A621D12CEEB00B4329B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EAE50A651D12CEEB00B4329B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EAE50A671D12CEEB00B4329B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAE50A6C1D12CEEC00B4329B /* LogNetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LogNetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAE50A701D12CEEC00B4329B /* LogNetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogNetTests.swift; sourceTree = "<group>"; };
+		EAE50A721D12CEEC00B4329B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAE50A771D12CEEC00B4329B /* LogNetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LogNetUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAE50A7B1D12CEEC00B4329B /* LogNetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogNetUITests.swift; sourceTree = "<group>"; };
+		EAE50A7D1D12CEEC00B4329B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EAE50A551D12CEEB00B4329B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EAE50A691D12CEEC00B4329B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EAE50A741D12CEEC00B4329B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EAE50A4F1D12CEEB00B4329B = {
+			isa = PBXGroup;
+			children = (
+				EAE50A5A1D12CEEB00B4329B /* LogNet */,
+				EAE50A6F1D12CEEC00B4329B /* LogNetTests */,
+				EAE50A7A1D12CEEC00B4329B /* LogNetUITests */,
+				EAE50A591D12CEEB00B4329B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EAE50A591D12CEEB00B4329B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EAE50A581D12CEEB00B4329B /* LogNet.app */,
+				EAE50A6C1D12CEEC00B4329B /* LogNetTests.xctest */,
+				EAE50A771D12CEEC00B4329B /* LogNetUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EAE50A5A1D12CEEB00B4329B /* LogNet */ = {
+			isa = PBXGroup;
+			children = (
+				EAE50A5B1D12CEEB00B4329B /* AppDelegate.swift */,
+				EAE50A5D1D12CEEB00B4329B /* ViewController.swift */,
+				EAE50A5F1D12CEEB00B4329B /* Main.storyboard */,
+				EAE50A621D12CEEB00B4329B /* Assets.xcassets */,
+				EAE50A641D12CEEB00B4329B /* LaunchScreen.storyboard */,
+				EAE50A671D12CEEB00B4329B /* Info.plist */,
+			);
+			path = LogNet;
+			sourceTree = "<group>";
+		};
+		EAE50A6F1D12CEEC00B4329B /* LogNetTests */ = {
+			isa = PBXGroup;
+			children = (
+				EAE50A701D12CEEC00B4329B /* LogNetTests.swift */,
+				EAE50A721D12CEEC00B4329B /* Info.plist */,
+			);
+			path = LogNetTests;
+			sourceTree = "<group>";
+		};
+		EAE50A7A1D12CEEC00B4329B /* LogNetUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EAE50A7B1D12CEEC00B4329B /* LogNetUITests.swift */,
+				EAE50A7D1D12CEEC00B4329B /* Info.plist */,
+			);
+			path = LogNetUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EAE50A571D12CEEB00B4329B /* LogNet */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EAE50A801D12CEEC00B4329B /* Build configuration list for PBXNativeTarget "LogNet" */;
+			buildPhases = (
+				EAE50A541D12CEEB00B4329B /* Sources */,
+				EAE50A551D12CEEB00B4329B /* Frameworks */,
+				EAE50A561D12CEEB00B4329B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LogNet;
+			productName = LogNet;
+			productReference = EAE50A581D12CEEB00B4329B /* LogNet.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EAE50A6B1D12CEEC00B4329B /* LogNetTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EAE50A831D12CEEC00B4329B /* Build configuration list for PBXNativeTarget "LogNetTests" */;
+			buildPhases = (
+				EAE50A681D12CEEC00B4329B /* Sources */,
+				EAE50A691D12CEEC00B4329B /* Frameworks */,
+				EAE50A6A1D12CEEC00B4329B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EAE50A6E1D12CEEC00B4329B /* PBXTargetDependency */,
+			);
+			name = LogNetTests;
+			productName = LogNetTests;
+			productReference = EAE50A6C1D12CEEC00B4329B /* LogNetTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EAE50A761D12CEEC00B4329B /* LogNetUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EAE50A861D12CEEC00B4329B /* Build configuration list for PBXNativeTarget "LogNetUITests" */;
+			buildPhases = (
+				EAE50A731D12CEEC00B4329B /* Sources */,
+				EAE50A741D12CEEC00B4329B /* Frameworks */,
+				EAE50A751D12CEEC00B4329B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EAE50A791D12CEEC00B4329B /* PBXTargetDependency */,
+			);
+			name = LogNetUITests;
+			productName = LogNetUITests;
+			productReference = EAE50A771D12CEEC00B4329B /* LogNetUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EAE50A501D12CEEB00B4329B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Anton Tikhonov";
+				TargetAttributes = {
+					EAE50A571D12CEEB00B4329B = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					EAE50A6B1D12CEEC00B4329B = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = EAE50A571D12CEEB00B4329B;
+					};
+					EAE50A761D12CEEC00B4329B = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = EAE50A571D12CEEB00B4329B;
+					};
+				};
+			};
+			buildConfigurationList = EAE50A531D12CEEB00B4329B /* Build configuration list for PBXProject "LogNet" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EAE50A4F1D12CEEB00B4329B;
+			productRefGroup = EAE50A591D12CEEB00B4329B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EAE50A571D12CEEB00B4329B /* LogNet */,
+				EAE50A6B1D12CEEC00B4329B /* LogNetTests */,
+				EAE50A761D12CEEC00B4329B /* LogNetUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EAE50A561D12CEEB00B4329B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAE50A661D12CEEB00B4329B /* LaunchScreen.storyboard in Resources */,
+				EAE50A631D12CEEB00B4329B /* Assets.xcassets in Resources */,
+				EAE50A611D12CEEB00B4329B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EAE50A6A1D12CEEC00B4329B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EAE50A751D12CEEC00B4329B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EAE50A541D12CEEB00B4329B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAE50A5E1D12CEEB00B4329B /* ViewController.swift in Sources */,
+				EAE50A5C1D12CEEB00B4329B /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EAE50A681D12CEEC00B4329B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAE50A711D12CEEC00B4329B /* LogNetTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EAE50A731D12CEEC00B4329B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAE50A7C1D12CEEC00B4329B /* LogNetUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EAE50A6E1D12CEEC00B4329B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EAE50A571D12CEEB00B4329B /* LogNet */;
+			targetProxy = EAE50A6D1D12CEEC00B4329B /* PBXContainerItemProxy */;
+		};
+		EAE50A791D12CEEC00B4329B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EAE50A571D12CEEB00B4329B /* LogNet */;
+			targetProxy = EAE50A781D12CEEC00B4329B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EAE50A5F1D12CEEB00B4329B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EAE50A601D12CEEB00B4329B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EAE50A641D12CEEB00B4329B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EAE50A651D12CEEB00B4329B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EAE50A7E1D12CEEC00B4329B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EAE50A7F1D12CEEC00B4329B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EAE50A811D12CEEC00B4329B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = LogNet/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = lognet.LogNet;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		EAE50A821D12CEEC00B4329B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = LogNet/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = lognet.LogNet;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		EAE50A841D12CEEC00B4329B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = LogNetTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = lognet.LogNetTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LogNet.app/LogNet";
+			};
+			name = Debug;
+		};
+		EAE50A851D12CEEC00B4329B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = LogNetTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = lognet.LogNetTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LogNet.app/LogNet";
+			};
+			name = Release;
+		};
+		EAE50A871D12CEEC00B4329B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = LogNetUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = lognet.LogNetUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = LogNet;
+			};
+			name = Debug;
+		};
+		EAE50A881D12CEEC00B4329B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = LogNetUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = lognet.LogNetUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = LogNet;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EAE50A531D12CEEB00B4329B /* Build configuration list for PBXProject "LogNet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EAE50A7E1D12CEEC00B4329B /* Debug */,
+				EAE50A7F1D12CEEC00B4329B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EAE50A801D12CEEC00B4329B /* Build configuration list for PBXNativeTarget "LogNet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EAE50A811D12CEEC00B4329B /* Debug */,
+				EAE50A821D12CEEC00B4329B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		EAE50A831D12CEEC00B4329B /* Build configuration list for PBXNativeTarget "LogNetTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EAE50A841D12CEEC00B4329B /* Debug */,
+				EAE50A851D12CEEC00B4329B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		EAE50A861D12CEEC00B4329B /* Build configuration list for PBXNativeTarget "LogNetUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EAE50A871D12CEEC00B4329B /* Debug */,
+				EAE50A881D12CEEC00B4329B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EAE50A501D12CEEB00B4329B /* Project object */;
+}
