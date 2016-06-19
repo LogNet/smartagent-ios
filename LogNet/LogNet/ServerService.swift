@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+protocol ServerService {
+    func postDeviceToken(deviceToken:String)
+}

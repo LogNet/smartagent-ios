@@ -12,12 +12,15 @@
 		EA26374A1D15B95A00D5988D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2637491D15B95A00D5988D /* LoginViewModel.swift */; };
 		EA26374E1D15BE3D00D5988D /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA26374D1D15BE3D00D5988D /* Router.swift */; };
 		EA2637521D15BF9000D5988D /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2637511D15BF9000D5988D /* LoginModel.swift */; };
-		EA2637571D16779B00D5988D /* ServerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2637561D16779B00D5988D /* ServerService.swift */; };
+		EA2637571D16779B00D5988D /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2637561D16779B00D5988D /* LoginService.swift */; };
 		EA2637591D16787C00D5988D /* GoandroidServerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2637581D16787C00D5988D /* GoandroidServerService.swift */; };
 		EA26375B1D16A1F700D5988D /* LoginModelsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA26375A1D16A1F700D5988D /* LoginModelsFactory.swift */; };
 		EA26375D1D16A4F100D5988D /* ServerParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA26375C1D16A4F100D5988D /* ServerParser.swift */; };
 		EA26375F1D16A59700D5988D /* GoandroidServerParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA26375E1D16A59700D5988D /* GoandroidServerParser.swift */; };
 		EA2637631D16BEF400D5988D /* WebBrouserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2637621D16BEF400D5988D /* WebBrouserViewController.swift */; };
+		EADC60021D16E3CE00B8743C /* WebBrowserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60011D16E3CE00B8743C /* WebBrowserViewModel.swift */; };
+		EADC60041D16E44F00B8743C /* WebBrowserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60031D16E44F00B8743C /* WebBrowserModel.swift */; };
+		EADC60061D17017E00B8743C /* ServerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60051D17017E00B8743C /* ServerService.swift */; };
 		EAE50A5C1D12CEEB00B4329B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE50A5B1D12CEEB00B4329B /* AppDelegate.swift */; };
 		EAE50A5E1D12CEEB00B4329B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE50A5D1D12CEEB00B4329B /* LoginViewController.swift */; };
 		EAE50A611D12CEEB00B4329B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAE50A5F1D12CEEB00B4329B /* Main.storyboard */; };
@@ -51,12 +54,15 @@
 		EA2637491D15B95A00D5988D /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		EA26374D1D15BE3D00D5988D /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		EA2637511D15BF9000D5988D /* LoginModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
-		EA2637561D16779B00D5988D /* ServerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerService.swift; sourceTree = "<group>"; };
+		EA2637561D16779B00D5988D /* LoginService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		EA2637581D16787C00D5988D /* GoandroidServerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoandroidServerService.swift; sourceTree = "<group>"; };
 		EA26375A1D16A1F700D5988D /* LoginModelsFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginModelsFactory.swift; sourceTree = "<group>"; };
 		EA26375C1D16A4F100D5988D /* ServerParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerParser.swift; sourceTree = "<group>"; };
 		EA26375E1D16A59700D5988D /* GoandroidServerParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoandroidServerParser.swift; sourceTree = "<group>"; };
 		EA2637621D16BEF400D5988D /* WebBrouserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebBrouserViewController.swift; sourceTree = "<group>"; };
+		EADC60011D16E3CE00B8743C /* WebBrowserViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebBrowserViewModel.swift; sourceTree = "<group>"; };
+		EADC60031D16E44F00B8743C /* WebBrowserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebBrowserModel.swift; sourceTree = "<group>"; };
+		EADC60051D17017E00B8743C /* ServerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerService.swift; sourceTree = "<group>"; };
 		EAE50A581D12CEEB00B4329B /* LogNet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LogNet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAE50A5B1D12CEEB00B4329B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EAE50A5D1D12CEEB00B4329B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +129,7 @@
 				EA26375A1D16A1F700D5988D /* LoginModelsFactory.swift */,
 				EA26375C1D16A4F100D5988D /* ServerParser.swift */,
 				EA26375E1D16A59700D5988D /* GoandroidServerParser.swift */,
+				EADC60031D16E44F00B8743C /* WebBrowserModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -141,6 +148,7 @@
 			children = (
 				EA2637491D15B95A00D5988D /* LoginViewModel.swift */,
 				EA26374D1D15BE3D00D5988D /* Router.swift */,
+				EADC60011D16E3CE00B8743C /* WebBrowserViewModel.swift */,
 			);
 			name = ViewModels;
 			sourceTree = "<group>";
@@ -148,8 +156,9 @@
 		EA2637551D16776600D5988D /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				EA2637561D16779B00D5988D /* ServerService.swift */,
+				EA2637561D16779B00D5988D /* LoginService.swift */,
 				EA2637581D16787C00D5988D /* GoandroidServerService.swift */,
+				EADC60051D17017E00B8743C /* ServerService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -285,6 +294,9 @@
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 8UGVNM2VM6;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.Push = {
 								enabled = 1;
 							};
@@ -416,10 +428,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA26375B1D16A1F700D5988D /* LoginModelsFactory.swift in Sources */,
-				EA2637571D16779B00D5988D /* ServerService.swift in Sources */,
+				EA2637571D16779B00D5988D /* LoginService.swift in Sources */,
+				EADC60061D17017E00B8743C /* ServerService.swift in Sources */,
 				EA26374E1D15BE3D00D5988D /* Router.swift in Sources */,
 				EA2637631D16BEF400D5988D /* WebBrouserViewController.swift in Sources */,
+				EADC60041D16E44F00B8743C /* WebBrowserModel.swift in Sources */,
 				EA26375F1D16A59700D5988D /* GoandroidServerParser.swift in Sources */,
+				EADC60021D16E3CE00B8743C /* WebBrowserViewModel.swift in Sources */,
 				EA2637521D15BF9000D5988D /* LoginModel.swift in Sources */,
 				EAE50A5E1D12CEEB00B4329B /* LoginViewController.swift in Sources */,
 				EA26375D1D16A4F100D5988D /* ServerParser.swift in Sources */,

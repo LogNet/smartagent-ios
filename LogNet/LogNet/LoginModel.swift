@@ -13,10 +13,10 @@ class LoginModel {
     
     var parser:ServerParser?
     
-    private var serverService:ServerService
+    private var loginService:LoginService
     
-    init (serverService:ServerService) {
-        self.serverService = serverService
+    init (loginService:LoginService) {
+        self.loginService = loginService
     }
     
     // MARK: Public methods
@@ -27,12 +27,17 @@ class LoginModel {
     
     func login(phoneNumber:String, completed: (NSError?)->Void) {
         weak var weakSelf = self
-        serverService.login(phoneNumber) { (JSON:AnyObject?, error:NSError?) in
-            if let token = weakSelf?.parser?.parseToken(JSON) {
-                 print("parsed token: " + token)
-                FIRAuth.auth()?.signInWithCustomToken(token, completion: { (user:FIRUser?, error:NSError?) in
-                    
-                })
+        loginService.login(phoneNumber) { (JSON:AnyObject?, error:NSError?) in
+            if error == nil {
+                if let token = weakSelf?.parser?.parseToken(JSON) {
+                    print("parsed token: " + token)
+                    FIRAuth.auth()?.signInWithCustomToken(token, completion: { (user:FIRUser?, error:NSError?) in
+                        weakSelf?.loginService.storeToken(token)
+                        completed(error)
+                    })
+                }
+            } else {
+                completed(error)
             }
         }
     }

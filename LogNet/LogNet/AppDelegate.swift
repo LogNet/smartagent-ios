@@ -11,6 +11,8 @@ import Firebase
 import Fabric
 import Crashlytics
 import FirebaseAuth
+import FirebaseInstanceID
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,46 +23,72 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         FIRApp.configure()
+        // Add observer for InstanceID token refresh callback.
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.tokenRefreshNotification),
+                                                         name: kFIRInstanceIDTokenRefreshNotification, object: nil)
         Fabric.with([Crashlytics.self])
-        registerForPushNotifications(application)
-        window?.rootViewController = getInitialViewController()
-        window?.makeKeyAndVisible()
+        configureViewController()
         return true
     }
 
+    // MARK: Firebase
+    
+    func connectToFcm() {
+        FIRMessaging.messaging().connectWithCompletion { (error) in
+            if (error != nil) {
+                print("Unable to connect with FCM. \(error)")
+            } else {
+                print("Connected to FCM.")
+                let refreshedToken = FIRInstanceID.instanceID().token()
+                print("InstanceID token: \(refreshedToken)")
+            }
+        }
+    }
+    
+    func tokenRefreshNotification(notification: NSNotification) {
+        sendDeviceTokenToServer()
+        connectToFcm()
+    }
+    
     // MARK: Private Methods
     
-    func getInitialViewController() -> UIViewController {
-        if !LoginModel.isUserLoggedIn() {
-            return self.getLoginViewController()
+    func sendDeviceTokenToServer() {
+        if FIRInstanceID.instanceID().token() != nil {
+            print("InstanceID token: \(FIRInstanceID.instanceID().token())")
+            // Connect to FCM since connection may have failed when attempted before having a token.
+            let serverService = GoandroidServerService()
+            serverService.postDeviceToken(FIRInstanceID.instanceID().token()!)
         }
-        return self.getBrouserViewController();
     }
     
-    func getBrouserViewController() -> UIViewController {
+    func configureViewController() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let brouserViewController:WebBrouserViewController =
-            storyboard.instantiateViewControllerWithIdentifier("WebBrouserViewController") as! WebBrouserViewController
-        return brouserViewController
+        let navigationController = storyboard.instantiateInitialViewController() as! UINavigationController
+        self.router = Router(navigationController)
+        let browserViewController = storyboard.instantiateViewControllerWithIdentifier("WebBrouserViewController") as!WebBrouserViewController
+        let webBrowserModel = WebBrowserModel()
+        let webBrowserViewModel = WebBrowserViewModel(browserModel: webBrowserModel, router: self.router)
+        browserViewController.viewModel = webBrowserViewModel
+        navigationController.viewControllers = [browserViewController]
+        self.window?.rootViewController = navigationController
+        self.window?.makeKeyAndVisible()
     }
-    
-    func getLoginViewController() -> UIViewController {
-        let loginModel = LoginModelsFactory.getLoginModel()
-        let loginViewModel = LoginViewModel(loginModel: loginModel)
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let loginViewController:LoginViewController =
-            storyboard.instantiateInitialViewController() as! LoginViewController
-        loginViewController.loginViewModel = loginViewModel;
-        return loginViewController;
-    }
-    
-    func registerForPushNotifications(application:UIApplication) {
-        let notificationSettings = UIUserNotificationSettings(
-            forTypes: [.Badge, .Sound, .Alert], categories: nil)
-        application.registerUserNotificationSettings(notificationSettings)
-    }
+
     
     // MARK: UIApplicationDelegate
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject],
+                     fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+        // If you are receiving a notification message while your app is in the background,
+        // this callback will not be fired till the user taps on the notification launching the application.
+        // TODO: Handle data of notification
+        
+        // Print message ID.
+        print("Message ID: \(userInfo["gcm.message_id"]!)")
+        
+        // Print full message.
+        print("%@", userInfo)
+    }
     
     func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings) {
         if notificationSettings.types != .None {
@@ -77,11 +105,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         print("Device Token:", tokenString)
+        FIRMessaging.messaging().disconnect()
+        FIRInstanceID.instanceID().setAPNSToken(deviceToken, type: FIRInstanceIDAPNSTokenType.Unknown)
+        self.connectToFcm()
     }
+    
     
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
         print("Failed to register:", error)
     }
+
     
     // MARK: Application Lifecycle
     
@@ -91,6 +124,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidEnterBackground(application: UIApplication) {
+        FIRMessaging.messaging().disconnect()
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
@@ -100,6 +134,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(application: UIApplication) {
+        connectToFcm()
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
 

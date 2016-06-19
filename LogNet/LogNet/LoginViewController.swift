@@ -50,20 +50,42 @@ class LoginViewController: UIViewController {
         return false
     }
     
-    
-    
-    @IBAction func login(sender: AnyObject) {
-        if self.isValidPhoneString(self.phoneTextField.text) {
-            self.loginViewModel?.login({ (error) in
-                
-            })
+    func wrongPhoneNumber() {
+        let alert =
+            UIAlertController(title: "Wrong phone number!",
+                              message: "Please, write a valid phone number.",
+                              preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+   
+    func loginCompletedWithError(error:NSError?) {
+        if error == nil {
+            self.dismissViewControllerAnimated(true, completion: nil)
         } else {
             let alert =
-                UIAlertController(title: "Wrong phone number!",
-                                  message: "Please, write a valid phone number.",
+                UIAlertController(title: "An error occurred!",
+                                  message: "Something went wrong.",
                                   preferredStyle: .Alert)
             alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
+        }
+    }
+    
+    func startLogin()  {
+        weak var weakSelf = self
+        self.loginViewModel?.login({ (error) in
+            weakSelf?.loginCompletedWithError(error)
+        })
+    }
+    
+    // MARK: IBActions
+    
+    @IBAction func login(sender: AnyObject) {
+        if self.isValidPhoneString(self.phoneTextField.text) {
+            self.startLogin()
+        } else {
+            self.wrongPhoneNumber()
         }
     }
     

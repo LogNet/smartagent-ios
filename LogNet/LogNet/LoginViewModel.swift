@@ -10,6 +10,8 @@ import Foundation
 
 class LoginViewModel:NSObject {
     
+    var router:LoginViewModelRouter?
+    
     // MARK: Public Variables
     
     var phoneNumber:String?
@@ -18,19 +20,25 @@ class LoginViewModel:NSObject {
 
     private var loginModel:LoginModel
     
-    init (loginModel:LoginModel) {
+    init (loginModel:LoginModel, router:Router?) {
         self.loginModel = loginModel
+        self.router = router
     }
     
     // MARK: Public methods
     
     func login(completion:(error:NSError?)->Void) -> Void {
         if self.phoneNumber != nil {
+            weak var weakSelf = self
             self.loginModel.login(self.phoneNumber!) { (error:NSError?) in
-                
+                if error == nil {
+                    weakSelf?.router?.loginFinished()
+                }
+                completion(error: error)
             }
             print(self.phoneNumber!)
         }
         
     }
+    
 }
