@@ -87,7 +87,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("Message ID: \(userInfo["gcm.message_id"]!)")
         
         // Print full message.
-        print("%@", userInfo)
+        print("link = %@", userInfo["link"])
+        if let link:String = userInfo["link"] as? String {
+            self.router?.openURLString(link)
+        }
     }
     
     func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings) {

@@ -48,4 +48,9 @@ class Router:WebBrowserViewModelRouter,LoginViewModelRouter {
         browserViewController.viewModel?.sendFirebaseTokenToServer()
         
     }
+    
+    func openURLString(urlString:String) {
+        let browserViewController = self.navigationController!.viewControllers[0] as! WebBrouserViewController
+        browserViewController.loadRequestFromString(urlString)
+    }
 }

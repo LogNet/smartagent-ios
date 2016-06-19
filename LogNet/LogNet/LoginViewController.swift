@@ -8,6 +8,13 @@
 
 import UIKit
 import ReactiveCocoa
+import QuartzCore
+
+extension CALayer {
+    func setBorderColorFromUIColor(color:UIColor) {
+        self.borderColor = color.CGColor
+    }
+}
 
 class LoginViewController: UIViewController {
 

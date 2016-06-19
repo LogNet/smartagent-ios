@@ -21,6 +21,7 @@
 		EADC60021D16E3CE00B8743C /* WebBrowserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60011D16E3CE00B8743C /* WebBrowserViewModel.swift */; };
 		EADC60041D16E44F00B8743C /* WebBrowserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60031D16E44F00B8743C /* WebBrowserModel.swift */; };
 		EADC60061D17017E00B8743C /* ServerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60051D17017E00B8743C /* ServerService.swift */; };
+		EADC60081D175DDA00B8743C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EADC60071D175DDA00B8743C /* QuartzCore.framework */; };
 		EAE50A5C1D12CEEB00B4329B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE50A5B1D12CEEB00B4329B /* AppDelegate.swift */; };
 		EAE50A5E1D12CEEB00B4329B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE50A5D1D12CEEB00B4329B /* LoginViewController.swift */; };
 		EAE50A611D12CEEB00B4329B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAE50A5F1D12CEEB00B4329B /* Main.storyboard */; };
@@ -63,6 +64,7 @@
 		EADC60011D16E3CE00B8743C /* WebBrowserViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebBrowserViewModel.swift; sourceTree = "<group>"; };
 		EADC60031D16E44F00B8743C /* WebBrowserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebBrowserModel.swift; sourceTree = "<group>"; };
 		EADC60051D17017E00B8743C /* ServerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerService.swift; sourceTree = "<group>"; };
+		EADC60071D175DDA00B8743C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		EAE50A581D12CEEB00B4329B /* LogNet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LogNet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAE50A5B1D12CEEB00B4329B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EAE50A5D1D12CEEB00B4329B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EADC60081D175DDA00B8743C /* QuartzCore.framework in Frameworks */,
 				C982CE3C3CFC0D3186424761 /* Pods_LogNet.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -108,6 +111,7 @@
 		60AC10965845AF0CA7D197F4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EADC60071D175DDA00B8743C /* QuartzCore.framework */,
 				2E1AB6E3A44708BDEAE713A4 /* Pods_LogNet.framework */,
 			);
 			name = Frameworks;
