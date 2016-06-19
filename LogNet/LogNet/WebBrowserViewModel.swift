@@ -1,5 +1,5 @@
 //
-//  ServerService.swift
+//  BrowserViewModel.swift
 //  LogNet
 //
 //  Created by Anton Tikhonov on 6/19/16.
@@ -7,3 +7,10 @@
 //
 
 import Foundation
+
+class BrowserViewModel:NSObject {
+
+    var router:Router?
+    
+    
+}

@@ -1,5 +1,5 @@
 //
-//  ServerService.swift
+//  ServierService.swift
 //  LogNet
 //
 //  Created by Anton Tikhonov on 6/19/16.
@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+protocol ServerService {
+    func login(phoneNumber:String, completed: (AnyObject?,NSError?)->Void)
+}
