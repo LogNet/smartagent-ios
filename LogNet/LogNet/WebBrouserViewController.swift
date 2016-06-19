@@ -6,7 +6,7 @@
 //  Copyright © 2016 Anton Tikhonov. All rights reserved.
 //
 
-import Cocoa
+import UIKit
 
 class WebBrouserViewController: UIViewController {
 

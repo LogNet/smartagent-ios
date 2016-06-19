@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+protocol ServerParser {
+    func parseToken(JSON:AnyObject?) -> String?
+}

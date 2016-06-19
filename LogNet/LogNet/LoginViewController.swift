@@ -7,12 +7,18 @@
 //
 
 import UIKit
+import ReactiveCocoa
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
 
+    @IBOutlet weak var phoneTextField: UITextField!
+    
+    var loginViewModel: LoginViewModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        bindViewModel()
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,6 +26,45 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    // MARK: Methods
+    
+    func bindViewModel() {
+/*
+        weak var weakSelf = self
+        let validPhoneSignal = self.phoneTextField.rac_textSignal().map { (next:AnyObject!) -> AnyObject! in
+            let text = next as! String
+            return weakSelf!.isValidPhoneString(text)
+        }
+*/
+        self.phoneTextField.rac_textSignal().subscribeNext { (next:AnyObject!) in
+            if let text = next as? String {
+                self.loginViewModel?.phoneNumber = text
+            }
+        }
+    }
+    
+    func isValidPhoneString(phoneString:String?) -> Bool {
+        if phoneString != nil {
+            return phoneString?.characters.count > 0
+        }
+        return false
+    }
+    
+    
+    
+    @IBAction func login(sender: AnyObject) {
+        if self.isValidPhoneString(self.phoneTextField.text) {
+            self.loginViewModel?.login({ (error) in
+                
+            })
+        } else {
+            let alert =
+                UIAlertController(title: "Wrong phone number!",
+                                  message: "Please, write a valid phone number.",
+                                  preferredStyle: .Alert)
+            alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+    }
+    
 }
-

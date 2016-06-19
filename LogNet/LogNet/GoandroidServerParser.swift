@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+class GoandroidServerParser: ServerParser {
+    func parseToken(JSON: AnyObject?) -> String? {
+        if JSON != nil {
+            let token = JSON!["token"] as! String
+            return token
+        }
+        return nil
+    }
+}

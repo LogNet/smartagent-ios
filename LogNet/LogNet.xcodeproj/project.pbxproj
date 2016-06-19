@@ -7,8 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C982CE3C3CFC0D3186424761 /* Pods_LogNet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E1AB6E3A44708BDEAE713A4 /* Pods_LogNet.framework */; };
+		EA2637441D12E46600D5988D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA2637431D12E46600D5988D /* GoogleService-Info.plist */; };
+		EA26374A1D15B95A00D5988D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2637491D15B95A00D5988D /* LoginViewModel.swift */; };
+		EA26374E1D15BE3D00D5988D /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA26374D1D15BE3D00D5988D /* Router.swift */; };
+		EA2637521D15BF9000D5988D /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2637511D15BF9000D5988D /* LoginModel.swift */; };
+		EA2637571D16779B00D5988D /* ServerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2637561D16779B00D5988D /* ServerService.swift */; };
+		EA2637591D16787C00D5988D /* GoandroidServerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2637581D16787C00D5988D /* GoandroidServerService.swift */; };
+		EA26375B1D16A1F700D5988D /* LoginModelsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA26375A1D16A1F700D5988D /* LoginModelsFactory.swift */; };
+		EA26375D1D16A4F100D5988D /* ServerParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA26375C1D16A4F100D5988D /* ServerParser.swift */; };
+		EA26375F1D16A59700D5988D /* GoandroidServerParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA26375E1D16A59700D5988D /* GoandroidServerParser.swift */; };
+		EA2637631D16BEF400D5988D /* WebBrouserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2637621D16BEF400D5988D /* WebBrouserViewController.swift */; };
 		EAE50A5C1D12CEEB00B4329B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE50A5B1D12CEEB00B4329B /* AppDelegate.swift */; };
-		EAE50A5E1D12CEEB00B4329B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE50A5D1D12CEEB00B4329B /* ViewController.swift */; };
+		EAE50A5E1D12CEEB00B4329B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE50A5D1D12CEEB00B4329B /* LoginViewController.swift */; };
 		EAE50A611D12CEEB00B4329B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAE50A5F1D12CEEB00B4329B /* Main.storyboard */; };
 		EAE50A631D12CEEB00B4329B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAE50A621D12CEEB00B4329B /* Assets.xcassets */; };
 		EAE50A661D12CEEB00B4329B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAE50A641D12CEEB00B4329B /* LaunchScreen.storyboard */; };
@@ -34,9 +45,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E1AB6E3A44708BDEAE713A4 /* Pods_LogNet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LogNet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCEB39520A448D2C92E66E98 /* Pods-LogNet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LogNet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LogNet/Pods-LogNet.debug.xcconfig"; sourceTree = "<group>"; };
+		EA2637431D12E46600D5988D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EA2637491D15B95A00D5988D /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		EA26374D1D15BE3D00D5988D /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		EA2637511D15BF9000D5988D /* LoginModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		EA2637561D16779B00D5988D /* ServerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerService.swift; sourceTree = "<group>"; };
+		EA2637581D16787C00D5988D /* GoandroidServerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoandroidServerService.swift; sourceTree = "<group>"; };
+		EA26375A1D16A1F700D5988D /* LoginModelsFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginModelsFactory.swift; sourceTree = "<group>"; };
+		EA26375C1D16A4F100D5988D /* ServerParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerParser.swift; sourceTree = "<group>"; };
+		EA26375E1D16A59700D5988D /* GoandroidServerParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoandroidServerParser.swift; sourceTree = "<group>"; };
+		EA2637621D16BEF400D5988D /* WebBrouserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebBrouserViewController.swift; sourceTree = "<group>"; };
 		EAE50A581D12CEEB00B4329B /* LogNet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LogNet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAE50A5B1D12CEEB00B4329B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EAE50A5D1D12CEEB00B4329B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EAE50A5D1D12CEEB00B4329B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		EAE50A601D12CEEB00B4329B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EAE50A621D12CEEB00B4329B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EAE50A651D12CEEB00B4329B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +70,7 @@
 		EAE50A771D12CEEC00B4329B /* LogNetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LogNetUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAE50A7B1D12CEEC00B4329B /* LogNetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogNetUITests.swift; sourceTree = "<group>"; };
 		EAE50A7D1D12CEEC00B4329B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC9142CEE44B9832FFEAEEB5 /* Pods-LogNet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LogNet.release.xcconfig"; path = "Pods/Target Support Files/Pods-LogNet/Pods-LogNet.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C982CE3C3CFC0D3186424761 /* Pods_LogNet.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +99,61 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		60AC10965845AF0CA7D197F4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2E1AB6E3A44708BDEAE713A4 /* Pods_LogNet.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		871A7BF1C98F30F26301E5FA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CCEB39520A448D2C92E66E98 /* Pods-LogNet.debug.xcconfig */,
+				FC9142CEE44B9832FFEAEEB5 /* Pods-LogNet.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		EA2637461D15B89E00D5988D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EA2637511D15BF9000D5988D /* LoginModel.swift */,
+				EA26375A1D16A1F700D5988D /* LoginModelsFactory.swift */,
+				EA26375C1D16A4F100D5988D /* ServerParser.swift */,
+				EA26375E1D16A59700D5988D /* GoandroidServerParser.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		EA2637471D15B8A800D5988D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EAE50A5D1D12CEEB00B4329B /* LoginViewController.swift */,
+				EA2637621D16BEF400D5988D /* WebBrouserViewController.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		EA2637481D15B8AF00D5988D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				EA2637491D15B95A00D5988D /* LoginViewModel.swift */,
+				EA26374D1D15BE3D00D5988D /* Router.swift */,
+			);
+			name = ViewModels;
+			sourceTree = "<group>";
+		};
+		EA2637551D16776600D5988D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				EA2637561D16779B00D5988D /* ServerService.swift */,
+				EA2637581D16787C00D5988D /* GoandroidServerService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
 		EAE50A4F1D12CEEB00B4329B = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +161,8 @@
 				EAE50A6F1D12CEEC00B4329B /* LogNetTests */,
 				EAE50A7A1D12CEEC00B4329B /* LogNetUITests */,
 				EAE50A591D12CEEB00B4329B /* Products */,
+				871A7BF1C98F30F26301E5FA /* Pods */,
+				60AC10965845AF0CA7D197F4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,12 +179,16 @@
 		EAE50A5A1D12CEEB00B4329B /* LogNet */ = {
 			isa = PBXGroup;
 			children = (
+				EA2637551D16776600D5988D /* Services */,
+				EA2637481D15B8AF00D5988D /* ViewModels */,
+				EA2637471D15B8A800D5988D /* Views */,
+				EA2637461D15B89E00D5988D /* Models */,
 				EAE50A5B1D12CEEB00B4329B /* AppDelegate.swift */,
-				EAE50A5D1D12CEEB00B4329B /* ViewController.swift */,
 				EAE50A5F1D12CEEB00B4329B /* Main.storyboard */,
 				EAE50A621D12CEEB00B4329B /* Assets.xcassets */,
 				EAE50A641D12CEEB00B4329B /* LaunchScreen.storyboard */,
 				EAE50A671D12CEEB00B4329B /* Info.plist */,
+				EA2637431D12E46600D5988D /* GoogleService-Info.plist */,
 			);
 			path = LogNet;
 			sourceTree = "<group>";
@@ -132,9 +218,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EAE50A801D12CEEC00B4329B /* Build configuration list for PBXNativeTarget "LogNet" */;
 			buildPhases = (
+				D7D139985998654D26C2B480 /* [CP] Check Pods Manifest.lock */,
 				EAE50A541D12CEEB00B4329B /* Sources */,
 				EAE50A551D12CEEB00B4329B /* Frameworks */,
 				EAE50A561D12CEEB00B4329B /* Resources */,
+				60DE6372F40A3C059A13ABF5 /* [CP] Embed Pods Frameworks */,
+				D3F46707DFDECB0DEC9F246B /* [CP] Copy Pods Resources */,
+				EA2637451D12EC4900D5988D /* Fabric Script */,
 			);
 			buildRules = (
 			);
@@ -193,6 +283,12 @@
 				TargetAttributes = {
 					EAE50A571D12CEEB00B4329B = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 8UGVNM2VM6;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					EAE50A6B1D12CEEC00B4329B = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -230,6 +326,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAE50A661D12CEEB00B4329B /* LaunchScreen.storyboard in Resources */,
+				EA2637441D12E46600D5988D /* GoogleService-Info.plist in Resources */,
 				EAE50A631D12CEEB00B4329B /* Assets.xcassets in Resources */,
 				EAE50A611D12CEEB00B4329B /* Main.storyboard in Resources */,
 			);
@@ -251,13 +348,84 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		60DE6372F40A3C059A13ABF5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LogNet/Pods-LogNet-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D3F46707DFDECB0DEC9F246B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LogNet/Pods-LogNet-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7D139985998654D26C2B480 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EA2637451D12EC4900D5988D /* Fabric Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Fabric Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 6e32d6db50c7d355320c2c1d67a0e3db21d58548 3050b760d4235ceab9e71589e5f150ef1c59823f0b75ad7c9d5e827cffaf4b9b";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EAE50A541D12CEEB00B4329B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAE50A5E1D12CEEB00B4329B /* ViewController.swift in Sources */,
+				EA26375B1D16A1F700D5988D /* LoginModelsFactory.swift in Sources */,
+				EA2637571D16779B00D5988D /* ServerService.swift in Sources */,
+				EA26374E1D15BE3D00D5988D /* Router.swift in Sources */,
+				EA2637631D16BEF400D5988D /* WebBrouserViewController.swift in Sources */,
+				EA26375F1D16A59700D5988D /* GoandroidServerParser.swift in Sources */,
+				EA2637521D15BF9000D5988D /* LoginModel.swift in Sources */,
+				EAE50A5E1D12CEEB00B4329B /* LoginViewController.swift in Sources */,
+				EA26375D1D16A4F100D5988D /* ServerParser.swift in Sources */,
 				EAE50A5C1D12CEEB00B4329B /* AppDelegate.swift in Sources */,
+				EA26374A1D15B95A00D5988D /* LoginViewModel.swift in Sources */,
+				EA2637591D16787C00D5988D /* GoandroidServerService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,8 +565,10 @@
 		};
 		EAE50A811D12CEEC00B4329B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CCEB39520A448D2C92E66E98 /* Pods-LogNet.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Roma Herman (Z32656347C)";
 				INFOPLIST_FILE = LogNet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = lognet.LogNet;
@@ -408,8 +578,10 @@
 		};
 		EAE50A821D12CEEC00B4329B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC9142CEE44B9832FFEAEEB5 /* Pods-LogNet.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Roma Herman (Z32656347C)";
 				INFOPLIST_FILE = LogNet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = lognet.LogNet;
@@ -482,6 +654,7 @@
 				EAE50A821D12CEEC00B4329B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EAE50A831D12CEEC00B4329B /* Build configuration list for PBXNativeTarget "LogNetTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +663,7 @@
 				EAE50A851D12CEEC00B4329B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EAE50A861D12CEEC00B4329B /* Build configuration list for PBXNativeTarget "LogNetUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +672,7 @@
 				EAE50A881D12CEEC00B4329B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

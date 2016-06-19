@@ -7,7 +7,13 @@
 //
 
 import Foundation
+import UIKit
 
-protocol ViewModelService {
+class Router {
     
+    private var navigationController:UINavigationController?
+    
+    init(_ navigationController:UINavigationController){
+        self.navigationController = navigationController
+    }
 }

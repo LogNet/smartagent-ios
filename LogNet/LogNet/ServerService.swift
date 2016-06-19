@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol ServierService {
-    func login(phoneNumber:String, completed:(NSError?))
+protocol ServerService {
+    func login(phoneNumber:String, completed: (AnyObject?,NSError?)->Void)
 }

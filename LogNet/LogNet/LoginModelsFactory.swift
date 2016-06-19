@@ -7,3 +7,12 @@
 //
 
 import Foundation
+
+class LoginModelsFactory {
+    class func getLoginModel() -> LoginModel {
+        let serverService = GoandroidServerService()
+        let loginModel = LoginModel(serverService: serverService)
+        loginModel.parser = GoandroidServerParser()
+        return loginModel
+    }
+}
