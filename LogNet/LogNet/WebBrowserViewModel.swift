@@ -14,12 +14,13 @@ import FirebaseInstanceID
 class WebBrowserViewModel:NSObject {
 
     var router:WebBrowserViewModelRouter?
-    
+    dynamic var urlString:String?
     private var browserModel:WebBrowserModel?
     
     init(browserModel:WebBrowserModel, router:Router?) {
         self.browserModel = browserModel;
         self.router = router;
+        self.urlString = "http://www.lognet-travel.com/"
     }
     
     func checkUserLoggedIn() {

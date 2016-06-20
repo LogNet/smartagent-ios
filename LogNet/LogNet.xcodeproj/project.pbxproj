@@ -22,6 +22,7 @@
 		EADC60041D16E44F00B8743C /* WebBrowserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60031D16E44F00B8743C /* WebBrowserModel.swift */; };
 		EADC60061D17017E00B8743C /* ServerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60051D17017E00B8743C /* ServerService.swift */; };
 		EADC60081D175DDA00B8743C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EADC60071D175DDA00B8743C /* QuartzCore.framework */; };
+		EADC600A1D18543800B8743C /* AlertNotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60091D18543700B8743C /* AlertNotificationViewModel.swift */; };
 		EAE50A5C1D12CEEB00B4329B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE50A5B1D12CEEB00B4329B /* AppDelegate.swift */; };
 		EAE50A5E1D12CEEB00B4329B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE50A5D1D12CEEB00B4329B /* LoginViewController.swift */; };
 		EAE50A611D12CEEB00B4329B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAE50A5F1D12CEEB00B4329B /* Main.storyboard */; };
@@ -65,6 +66,7 @@
 		EADC60031D16E44F00B8743C /* WebBrowserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebBrowserModel.swift; sourceTree = "<group>"; };
 		EADC60051D17017E00B8743C /* ServerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerService.swift; sourceTree = "<group>"; };
 		EADC60071D175DDA00B8743C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		EADC60091D18543700B8743C /* AlertNotificationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertNotificationViewModel.swift; sourceTree = "<group>"; };
 		EAE50A581D12CEEB00B4329B /* LogNet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LogNet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAE50A5B1D12CEEB00B4329B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EAE50A5D1D12CEEB00B4329B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				EA2637491D15B95A00D5988D /* LoginViewModel.swift */,
 				EA26374D1D15BE3D00D5988D /* Router.swift */,
 				EADC60011D16E3CE00B8743C /* WebBrowserViewModel.swift */,
+				EADC60091D18543700B8743C /* AlertNotificationViewModel.swift */,
 			);
 			name = ViewModels;
 			sourceTree = "<group>";
@@ -444,6 +447,7 @@
 				EA26375D1D16A4F100D5988D /* ServerParser.swift in Sources */,
 				EAE50A5C1D12CEEB00B4329B /* AppDelegate.swift in Sources */,
 				EA26374A1D15B95A00D5988D /* LoginViewModel.swift in Sources */,
+				EADC600A1D18543800B8743C /* AlertNotificationViewModel.swift in Sources */,
 				EA2637591D16787C00D5988D /* GoandroidServerService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

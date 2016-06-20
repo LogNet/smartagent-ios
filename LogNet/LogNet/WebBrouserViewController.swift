@@ -8,6 +8,7 @@
 
 import UIKit
 import AMScrollingNavbar
+import ReactiveCocoa
 
 class WebBrouserViewController: UIViewController, UIWebViewDelegate {
     
@@ -19,8 +20,13 @@ class WebBrouserViewController: UIViewController, UIWebViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        self.loadRequestFromString("http://www.lognet-travel.com/")
+        weak var weakSelf = self
+        self.viewModel?.rac_valuesForKeyPath("urlString", observer: self).subscribeNext({ (string:AnyObject!) in
+            if let urlString = string as? String {
+                weakSelf!.loadRequestFromString(urlString)
+            }
+            
+        })
         self.addRefreshControl()
     }
     
@@ -49,7 +55,27 @@ class WebBrouserViewController: UIViewController, UIWebViewDelegate {
         // Dispose of any resources that can be recreated.
     }
 
-    func addRefreshControl() {
+    
+    // MARK: Public
+    
+    func showNotificationAlert(alertViewModel:AlertNotificationViewModel)  {
+        let alert =
+            UIAlertController(title: alertViewModel.title,
+                              message: alertViewModel.text,
+                              preferredStyle: .Alert)
+        let cancel = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil);
+        let open = UIAlertAction(title: "Open", style: .Default) { (action:UIAlertAction) in
+            self.viewModel?.urlString = alertViewModel.urlString
+        }
+        
+        alert.addAction(open)
+        alert.addAction(cancel)
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    // MARK: Private
+    
+    private func addRefreshControl() {
         self.refreshControl = UIRefreshControl()
         self.refreshControl!.addTarget(self, action: #selector(self.refresh(_:)), forControlEvents: .ValueChanged)
         self.webView.scrollView.addSubview(refreshControl!)
@@ -57,9 +83,10 @@ class WebBrouserViewController: UIViewController, UIWebViewDelegate {
     
     func refresh(refreshControl:UIRefreshControl) {
         self.webView.reload()
+//        self.viewModel?.urlString = "http://stackoverflow.com"
     }
     
-    func loadRequestFromString(urlString:String) {
+    private func loadRequestFromString(urlString:String) {
         let url = NSURL(string: urlString)
         let urlRequest = NSURLRequest(URL: url!)
         self.webView.loadRequest(urlRequest)
@@ -67,6 +94,7 @@ class WebBrouserViewController: UIViewController, UIWebViewDelegate {
     
     
     // MARK: Web view delegate
+    
     func webViewDidStartLoad(webView: UIWebView) {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
     }

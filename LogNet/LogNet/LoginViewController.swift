@@ -9,6 +9,7 @@
 import UIKit
 import ReactiveCocoa
 import QuartzCore
+import PKHUD
 
 extension CALayer {
     func setBorderColorFromUIColor(color:UIColor) {
@@ -26,6 +27,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         bindViewModel()
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -68,8 +70,10 @@ class LoginViewController: UIViewController {
    
     func loginCompletedWithError(error:NSError?) {
         if error == nil {
+            HUD.flash(.Success, delay: 1)
             self.dismissViewControllerAnimated(true, completion: nil)
         } else {
+            HUD.hide()
             let alert =
                 UIAlertController(title: "An error occurred!",
                                   message: "Something went wrong.",
@@ -90,7 +94,9 @@ class LoginViewController: UIViewController {
     
     @IBAction func login(sender: AnyObject) {
         if self.isValidPhoneString(self.phoneTextField.text) {
+            self.phoneTextField.resignFirstResponder()
             self.startLogin()
+            HUD.show(.SystemActivity)
         } else {
             self.wrongPhoneNumber()
         }

@@ -49,8 +49,13 @@ class Router:WebBrowserViewModelRouter,LoginViewModelRouter {
         
     }
     
+    func showNotificationAlert(viewModel:AlertNotificationViewModel) {
+        let browserViewController = self.navigationController!.viewControllers[0] as! WebBrouserViewController
+        browserViewController.showNotificationAlert(viewModel)
+    }
+    
     func openURLString(urlString:String) {
         let browserViewController = self.navigationController!.viewControllers[0] as! WebBrouserViewController
-        browserViewController.loadRequestFromString(urlString)
+        browserViewController.viewModel?.urlString = urlString
     }
 }

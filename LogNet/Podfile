@@ -11,5 +11,6 @@ pod 'Crashlytics'
 pod 'ReactiveCocoa', '~> 4.1'
 pod 'Alamofire', '~> 3.4'
 pod 'AMScrollingNavbar', '~> 2.1'
+pod 'PKHUD', '~> 3.1'
 end
 
