@@ -425,7 +425,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" 6e32d6db50c7d355320c2c1d67a0e3db21d58548 3050b760d4235ceab9e71589e5f150ef1c59823f0b75ad7c9d5e827cffaf4b9b";
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 8ab70adc5721b864db7abbb0411146e229eb1612 f45d7423a199dac7e8fa0fe30d49d3754241c4402efc360efb921ddca939c5d8";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -593,9 +593,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Roma Herman (Z32656347C)";
 				INFOPLIST_FILE = LogNet/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = lognet.LogNet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -606,9 +608,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Roma Herman (Z32656347C)";
 				INFOPLIST_FILE = LogNet/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = lognet.LogNet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
