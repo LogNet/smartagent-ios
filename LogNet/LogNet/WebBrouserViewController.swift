@@ -30,11 +30,6 @@ class WebBrouserViewController: UIViewController, UIWebViewDelegate {
         self.addRefreshControl()
     }
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        self.viewModel?.checkUserLoggedIn()
-    }
-    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         if let navigationController = self.navigationController as? ScrollingNavigationController {

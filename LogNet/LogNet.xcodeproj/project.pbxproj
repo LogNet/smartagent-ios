@@ -23,6 +23,15 @@
 		EADC60061D17017E00B8743C /* ServerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60051D17017E00B8743C /* ServerService.swift */; };
 		EADC60081D175DDA00B8743C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EADC60071D175DDA00B8743C /* QuartzCore.framework */; };
 		EADC600A1D18543800B8743C /* AlertNotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60091D18543700B8743C /* AlertNotificationViewModel.swift */; };
+		EADC600E1D19785000B8743C /* NotificationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC600D1D19785000B8743C /* NotificationsTableViewController.swift */; };
+		EADC60101D1A6EB200B8743C /* NotificatonsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC600F1D1A6EB200B8743C /* NotificatonsViewModel.swift */; };
+		EADC60121D1A6EF500B8743C /* NotificationsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60111D1A6EF500B8743C /* NotificationsModel.swift */; };
+		EADC60141D1A6FEA00B8743C /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60131D1A6FEA00B8743C /* ViewModel.swift */; };
+		EADC60161D1A77AB00B8743C /* NotificationsStorageServise.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60151D1A77AB00B8743C /* NotificationsStorageServise.swift */; };
+		EADC60181D1A782B00B8743C /* NotificationsModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60171D1A782B00B8743C /* NotificationsModelFactory.swift */; };
+		EADC601B1D1A8A5100B8743C /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC601A1D1A8A5100B8743C /* Typealiases.swift */; };
+		EADC601D1D1A8EFC00B8743C /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC601C1D1A8EFC00B8743C /* Notification.swift */; };
+		EADC60201D1B125C00B8743C /* NotificationsStorageServiseRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC601F1D1B125C00B8743C /* NotificationsStorageServiseRealm.swift */; };
 		EAE50A5C1D12CEEB00B4329B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE50A5B1D12CEEB00B4329B /* AppDelegate.swift */; };
 		EAE50A5E1D12CEEB00B4329B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE50A5D1D12CEEB00B4329B /* LoginViewController.swift */; };
 		EAE50A611D12CEEB00B4329B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAE50A5F1D12CEEB00B4329B /* Main.storyboard */; };
@@ -67,6 +76,15 @@
 		EADC60051D17017E00B8743C /* ServerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerService.swift; sourceTree = "<group>"; };
 		EADC60071D175DDA00B8743C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		EADC60091D18543700B8743C /* AlertNotificationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertNotificationViewModel.swift; sourceTree = "<group>"; };
+		EADC600D1D19785000B8743C /* NotificationsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsTableViewController.swift; sourceTree = "<group>"; };
+		EADC600F1D1A6EB200B8743C /* NotificatonsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificatonsViewModel.swift; sourceTree = "<group>"; };
+		EADC60111D1A6EF500B8743C /* NotificationsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsModel.swift; sourceTree = "<group>"; };
+		EADC60131D1A6FEA00B8743C /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		EADC60151D1A77AB00B8743C /* NotificationsStorageServise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsStorageServise.swift; sourceTree = "<group>"; };
+		EADC60171D1A782B00B8743C /* NotificationsModelFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsModelFactory.swift; sourceTree = "<group>"; };
+		EADC601A1D1A8A5100B8743C /* Typealiases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Typealiases.swift; sourceTree = "<group>"; };
+		EADC601C1D1A8EFC00B8743C /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		EADC601F1D1B125C00B8743C /* NotificationsStorageServiseRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsStorageServiseRealm.swift; sourceTree = "<group>"; };
 		EAE50A581D12CEEB00B4329B /* LogNet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LogNet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAE50A5B1D12CEEB00B4329B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EAE50A5D1D12CEEB00B4329B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -133,9 +151,9 @@
 			children = (
 				EA2637511D15BF9000D5988D /* LoginModel.swift */,
 				EA26375A1D16A1F700D5988D /* LoginModelsFactory.swift */,
-				EA26375C1D16A4F100D5988D /* ServerParser.swift */,
-				EA26375E1D16A59700D5988D /* GoandroidServerParser.swift */,
 				EADC60031D16E44F00B8743C /* WebBrowserModel.swift */,
+				EADC60111D1A6EF500B8743C /* NotificationsModel.swift */,
+				EADC601C1D1A8EFC00B8743C /* Notification.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -145,6 +163,7 @@
 			children = (
 				EAE50A5D1D12CEEB00B4329B /* LoginViewController.swift */,
 				EA2637621D16BEF400D5988D /* WebBrouserViewController.swift */,
+				EADC600D1D19785000B8743C /* NotificationsTableViewController.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -152,10 +171,13 @@
 		EA2637481D15B8AF00D5988D /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				EA2637491D15B95A00D5988D /* LoginViewModel.swift */,
 				EA26374D1D15BE3D00D5988D /* Router.swift */,
+				EADC60131D1A6FEA00B8743C /* ViewModel.swift */,
+				EA2637491D15B95A00D5988D /* LoginViewModel.swift */,
 				EADC60011D16E3CE00B8743C /* WebBrowserViewModel.swift */,
 				EADC60091D18543700B8743C /* AlertNotificationViewModel.swift */,
+				EADC600F1D1A6EB200B8743C /* NotificatonsViewModel.swift */,
+				EADC60171D1A782B00B8743C /* NotificationsModelFactory.swift */,
 			);
 			name = ViewModels;
 			sourceTree = "<group>";
@@ -166,8 +188,20 @@
 				EA2637561D16779B00D5988D /* LoginService.swift */,
 				EA2637581D16787C00D5988D /* GoandroidServerService.swift */,
 				EADC60051D17017E00B8743C /* ServerService.swift */,
+				EADC60151D1A77AB00B8743C /* NotificationsStorageServise.swift */,
+				EADC601F1D1B125C00B8743C /* NotificationsStorageServiseRealm.swift */,
 			);
 			name = Services;
+			sourceTree = "<group>";
+		};
+		EADC601E1D1AD0F000B8743C /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				EADC601A1D1A8A5100B8743C /* Typealiases.swift */,
+				EA26375E1D16A59700D5988D /* GoandroidServerParser.swift */,
+				EA26375C1D16A4F100D5988D /* ServerParser.swift */,
+			);
+			name = Entities;
 			sourceTree = "<group>";
 		};
 		EAE50A4F1D12CEEB00B4329B = {
@@ -195,6 +229,7 @@
 		EAE50A5A1D12CEEB00B4329B /* LogNet */ = {
 			isa = PBXGroup;
 			children = (
+				EADC601E1D1AD0F000B8743C /* Entities */,
 				EA2637551D16776600D5988D /* Services */,
 				EA2637481D15B8AF00D5988D /* ViewModels */,
 				EA2637471D15B8A800D5988D /* Views */,
@@ -436,6 +471,11 @@
 			files = (
 				EA26375B1D16A1F700D5988D /* LoginModelsFactory.swift in Sources */,
 				EA2637571D16779B00D5988D /* LoginService.swift in Sources */,
+				EADC60201D1B125C00B8743C /* NotificationsStorageServiseRealm.swift in Sources */,
+				EADC60181D1A782B00B8743C /* NotificationsModelFactory.swift in Sources */,
+				EADC601D1D1A8EFC00B8743C /* Notification.swift in Sources */,
+				EADC600E1D19785000B8743C /* NotificationsTableViewController.swift in Sources */,
+				EADC60101D1A6EB200B8743C /* NotificatonsViewModel.swift in Sources */,
 				EADC60061D17017E00B8743C /* ServerService.swift in Sources */,
 				EA26374E1D15BE3D00D5988D /* Router.swift in Sources */,
 				EA2637631D16BEF400D5988D /* WebBrouserViewController.swift in Sources */,
@@ -443,9 +483,13 @@
 				EA26375F1D16A59700D5988D /* GoandroidServerParser.swift in Sources */,
 				EADC60021D16E3CE00B8743C /* WebBrowserViewModel.swift in Sources */,
 				EA2637521D15BF9000D5988D /* LoginModel.swift in Sources */,
+				EADC60141D1A6FEA00B8743C /* ViewModel.swift in Sources */,
 				EAE50A5E1D12CEEB00B4329B /* LoginViewController.swift in Sources */,
+				EADC60161D1A77AB00B8743C /* NotificationsStorageServise.swift in Sources */,
+				EADC60121D1A6EF500B8743C /* NotificationsModel.swift in Sources */,
 				EA26375D1D16A4F100D5988D /* ServerParser.swift in Sources */,
 				EAE50A5C1D12CEEB00B4329B /* AppDelegate.swift in Sources */,
+				EADC601B1D1A8A5100B8743C /* Typealiases.swift in Sources */,
 				EA26374A1D15B95A00D5988D /* LoginViewModel.swift in Sources */,
 				EADC600A1D18543800B8743C /* AlertNotificationViewModel.swift in Sources */,
 				EA2637591D16787C00D5988D /* GoandroidServerService.swift in Sources */,

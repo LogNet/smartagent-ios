@@ -7,3 +7,6 @@
 //
 
 import Foundation
+
+typealias JSONCompletionBlock = (AnyObject?,NSError?)->Void
+typealias ErrorCompletionBlock = (error:NSError?)->Void

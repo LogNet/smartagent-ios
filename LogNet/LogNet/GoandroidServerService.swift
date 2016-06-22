@@ -13,9 +13,11 @@ class GoandroidServerService:LoginService,ServerService {
     private let TOKEN_KEY = "TOKEN_KEY"
     let baseURLString = "http://goandroid.net:8484"
     
-    func login(phoneNumber: String, completed: ((AnyObject?,NSError?)->Void)) {
+    func login(phoneNumber: String, completion: JSONCompletionBlock?) {
         Alamofire.request(.POST, baseURLString + "/agent/register",parameters:["phoneNumber":phoneNumber]).responseJSON { response in
-            completed(response.result.value,response.result.error)
+            if completion != nil {
+                completion!(response.result.value,response.result.error)
+            }
         }
     }
     
@@ -36,6 +38,17 @@ class GoandroidServerService:LoginService,ServerService {
             Alamofire.request(.POST, baseURLString + "/push",parameters:["registrationId":deviceToken],headers:headers).responseJSON {
                 response in
                 
+            }
+        }
+    }
+    
+    func getNotifications(completion: JSONCompletionBlock?) {
+         if let token = self.getToken() {
+            let headers = ["token":token]
+            Alamofire.request(.GET, baseURLString + "/events", headers: headers).responseJSON { response in
+                if completion != nil {
+                    completion!(response.result.value, response.result.error)
+                }
             }
         }
     }

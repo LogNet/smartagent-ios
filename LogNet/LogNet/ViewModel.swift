@@ -6,8 +6,14 @@
 //  Copyright © 2016 Anton Tikhonov. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 class ViewModel: NSObject {
+
+    internal var router:Router
+
+    init(router:Router) {
+        self.router = router
+    }
 
 }

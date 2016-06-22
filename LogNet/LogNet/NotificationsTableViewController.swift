@@ -10,9 +10,11 @@ import UIKit
 
 class NotificationsTableViewController: UITableViewController {
 
+    var viewModel:NotificatonsViewModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -20,6 +22,11 @@ class NotificationsTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.viewModel?.checkUserLoggedIn()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -37,6 +44,12 @@ class NotificationsTableViewController: UITableViewController {
         return 0
     }
 
+    // MARK: Private methods
+    
+    func fetch() {
+        self.viewModel?.fetch()
+    }
+    
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)

@@ -16,4 +16,22 @@ class GoandroidServerParser: ServerParser {
         }
         return nil
     }
+    
+    func parseNotifications(JSON:AnyObject?) -> Array<Notification>? {
+        if let jsonNotifications = JSON as? [[String: AnyObject]]{
+            var notifications = Array<Notification>()
+            for jsonNotification in jsonNotifications {
+                let notification = Notification()
+                notification.title = jsonNotification["title"] as? String
+                notification.link = jsonNotification["link"] as? String
+                notification.time = jsonNotification["time"] as? Int
+                notification.text = jsonNotification["text"] as? String
+                notification.phone = jsonNotification["phone"] as? String
+                notifications.append(notification)
+            }
+            return notifications;
+        }
+        return nil
+    }
+    
 }

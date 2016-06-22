@@ -7,3 +7,19 @@
 //
 
 import Foundation
+
+class NotificationsStorageServiseRealm: NotificationsStorageServise {
+    
+    func addNotification(notification:Notification, completion:ErrorCompletionBlock?) {
+        
+    }
+    
+    func addNotifications(notifications:[Notification],completion:ErrorCompletionBlock?) {
+        
+    }
+    
+    func fetch() -> [Notification]? {
+        
+    }
+    
+}

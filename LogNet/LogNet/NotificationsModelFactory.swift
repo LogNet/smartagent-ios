@@ -7,3 +7,14 @@
 //
 
 import Foundation
+
+class NotificationsModelFactory {
+    
+    class func getGoandroidNotificationsModel() -> NotificationsModel {
+        let model = NotificationsModel()
+        model.serverParser = GoandroidServerParser()
+        model.servserService = GoandroidServerService()
+        return model
+    }
+    
+}

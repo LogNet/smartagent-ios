@@ -50,6 +50,11 @@ PODS:
   - ReactiveCocoa/UI (4.1.0):
     - ReactiveCocoa/Core
     - Result (~> 2.0)
+  - Realm (1.0.0):
+    - Realm/Headers (= 1.0.0)
+  - Realm/Headers (1.0.0)
+  - RealmSwift (1.0.0):
+    - Realm (= 1.0.0)
   - Result (2.0.0)
 
 DEPENDENCIES:
@@ -62,6 +67,7 @@ DEPENDENCIES:
   - FirebaseAuth (~> 3.0)
   - PKHUD (~> 3.1)
   - ReactiveCocoa (~> 4.1)
+  - RealmSwift (~> 1.0)
 
 SPEC CHECKSUMS:
   Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
@@ -80,8 +86,10 @@ SPEC CHECKSUMS:
   GoogleUtilities: 56c5ac05b7aa5dc417a1bb85221a9516e04d7032
   PKHUD: 4167eccdb1b3a892fd80ce2b51cb6ba412a889ab
   ReactiveCocoa: d70004d7a366a7b8e87e60ce2347182c77701949
+  Realm: e15cd8e7c11d3e576f628ba0b7cb855269b4991c
+  RealmSwift: 3229306d020d96f83b335f87a0dcbf2cef0e6a2b
   Result: 9e75e1111c774c6ac594e14907b15057053a7959
 
-PODFILE CHECKSUM: fa284d59b2a8d97e1c2695f2d8014b093be75b1c
+PODFILE CHECKSUM: bf6db4c1ef9a1227401df8da17c9ce3834a75c58
 
 COCOAPODS: 1.0.1

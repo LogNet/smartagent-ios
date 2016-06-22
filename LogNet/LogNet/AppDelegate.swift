@@ -46,7 +46,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func tokenRefreshNotification(notification: NSNotification) {
         let refreshedToken = FIRInstanceID.instanceID().token()
         print("InstanceID token: \(refreshedToken)")
-//        connectToFcm()
         sendDeviceTokenToServer()
         FIRMessaging.messaging().subscribeToTopic("/topics/smart_agent")
     }
@@ -66,16 +65,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let navigationController = storyboard.instantiateInitialViewController() as! UINavigationController
         self.router = Router(navigationController)
-        let browserViewController = storyboard.instantiateViewControllerWithIdentifier("WebBrouserViewController") as!WebBrouserViewController
-        let webBrowserModel = WebBrowserModel()
-        let webBrowserViewModel = WebBrowserViewModel(browserModel: webBrowserModel, router: self.router)
-        browserViewController.viewModel = webBrowserViewModel
-        navigationController.viewControllers = [browserViewController]
         self.window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()
     }
 
-    
     // MARK: UIApplicationDelegate
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject],
@@ -83,7 +76,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If you are receiving a notification message while your app is in the background,
         // this callback will not be fired till the user taps on the notification launching the application.
         // TODO: Handle data of notification
-//        FIRMessaging.messaging().appDidReceiveMessage(userInfo)
         // Print message ID.
         print("Message ID: \(userInfo["gcm.message_id"]!)")
         print("Push notification info: \(userInfo)")
@@ -123,9 +115,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         for i in 0..<deviceToken.length {
             tokenString += String(format: "%02.2hhx", arguments: [tokenChars[i]])
         }
-        
         print("Device Token:", tokenString)
-//        FIRInstanceID.instanceID().setAPNSToken(deviceToken, type: FIRInstanceIDAPNSTokenType.Unknown)
     }
     
     
@@ -152,12 +142,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //    }
 
     func applicationDidBecomeActive(application: UIApplication) {
-//        connectToFcm()
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
 
 //    func applicationWillTerminate(application: UIApplication) {
-////        FIRMessaging.messaging().disconnect()
 //        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 //    }
 

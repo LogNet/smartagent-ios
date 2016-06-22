@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol StorageService {
+protocol NotificationsStorageServise {
     
 }
 

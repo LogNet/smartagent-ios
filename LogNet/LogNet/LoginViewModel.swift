@@ -8,9 +8,7 @@
 
 import Foundation
 
-class LoginViewModel:NSObject {
-    
-    var router:LoginViewModelRouter?
+class LoginViewModel:ViewModel {
     
     // MARK: Public Variables
     
@@ -20,9 +18,9 @@ class LoginViewModel:NSObject {
 
     private var loginModel:LoginModel
     
-    init (loginModel:LoginModel, router:Router?) {
+    init (loginModel:LoginModel, router:Router) {
         self.loginModel = loginModel
-        self.router = router
+        super.init(router: router)
     }
     
     // MARK: Public methods
@@ -32,7 +30,7 @@ class LoginViewModel:NSObject {
             weak var weakSelf = self
             self.loginModel.login(self.phoneNumber!) { (error:NSError?) in
                 if error == nil {
-                    weakSelf?.router?.loginFinished()
+                    weakSelf?.router.loginFinished()
                 }
                 completion(error: error)
             }

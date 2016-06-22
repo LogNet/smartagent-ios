@@ -9,44 +9,54 @@
 import Foundation
 import UIKit
 
-protocol LoginViewModelRouter {
-    func loginFinished()
-}
-
-protocol WebBrowserViewModelRouter {
-    func showLoginView()
-}
-
-class Router:WebBrowserViewModelRouter,LoginViewModelRouter {
+class Router {
     
     private var navigationController:UINavigationController?
+    private var storyboard:UIStoryboard
     
     init(_ navigationController:UINavigationController){
         self.navigationController = navigationController
+        self.storyboard = UIStoryboard(name: "Main", bundle: nil)
+        self.setupHomeViewController()
+    }
+   
+    func setupHomeViewController() {
+        let notificationsViewController = self.storyboard.instantiateViewControllerWithIdentifier("NotificationsTableViewController") as! NotificationsTableViewController
+        let model = NotificationsModelFactory.getGoandroidNotificationsModel()
+        let notificationsViewModel = NotificatonsViewModel(model: model, router: self)
+        notificationsViewController.viewModel = notificationsViewModel;
+        self.navigationController!.viewControllers = [notificationsViewController]
+
+       /*
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let browserViewController = storyboard.instantiateViewControllerWithIdentifier("WebBrouserViewController") as!WebBrouserViewController
+        let webBrowserModel = WebBrowserModel()
+        let webBrowserViewModel = WebBrowserViewModel(browserModel: webBrowserModel, router: self)
+        browserViewController.viewModel = webBrowserViewModel
+        self.navigationController!.viewControllers = [browserViewController]
+        */
     }
     
     func showLoginView() {
         let loginViewController = self.getLoginViewController()
-        let browserViewController = self.navigationController!.viewControllers[0] as! WebBrouserViewController
-        browserViewController.presentViewController(loginViewController, animated: false, completion: nil)
+        let homeViewController = self.navigationController!.viewControllers[0]
+        homeViewController.presentViewController(loginViewController, animated: false, completion: nil)
     }
     
     func getLoginViewController() -> UIViewController {
         let loginModel = LoginModelsFactory.getLoginModel()
         let loginViewModel = LoginViewModel(loginModel: loginModel,router: self)
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let loginViewController:LoginViewController =
-            storyboard.instantiateViewControllerWithIdentifier("LoginViewController") as! LoginViewController
+            self.storyboard.instantiateViewControllerWithIdentifier("LoginViewController") as! LoginViewController
         loginViewController.loginViewModel = loginViewModel;
         loginViewModel.router = self
         return loginViewController;
     }
     
     func loginFinished() {
-        let browserViewController = self.navigationController!.viewControllers[0] as! WebBrouserViewController
-        browserViewController.viewModel?.registerForPushNotifications()
-        browserViewController.viewModel?.sendFirebaseTokenToServer()
-        
+        let notificationsViewController = self.navigationController!.viewControllers[0] as! NotificationsTableViewController
+        notificationsViewController.viewModel?.registerForPushNotifications()
+        notificationsViewController.viewModel?.sendFirebaseTokenToServer()        
     }
     
     func showNotificationAlert(viewModel:AlertNotificationViewModel) {
