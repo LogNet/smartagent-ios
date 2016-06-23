@@ -13,12 +13,12 @@ class Notification: Object {
     dynamic var title:String?
     dynamic var text:String?
     dynamic var link:String?
-    dynamic var time:String?
+    dynamic var time:NSDate?
     dynamic var phone:String?
  
     override var description: String {
         get {
-            return "title: \(self.title)"
+            return "title: \(self.title) date: \(self.time)"
         }
        
     }

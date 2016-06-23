@@ -56,7 +56,8 @@ class Router {
     func loginFinished() {
         let notificationsViewController = self.navigationController!.viewControllers[0] as! NotificationsTableViewController
         notificationsViewController.viewModel?.registerForPushNotifications()
-        notificationsViewController.viewModel?.sendFirebaseTokenToServer()        
+        notificationsViewController.viewModel?.sendFirebaseTokenToServer()
+        notificationsViewController.fetch()
     }
     
     func showNotificationAlert(viewModel:AlertNotificationViewModel) {

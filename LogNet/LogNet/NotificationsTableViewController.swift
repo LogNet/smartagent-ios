@@ -8,14 +8,16 @@
 
 import UIKit
 import ReactiveCocoa
+import PKHUD
 
 class NotificationsTableViewController: UITableViewController {
 
     var viewModel:NotificatonsViewModel?
+    var token: dispatch_once_t = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.refreshControl?.addTarget(self, action:#selector(self.handleRefresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -26,11 +28,22 @@ class NotificationsTableViewController: UITableViewController {
         self.viewModel?.rac_valuesForKeyPath("cellViewModels", observer: self).subscribeNext({ (string:AnyObject!) in
             weakSelf?.tableView.reloadData()
         })
+        
+        let signal = self.viewModel?.rac_valuesForKeyPath("downloading", observer: self)
+        signal?.subscribeNext({x in
+            if x.boolValue == true {
+                HUD.show(.Progress)
+            } else if HUD.isVisible {
+                HUD.flash(.Progress)
+            }
+        })
     }
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        self.viewModel?.checkUserLoggedIn()
+        dispatch_once(&token) {
+            self.viewModel?.checkUserLoggedIn()
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -53,18 +66,25 @@ class NotificationsTableViewController: UITableViewController {
         return 0
     }
 
-    // MARK: Private methods
-    
+    func handleRefresh(refreshControl: UIRefreshControl) {
+        self.fetch()
+        refreshControl.endRefreshing()
+    }
+
     func fetch() {
         self.viewModel?.fetch()
     }
     
+    
+    // MARK: Private methods
+
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("NotificationCell", forIndexPath: indexPath) as! NotificationCell
         let viewModel = self.viewModel?.cellViewModelForRow(indexPath.row)
         // Configure the cell...
         cell.title.text = viewModel?.title
         cell.body.text = viewModel?.text
+        cell.date.text = viewModel?.date
 
         return cell
     }

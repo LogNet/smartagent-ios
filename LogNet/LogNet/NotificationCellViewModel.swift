@@ -12,4 +12,6 @@ class NotificationCellViewModel {
     var title:String?
     var text:String?
     var link:String?
+    var date:String?
+    
 }

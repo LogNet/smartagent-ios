@@ -63,8 +63,7 @@ class NotificationsStorageServiseRealm: NotificationsStorageServise {
     func fetch() ->[Notification]? {
         let realm = try! Realm()
         let type = Notification.self
-        let notifications = Array(realm.objects(type))
+        let notifications = Array(realm.objects(type).sorted("time", ascending: false))
         return notifications
     }
-    
 }

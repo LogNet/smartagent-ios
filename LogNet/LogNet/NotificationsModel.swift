@@ -32,9 +32,9 @@ class NotificationsModel: NSObject {
                             })
                         })
                     }
-                    
                 } else {
-                    completion(error: error, notifications: nil)
+                    let fetchedNotifications = weakSelf?.storageService?.fetch()
+                    completion(error: error, notifications: fetchedNotifications)
                 }
             })
         }

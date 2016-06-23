@@ -12,7 +12,14 @@ import FirebaseInstanceID
 
 class NotificatonsViewModel: ViewModel {
     dynamic var cellViewModels:NSMutableArray?
+    dynamic var downloading = false
     var model:NotificationsModel
+    
+    lazy var dateFormatter:NSDateFormatter = {
+        let formatter = NSDateFormatter()
+        formatter.dateStyle = .MediumStyle
+        return formatter
+    }()
     
     init(model:NotificationsModel, router:Router) {
         self.model = model
@@ -55,8 +62,9 @@ class NotificatonsViewModel: ViewModel {
             forTypes: [.Badge, .Sound, .Alert], categories: nil)
         application.registerUserNotificationSettings(notificationSettings)
     }
-
+    
     func fetch() {
+        self.downloading = true;
         var viewModels = Array<NotificationCellViewModel>()
         weak var weakSelf = self
         self.model.getNotifications { (error, notifications) in
@@ -67,6 +75,7 @@ class NotificatonsViewModel: ViewModel {
                     }
                 }
             }
+            self.downloading = false;
             self.cellViewModels = NSMutableArray(array: viewModels)
         }
     }
@@ -76,6 +85,7 @@ class NotificatonsViewModel: ViewModel {
         viewModel.text = notification.text
         viewModel.title = notification.title
         viewModel.link = notification.link
+        viewModel.date = self.dateFormatter.stringFromDate(notification.time!)
         return viewModel
     }
     
