@@ -65,7 +65,11 @@ class Router {
     }
     
     func openURLString(urlString:String) {
-        let browserViewController = self.navigationController!.viewControllers[0] as! WebBrouserViewController
-        browserViewController.viewModel?.urlString = urlString
+        let browserViewController = self.storyboard.instantiateViewControllerWithIdentifier("WebBrouserViewController") as? WebBrouserViewController
+        let model = WebBrowserModel()
+        let viewModel = WebBrowserViewModel(browserModel: model, router: self)
+        viewModel.urlString = urlString
+        browserViewController?.viewModel = viewModel
+        self.navigationController?.pushViewController(browserViewController!, animated: true)
     }
 }

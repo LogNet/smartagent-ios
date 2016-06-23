@@ -21,13 +21,25 @@ class NotificationsModel: NSObject {
             weak var weakSelf = self
             self.servserService?.getNotifications({ (JSON:AnyObject?, error:NSError?) in
                 if JSON != nil || error == nil {
-                    let notifications = weakSelf?.serverParser?.parseNotifications(JSON)
-                    print("notifications: \(notifications)")
+                    if let notifications = weakSelf?.serverParser?.parseNotifications(JSON) {
+                        weakSelf?.storageService?.cleanUp({ (error) in
+                            weakSelf?.storageService?.addNotifications(notifications, completion: { (error) in
+                                if error == nil {
+                                    let fetchedNotifications = weakSelf?.storageService?.fetch()
+                                    completion(error:nil, notifications: fetchedNotifications)
+                                    print("fetched notifications\(fetchedNotifications)")
+                                }
+                            })
+                        })
+                    }
+                    
                 } else {
                     completion(error: error, notifications: nil)
                 }
             })
         }
     }
+    
+    
     
 }

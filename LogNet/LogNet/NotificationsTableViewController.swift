@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ReactiveCocoa
 
 class NotificationsTableViewController: UITableViewController {
 
@@ -20,6 +21,11 @@ class NotificationsTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        weak var weakSelf = self
+        self.viewModel?.rac_valuesForKeyPath("cellViewModels", observer: self).subscribeNext({ (string:AnyObject!) in
+            weakSelf?.tableView.reloadData()
+        })
     }
 
     override func viewDidAppear(animated: Bool) {
@@ -36,11 +42,14 @@ class NotificationsTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        if self.viewModel?.cellViewModels != nil {
+            return (self.viewModel?.cellViewModels?.count)!
+        }
         return 0
     }
 
@@ -50,16 +59,21 @@ class NotificationsTableViewController: UITableViewController {
         self.viewModel?.fetch()
     }
     
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
+        let cell = tableView.dequeueReusableCellWithIdentifier("NotificationCell", forIndexPath: indexPath) as! NotificationCell
+        let viewModel = self.viewModel?.cellViewModelForRow(indexPath.row)
         // Configure the cell...
+        cell.title.text = viewModel?.title
+        cell.body.text = viewModel?.text
 
         return cell
     }
-    */
 
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let viewModel = self.viewModel?.cellViewModelForRow(indexPath.row)
+        self.viewModel?.router.openURLString((viewModel?.link)!)
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

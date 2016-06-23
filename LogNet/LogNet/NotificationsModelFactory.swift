@@ -14,6 +14,7 @@ class NotificationsModelFactory {
         let model = NotificationsModel()
         model.serverParser = GoandroidServerParser()
         model.servserService = GoandroidServerService()
+        model.storageService = NotificationsStorageServiseRealm()
         return model
     }
     

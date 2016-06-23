@@ -7,12 +7,13 @@
 //
 
 import Foundation
+import RealmSwift
 
-class Notification: NSObject {
+class Notification: Object {
     dynamic var title:String?
     dynamic var text:String?
     dynamic var link:String?
-    dynamic var time:NSNumber?
+    dynamic var time:String?
     dynamic var phone:String?
  
     override var description: String {

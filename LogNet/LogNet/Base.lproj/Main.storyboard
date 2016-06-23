@@ -23,18 +23,48 @@
         <scene sceneID="8Mt-mb-rYw">
             <objects>
                 <tableViewController storyboardIdentifier="NotificationsTableViewController" id="Ck6-eK-VsL" customClass="NotificationsTableViewController" customModule="LogNet" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="qqE-wh-iN4">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" id="qqE-wh-iN4">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="lYk-CD-E5c">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NotificationCell" rowHeight="80" id="lYk-CD-E5c" customClass="NotificationCell" customModule="LogNet" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lYk-CD-E5c" id="Vvg-aW-Q3P">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BJI-e4-tS3">
+                                            <rect key="frame" x="13" y="8" width="573" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="N4W-d3-0yi"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HGH-de-ZAl">
+                                            <rect key="frame" x="13" y="29" width="579" height="43"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="BJI-e4-tS3" firstAttribute="leading" secondItem="Vvg-aW-Q3P" secondAttribute="leadingMargin" constant="5" id="954-bg-B8y"/>
+                                        <constraint firstItem="BJI-e4-tS3" firstAttribute="leading" secondItem="HGH-de-ZAl" secondAttribute="leading" id="NTQ-rg-AXn"/>
+                                        <constraint firstItem="BJI-e4-tS3" firstAttribute="centerX" secondItem="Vvg-aW-Q3P" secondAttribute="centerX" id="PqY-UJ-shP"/>
+                                        <constraint firstItem="BJI-e4-tS3" firstAttribute="top" secondItem="Vvg-aW-Q3P" secondAttribute="topMargin" id="hyl-hM-e7H"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="HGH-de-ZAl" secondAttribute="bottom" constant="-0.5" id="kmI-43-t49"/>
+                                        <constraint firstItem="HGH-de-ZAl" firstAttribute="trailing" secondItem="Vvg-aW-Q3P" secondAttribute="trailingMargin" id="sPa-4S-Te2"/>
+                                        <constraint firstItem="HGH-de-ZAl" firstAttribute="top" secondItem="BJI-e4-tS3" secondAttribute="bottom" id="sSm-dF-Kif"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="body" destination="HGH-de-ZAl" id="Rvd-tP-8zl"/>
+                                    <outlet property="title" destination="BJI-e4-tS3" id="4SK-ND-Ye9"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

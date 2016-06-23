@@ -18,6 +18,8 @@
 		EA26375D1D16A4F100D5988D /* ServerParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA26375C1D16A4F100D5988D /* ServerParser.swift */; };
 		EA26375F1D16A59700D5988D /* GoandroidServerParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA26375E1D16A59700D5988D /* GoandroidServerParser.swift */; };
 		EA2637631D16BEF400D5988D /* WebBrouserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2637621D16BEF400D5988D /* WebBrouserViewController.swift */; };
+		EA7ECA5B1D1BAD780014010A /* NotificationCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7ECA5A1D1BAD780014010A /* NotificationCellViewModel.swift */; };
+		EA7ECA5D1D1BB41E0014010A /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7ECA5C1D1BB41E0014010A /* NotificationCell.swift */; };
 		EADC60021D16E3CE00B8743C /* WebBrowserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60011D16E3CE00B8743C /* WebBrowserViewModel.swift */; };
 		EADC60041D16E44F00B8743C /* WebBrowserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60031D16E44F00B8743C /* WebBrowserModel.swift */; };
 		EADC60061D17017E00B8743C /* ServerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60051D17017E00B8743C /* ServerService.swift */; };
@@ -71,6 +73,8 @@
 		EA26375C1D16A4F100D5988D /* ServerParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerParser.swift; sourceTree = "<group>"; };
 		EA26375E1D16A59700D5988D /* GoandroidServerParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoandroidServerParser.swift; sourceTree = "<group>"; };
 		EA2637621D16BEF400D5988D /* WebBrouserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebBrouserViewController.swift; sourceTree = "<group>"; };
+		EA7ECA5A1D1BAD780014010A /* NotificationCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationCellViewModel.swift; sourceTree = "<group>"; };
+		EA7ECA5C1D1BB41E0014010A /* NotificationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
 		EADC60011D16E3CE00B8743C /* WebBrowserViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebBrowserViewModel.swift; sourceTree = "<group>"; };
 		EADC60031D16E44F00B8743C /* WebBrowserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebBrowserModel.swift; sourceTree = "<group>"; };
 		EADC60051D17017E00B8743C /* ServerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerService.swift; sourceTree = "<group>"; };
@@ -164,6 +168,7 @@
 				EAE50A5D1D12CEEB00B4329B /* LoginViewController.swift */,
 				EA2637621D16BEF400D5988D /* WebBrouserViewController.swift */,
 				EADC600D1D19785000B8743C /* NotificationsTableViewController.swift */,
+				EA7ECA5C1D1BB41E0014010A /* NotificationCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -178,6 +183,7 @@
 				EADC60091D18543700B8743C /* AlertNotificationViewModel.swift */,
 				EADC600F1D1A6EB200B8743C /* NotificatonsViewModel.swift */,
 				EADC60171D1A782B00B8743C /* NotificationsModelFactory.swift */,
+				EA7ECA5A1D1BAD780014010A /* NotificationCellViewModel.swift */,
 			);
 			name = ViewModels;
 			sourceTree = "<group>";
@@ -473,6 +479,7 @@
 				EA2637571D16779B00D5988D /* LoginService.swift in Sources */,
 				EADC60201D1B125C00B8743C /* NotificationsStorageServiseRealm.swift in Sources */,
 				EADC60181D1A782B00B8743C /* NotificationsModelFactory.swift in Sources */,
+				EA7ECA5D1D1BB41E0014010A /* NotificationCell.swift in Sources */,
 				EADC601D1D1A8EFC00B8743C /* Notification.swift in Sources */,
 				EADC600E1D19785000B8743C /* NotificationsTableViewController.swift in Sources */,
 				EADC60101D1A6EB200B8743C /* NotificatonsViewModel.swift in Sources */,
@@ -485,6 +492,7 @@
 				EA2637521D15BF9000D5988D /* LoginModel.swift in Sources */,
 				EADC60141D1A6FEA00B8743C /* ViewModel.swift in Sources */,
 				EAE50A5E1D12CEEB00B4329B /* LoginViewController.swift in Sources */,
+				EA7ECA5B1D1BAD780014010A /* NotificationCellViewModel.swift in Sources */,
 				EADC60161D1A77AB00B8743C /* NotificationsStorageServise.swift in Sources */,
 				EADC60121D1A6EF500B8743C /* NotificationsModel.swift in Sources */,
 				EA26375D1D16A4F100D5988D /* ServerParser.swift in Sources */,

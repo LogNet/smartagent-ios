@@ -11,7 +11,7 @@ import FirebaseAuth
 import FirebaseInstanceID
 
 class NotificatonsViewModel: ViewModel {
-    
+    dynamic var cellViewModels:NSMutableArray?
     var model:NotificationsModel
     
     init(model:NotificationsModel, router:Router) {
@@ -57,9 +57,30 @@ class NotificatonsViewModel: ViewModel {
     }
 
     func fetch() {
-        self.model .getNotifications { (error, notifications) in
-            
+        var viewModels = Array<NotificationCellViewModel>()
+        weak var weakSelf = self
+        self.model.getNotifications { (error, notifications) in
+            if notifications != nil {
+                for notification in notifications! {
+                    if let viewModel = weakSelf?.viewModelFromNotification(notification){
+                        viewModels.append(viewModel)
+                    }
+                }
+            }
+            self.cellViewModels = NSMutableArray(array: viewModels)
         }
+    }
+    
+    func viewModelFromNotification(notification:Notification) -> NotificationCellViewModel {
+        let viewModel = NotificationCellViewModel()
+        viewModel.text = notification.text
+        viewModel.title = notification.title
+        viewModel.link = notification.link
+        return viewModel
+    }
+    
+    func cellViewModelForRow(row:Int) -> NotificationCellViewModel {
+        return self.cellViewModels![row] as! NotificationCellViewModel
     }
     
 }

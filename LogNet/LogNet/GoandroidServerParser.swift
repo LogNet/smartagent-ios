@@ -24,7 +24,7 @@ class GoandroidServerParser: ServerParser {
                 let notification = Notification()
                 notification.title = jsonNotification["title"] as? String
                 notification.link = jsonNotification["link"] as? String
-                notification.time = jsonNotification["time"] as? Int
+                notification.time = jsonNotification["time"] as? String
                 notification.text = jsonNotification["text"] as? String
                 notification.phone = jsonNotification["phone"] as? String
                 notifications.append(notification)
