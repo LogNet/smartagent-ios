@@ -60,9 +60,19 @@ class Router {
         notificationsViewController.fetch()
     }
     
-    func showNotificationAlert(viewModel:AlertNotificationViewModel) {
-        let browserViewController = self.navigationController!.viewControllers[0] as! WebBrouserViewController
-        browserViewController.showNotificationAlert(viewModel)
+    func showNotificationAlert(alertViewModel:AlertNotificationViewModel)  {
+            let alert =
+                UIAlertController(title: alertViewModel.title,
+                                  message: alertViewModel.text,
+                                  preferredStyle: .Alert)
+            let cancel = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil);
+            let open = UIAlertAction(title: "Open", style: .Default) { (action:UIAlertAction) in
+                self.openURLString(alertViewModel.urlString!)
+            }
+            
+            alert.addAction(open)
+            alert.addAction(cancel)
+            self.navigationController?.topViewController!.presentViewController(alert, animated: true, completion: nil)
     }
     
     func openURLString(urlString:String) {

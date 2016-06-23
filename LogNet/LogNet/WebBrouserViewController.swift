@@ -20,13 +20,7 @@ class WebBrouserViewController: UIViewController, UIWebViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        weak var weakSelf = self
-        self.viewModel?.rac_valuesForKeyPath("urlString", observer: self).subscribeNext({ (string:AnyObject!) in
-            if let urlString = string as? String {
-                weakSelf!.loadRequestFromString(urlString)
-            }
-            
-        })
+        self.loadRequestFromString(self.viewModel!.urlString!)
         self.addRefreshControl()
     }
     
@@ -48,24 +42,6 @@ class WebBrouserViewController: UIViewController, UIWebViewDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-
-    
-    // MARK: Public
-    
-    func showNotificationAlert(alertViewModel:AlertNotificationViewModel)  {
-        let alert =
-            UIAlertController(title: alertViewModel.title,
-                              message: alertViewModel.text,
-                              preferredStyle: .Alert)
-        let cancel = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil);
-        let open = UIAlertAction(title: "Open", style: .Default) { (action:UIAlertAction) in
-            self.viewModel?.urlString = alertViewModel.urlString
-        }
-        
-        alert.addAction(open)
-        alert.addAction(cancel)
-        self.presentViewController(alert, animated: true, completion: nil)
     }
     
     // MARK: Private
@@ -105,5 +81,9 @@ class WebBrouserViewController: UIViewController, UIWebViewDelegate {
     
     func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         return true
+    }
+    
+    deinit {
+        self.webView.delegate = nil
     }
 }

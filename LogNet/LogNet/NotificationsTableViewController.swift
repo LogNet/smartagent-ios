@@ -63,7 +63,7 @@ class NotificationsTableViewController: UITableViewController {
         if self.viewModel?.cellViewModels != nil {
             return (self.viewModel?.cellViewModels?.count)!
         }
-        return 0
+        return 1
     }
 
     func handleRefresh(refreshControl: UIRefreshControl) {
@@ -75,10 +75,13 @@ class NotificationsTableViewController: UITableViewController {
         self.viewModel?.fetch()
     }
     
-    
     // MARK: Private methods
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        guard ((self.viewModel?.cellViewModels) != nil) else {
+            let cell = tableView.dequeueReusableCellWithIdentifier("NothingCell")
+            return cell!
+        }
         let cell = tableView.dequeueReusableCellWithIdentifier("NotificationCell", forIndexPath: indexPath) as! NotificationCell
         let viewModel = self.viewModel?.cellViewModelForRow(indexPath.row)
         // Configure the cell...
@@ -89,6 +92,18 @@ class NotificationsTableViewController: UITableViewController {
         return cell
     }
 
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0.5
+    }
+    
+    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0.5
+    }
+    
+    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return nil
+    }
+    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let viewModel = self.viewModel?.cellViewModelForRow(indexPath.row)
         self.viewModel?.router.openURLString((viewModel?.link)!)

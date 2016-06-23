@@ -9,7 +9,7 @@
 import Foundation
 
 class WebBrowserViewModel:ViewModel {
-    dynamic var urlString:String?
+    var urlString:String?
     private var browserModel:WebBrowserModel?
     
     init(browserModel:WebBrowserModel, router:Router) {
