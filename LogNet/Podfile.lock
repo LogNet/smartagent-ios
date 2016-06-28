@@ -60,7 +60,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 3.4)
   - AMScrollingNavbar (~> 2.1)
-  - Crashlytics
+  - Crashlytics (~> 3.7)
   - Fabric
   - Firebase (~> 3.2)
   - Firebase/Messaging
@@ -90,6 +90,6 @@ SPEC CHECKSUMS:
   RealmSwift: 3229306d020d96f83b335f87a0dcbf2cef0e6a2b
   Result: 9e75e1111c774c6ac594e14907b15057053a7959
 
-PODFILE CHECKSUM: bf6db4c1ef9a1227401df8da17c9ce3834a75c58
+PODFILE CHECKSUM: 5bf77032c402cb303278c092b8a9020597204326
 
 COCOAPODS: 1.0.1

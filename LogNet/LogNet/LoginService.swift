@@ -9,7 +9,7 @@
 import Foundation
 
 protocol LoginService {
-    func login(phoneNumber: String, completion: JSONCompletionBlock?)
+    func login(phoneNumber: String, deviceToken:String, completion: ErrorCompletionBlock?)
     func storeToken(token:String?)
     func getToken() -> String?
 }

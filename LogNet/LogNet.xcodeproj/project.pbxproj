@@ -20,6 +20,7 @@
 		EA2637631D16BEF400D5988D /* WebBrouserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2637621D16BEF400D5988D /* WebBrouserViewController.swift */; };
 		EA7ECA5B1D1BAD780014010A /* NotificationCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7ECA5A1D1BAD780014010A /* NotificationCellViewModel.swift */; };
 		EA7ECA5D1D1BB41E0014010A /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7ECA5C1D1BB41E0014010A /* NotificationCell.swift */; };
+		EA8BB9401D21A04200D07561 /* PushTokenUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8BB93F1D21A04200D07561 /* PushTokenUtil.swift */; };
 		EADC60021D16E3CE00B8743C /* WebBrowserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60011D16E3CE00B8743C /* WebBrowserViewModel.swift */; };
 		EADC60041D16E44F00B8743C /* WebBrowserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60031D16E44F00B8743C /* WebBrowserModel.swift */; };
 		EADC60061D17017E00B8743C /* ServerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60051D17017E00B8743C /* ServerService.swift */; };
@@ -75,6 +76,7 @@
 		EA2637621D16BEF400D5988D /* WebBrouserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebBrouserViewController.swift; sourceTree = "<group>"; };
 		EA7ECA5A1D1BAD780014010A /* NotificationCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationCellViewModel.swift; sourceTree = "<group>"; };
 		EA7ECA5C1D1BB41E0014010A /* NotificationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
+		EA8BB93F1D21A04200D07561 /* PushTokenUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushTokenUtil.swift; sourceTree = "<group>"; };
 		EADC60011D16E3CE00B8743C /* WebBrowserViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebBrowserViewModel.swift; sourceTree = "<group>"; };
 		EADC60031D16E44F00B8743C /* WebBrowserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebBrowserModel.swift; sourceTree = "<group>"; };
 		EADC60051D17017E00B8743C /* ServerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerService.swift; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 				EAE50A641D12CEEB00B4329B /* LaunchScreen.storyboard */,
 				EAE50A671D12CEEB00B4329B /* Info.plist */,
 				EA2637431D12E46600D5988D /* GoogleService-Info.plist */,
+				EA8BB93F1D21A04200D07561 /* PushTokenUtil.swift */,
 			);
 			path = LogNet;
 			sourceTree = "<group>";
@@ -491,6 +494,7 @@
 				EADC60021D16E3CE00B8743C /* WebBrowserViewModel.swift in Sources */,
 				EA2637521D15BF9000D5988D /* LoginModel.swift in Sources */,
 				EADC60141D1A6FEA00B8743C /* ViewModel.swift in Sources */,
+				EA8BB9401D21A04200D07561 /* PushTokenUtil.swift in Sources */,
 				EAE50A5E1D12CEEB00B4329B /* LoginViewController.swift in Sources */,
 				EA7ECA5B1D1BAD780014010A /* NotificationCellViewModel.swift in Sources */,
 				EADC60161D1A77AB00B8743C /* NotificationsStorageServise.swift in Sources */,

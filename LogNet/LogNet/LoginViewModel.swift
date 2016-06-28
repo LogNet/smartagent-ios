@@ -13,7 +13,7 @@ class LoginViewModel:ViewModel {
     // MARK: Public Variables
     
     var phoneNumber:String?
-    
+    var deviceToken:String?
     // MARK: Private Variables
 
     private var loginModel:LoginModel
@@ -28,7 +28,7 @@ class LoginViewModel:ViewModel {
     func login(completion:(error:NSError?)->Void) -> Void {
         if self.phoneNumber != nil {
             weak var weakSelf = self
-            self.loginModel.login(self.phoneNumber!) { (error:NSError?) in
+            self.loginModel.login(self.phoneNumber!, deviceToken: self.deviceToken!) { (error:NSError?) in
                 if error == nil {
                     weakSelf?.router.loginFinished()
                 }

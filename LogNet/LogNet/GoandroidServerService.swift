@@ -13,12 +13,31 @@ class GoandroidServerService:LoginService,ServerService {
     private let TOKEN_KEY = "TOKEN_KEY"
     let baseURLString = "http://goandroid.net:8484"
     
-    func login(phoneNumber: String, completion: JSONCompletionBlock?) {
-        Alamofire.request(.POST, baseURLString + "/agent/register",parameters:["phoneNumber":phoneNumber]).responseJSON { response in
+    func login(phoneNumber: String, deviceToken:String, completion: ErrorCompletionBlock?) {
+        
+        Alamofire.request(.POST, baseURLString + "/push",parameters:["phoneNumber":phoneNumber, "token":deviceToken]).responseJSON { [weak self] response in
             if completion != nil {
-                completion!(response.result.value,response.result.error)
+                if response.result.error == nil {
+                    self?.loginOtherOnServer(phoneNumber, deviceToken: deviceToken, completion: completion)
+                } else {
+                    completion!(error: response.result.error)
+                }
+
             }
         }
+    }
+    
+    func loginOtherOnServer(phoneNumber: String, deviceToken:String, completion:ErrorCompletionBlock?)  {
+        Alamofire.request(.POST, "http://62.90.233.18:8080/agent/register",parameters:["phoneNumber":phoneNumber, "token":deviceToken]).responseJSON { response in
+            if completion != nil {
+                var error:NSError?
+                if response.response?.statusCode != 201 {
+                    error = NSError(domain: "com.GoandroidServerService", code: 1, userInfo: nil)
+                }
+                completion!(error: error)
+            }
+        }
+
     }
     
     func storeToken(token: String?) {
@@ -44,8 +63,8 @@ class GoandroidServerService:LoginService,ServerService {
     
     func getNotifications(completion: JSONCompletionBlock?) {
          if let token = self.getToken() {
-            let headers = ["token":token]
-            Alamofire.request(.GET, baseURLString + "/events", headers: headers).responseJSON { response in
+            let parameters = ["phoneNumber":token]
+            Alamofire.request(.GET, baseURLString + "/events", parameters:parameters).responseJSON { response in
                 if completion != nil {
                     completion!(response.result.value, response.result.error)
                 }

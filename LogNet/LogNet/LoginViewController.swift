@@ -22,7 +22,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var phoneTextField: UITextField!
     
     var loginViewModel: LoginViewModel?
-    
+    var loginningNow = false;
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -83,18 +84,45 @@ class LoginViewController: UIViewController {
         }
     }
     
+    func registerForPushNotifications() {
+        let application = UIApplication.sharedApplication()
+        let notificationSettings = UIUserNotificationSettings(
+            forTypes: [.Badge, .Sound, .Alert], categories: nil)
+        application.registerUserNotificationSettings(notificationSettings)
+    }
+    
+    func pushPermissionsDenied() {
+        HUD.hide()
+        self.loginningNow = false;
+        let alert =
+            UIAlertController(title: "Push notifications denied.",
+                              message: "Go to Settings->Notifications and enable it.",
+                              preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
     func startLogin()  {
-        weak var weakSelf = self
-        self.loginViewModel?.login({ (error) in
-            weakSelf?.loginCompletedWithError(error)
-        })
+        self.registerForPushNotifications()
     }
     
     // MARK: IBActions
     
+    func proceedWithToken() {
+        weak var weakSelf = self
+        self.loginningNow = false
+        self.loginViewModel?.deviceToken = PushTokenUtil.getPushToken()
+        if loginViewModel?.deviceToken != nil {
+            self.loginViewModel?.login({ (error) in
+                weakSelf?.loginCompletedWithError(error)
+            })
+        }
+    }
+    
     @IBAction func login(sender: AnyObject) {
         if self.isValidPhoneString(self.phoneTextField.text) {
             self.phoneTextField.resignFirstResponder()
+            self.loginningNow = true;
             self.startLogin()
             HUD.show(.SystemActivity)
         } else {

@@ -27,23 +27,16 @@ class NotificatonsViewModel: ViewModel {
     }
     
     func checkUserLoggedIn() {
-        print("checkUserLoggedIn")
-        if FIRAuth.auth()?.currentUser == nil {
-            self.router.showLoginView()
-        } else {
-            checkOldUser()
-        }
-    }
-    
-    private func checkOldUser() {
         let serverService = GoandroidServerService()
         if serverService.getToken() == nil {
-            try!FIRAuth.auth()?.signOut()
             self.router.showLoginView()
         } else {
             self.fetch()
         }
     }
+    
+    private func checkOldUser() {
+            }
     
     // MARK: Push Notifications
     
@@ -56,12 +49,6 @@ class NotificatonsViewModel: ViewModel {
         }
     }
     
-    func registerForPushNotifications() {
-        let application = UIApplication.sharedApplication()
-        let notificationSettings = UIUserNotificationSettings(
-            forTypes: [.Badge, .Sound, .Alert], categories: nil)
-        application.registerUserNotificationSettings(notificationSettings)
-    }
     
     func fetch() {
         self.downloading = true;

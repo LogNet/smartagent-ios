@@ -81,6 +81,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("Message ID: \(userInfo["gcm.message_id"]!)")
         print("Push notification info: \(userInfo)")
         // Print full message.
+        FIRMessaging.messaging().appDidReceiveMessage(userInfo)
         print("link = %@", userInfo["link"])
         if application.applicationState == UIApplicationState.Active {
             
@@ -106,6 +107,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings) {
         if notificationSettings.types != .None {
             application.registerForRemoteNotifications()
+        } else {
+            self.router?.pushNotificationRegistrationCancelled()
         }
     }
     
@@ -116,6 +119,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         for i in 0..<deviceToken.length {
             tokenString += String(format: "%02.2hhx", arguments: [tokenChars[i]])
         }
+        
+        FIRInstanceID.instanceID().setAPNSToken(deviceToken, type: .Unknown)
+        PushTokenUtil.storePushToken(tokenString)
+        self.router?.loginProceedWithDeviceToken(tokenString)
         print("Device Token:", tokenString)
     }
     
@@ -123,7 +130,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
         print("Failed to register:", error)
     }
-
     
     // MARK: Application Lifecycle
     

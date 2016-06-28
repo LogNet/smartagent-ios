@@ -25,24 +25,16 @@ class LoginModel {
         return FIRAuth.auth()?.currentUser != nil
     }
     
-    func login(phoneNumber:String, completed: (NSError?)->Void) {
+    func login(phoneNumber:String, deviceToken:String, completed: (NSError?)->Void) {
         weak var weakSelf = self
-        loginService.login(phoneNumber) { (JSON:AnyObject?, error:NSError?) in
+        loginService.login(phoneNumber,deviceToken: deviceToken) { (error:NSError?) in
             if error == nil {
-                if let token = weakSelf?.parser?.parseToken(JSON) {
-                    print("parsed token: " + token)
-                    FIRAuth.auth()?.signInWithCustomToken(token, completion: { (user:FIRUser?, error:NSError?) in
-                        weakSelf?.loginService.storeToken(token)
-                        completed(error)
-                    })
-                }
-            } else {
-                completed(error)
+                weakSelf?.loginService.storeToken(phoneNumber)
             }
+            completed(error)
         }
     }
     
     // MARK: Private methods
-
     
 }

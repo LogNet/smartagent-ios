@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class Router {
-    
+    private weak var loginViewController:LoginViewController?
     private var navigationController:UINavigationController?
     private var storyboard:UIStoryboard
     
@@ -26,15 +26,6 @@ class Router {
         let notificationsViewModel = NotificatonsViewModel(model: model, router: self)
         notificationsViewController.viewModel = notificationsViewModel;
         self.navigationController!.viewControllers = [notificationsViewController]
-
-       /*
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let browserViewController = storyboard.instantiateViewControllerWithIdentifier("WebBrouserViewController") as!WebBrouserViewController
-        let webBrowserModel = WebBrowserModel()
-        let webBrowserViewModel = WebBrowserViewModel(browserModel: webBrowserModel, router: self)
-        browserViewController.viewModel = webBrowserViewModel
-        self.navigationController!.viewControllers = [browserViewController]
-        */
     }
     
     func showLoginView() {
@@ -49,13 +40,26 @@ class Router {
         let loginViewController:LoginViewController =
             self.storyboard.instantiateViewControllerWithIdentifier("LoginViewController") as! LoginViewController
         loginViewController.loginViewModel = loginViewModel;
+        self.loginViewController = loginViewController
         loginViewModel.router = self
         return loginViewController;
     }
     
+    func pushNotificationRegistrationCancelled() {
+        if self.loginViewController != nil && self.loginViewController!.loginningNow {
+            self.loginViewController?.pushPermissionsDenied()
+        }
+    }
+    
+    func loginProceedWithDeviceToken(deviceToken:String) {
+        if self.loginViewController != nil && self.loginViewController!.loginningNow {
+            self.loginViewController?.proceedWithToken()
+        }
+    }
+    
     func loginFinished() {
         let notificationsViewController = self.navigationController!.viewControllers[0] as! NotificationsTableViewController
-        notificationsViewController.viewModel?.registerForPushNotifications()
+//        notificationsViewController.viewModel?.registerForPushNotifications()
         notificationsViewController.viewModel?.sendFirebaseTokenToServer()
         notificationsViewController.fetch()
     }
