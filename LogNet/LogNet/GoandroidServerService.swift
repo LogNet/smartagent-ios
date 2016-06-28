@@ -51,15 +51,15 @@ class GoandroidServerService:LoginService,ServerService {
         return defaults.valueForKey(TOKEN_KEY) as? String
     }
     
-    func postDeviceToken(deviceToken: String) {
-        if let token = self.getToken() {
-            let headers = ["token":token]
-            Alamofire.request(.POST, baseURLString + "/push",parameters:["registrationId":deviceToken],headers:headers).responseJSON {
-                response in
-                
-            }
-        }
-    }
+//    func postDeviceToken(deviceToken: String) {
+//        if let token = self.getToken() {
+//            let headers = ["token":token]
+//            Alamofire.request(.POST, baseURLString + "/push",parameters:["registrationId":deviceToken],headers:headers).responseJSON {
+//                response in
+//                
+//            }
+//        }
+//    }
     
     func getNotifications(completion: JSONCompletionBlock?) {
          if let token = self.getToken() {

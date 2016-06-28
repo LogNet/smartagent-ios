@@ -46,21 +46,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func tokenRefreshNotification(notification: NSNotification) {
         let refreshedToken = FIRInstanceID.instanceID().token()
         print("InstanceID token: \(refreshedToken)")
-        sendDeviceTokenToServer()
+//        sendDeviceTokenToServer()
         FIRMessaging.messaging().subscribeToTopic("/topics/smart_agent")
         connectToFcm()
     }
     
     // MARK: Private Methods
     
-    func sendDeviceTokenToServer() {
-        if FIRInstanceID.instanceID().token() != nil {
-            print("InstanceID token: \(FIRInstanceID.instanceID().token())")
-            // Connect to FCM since connection may have failed when attempted before having a token.
-            let serverService = GoandroidServerService()
-            serverService.postDeviceToken(FIRInstanceID.instanceID().token()!)
-        }
-    }
+//    func sendDeviceTokenToServer() {
+//        if FIRInstanceID.instanceID().token() != nil {
+//            print("InstanceID token: \(FIRInstanceID.instanceID().token())")
+//            // Connect to FCM since connection may have failed when attempted before having a token.
+////            let serverService = GoandroidServerService()
+////            serverService.postDeviceToken(FIRInstanceID.instanceID().token()!)
+//        }
+//    }
     
     func configureViewController() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -121,7 +121,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         FIRInstanceID.instanceID().setAPNSToken(deviceToken, type: .Unknown)
-        PushTokenUtil.storePushToken(tokenString)
+        let refreshedToken = FIRInstanceID.instanceID().token()
+        PushTokenUtil.storePushToken(refreshedToken)
         self.router?.loginProceedWithDeviceToken(tokenString)
         print("Device Token:", tokenString)
     }

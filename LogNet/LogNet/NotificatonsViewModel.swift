@@ -40,14 +40,14 @@ class NotificatonsViewModel: ViewModel {
     
     // MARK: Push Notifications
     
-    func sendFirebaseTokenToServer() {
-        if FIRInstanceID.instanceID().token() != nil {
-            print("InstanceID token: \(FIRInstanceID.instanceID().token())")
-            // Connect to FCM since connection may have failed when attempted before having a token.
-            let serverService = GoandroidServerService()
-            serverService.postDeviceToken(FIRInstanceID.instanceID().token()!)
-        }
-    }
+//    func sendFirebaseTokenToServer() {
+//        if FIRInstanceID.instanceID().token() != nil {
+//            print("InstanceID token: \(FIRInstanceID.instanceID().token())")
+//            // Connect to FCM since connection may have failed when attempted before having a token.
+//            let serverService = GoandroidServerService()
+//            serverService.postDeviceToken(FIRInstanceID.instanceID().token()!)
+//        }
+//    }
     
     
     func fetch() {

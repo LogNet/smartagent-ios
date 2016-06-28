@@ -95,7 +95,7 @@ class LoginViewController: UIViewController {
         HUD.hide()
         self.loginningNow = false;
         let alert =
-            UIAlertController(title: "Push notifications denied.",
+            UIAlertController(title: "Push notifications disabled.",
                               message: "Go to Settings->Notifications and enable it.",
                               preferredStyle: .Alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
