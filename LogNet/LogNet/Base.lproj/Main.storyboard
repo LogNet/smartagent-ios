@@ -22,13 +22,13 @@
         <!--Notifications-->
         <scene sceneID="8Mt-mb-rYw">
             <objects>
-                <tableViewController storyboardIdentifier="NotificationsTableViewController" id="Ck6-eK-VsL" customClass="NotificationsTableViewController" customModule="LogNet" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="NotificationsTableViewController" id="Ck6-eK-VsL" customClass="NotificationsTableViewController" customModule="SmartAgent" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="80" sectionHeaderHeight="1" sectionFooterHeight="1" id="qqE-wh-iN4">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NotificationCell" rowHeight="80" id="lYk-CD-E5c" customClass="NotificationCell" customModule="LogNet" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NotificationCell" rowHeight="80" id="lYk-CD-E5c" customClass="NotificationCell" customModule="SmartAgent" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="113.5" width="600" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lYk-CD-E5c" id="Vvg-aW-Q3P">
@@ -80,10 +80,10 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NothingCell" id="6pJ-8L-qX3">
-                                <rect key="frame" x="0.0" y="194" width="600" height="80"/>
+                                <rect key="frame" x="0.0" y="193.5" width="600" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6pJ-8L-qX3" id="bjQ-wt-gic">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="80"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="79.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have no notifications" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yrp-3l-iCI">
@@ -120,7 +120,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="LogNet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="SmartAgent" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -177,7 +177,7 @@
         <!--Web Brouser View Controller-->
         <scene sceneID="PV8-Yg-zJ3">
             <objects>
-                <viewController storyboardIdentifier="WebBrouserViewController" id="ayG-p0-vv0" customClass="WebBrouserViewController" customModule="LogNet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WebBrouserViewController" id="ayG-p0-vv0" customClass="WebBrouserViewController" customModule="SmartAgent" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KB6-QP-5Ho"/>
                         <viewControllerLayoutGuide type="bottom" id="zOn-XG-MD0"/>

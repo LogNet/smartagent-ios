@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:LogNet.xcodeproj">
+      location = "group:/Users/antontikhonov/Documents/GIT/LogNet/LogNet/SmartAgent.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

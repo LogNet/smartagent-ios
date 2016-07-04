@@ -91,17 +91,17 @@
 		EADC601A1D1A8A5100B8743C /* Typealiases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Typealiases.swift; sourceTree = "<group>"; };
 		EADC601C1D1A8EFC00B8743C /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		EADC601F1D1B125C00B8743C /* NotificationsStorageServiseRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsStorageServiseRealm.swift; sourceTree = "<group>"; };
-		EAE50A581D12CEEB00B4329B /* LogNet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LogNet.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAE50A581D12CEEB00B4329B /* SmartAgent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartAgent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAE50A5B1D12CEEB00B4329B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EAE50A5D1D12CEEB00B4329B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		EAE50A601D12CEEB00B4329B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EAE50A621D12CEEB00B4329B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EAE50A651D12CEEB00B4329B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EAE50A671D12CEEB00B4329B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EAE50A6C1D12CEEC00B4329B /* LogNetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LogNetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAE50A6C1D12CEEC00B4329B /* SmartAgent.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartAgent.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAE50A701D12CEEC00B4329B /* LogNetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogNetTests.swift; sourceTree = "<group>"; };
 		EAE50A721D12CEEC00B4329B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EAE50A771D12CEEC00B4329B /* LogNetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LogNetUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAE50A771D12CEEC00B4329B /* SmartAgent.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartAgent.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAE50A7B1D12CEEC00B4329B /* LogNetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogNetUITests.swift; sourceTree = "<group>"; };
 		EAE50A7D1D12CEEC00B4329B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC9142CEE44B9832FFEAEEB5 /* Pods-LogNet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LogNet.release.xcconfig"; path = "Pods/Target Support Files/Pods-LogNet/Pods-LogNet.release.xcconfig"; sourceTree = "<group>"; };
@@ -227,9 +227,9 @@
 		EAE50A591D12CEEB00B4329B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EAE50A581D12CEEB00B4329B /* LogNet.app */,
-				EAE50A6C1D12CEEC00B4329B /* LogNetTests.xctest */,
-				EAE50A771D12CEEC00B4329B /* LogNetUITests.xctest */,
+				EAE50A581D12CEEB00B4329B /* SmartAgent.app */,
+				EAE50A6C1D12CEEC00B4329B /* SmartAgent.xctest */,
+				EAE50A771D12CEEC00B4329B /* SmartAgent.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -274,9 +274,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EAE50A571D12CEEB00B4329B /* LogNet */ = {
+		EAE50A571D12CEEB00B4329B /* SmartAgent */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EAE50A801D12CEEC00B4329B /* Build configuration list for PBXNativeTarget "LogNet" */;
+			buildConfigurationList = EAE50A801D12CEEC00B4329B /* Build configuration list for PBXNativeTarget "SmartAgent" */;
 			buildPhases = (
 				D7D139985998654D26C2B480 /* [CP] Check Pods Manifest.lock */,
 				EAE50A541D12CEEB00B4329B /* Sources */,
@@ -290,14 +290,14 @@
 			);
 			dependencies = (
 			);
-			name = LogNet;
+			name = SmartAgent;
 			productName = LogNet;
-			productReference = EAE50A581D12CEEB00B4329B /* LogNet.app */;
+			productReference = EAE50A581D12CEEB00B4329B /* SmartAgent.app */;
 			productType = "com.apple.product-type.application";
 		};
-		EAE50A6B1D12CEEC00B4329B /* LogNetTests */ = {
+		EAE50A6B1D12CEEC00B4329B /* SmartAgentTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EAE50A831D12CEEC00B4329B /* Build configuration list for PBXNativeTarget "LogNetTests" */;
+			buildConfigurationList = EAE50A831D12CEEC00B4329B /* Build configuration list for PBXNativeTarget "SmartAgentTests" */;
 			buildPhases = (
 				EAE50A681D12CEEC00B4329B /* Sources */,
 				EAE50A691D12CEEC00B4329B /* Frameworks */,
@@ -308,14 +308,14 @@
 			dependencies = (
 				EAE50A6E1D12CEEC00B4329B /* PBXTargetDependency */,
 			);
-			name = LogNetTests;
+			name = SmartAgentTests;
 			productName = LogNetTests;
-			productReference = EAE50A6C1D12CEEC00B4329B /* LogNetTests.xctest */;
+			productReference = EAE50A6C1D12CEEC00B4329B /* SmartAgent.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		EAE50A761D12CEEC00B4329B /* LogNetUITests */ = {
+		EAE50A761D12CEEC00B4329B /* SmartAgentUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EAE50A861D12CEEC00B4329B /* Build configuration list for PBXNativeTarget "LogNetUITests" */;
+			buildConfigurationList = EAE50A861D12CEEC00B4329B /* Build configuration list for PBXNativeTarget "SmartAgentUITests" */;
 			buildPhases = (
 				EAE50A731D12CEEC00B4329B /* Sources */,
 				EAE50A741D12CEEC00B4329B /* Frameworks */,
@@ -326,9 +326,9 @@
 			dependencies = (
 				EAE50A791D12CEEC00B4329B /* PBXTargetDependency */,
 			);
-			name = LogNetUITests;
+			name = SmartAgentUITests;
 			productName = LogNetUITests;
-			productReference = EAE50A771D12CEEC00B4329B /* LogNetUITests.xctest */;
+			productReference = EAE50A771D12CEEC00B4329B /* SmartAgent.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -363,7 +363,7 @@
 					};
 				};
 			};
-			buildConfigurationList = EAE50A531D12CEEB00B4329B /* Build configuration list for PBXProject "LogNet" */;
+			buildConfigurationList = EAE50A531D12CEEB00B4329B /* Build configuration list for PBXProject "SmartAgent" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -376,9 +376,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EAE50A571D12CEEB00B4329B /* LogNet */,
-				EAE50A6B1D12CEEC00B4329B /* LogNetTests */,
-				EAE50A761D12CEEC00B4329B /* LogNetUITests */,
+				EAE50A571D12CEEB00B4329B /* SmartAgent */,
+				EAE50A6B1D12CEEC00B4329B /* SmartAgentTests */,
+				EAE50A761D12CEEC00B4329B /* SmartAgentUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -529,12 +529,12 @@
 /* Begin PBXTargetDependency section */
 		EAE50A6E1D12CEEC00B4329B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = EAE50A571D12CEEB00B4329B /* LogNet */;
+			target = EAE50A571D12CEEB00B4329B /* SmartAgent */;
 			targetProxy = EAE50A6D1D12CEEC00B4329B /* PBXContainerItemProxy */;
 		};
 		EAE50A791D12CEEC00B4329B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = EAE50A571D12CEEB00B4329B /* LogNet */;
+			target = EAE50A571D12CEEB00B4329B /* SmartAgent */;
 			targetProxy = EAE50A781D12CEEC00B4329B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -652,7 +652,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = lognet.LogNet;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SmartAgent;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -667,7 +667,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = lognet.LogNet;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SmartAgent;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
@@ -679,8 +679,8 @@
 				INFOPLIST_FILE = LogNetTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = lognet.LogNetTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LogNet.app/LogNet";
+				PRODUCT_NAME = SmartAgent;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SmartAgent.app/SmartAgent";
 			};
 			name = Debug;
 		};
@@ -691,8 +691,8 @@
 				INFOPLIST_FILE = LogNetTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = lognet.LogNetTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LogNet.app/LogNet";
+				PRODUCT_NAME = SmartAgent;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SmartAgent.app/SmartAgent";
 			};
 			name = Release;
 		};
@@ -702,7 +702,7 @@
 				INFOPLIST_FILE = LogNetUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = lognet.LogNetUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SmartAgent;
 				TEST_TARGET_NAME = LogNet;
 			};
 			name = Debug;
@@ -713,7 +713,7 @@
 				INFOPLIST_FILE = LogNetUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = lognet.LogNetUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SmartAgent;
 				TEST_TARGET_NAME = LogNet;
 			};
 			name = Release;
@@ -721,7 +721,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EAE50A531D12CEEB00B4329B /* Build configuration list for PBXProject "LogNet" */ = {
+		EAE50A531D12CEEB00B4329B /* Build configuration list for PBXProject "SmartAgent" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EAE50A7E1D12CEEC00B4329B /* Debug */,
@@ -730,7 +730,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EAE50A801D12CEEC00B4329B /* Build configuration list for PBXNativeTarget "LogNet" */ = {
+		EAE50A801D12CEEC00B4329B /* Build configuration list for PBXNativeTarget "SmartAgent" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EAE50A811D12CEEC00B4329B /* Debug */,
@@ -739,7 +739,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EAE50A831D12CEEC00B4329B /* Build configuration list for PBXNativeTarget "LogNetTests" */ = {
+		EAE50A831D12CEEC00B4329B /* Build configuration list for PBXNativeTarget "SmartAgentTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EAE50A841D12CEEC00B4329B /* Debug */,
@@ -748,7 +748,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EAE50A861D12CEEC00B4329B /* Build configuration list for PBXNativeTarget "LogNetUITests" */ = {
+		EAE50A861D12CEEC00B4329B /* Build configuration list for PBXNativeTarget "SmartAgentUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EAE50A871D12CEEC00B4329B /* Debug */,
