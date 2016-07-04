@@ -9,11 +9,11 @@
 import Foundation
 import Alamofire
 
-class GoandroidServerService:LoginService,ServerService {
+class GoandroidServerService:ServerService {
     private let TOKEN_KEY = "TOKEN_KEY"
     let baseURLString = "http://goandroid.net:8484"
     
-    func login(phoneNumber: String, deviceToken:String, completion: ErrorCompletionBlock?) {
+    func login(phoneNumber: String, name deviceToken:String, completion: ErrorCompletionBlock?) {
         
         Alamofire.request(.POST, baseURLString + "/push",parameters:["phoneNumber":phoneNumber, "token":deviceToken]).responseJSON { [weak self] response in
             if completion != nil {

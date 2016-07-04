@@ -25,12 +25,8 @@ class LoginModel {
         return FIRAuth.auth()?.currentUser != nil
     }
     
-    func login(phoneNumber:String, deviceToken:String, completed: (NSError?)->Void) {
-        weak var weakSelf = self
-        loginService.login(phoneNumber,deviceToken: deviceToken) { (error:NSError?) in
-            if error == nil {
-                weakSelf?.loginService.storeToken(phoneNumber)
-            }
+    func login(phoneNumber:String, name:String, completed: (NSError?)->Void) {
+        loginService.login(phoneNumber,name:name) { (error:NSError?) in
             completed(error)
         }
     }

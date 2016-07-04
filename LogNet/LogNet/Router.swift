@@ -53,7 +53,7 @@ class Router {
     
     func loginProceedWithDeviceToken(deviceToken:String) {
         if self.loginViewController != nil && self.loginViewController!.loginningNow {
-            self.loginViewController?.proceedWithToken()
+//            self.loginViewController?.proceedWithToken()
         }
     }
     

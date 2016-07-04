@@ -10,7 +10,7 @@ import Foundation
 
 class LoginModelsFactory {
     class func getLoginModel() -> LoginModel {
-        let serverService = GoandroidServerService()
+        let serverService = SmartAgentLoginServise()
         let loginModel = LoginModel(loginService: serverService)
         loginModel.parser = GoandroidServerParser()
         return loginModel

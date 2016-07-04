@@ -19,6 +19,7 @@ extension CALayer {
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!
     
     var loginViewModel: LoginViewModel?
@@ -27,7 +28,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        bindViewModel()
+        self.bindViewModel()
 
     }
 
@@ -39,16 +40,16 @@ class LoginViewController: UIViewController {
     // MARK: Methods
     
     func bindViewModel() {
-/*
-        weak var weakSelf = self
-        let validPhoneSignal = self.phoneTextField.rac_textSignal().map { (next:AnyObject!) -> AnyObject! in
-            let text = next as! String
-            return weakSelf!.isValidPhoneString(text)
-        }
-*/
+        // Observe name.
         self.phoneTextField.rac_textSignal().subscribeNext { (next:AnyObject!) in
             if let text = next as? String {
                 self.loginViewModel?.phoneNumber = text
+            }
+        }
+        // Observe name.
+        self.nameTextField.rac_textSignal().subscribeNext { (next:AnyObject!) in
+            if let text = next as? String {
+                self.loginViewModel?.name = text
             }
         }
     }
@@ -60,6 +61,21 @@ class LoginViewController: UIViewController {
         return false
     }
     
+    func isValidName(name:String?) -> Bool {
+        if name != nil {
+            return name?.characters.count > 0
+        }
+        return false
+    }
+    
+    func wrongRegistrationFields() {
+        if !self.isValidName(nameTextField.text) {
+            self.wrongName()
+        } else {
+            self.wrongPhoneNumber()
+        }
+    }
+    
     func wrongPhoneNumber() {
         let alert =
             UIAlertController(title: "Wrong phone number!",
@@ -68,7 +84,17 @@ class LoginViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
         self.presentViewController(alert, animated: true, completion: nil)
     }
-   
+    
+
+    func wrongName() {
+        let alert =
+            UIAlertController(title: "Wrong name!",
+                              message: "Please, write a valid name.",
+                              preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
     func loginCompletedWithError(error:NSError?) {
         if error == nil {
             HUD.flash(.Success, delay: 1)
@@ -103,30 +129,21 @@ class LoginViewController: UIViewController {
     }
     
     func startLogin()  {
-        self.registerForPushNotifications()
+        self.loginViewModel?.login({ [weak self] (error) in
+            self?.loginCompletedWithError(error)
+        })
     }
     
-    // MARK: IBActions
-    
-    func proceedWithToken() {
-        weak var weakSelf = self
-        self.loginningNow = false
-        self.loginViewModel?.deviceToken = PushTokenUtil.getPushToken()
-        if loginViewModel?.deviceToken != nil {
-            self.loginViewModel?.login({ (error) in
-                weakSelf?.loginCompletedWithError(error)
-            })
-        }
-    }
+// MARK: IBActions
     
     @IBAction func login(sender: AnyObject) {
-        if self.isValidPhoneString(self.phoneTextField.text) {
+        if self.isValidPhoneString(self.phoneTextField.text) && self.isValidName(self.nameTextField.text) {
             self.phoneTextField.resignFirstResponder()
-            self.loginningNow = true;
+            self.nameTextField.resignFirstResponder()
             self.startLogin()
             HUD.show(.SystemActivity)
         } else {
-            self.wrongPhoneNumber()
+            self.wrongRegistrationFields()
         }
     }
     

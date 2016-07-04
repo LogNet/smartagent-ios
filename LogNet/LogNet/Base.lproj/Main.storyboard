@@ -137,7 +137,7 @@
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qV4-9b-2KE">
                                 <rect key="frame" x="254" y="264" width="93" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="93" id="aL9-q3-Gva"/>
+                                    <constraint firstAttribute="width" constant="93" id="tER-yh-6jW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
                                 <state key="normal" title="Login">
@@ -155,18 +155,27 @@
                                     <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8gW-dI-NtF"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y7Z-Qo-xfi">
+                                <rect key="frame" x="53" y="150" width="494" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="qV4-9b-2KE" firstAttribute="top" secondItem="bPe-sq-kMf" secondAttribute="bottom" constant="39" id="7vZ-oz-lxD"/>
-                            <constraint firstItem="bPe-sq-kMf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CoB-By-Dsi"/>
-                            <constraint firstItem="qV4-9b-2KE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FoI-U2-mqP"/>
-                            <constraint firstItem="bPe-sq-kMf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="33" id="ln9-Dw-X4d"/>
-                            <constraint firstItem="bPe-sq-kMf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="175" id="xuF-qO-lsd"/>
+                            <constraint firstItem="y7Z-Qo-xfi" firstAttribute="leading" secondItem="bPe-sq-kMf" secondAttribute="leading" id="AZE-uz-5xO"/>
+                            <constraint firstItem="y7Z-Qo-xfi" firstAttribute="trailing" secondItem="bPe-sq-kMf" secondAttribute="trailing" id="Oli-bz-KMo"/>
+                            <constraint firstItem="y7Z-Qo-xfi" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="130" id="PRa-B2-6f9"/>
+                            <constraint firstItem="qV4-9b-2KE" firstAttribute="top" secondItem="bPe-sq-kMf" secondAttribute="bottom" constant="39" id="RoT-iH-eBl"/>
+                            <constraint firstItem="bPe-sq-kMf" firstAttribute="centerX" secondItem="qV4-9b-2KE" secondAttribute="centerX" id="Spt-S5-PxV"/>
+                            <constraint firstItem="y7Z-Qo-xfi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="33" id="UCl-Ik-oyz"/>
+                            <constraint firstItem="y7Z-Qo-xfi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aFC-iC-UsK"/>
+                            <constraint firstItem="bPe-sq-kMf" firstAttribute="top" secondItem="y7Z-Qo-xfi" secondAttribute="bottom" constant="15" id="fQZ-lW-UEk"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="GiB-7p-pNo"/>
                     <connections>
+                        <outlet property="nameTextField" destination="y7Z-Qo-xfi" id="bje-iV-06x"/>
                         <outlet property="phoneTextField" destination="bPe-sq-kMf" id="36m-wp-BOF"/>
                     </connections>
                 </viewController>

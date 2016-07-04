@@ -27,11 +27,11 @@ class NotificatonsViewModel: ViewModel {
     }
     
     func checkUserLoggedIn() {
-        let serverService = GoandroidServerService()
-        if serverService.getToken() == nil {
-            self.router.showLoginView()
-        } else {
+        let loginService = SmartAgentLoginServise()
+        if loginService.isAutorized() {
             self.fetch()
+        } else {
+            self.router.showLoginView()
         }
     }
     
