@@ -19,7 +19,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>5</string>
+	<string>6</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
@@ -44,7 +44,7 @@
 		<true/>
 		<key>NSExceptionDomains</key>
 		<dict>
-			<key>goandroid.net</key>
+			<key>62.90.233.18:8080</key>
 			<dict>
 				<key>NSIncludesSubdomains</key>
 				<true/>
@@ -53,7 +53,7 @@
 				<key>NSTemporaryExceptionMinimumTLSVersion</key>
 				<string>TLSv1.1</string>
 			</dict>
-			<key>62.90.233.18:8080</key>
+			<key>goandroid.net</key>
 			<dict>
 				<key>NSIncludesSubdomains</key>
 				<true/>
