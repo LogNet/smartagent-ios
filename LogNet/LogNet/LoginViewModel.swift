@@ -11,7 +11,7 @@ import Foundation
 class LoginViewModel:ViewModel {
     
     // MARK: Public Variables
-    
+    var name:String?
     var phoneNumber:String?
     var deviceToken:String?
     // MARK: Private Variables
