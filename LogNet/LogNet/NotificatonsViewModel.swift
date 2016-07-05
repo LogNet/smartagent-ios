@@ -13,7 +13,7 @@ import FirebaseInstanceID
 class NotificatonsViewModel: ViewModel {
     dynamic var cellViewModels:NSMutableArray?
     dynamic var downloading = false
-    var model:NotificationsModel
+    var model:RecentModel
     
     lazy var dateFormatter:NSDateFormatter = {
         let formatter = NSDateFormatter()
@@ -21,7 +21,7 @@ class NotificatonsViewModel: ViewModel {
         return formatter
     }()
     
-    init(model:NotificationsModel, router:Router) {
+    init(model:RecentModel, router:Router) {
         self.model = model
         super.init(router: router)
     }

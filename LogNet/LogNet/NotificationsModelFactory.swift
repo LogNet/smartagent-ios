@@ -8,10 +8,10 @@
 
 import Foundation
 
-class NotificationsModelFactory {
+class RecentModelFactory {
     
-    class func getGoandroidNotificationsModel() -> NotificationsModel {
-        let model = NotificationsModel()
+    class func getGoandroidNotificationsModel() -> RecentModel {
+        let model = RecentModel()
         model.serverParser = GoandroidServerParser()
         model.servserService = GoandroidServerService()
         model.storageService = NotificationsStorageServiseRealm()

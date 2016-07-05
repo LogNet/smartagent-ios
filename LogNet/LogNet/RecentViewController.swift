@@ -10,7 +10,7 @@ import UIKit
 import ReactiveCocoa
 import PKHUD
 
-class NotificationsTableViewController: UITableViewController {
+class RecentViewController: UITableViewController {
 
     var viewModel:NotificatonsViewModel?
     var token: dispatch_once_t = 0

@@ -17,6 +17,10 @@ class SmartAgentLoginServise: LoginService {
         }
     }
     
+    func sendNotificationToken(notificationToken: String) {
+        
+    }
+    
     func storeToken(token:String) {
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setObject(token, forKey: TOKEN_KEY)

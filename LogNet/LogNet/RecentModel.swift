@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NotificationsModel: NSObject {
+class RecentModel: NSObject {
     
     var servserService:ServerService?
     var serverParser:ServerParser?

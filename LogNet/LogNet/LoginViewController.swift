@@ -110,13 +110,6 @@ class LoginViewController: UIViewController {
         }
     }
     
-    func registerForPushNotifications() {
-        let application = UIApplication.sharedApplication()
-        let notificationSettings = UIUserNotificationSettings(
-            forTypes: [.Badge, .Sound, .Alert], categories: nil)
-        application.registerUserNotificationSettings(notificationSettings)
-    }
-    
     func pushPermissionsDenied() {
         HUD.hide()
         self.loginningNow = false;

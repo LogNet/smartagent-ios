@@ -21,8 +21,8 @@ class Router {
     }
    
     func setupHomeViewController() {
-        let notificationsViewController = self.storyboard.instantiateViewControllerWithIdentifier("NotificationsTableViewController") as! NotificationsTableViewController
-        let model = NotificationsModelFactory.getGoandroidNotificationsModel()
+        let notificationsViewController = self.storyboard.instantiateViewControllerWithIdentifier("RecentViewController") as! RecentViewController
+        let model = RecentModelFactory.getGoandroidNotificationsModel()
         let notificationsViewModel = NotificatonsViewModel(model: model, router: self)
         notificationsViewController.viewModel = notificationsViewModel;
         self.navigationController!.viewControllers = [notificationsViewController]
@@ -45,22 +45,10 @@ class Router {
         return loginViewController;
     }
     
-    func pushNotificationRegistrationCancelled() {
-        if self.loginViewController != nil && self.loginViewController!.loginningNow {
-            self.loginViewController?.pushPermissionsDenied()
-        }
-    }
-    
-    func loginProceedWithDeviceToken(deviceToken:String) {
-        if self.loginViewController != nil && self.loginViewController!.loginningNow {
-//            self.loginViewController?.proceedWithToken()
-        }
-    }
-    
     func loginFinished() {
-        let notificationsViewController = self.navigationController!.viewControllers[0] as! NotificationsTableViewController
-//        notificationsViewController.viewModel?.registerForPushNotifications()
-//        notificationsViewController.viewModel?.sendFirebaseTokenToServer()
+        self.registerForPushNotifications()
+        let notificationsViewController =
+                self.navigationController!.viewControllers[0] as! RecentViewController
         notificationsViewController.fetch()
     }
     
@@ -86,5 +74,12 @@ class Router {
         viewModel.urlString = urlString
         browserViewController?.viewModel = viewModel
         self.navigationController?.pushViewController(browserViewController!, animated: true)
+    }
+    
+    func registerForPushNotifications() {
+        let application = UIApplication.sharedApplication()
+        let notificationSettings =
+                UIUserNotificationSettings(forTypes: [.Badge, .Sound, .Alert], categories: nil)
+        application.registerUserNotificationSettings(notificationSettings)
     }
 }

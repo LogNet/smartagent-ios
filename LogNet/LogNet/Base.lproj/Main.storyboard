@@ -22,7 +22,7 @@
         <!--Notifications-->
         <scene sceneID="8Mt-mb-rYw">
             <objects>
-                <tableViewController storyboardIdentifier="NotificationsTableViewController" id="Ck6-eK-VsL" customClass="NotificationsTableViewController" customModule="SmartAgent" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="RecentViewController" id="Ck6-eK-VsL" customClass="RecentViewController" customModule="SmartAgent" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="80" sectionHeaderHeight="1" sectionFooterHeight="1" id="qqE-wh-iN4">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

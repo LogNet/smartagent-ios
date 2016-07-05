@@ -27,9 +27,9 @@
 		EADC60061D17017E00B8743C /* ServerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60051D17017E00B8743C /* ServerService.swift */; };
 		EADC60081D175DDA00B8743C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EADC60071D175DDA00B8743C /* QuartzCore.framework */; };
 		EADC600A1D18543800B8743C /* AlertNotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60091D18543700B8743C /* AlertNotificationViewModel.swift */; };
-		EADC600E1D19785000B8743C /* NotificationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC600D1D19785000B8743C /* NotificationsTableViewController.swift */; };
+		EADC600E1D19785000B8743C /* RecentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC600D1D19785000B8743C /* RecentViewController.swift */; };
 		EADC60101D1A6EB200B8743C /* NotificatonsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC600F1D1A6EB200B8743C /* NotificatonsViewModel.swift */; };
-		EADC60121D1A6EF500B8743C /* NotificationsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60111D1A6EF500B8743C /* NotificationsModel.swift */; };
+		EADC60121D1A6EF500B8743C /* RecentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60111D1A6EF500B8743C /* RecentModel.swift */; };
 		EADC60141D1A6FEA00B8743C /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60131D1A6FEA00B8743C /* ViewModel.swift */; };
 		EADC60161D1A77AB00B8743C /* NotificationsStorageServise.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60151D1A77AB00B8743C /* NotificationsStorageServise.swift */; };
 		EADC60181D1A782B00B8743C /* NotificationsModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60171D1A782B00B8743C /* NotificationsModelFactory.swift */; };
@@ -84,9 +84,9 @@
 		EADC60051D17017E00B8743C /* ServerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerService.swift; sourceTree = "<group>"; };
 		EADC60071D175DDA00B8743C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		EADC60091D18543700B8743C /* AlertNotificationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertNotificationViewModel.swift; sourceTree = "<group>"; };
-		EADC600D1D19785000B8743C /* NotificationsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsTableViewController.swift; sourceTree = "<group>"; };
+		EADC600D1D19785000B8743C /* RecentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentViewController.swift; sourceTree = "<group>"; };
 		EADC600F1D1A6EB200B8743C /* NotificatonsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificatonsViewModel.swift; sourceTree = "<group>"; };
-		EADC60111D1A6EF500B8743C /* NotificationsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsModel.swift; sourceTree = "<group>"; };
+		EADC60111D1A6EF500B8743C /* RecentModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentModel.swift; sourceTree = "<group>"; };
 		EADC60131D1A6FEA00B8743C /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		EADC60151D1A77AB00B8743C /* NotificationsStorageServise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsStorageServise.swift; sourceTree = "<group>"; };
 		EADC60171D1A782B00B8743C /* NotificationsModelFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsModelFactory.swift; sourceTree = "<group>"; };
@@ -160,7 +160,7 @@
 				EA2637511D15BF9000D5988D /* LoginModel.swift */,
 				EA26375A1D16A1F700D5988D /* LoginModelsFactory.swift */,
 				EADC60031D16E44F00B8743C /* WebBrowserModel.swift */,
-				EADC60111D1A6EF500B8743C /* NotificationsModel.swift */,
+				EADC60111D1A6EF500B8743C /* RecentModel.swift */,
 				EADC601C1D1A8EFC00B8743C /* Notification.swift */,
 			);
 			name = Models;
@@ -171,7 +171,7 @@
 			children = (
 				EAE50A5D1D12CEEB00B4329B /* LoginViewController.swift */,
 				EA2637621D16BEF400D5988D /* WebBrouserViewController.swift */,
-				EADC600D1D19785000B8743C /* NotificationsTableViewController.swift */,
+				EADC600D1D19785000B8743C /* RecentViewController.swift */,
 				EA7ECA5C1D1BB41E0014010A /* NotificationCell.swift */,
 			);
 			name = Views;
@@ -487,7 +487,7 @@
 				EADC60181D1A782B00B8743C /* NotificationsModelFactory.swift in Sources */,
 				EA7ECA5D1D1BB41E0014010A /* NotificationCell.swift in Sources */,
 				EADC601D1D1A8EFC00B8743C /* Notification.swift in Sources */,
-				EADC600E1D19785000B8743C /* NotificationsTableViewController.swift in Sources */,
+				EADC600E1D19785000B8743C /* RecentViewController.swift in Sources */,
 				EADC60101D1A6EB200B8743C /* NotificatonsViewModel.swift in Sources */,
 				EADC60061D17017E00B8743C /* ServerService.swift in Sources */,
 				EA26374E1D15BE3D00D5988D /* Router.swift in Sources */,
@@ -501,7 +501,7 @@
 				EAE50A5E1D12CEEB00B4329B /* LoginViewController.swift in Sources */,
 				EA7ECA5B1D1BAD780014010A /* NotificationCellViewModel.swift in Sources */,
 				EADC60161D1A77AB00B8743C /* NotificationsStorageServise.swift in Sources */,
-				EADC60121D1A6EF500B8743C /* NotificationsModel.swift in Sources */,
+				EADC60121D1A6EF500B8743C /* RecentModel.swift in Sources */,
 				EA26375D1D16A4F100D5988D /* ServerParser.swift in Sources */,
 				EAE50A5C1D12CEEB00B4329B /* AppDelegate.swift in Sources */,
 				EA8CDA481D2AE5490090E9C1 /* SmartAgentLoginServise.swift in Sources */,
