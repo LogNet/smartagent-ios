@@ -8,7 +8,7 @@
 
 import Foundation
 
-class GoandroidServerParser: ServerParser {
+class SmartAgentParser: ServerParser {
     func parseToken(JSON: AnyObject?) -> String? {
         if JSON != nil {
             let token = JSON!["token"] as! String

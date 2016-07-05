@@ -9,7 +9,12 @@
 import Foundation
 
 protocol ServerService {
-//    func postDeviceToken(deviceToken:String)
-    func getNotifications(completion: JSONCompletionBlock?)
-    
+    func getNotificationList(type:String?,
+                          subtype:String?,
+                          from_id:Int?,
+                            to_id:Int?,
+                        from_time:NSTimeInterval?,
+                          to_time:NSTimeInterval?,
+                      chunks_size:Int?,
+                       completion:JSONCompletionBlock?)
 }

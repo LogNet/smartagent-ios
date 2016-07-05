@@ -69,10 +69,6 @@ class NotificatonsViewModel: ViewModel {
     
     func viewModelFromNotification(notification:Notification) -> NotificationCellViewModel {
         let viewModel = NotificationCellViewModel()
-        viewModel.text = notification.text
-        viewModel.title = notification.title
-        viewModel.link = notification.link
-        viewModel.date = self.dateFormatter.stringFromDate(notification.time!)
         return viewModel
     }
     

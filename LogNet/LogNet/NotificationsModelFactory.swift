@@ -13,7 +13,7 @@ class RecentModelFactory {
     class func getGoandroidNotificationsModel() -> RecentModel {
         let model = RecentModel()
         model.serverParser = GoandroidServerParser()
-        model.servserService = GoandroidServerService()
+        model.servserService = SmartAgentServerServise()
         model.storageService = NotificationsStorageServiseRealm()
         return model
     }

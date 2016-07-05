@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-class GoandroidServerService:ServerService {
+class GoandroidServerService {
     private let TOKEN_KEY = "TOKEN_KEY"
     let baseURLString = "http://goandroid.net:8484"
     
