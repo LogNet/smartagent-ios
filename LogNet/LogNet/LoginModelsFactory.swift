@@ -12,7 +12,7 @@ class LoginModelsFactory {
     class func getLoginModel() -> LoginModel {
         let serverService = SmartAgentLoginServise()
         let loginModel = LoginModel(loginService: serverService)
-        loginModel.parser = GoandroidServerParser()
+        loginModel.parser = SmartAgentParser()
         return loginModel
     }
 }

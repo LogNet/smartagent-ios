@@ -12,7 +12,7 @@ import PKHUD
 
 class RecentViewController: UITableViewController {
 
-    var viewModel:NotificatonsViewModel?
+    var viewModel:RecentViewModel?
     var token: dispatch_once_t = 0
     
     override func viewDidLoad() {

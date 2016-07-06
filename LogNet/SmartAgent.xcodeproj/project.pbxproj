@@ -23,18 +23,23 @@
 		EA8BB9401D21A04200D07561 /* PushTokenUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8BB93F1D21A04200D07561 /* PushTokenUtil.swift */; };
 		EA8CDA481D2AE5490090E9C1 /* SmartAgentLoginServise.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8CDA471D2AE5490090E9C1 /* SmartAgentLoginServise.swift */; };
 		EA8CDA4A1D2C44A50090E9C1 /* SmartAgentServerServise.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8CDA491D2C44A50090E9C1 /* SmartAgentServerServise.swift */; };
-		EAD43D081D2C4CCE00E1FF15 /* ServiceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD43D071D2C4CCE00E1FF15 /* ServiceLayer.swift */; };
+		EAD43D0F1D2CBAB600E1FF15 /* DummyServerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD43D0E1D2CBAB600E1FF15 /* DummyServerService.swift */; };
+		EAD43D151D2CC4AB00E1FF15 /* APIFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD43D141D2CC4AB00E1FF15 /* APIFacade.swift */; };
+		EAD43D1A1D2CD16300E1FF15 /* cancelled.json in Resources */ = {isa = PBXBuildFile; fileRef = EAD43D161D2CD16300E1FF15 /* cancelled.json */; };
+		EAD43D1B1D2CD16300E1FF15 /* recent.json in Resources */ = {isa = PBXBuildFile; fileRef = EAD43D171D2CD16300E1FF15 /* recent.json */; };
+		EAD43D1C1D2CD16300E1FF15 /* reprice.json in Resources */ = {isa = PBXBuildFile; fileRef = EAD43D181D2CD16300E1FF15 /* reprice.json */; };
+		EAD43D1D1D2CD16300E1FF15 /* ticket_due.json in Resources */ = {isa = PBXBuildFile; fileRef = EAD43D191D2CD16300E1FF15 /* ticket_due.json */; };
 		EADC60021D16E3CE00B8743C /* WebBrowserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60011D16E3CE00B8743C /* WebBrowserViewModel.swift */; };
 		EADC60041D16E44F00B8743C /* WebBrowserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60031D16E44F00B8743C /* WebBrowserModel.swift */; };
 		EADC60061D17017E00B8743C /* ServerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60051D17017E00B8743C /* ServerService.swift */; };
 		EADC60081D175DDA00B8743C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EADC60071D175DDA00B8743C /* QuartzCore.framework */; };
 		EADC600A1D18543800B8743C /* AlertNotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60091D18543700B8743C /* AlertNotificationViewModel.swift */; };
 		EADC600E1D19785000B8743C /* RecentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC600D1D19785000B8743C /* RecentViewController.swift */; };
-		EADC60101D1A6EB200B8743C /* NotificatonsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC600F1D1A6EB200B8743C /* NotificatonsViewModel.swift */; };
+		EADC60101D1A6EB200B8743C /* RecentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC600F1D1A6EB200B8743C /* RecentViewModel.swift */; };
 		EADC60121D1A6EF500B8743C /* RecentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60111D1A6EF500B8743C /* RecentModel.swift */; };
 		EADC60141D1A6FEA00B8743C /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60131D1A6FEA00B8743C /* ViewModel.swift */; };
 		EADC60161D1A77AB00B8743C /* NotificationsStorageServise.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60151D1A77AB00B8743C /* NotificationsStorageServise.swift */; };
-		EADC60181D1A782B00B8743C /* NotificationsModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60171D1A782B00B8743C /* NotificationsModelFactory.swift */; };
+		EADC60181D1A782B00B8743C /* RecentModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60171D1A782B00B8743C /* RecentModelFactory.swift */; };
 		EADC601B1D1A8A5100B8743C /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC601A1D1A8A5100B8743C /* Typealiases.swift */; };
 		EADC601D1D1A8EFC00B8743C /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC601C1D1A8EFC00B8743C /* Notification.swift */; };
 		EADC60201D1B125C00B8743C /* NotificationsStorageServiseRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC601F1D1B125C00B8743C /* NotificationsStorageServiseRealm.swift */; };
@@ -82,18 +87,23 @@
 		EA8BB93F1D21A04200D07561 /* PushTokenUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushTokenUtil.swift; sourceTree = "<group>"; };
 		EA8CDA471D2AE5490090E9C1 /* SmartAgentLoginServise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmartAgentLoginServise.swift; sourceTree = "<group>"; };
 		EA8CDA491D2C44A50090E9C1 /* SmartAgentServerServise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmartAgentServerServise.swift; sourceTree = "<group>"; };
-		EAD43D071D2C4CCE00E1FF15 /* ServiceLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceLayer.swift; sourceTree = "<group>"; };
+		EAD43D0E1D2CBAB600E1FF15 /* DummyServerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyServerService.swift; sourceTree = "<group>"; };
+		EAD43D141D2CC4AB00E1FF15 /* APIFacade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIFacade.swift; sourceTree = "<group>"; };
+		EAD43D161D2CD16300E1FF15 /* cancelled.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cancelled.json; sourceTree = "<group>"; };
+		EAD43D171D2CD16300E1FF15 /* recent.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recent.json; sourceTree = "<group>"; };
+		EAD43D181D2CD16300E1FF15 /* reprice.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = reprice.json; sourceTree = "<group>"; };
+		EAD43D191D2CD16300E1FF15 /* ticket_due.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ticket_due.json; sourceTree = "<group>"; };
 		EADC60011D16E3CE00B8743C /* WebBrowserViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebBrowserViewModel.swift; sourceTree = "<group>"; };
 		EADC60031D16E44F00B8743C /* WebBrowserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebBrowserModel.swift; sourceTree = "<group>"; };
 		EADC60051D17017E00B8743C /* ServerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerService.swift; sourceTree = "<group>"; };
 		EADC60071D175DDA00B8743C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		EADC60091D18543700B8743C /* AlertNotificationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertNotificationViewModel.swift; sourceTree = "<group>"; };
 		EADC600D1D19785000B8743C /* RecentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentViewController.swift; sourceTree = "<group>"; };
-		EADC600F1D1A6EB200B8743C /* NotificatonsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificatonsViewModel.swift; sourceTree = "<group>"; };
+		EADC600F1D1A6EB200B8743C /* RecentViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentViewModel.swift; sourceTree = "<group>"; };
 		EADC60111D1A6EF500B8743C /* RecentModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentModel.swift; sourceTree = "<group>"; };
 		EADC60131D1A6FEA00B8743C /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		EADC60151D1A77AB00B8743C /* NotificationsStorageServise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsStorageServise.swift; sourceTree = "<group>"; };
-		EADC60171D1A782B00B8743C /* NotificationsModelFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsModelFactory.swift; sourceTree = "<group>"; };
+		EADC60171D1A782B00B8743C /* RecentModelFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentModelFactory.swift; sourceTree = "<group>"; };
 		EADC601A1D1A8A5100B8743C /* Typealiases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Typealiases.swift; sourceTree = "<group>"; };
 		EADC601C1D1A8EFC00B8743C /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		EADC601F1D1B125C00B8743C /* NotificationsStorageServiseRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsStorageServiseRealm.swift; sourceTree = "<group>"; };
@@ -189,8 +199,8 @@
 				EA2637491D15B95A00D5988D /* LoginViewModel.swift */,
 				EADC60011D16E3CE00B8743C /* WebBrowserViewModel.swift */,
 				EADC60091D18543700B8743C /* AlertNotificationViewModel.swift */,
-				EADC600F1D1A6EB200B8743C /* NotificatonsViewModel.swift */,
-				EADC60171D1A782B00B8743C /* NotificationsModelFactory.swift */,
+				EADC600F1D1A6EB200B8743C /* RecentViewModel.swift */,
+				EADC60171D1A782B00B8743C /* RecentModelFactory.swift */,
 				EA7ECA5A1D1BAD780014010A /* NotificationCellViewModel.swift */,
 			);
 			name = ViewModels;
@@ -202,7 +212,7 @@
 				EAD43D0C1D2C553C00E1FF15 /* ServerService */,
 				EAD43D0B1D2C516B00E1FF15 /* StorageService */,
 				EAD43D0A1D2C515300E1FF15 /* LoginService */,
-				EAD43D071D2C4CCE00E1FF15 /* ServiceLayer.swift */,
+				EAD43D141D2CC4AB00E1FF15 /* APIFacade.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -231,6 +241,7 @@
 			children = (
 				EADC60051D17017E00B8743C /* ServerService.swift */,
 				EA8CDA491D2C44A50090E9C1 /* SmartAgentServerServise.swift */,
+				EAD43D0E1D2CBAB600E1FF15 /* DummyServerService.swift */,
 			);
 			name = ServerService;
 			sourceTree = "<group>";
@@ -256,6 +267,10 @@
 		EAE50A4F1D12CEEB00B4329B = {
 			isa = PBXGroup;
 			children = (
+				EAD43D161D2CD16300E1FF15 /* cancelled.json */,
+				EAD43D171D2CD16300E1FF15 /* recent.json */,
+				EAD43D181D2CD16300E1FF15 /* reprice.json */,
+				EAD43D191D2CD16300E1FF15 /* ticket_due.json */,
 				EAE50A5A1D12CEEB00B4329B /* LogNet */,
 				EAE50A6F1D12CEEC00B4329B /* LogNetTests */,
 				EAE50A7A1D12CEEC00B4329B /* LogNetUITests */,
@@ -429,10 +444,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAD43D1D1D2CD16300E1FF15 /* ticket_due.json in Resources */,
 				EAE50A661D12CEEB00B4329B /* LaunchScreen.storyboard in Resources */,
 				EA2637441D12E46600D5988D /* GoogleService-Info.plist in Resources */,
+				EAD43D1A1D2CD16300E1FF15 /* cancelled.json in Resources */,
 				EAE50A631D12CEEB00B4329B /* Assets.xcassets in Resources */,
+				EAD43D1B1D2CD16300E1FF15 /* recent.json in Resources */,
 				EAE50A611D12CEEB00B4329B /* Main.storyboard in Resources */,
+				EAD43D1C1D2CD16300E1FF15 /* reprice.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,11 +541,11 @@
 				EA26375B1D16A1F700D5988D /* LoginModelsFactory.swift in Sources */,
 				EA2637571D16779B00D5988D /* LoginService.swift in Sources */,
 				EADC60201D1B125C00B8743C /* NotificationsStorageServiseRealm.swift in Sources */,
-				EADC60181D1A782B00B8743C /* NotificationsModelFactory.swift in Sources */,
+				EADC60181D1A782B00B8743C /* RecentModelFactory.swift in Sources */,
 				EA7ECA5D1D1BB41E0014010A /* NotificationCell.swift in Sources */,
 				EADC601D1D1A8EFC00B8743C /* Notification.swift in Sources */,
 				EADC600E1D19785000B8743C /* RecentViewController.swift in Sources */,
-				EADC60101D1A6EB200B8743C /* NotificatonsViewModel.swift in Sources */,
+				EADC60101D1A6EB200B8743C /* RecentViewModel.swift in Sources */,
 				EADC60061D17017E00B8743C /* ServerService.swift in Sources */,
 				EA26374E1D15BE3D00D5988D /* Router.swift in Sources */,
 				EA2637631D16BEF400D5988D /* WebBrouserViewController.swift in Sources */,
@@ -543,10 +562,11 @@
 				EADC60121D1A6EF500B8743C /* RecentModel.swift in Sources */,
 				EA26375D1D16A4F100D5988D /* ServerParser.swift in Sources */,
 				EAE50A5C1D12CEEB00B4329B /* AppDelegate.swift in Sources */,
+				EAD43D151D2CC4AB00E1FF15 /* APIFacade.swift in Sources */,
 				EA8CDA481D2AE5490090E9C1 /* SmartAgentLoginServise.swift in Sources */,
-				EAD43D081D2C4CCE00E1FF15 /* ServiceLayer.swift in Sources */,
 				EADC601B1D1A8A5100B8743C /* Typealiases.swift in Sources */,
 				EA26374A1D15B95A00D5988D /* LoginViewModel.swift in Sources */,
+				EAD43D0F1D2CBAB600E1FF15 /* DummyServerService.swift in Sources */,
 				EADC600A1D18543800B8743C /* AlertNotificationViewModel.swift in Sources */,
 				EA2637591D16787C00D5988D /* GoandroidServerService.swift in Sources */,
 			);

@@ -9,8 +9,7 @@
 import UIKit
 
 class SmartAgentServerServise: ServerService {
-	func getNotificationList(type: String?, subtype: String?, from_id: Int?, to_id: Int?, from_time: NSTimeInterval?, to_time: NSTimeInterval?, chunks_size: Int?, completion: JSONCompletionBlock?) {
+	func getNotificationList(type: NotificationType, subtype: String?, from_id: Int?, to_id: Int?, from_time: NSTimeInterval?, to_time: NSTimeInterval?, chunks_size: Int?, completion: JSONCompletionBlock?) {
         
-
 	}
 }

@@ -10,10 +10,10 @@ import Foundation
 
 class RecentModelFactory {
     
-    class func getGoandroidNotificationsModel() -> RecentModel {
+    class func getSmartAgentRecentModel() -> RecentModel {
         let model = RecentModel()
         model.serverParser = SmartAgentParser()
-        model.servserService = SmartAgentServerServise()
+        model.apiFacade = APIFacade(service: DummyServerService())
         model.storageService = NotificationsStorageServiseRealm()
         return model
     }

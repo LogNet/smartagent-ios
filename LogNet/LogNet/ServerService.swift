@@ -8,8 +8,15 @@
 
 import Foundation
 
+enum NotificationType {
+    case Recent
+    case Reprice
+    case Cancelled
+    case TicketDue
+}
+
 protocol ServerService {
-    func getNotificationList(type:String?,
+    func getNotificationList(type:NotificationType,
                           subtype:String?,
                           from_id:Int?,
                             to_id:Int?,

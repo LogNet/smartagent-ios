@@ -21,7 +21,7 @@ class Notification: Object {
  
     override var description: String {
         get {
-            return "title: \(self.title) date: \(self.title_message)"
+            return "title: \(self.title) date: \(self.notification_time)"
         }
        
     }

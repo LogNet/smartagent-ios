@@ -9,6 +9,13 @@
 import Foundation
 
 class SmartAgentParser: ServerParser {
+    
+    lazy var dateFormatter:NSDateFormatter = {
+       let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS'Z'"
+        return dateFormatter
+    }()
+    
     func parseToken(JSON: AnyObject?) -> String? {
         if JSON != nil {
             let token = JSON!["token"] as! String
@@ -23,12 +30,14 @@ class SmartAgentParser: ServerParser {
             var notifications = Array<Notification>()
             for jsonNotification in jsonNotifications {
                 let notification = Notification()
-                notification.title = jsonNotification["title"] as? String
-                notification.link = jsonNotification["link"] as? String
-                let interval = jsonNotification["time"] as? Double
-                notification.time = NSDate(timeIntervalSince1970: interval! / 1000.0)
-                notification.text = jsonNotification["text"] as? String
-                notification.phone = jsonNotification["phone"] as? String
+                notification.notification_id = jsonNotification["notification_id"] as? String
+                notification.status = jsonNotification["status"] as? String
+                notification.type = jsonNotification["status"] as? String
+                notification.title = jsonNotification["status"] as? String
+                notification.title_message = jsonNotification["status"] as? String
+                let time = jsonNotification["notification_time"] as? String
+                notification.notification_time = self.dateFormatter.dateFromString(time!)
+                notification.pnr_summary = jsonNotification["pnr_summary"] as? String
                 notifications.append(notification)
             }
             return notifications;

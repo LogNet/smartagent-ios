@@ -22,8 +22,8 @@ class Router {
    
     func setupHomeViewController() {
         let notificationsViewController = self.storyboard.instantiateViewControllerWithIdentifier("RecentViewController") as! RecentViewController
-        let model = RecentModelFactory.getGoandroidNotificationsModel()
-        let notificationsViewModel = NotificatonsViewModel(model: model, router: self)
+        let model = RecentModelFactory.getSmartAgentRecentModel()
+        let notificationsViewModel = RecentViewModel(model: model, router: self)
         notificationsViewController.viewModel = notificationsViewModel;
         self.navigationController!.viewControllers = [notificationsViewController]
     }

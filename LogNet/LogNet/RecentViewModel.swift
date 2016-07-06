@@ -10,7 +10,7 @@ import UIKit
 import FirebaseAuth
 import FirebaseInstanceID
 
-class NotificatonsViewModel: ViewModel {
+class RecentViewModel: ViewModel {
     dynamic var cellViewModels:NSMutableArray?
     dynamic var downloading = false
     var model:RecentModel
