@@ -61,7 +61,7 @@ class RecentViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         if self.viewModel?.cellViewModels != nil {
-            return (self.viewModel?.cellViewModels?.count)!
+            return (self.viewModel?.cellViewModels.count)!
         }
         return 1
     }

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C982CE3C3CFC0D3186424761 /* Pods_LogNet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E1AB6E3A44708BDEAE713A4 /* Pods_LogNet.framework */; };
+		4DF12A834A791E311C0B74FC /* Pods_SmartAgent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C9ED9DFC1AA6D8F3C46204 /* Pods_SmartAgent.framework */; };
 		EA2637441D12E46600D5988D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA2637431D12E46600D5988D /* GoogleService-Info.plist */; };
 		EA26374A1D15B95A00D5988D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2637491D15B95A00D5988D /* LoginViewModel.swift */; };
 		EA26374E1D15BE3D00D5988D /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA26374D1D15BE3D00D5988D /* Router.swift */; };
@@ -70,8 +70,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2E1AB6E3A44708BDEAE713A4 /* Pods_LogNet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LogNet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CCEB39520A448D2C92E66E98 /* Pods-LogNet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LogNet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LogNet/Pods-LogNet.debug.xcconfig"; sourceTree = "<group>"; };
+		18C9ED9DFC1AA6D8F3C46204 /* Pods_SmartAgent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartAgent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		71C3FF208C0ECE1879EE4482 /* Pods-SmartAgent.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartAgent.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartAgent/Pods-SmartAgent.debug.xcconfig"; sourceTree = "<group>"; };
 		EA2637431D12E46600D5988D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EA2637491D15B95A00D5988D /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		EA26374D1D15BE3D00D5988D /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -120,7 +120,7 @@
 		EAE50A771D12CEEC00B4329B /* SmartAgent.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartAgent.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAE50A7B1D12CEEC00B4329B /* LogNetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogNetUITests.swift; sourceTree = "<group>"; };
 		EAE50A7D1D12CEEC00B4329B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FC9142CEE44B9832FFEAEEB5 /* Pods-LogNet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LogNet.release.xcconfig"; path = "Pods/Target Support Files/Pods-LogNet/Pods-LogNet.release.xcconfig"; sourceTree = "<group>"; };
+		EE8F0BF2C4AFB1E94B6D9B3B /* Pods-SmartAgent.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartAgent.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartAgent/Pods-SmartAgent.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,7 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EADC60081D175DDA00B8743C /* QuartzCore.framework in Frameworks */,
-				C982CE3C3CFC0D3186424761 /* Pods_LogNet.framework in Frameworks */,
+				4DF12A834A791E311C0B74FC /* Pods_SmartAgent.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,22 +150,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		58BA38A1823F3A8CDFFBFD30 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				71C3FF208C0ECE1879EE4482 /* Pods-SmartAgent.debug.xcconfig */,
+				EE8F0BF2C4AFB1E94B6D9B3B /* Pods-SmartAgent.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		60AC10965845AF0CA7D197F4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				EADC60071D175DDA00B8743C /* QuartzCore.framework */,
-				2E1AB6E3A44708BDEAE713A4 /* Pods_LogNet.framework */,
+				18C9ED9DFC1AA6D8F3C46204 /* Pods_SmartAgent.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		871A7BF1C98F30F26301E5FA /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				CCEB39520A448D2C92E66E98 /* Pods-LogNet.debug.xcconfig */,
-				FC9142CEE44B9832FFEAEEB5 /* Pods-LogNet.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		EA2637461D15B89E00D5988D /* Models */ = {
@@ -275,8 +275,8 @@
 				EAE50A6F1D12CEEC00B4329B /* LogNetTests */,
 				EAE50A7A1D12CEEC00B4329B /* LogNetUITests */,
 				EAE50A591D12CEEB00B4329B /* Products */,
-				871A7BF1C98F30F26301E5FA /* Pods */,
 				60AC10965845AF0CA7D197F4 /* Frameworks */,
+				58BA38A1823F3A8CDFFBFD30 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -484,7 +484,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LogNet/Pods-LogNet-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SmartAgent/Pods-SmartAgent-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D3F46707DFDECB0DEC9F246B /* [CP] Copy Pods Resources */ = {
@@ -499,7 +499,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LogNet/Pods-LogNet-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SmartAgent/Pods-SmartAgent-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D7D139985998654D26C2B480 /* [CP] Check Pods Manifest.lock */ = {
@@ -708,7 +708,7 @@
 		};
 		EAE50A811D12CEEC00B4329B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CCEB39520A448D2C92E66E98 /* Pods-LogNet.debug.xcconfig */;
+			baseConfigurationReference = 71C3FF208C0ECE1879EE4482 /* Pods-SmartAgent.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Roma Herman (Z32656347C)";
@@ -723,7 +723,7 @@
 		};
 		EAE50A821D12CEEC00B4329B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FC9142CEE44B9832FFEAEEB5 /* Pods-LogNet.release.xcconfig */;
+			baseConfigurationReference = EE8F0BF2C4AFB1E94B6D9B3B /* Pods-SmartAgent.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Roma Herman (Z32656347C)";

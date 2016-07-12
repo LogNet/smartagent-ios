@@ -11,8 +11,13 @@ import FirebaseAuth
 import FirebaseInstanceID
 
 class RecentViewModel: ViewModel {
-    dynamic var cellViewModels:NSMutableArray?
+    
+    dynamic  lazy var cellViewModels:NSMutableArray = {
+        let models = NSMutableArray()
+        return models
+    }()
     dynamic var downloading = false
+    dynamic var hasNextChunk = false;
     var model:RecentModel
     
     lazy var dateFormatter:NSDateFormatter = {
@@ -20,6 +25,8 @@ class RecentViewModel: ViewModel {
         formatter.dateStyle = .MediumStyle
         return formatter
     }()
+    
+    // MARK: Methods
     
     init(model:RecentModel, router:Router) {
         self.model = model
@@ -49,22 +56,40 @@ class RecentViewModel: ViewModel {
 //        }
 //    }
     
-    
     func fetch() {
         self.downloading = true;
         var viewModels = Array<NotificationCellViewModel>()
-        weak var weakSelf = self
-        self.model.getNotifications { (error, notifications) in
+        self.model.getNotifications(1, chunkSize: 20) { [weak self] (error, notifications) in
             if notifications != nil {
                 for notification in notifications! {
-                    if let viewModel = weakSelf?.viewModelFromNotification(notification){
+                    if let viewModel = self?.viewModelFromNotification(notification){
                         viewModels.append(viewModel)
                     }
                 }
+
             }
-            self.downloading = false;
-            self.cellViewModels = NSMutableArray(array: viewModels)
+            self?.downloading = false;
+            self?.cellViewModels = NSMutableArray(array: viewModels)
         }
+    }
+    
+    func fetchNext() {
+        self.downloading = true;
+        var viewModels = Array<NotificationCellViewModel>()
+//        var model = self.cellViewModels.lastObject as! NotificationCellViewModel
+        self.model.getNotifications(1, chunkSize: 20) { [weak self] (error, notifications) in
+            if notifications != nil {
+                for notification in notifications! {
+                    if let viewModel = self?.viewModelFromNotification(notification){
+                        viewModels.append(viewModel)
+                    }
+                }
+                
+            }
+            self?.downloading = false;
+            self?.cellViewModels = NSMutableArray(array: viewModels)
+        }
+
     }
     
     func viewModelFromNotification(notification:Notification) -> NotificationCellViewModel {
@@ -73,7 +98,7 @@ class RecentViewModel: ViewModel {
     }
     
     func cellViewModelForRow(row:Int) -> NotificationCellViewModel {
-        return self.cellViewModels![row] as! NotificationCellViewModel
+        return self.cellViewModels[row] as! NotificationCellViewModel
     }
     
 }

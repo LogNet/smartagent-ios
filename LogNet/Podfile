@@ -2,7 +2,7 @@
 platform :ios, "8.0"
 use_frameworks!
 
-target "LogNet" do
+target "SmartAgent" do
 pod 'Firebase', '~> 3.2'
 pod 'FirebaseAuth', '~> 3.0'
 pod 'Firebase/Messaging'

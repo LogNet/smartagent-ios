@@ -15,7 +15,7 @@ class RecentModel: NSObject {
     
     // MARK: Public methods
     
-    func getNotifications(completion:((error:NSError?, notifications:Array<Notification>?)->Void)) {
+    func getNotifications(fromID:Int?, chunkSize:Int8, completion:((error:NSError?, notifications:Array<Notification>?)->Void)) {
         self.apiFacade?.getRecentNotifications(0, chunkSize: 20, completion: { [weak self] (JSON:AnyObject?, error:NSError?) in
             let notifications = self?.serverParser?.parseNotifications(JSON)
             print("notifications: \(notifications)")
