@@ -32,12 +32,15 @@ class SmartAgentParser: ServerParser {
                 let notification = Notification()
                 notification.notification_id = jsonNotification["notification_id"] as? String
                 notification.status = jsonNotification["status"] as? String
-                notification.type = jsonNotification["status"] as? String
-                notification.title = jsonNotification["status"] as? String
-                notification.title_message = jsonNotification["status"] as? String
+                notification.type = jsonNotification["type"] as? String
+                notification.sub_type = jsonNotification["sub_type"] as? String
+                notification.title = jsonNotification["title"] as? String
+                notification.title_message = jsonNotification["title_message"] as? String
                 let time = jsonNotification["notification_time"] as? String
                 notification.notification_time = self.dateFormatter.dateFromString(time!)
                 notification.pnr_summary = jsonNotification["pnr_summary"] as? String
+                notification.contact_name = jsonNotification["contact_name"] as? String
+
                 notifications.append(notification)
             }
             return notifications;

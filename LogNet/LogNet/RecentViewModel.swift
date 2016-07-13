@@ -58,8 +58,8 @@ class RecentViewModel: ViewModel {
     
     func fetch() {
         self.downloading = true;
-        var viewModels = Array<NotificationCellViewModel>()
-        self.model.getNotifications(1, chunkSize: 20) { [weak self] (error, notifications) in
+        var viewModels = Array<RecentNotificationCellViewModel>()
+        self.model.getNotifications(nil, chunkSize: 20) { [weak self] (error, notifications) in
             if notifications != nil {
                 for notification in notifications! {
                     if let viewModel = self?.viewModelFromNotification(notification){
@@ -75,7 +75,7 @@ class RecentViewModel: ViewModel {
     
     func fetchNext() {
         self.downloading = true;
-        var viewModels = Array<NotificationCellViewModel>()
+        var viewModels = Array<RecentNotificationCellViewModel>()
 //        var model = self.cellViewModels.lastObject as! NotificationCellViewModel
         self.model.getNotifications(1, chunkSize: 20) { [weak self] (error, notifications) in
             if notifications != nil {
@@ -92,13 +92,13 @@ class RecentViewModel: ViewModel {
 
     }
     
-    func viewModelFromNotification(notification:Notification) -> NotificationCellViewModel {
-        let viewModel = NotificationCellViewModel()
+    func viewModelFromNotification(notification:Notification) -> RecentNotificationCellViewModel {
+        let viewModel = RecentNotificationCellViewModel(notification: notification)
         return viewModel
     }
     
-    func cellViewModelForRow(row:Int) -> NotificationCellViewModel {
-        return self.cellViewModels[row] as! NotificationCellViewModel
+    func cellViewModelForRow(row:Int) -> RecentNotificationCellViewModel {
+        return self.cellViewModels[row] as! RecentNotificationCellViewModel
     }
     
 }

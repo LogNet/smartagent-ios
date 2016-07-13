@@ -11,27 +11,28 @@ import UIKit
 
 class Router {
     private weak var loginViewController:LoginViewController?
-    private var navigationController:UINavigationController?
+    private weak var recentViewController:RecentViewController?
+    private var tabBarController:UITabBarController
     private var storyboard:UIStoryboard
     
-    init(_ navigationController:UINavigationController){
-        self.navigationController = navigationController
+    init(_ tabBarController:UITabBarController){
+        self.tabBarController = tabBarController
         self.storyboard = UIStoryboard(name: "Main", bundle: nil)
         self.setupHomeViewController()
     }
    
     func setupHomeViewController() {
-        let notificationsViewController = self.storyboard.instantiateViewControllerWithIdentifier("RecentViewController") as! RecentViewController
+        let navigationController = self.tabBarController.viewControllers?.first as? UINavigationController
+        let recentViewController = navigationController?.viewControllers.first as? RecentViewController
         let model = RecentModelFactory.getSmartAgentRecentModel()
         let notificationsViewModel = RecentViewModel(model: model, router: self)
-        notificationsViewController.viewModel = notificationsViewModel;
-        self.navigationController!.viewControllers = [notificationsViewController]
+        recentViewController!.viewModel = notificationsViewModel;
+        self.recentViewController = recentViewController
     }
     
     func showLoginView() {
         let loginViewController = self.getLoginViewController()
-        let homeViewController = self.navigationController!.viewControllers[0]
-        homeViewController.presentViewController(loginViewController, animated: false, completion: nil)
+        self.recentViewController?.presentViewController(loginViewController, animated: false, completion: nil)
     }
     
     func getLoginViewController() -> UIViewController {
@@ -47,9 +48,7 @@ class Router {
     
     func loginFinished() {
         self.registerForPushNotifications()
-        let notificationsViewController =
-                self.navigationController!.viewControllers[0] as! RecentViewController
-        notificationsViewController.fetch()
+        self.recentViewController?.fetch()
     }
     
     func showNotificationAlert(alertViewModel:AlertNotificationViewModel)  {
@@ -64,7 +63,7 @@ class Router {
             
             alert.addAction(open)
             alert.addAction(cancel)
-            self.navigationController?.topViewController!.presentViewController(alert, animated: true, completion: nil)
+//            self.navigationController?.topViewController!.presentViewController(alert, animated: true, completion: nil)
     }
     
     func openURLString(urlString:String) {
@@ -73,7 +72,7 @@ class Router {
         let viewModel = WebBrowserViewModel(browserModel: model, router: self)
         viewModel.urlString = urlString
         browserViewController?.viewModel = viewModel
-        self.navigationController?.pushViewController(browserViewController!, animated: true)
+//        self.navigationController?.pushViewController(browserViewController!, animated: true)
     }
     
     func registerForPushNotifications() {

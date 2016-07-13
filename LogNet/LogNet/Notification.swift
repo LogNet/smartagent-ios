@@ -13,6 +13,7 @@ class Notification: Object {
     dynamic var notification_id:String?
     dynamic var status:String?
     dynamic var type:String?
+    dynamic var sub_type:String?
     dynamic var title:String?
     dynamic var title_message:String?
     dynamic var notification_time:NSDate?

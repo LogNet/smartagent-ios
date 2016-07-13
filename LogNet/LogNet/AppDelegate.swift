@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.tokenRefreshNotification),
                                                          name: kFIRInstanceIDTokenRefreshNotification, object: nil)
         Fabric.with([Crashlytics.self])
-        configureViewController()
+        self.configureViewController()
         return true
     }
 
@@ -63,9 +63,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func configureViewController() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let navigationController = storyboard.instantiateInitialViewController() as! UINavigationController
-        self.router = Router(navigationController)
-        self.window?.rootViewController = navigationController
+        let tabBarController = storyboard.instantiateInitialViewController() as? UITabBarController
+        self.router = Router(tabBarController!)
+        self.window?.rootViewController = tabBarController
         self.window?.makeKeyAndVisible()
     }
 

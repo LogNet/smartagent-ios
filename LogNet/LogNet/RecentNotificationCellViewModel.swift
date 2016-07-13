@@ -8,10 +8,16 @@
 
 import Foundation
 
-class NotificationCellViewModel {
+class RecentNotificationCellViewModel {
+    lazy var dateFormatter:NSDateFormatter = {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = .ShortStyle
+        dateFormatter.timeStyle = .MediumStyle
+        return dateFormatter
+    }()
     var title:String?
-    var text:String?
-    var link:String?
+    var contactName:String?
+    var pnrSummary:String?
     var date:String?
     private var notification:Notification
     
@@ -21,6 +27,11 @@ class NotificationCellViewModel {
     }
     
     func setupView() {
-//        self.title = notification.
+        self.title = self.notification.title
+        self.contactName = self.notification.contact_name;
+        self.pnrSummary = self.notification.pnr_summary
+        if let time = self.notification.notification_time {
+            self.date = self.dateFormatter.stringFromDate(time)
+        }
     }
 }

@@ -82,12 +82,10 @@ class RecentViewController: UITableViewController {
             let cell = tableView.dequeueReusableCellWithIdentifier("NothingCell")
             return cell!
         }
-        let cell = tableView.dequeueReusableCellWithIdentifier("NotificationCell", forIndexPath: indexPath) as! NotificationCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("RecentNotificationCell", forIndexPath: indexPath) as! RecentNotificationCell
         let viewModel = self.viewModel?.cellViewModelForRow(indexPath.row)
         // Configure the cell...
-        cell.title.text = viewModel?.title
-        cell.body.text = viewModel?.text
-        cell.date.text = viewModel?.date
+        cell.setViewModel(viewModel)
 
         return cell
     }
@@ -106,7 +104,6 @@ class RecentViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let viewModel = self.viewModel?.cellViewModelForRow(indexPath.row)
-        self.viewModel?.router.openURLString((viewModel?.link)!)
     }
     
     /*
