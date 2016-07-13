@@ -13,5 +13,14 @@ class NotificationCellViewModel {
     var text:String?
     var link:String?
     var date:String?
+    private var notification:Notification
     
+    init(notification: Notification) {
+        self.notification = notification
+        self.setupView()
+    }
+    
+    func setupView() {
+//        self.title = notification.
+    }
 }
