@@ -52,9 +52,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="efb-oE-qgC">
+                            <rect key="frame" x="0.0" y="274.5" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="jyG-od-TbY">
+                                    <rect key="frame" x="290" y="12" width="20" height="20"/>
+                                </activityIndicatorView>
+                            </subviews>
+                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="jyG-od-TbY" firstAttribute="centerY" secondItem="efb-oE-qgC" secondAttribute="centerY" id="ctR-Ng-cww"/>
+                                <constraint firstItem="jyG-od-TbY" firstAttribute="centerX" secondItem="efb-oE-qgC" secondAttribute="centerX" id="urX-tg-65V"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecentNotificationCell" rowHeight="80" id="lYk-CD-E5c" customClass="RecentNotificationCell" customModule="SmartAgent" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="114" width="600" height="80"/>
+                                <rect key="frame" x="0.0" y="113.5" width="600" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lYk-CD-E5c" id="Vvg-aW-Q3P">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="80"/>
@@ -150,6 +164,10 @@
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="uAN-6r-SVx">
                         <autoresizingMask key="autoresizingMask"/>
                     </refreshControl>
+                    <connections>
+                        <outlet property="footerView" destination="efb-oE-qgC" id="mdw-ML-wup"/>
+                        <outlet property="loadMoreIndicator" destination="jyG-od-TbY" id="Mle-Vr-aId"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VGX-kG-Urs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

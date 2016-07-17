@@ -15,8 +15,12 @@ class RecentViewController: UITableViewController {
     var viewModel:RecentViewModel?
     var token: dispatch_once_t = 0
     
+    @IBOutlet weak var loadMoreIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var footerView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+//        self.tableView.tableFooterView = nil
         self.refreshControl?.addTarget(self, action:#selector(self.handleRefresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -76,7 +80,7 @@ class RecentViewController: UITableViewController {
     }
     
     // MARK: Private methods
-
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         guard ((self.viewModel?.cellViewModels) != nil) else {
             let cell = tableView.dequeueReusableCellWithIdentifier("NothingCell")
@@ -90,11 +94,11 @@ class RecentViewController: UITableViewController {
         return cell
     }
 
-    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0.5
     }
     
-    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 0.5
     }
     

@@ -16,8 +16,9 @@ class RecentViewModel: ViewModel {
         let models = NSMutableArray()
         return models
     }()
-    dynamic var downloading = false
-    dynamic var hasNextChunk = false;
+    var loadMoreStatus:Bool = false
+    dynamic var downloading:Bool = false
+    dynamic var hasNextChunk:Bool = false;
     var model:RecentModel
     
     lazy var dateFormatter:NSDateFormatter = {
