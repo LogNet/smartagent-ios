@@ -71,8 +71,8 @@ class RecentViewController: UITableViewController {
         
         self.viewModel?.rac_valuesForKeyPath("loadMoreStatus", observer: self).subscribeNext({loadMoreStatus in
             if loadMoreStatus.boolValue == false {
-                self.tableView.tableFooterView = nil
                 self.loadMoreIndicator.stopAnimating()
+//                self.tableView.tableFooterView = nil
             } else {
                 self.tableView.tableFooterView = self.footerView
                 self.loadMoreIndicator.startAnimating()

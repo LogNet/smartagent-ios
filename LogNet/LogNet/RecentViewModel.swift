@@ -70,19 +70,21 @@ class RecentViewModel: ViewModel {
     
     func startFetching() {
         var viewModels = Array<RecentNotificationCellViewModel>()
-        var model = self.cellViewModels.lastObject as! RecentNotificationCellViewModel
-        self.model.getNotifications(1, chunkSize: 20) { [weak self] (error, notifications) in
-            if notifications != nil {
-                for notification in notifications! {
-                    if let viewModel = self?.viewModelFromNotification(notification){
-                        viewModels.append(viewModel)
+//        if let model = self.cellViewModels.lastObject as? RecentNotificationCellViewModel {
+            self.model.getNotifications(1, chunkSize: 20) { [weak self] (error, notifications) in
+                if notifications != nil {
+                    for notification in notifications! {
+                        if let viewModel = self?.viewModelFromNotification(notification){
+                            viewModels.append(viewModel)
+                        }
                     }
+                    
                 }
-                
-            }
-            self?.downloading = false;
-            self?.loadMoreStatus = false;
-            self?.cellViewModels = NSMutableArray(array: viewModels)
+                self?.downloading = false;
+                self?.loadMoreStatus = false;
+                self?.cellViewModels = NSMutableArray(array: viewModels)
+//            }
+
         }
     }
     

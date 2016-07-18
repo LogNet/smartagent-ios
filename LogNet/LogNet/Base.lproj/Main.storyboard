@@ -31,7 +31,7 @@
         <scene sceneID="34L-Vy-NXH">
             <objects>
                 <navigationController storyboardIdentifier="RecentNavigationController" id="nfx-rq-QNo" customClass="ScrollingNavigationController" customModule="AMScrollingNavbar" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Recent" id="g6g-W1-rdu"/>
+                    <tabBarItem key="tabBarItem" title="Recent" image="Recent" selectedImage="Recent Filled" id="g6g-W1-rdu"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Y6V-An-PLs">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -264,7 +264,7 @@
         <scene sceneID="uBw-dQ-voE">
             <objects>
                 <navigationController id="MaC-Lx-YbF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Tickening due" id="523-OH-Res"/>
+                    <tabBarItem key="tabBarItem" title="Tickening due" image="Ticket" selectedImage="Ticket Filled" id="523-OH-Res"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="mY3-93-Dbw">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -281,7 +281,7 @@
         <scene sceneID="1fU-lY-Den">
             <objects>
                 <navigationController id="YXr-9h-M2r" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Cancelled" id="RHp-A0-xYD"/>
+                    <tabBarItem key="tabBarItem" title="Cancelled" image="Cancelled" selectedImage="Cancelled Filled" id="RHp-A0-xYD"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="T6f-2k-upK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -298,7 +298,7 @@
         <scene sceneID="ZGF-54-2gf">
             <objects>
                 <navigationController id="PBD-6z-DEs" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Reprice" id="teq-E2-t4h"/>
+                    <tabBarItem key="tabBarItem" title="Reprice" image="Refund" selectedImage="Refund Filled" id="teq-E2-t4h"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vyK-BQ-U19">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -542,6 +542,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Cancelled" width="25" height="25"/>
+        <image name="Cancelled Filled" width="25" height="25"/>
+        <image name="Recent" width="25" height="25"/>
+        <image name="Recent Filled" width="25" height="25"/>
+        <image name="Refund" width="24" height="24"/>
+        <image name="Refund Filled" width="24" height="24"/>
+        <image name="Ticket" width="25" height="25"/>
+        <image name="Ticket Filled" width="25" height="25"/>
         <image name="bckgr_launch" width="640" height="1136"/>
     </resources>
 </document>
