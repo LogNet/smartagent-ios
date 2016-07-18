@@ -18,6 +18,8 @@
 		EA26375D1D16A4F100D5988D /* ServerParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA26375C1D16A4F100D5988D /* ServerParser.swift */; };
 		EA26375F1D16A59700D5988D /* SmartAgentServerParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA26375E1D16A59700D5988D /* SmartAgentServerParser.swift */; };
 		EA2637631D16BEF400D5988D /* WebBrouserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2637621D16BEF400D5988D /* WebBrouserViewController.swift */; };
+		EA35A8581D3D6C4F00BE3618 /* UnderlinedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA35A8571D3D6C4F00BE3618 /* UnderlinedTextField.swift */; };
+		EA35A85A1D3D825300BE3618 /* ActivationMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA35A8591D3D825300BE3618 /* ActivationMessageViewController.swift */; };
 		EA7ECA5B1D1BAD780014010A /* RecentNotificationCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7ECA5A1D1BAD780014010A /* RecentNotificationCellViewModel.swift */; };
 		EA7ECA5D1D1BB41E0014010A /* RecentNotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7ECA5C1D1BB41E0014010A /* RecentNotificationCell.swift */; };
 		EA8BB9401D21A04200D07561 /* PushTokenUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8BB93F1D21A04200D07561 /* PushTokenUtil.swift */; };
@@ -82,6 +84,8 @@
 		EA26375C1D16A4F100D5988D /* ServerParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerParser.swift; sourceTree = "<group>"; };
 		EA26375E1D16A59700D5988D /* SmartAgentServerParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmartAgentServerParser.swift; sourceTree = "<group>"; };
 		EA2637621D16BEF400D5988D /* WebBrouserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebBrouserViewController.swift; sourceTree = "<group>"; };
+		EA35A8571D3D6C4F00BE3618 /* UnderlinedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnderlinedTextField.swift; sourceTree = "<group>"; };
+		EA35A8591D3D825300BE3618 /* ActivationMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivationMessageViewController.swift; sourceTree = "<group>"; };
 		EA7ECA5A1D1BAD780014010A /* RecentNotificationCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentNotificationCellViewModel.swift; sourceTree = "<group>"; };
 		EA7ECA5C1D1BB41E0014010A /* RecentNotificationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentNotificationCell.swift; sourceTree = "<group>"; };
 		EA8BB93F1D21A04200D07561 /* PushTokenUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushTokenUtil.swift; sourceTree = "<group>"; };
@@ -187,6 +191,7 @@
 				EA2637621D16BEF400D5988D /* WebBrouserViewController.swift */,
 				EADC600D1D19785000B8743C /* RecentViewController.swift */,
 				EA7ECA5C1D1BB41E0014010A /* RecentNotificationCell.swift */,
+				EA35A8591D3D825300BE3618 /* ActivationMessageViewController.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -215,6 +220,14 @@
 				EAD43D141D2CC4AB00E1FF15 /* APIFacade.swift */,
 			);
 			name = Services;
+			sourceTree = "<group>";
+		};
+		EA35A8561D3D6BE800BE3618 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				EA35A8571D3D6C4F00BE3618 /* UnderlinedTextField.swift */,
+			);
+			name = CustomViews;
 			sourceTree = "<group>";
 		};
 		EAD43D0A1D2C515300E1FF15 /* LoginService */ = {
@@ -293,6 +306,7 @@
 		EAE50A5A1D12CEEB00B4329B /* LogNet */ = {
 			isa = PBXGroup;
 			children = (
+				EA35A8561D3D6BE800BE3618 /* CustomViews */,
 				EADC601E1D1AD0F000B8743C /* Entities */,
 				EA2637551D16776600D5988D /* Services */,
 				EA2637481D15B8AF00D5988D /* ViewModels */,
@@ -545,6 +559,7 @@
 				EA7ECA5D1D1BB41E0014010A /* RecentNotificationCell.swift in Sources */,
 				EADC601D1D1A8EFC00B8743C /* Notification.swift in Sources */,
 				EADC600E1D19785000B8743C /* RecentViewController.swift in Sources */,
+				EA35A8581D3D6C4F00BE3618 /* UnderlinedTextField.swift in Sources */,
 				EADC60101D1A6EB200B8743C /* RecentViewModel.swift in Sources */,
 				EADC60061D17017E00B8743C /* ServerService.swift in Sources */,
 				EA26374E1D15BE3D00D5988D /* Router.swift in Sources */,
@@ -565,6 +580,7 @@
 				EAD43D151D2CC4AB00E1FF15 /* APIFacade.swift in Sources */,
 				EA8CDA481D2AE5490090E9C1 /* SmartAgentLoginServise.swift in Sources */,
 				EADC601B1D1A8A5100B8743C /* Typealiases.swift in Sources */,
+				EA35A85A1D3D825300BE3618 /* ActivationMessageViewController.swift in Sources */,
 				EA26374A1D15B95A00D5988D /* LoginViewModel.swift in Sources */,
 				EAD43D0F1D2CBAB600E1FF15 /* DummyServerService.swift in Sources */,
 				EADC600A1D18543800B8743C /* AlertNotificationViewModel.swift in Sources */,
@@ -711,7 +727,8 @@
 			baseConfigurationReference = 71C3FF208C0ECE1879EE4482 /* Pods-SmartAgent.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Roma Herman (Z32656347C)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = LogNet/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -726,7 +743,8 @@
 			baseConfigurationReference = EE8F0BF2C4AFB1E94B6D9B3B /* Pods-SmartAgent.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Roma Herman (Z32656347C)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = LogNet/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

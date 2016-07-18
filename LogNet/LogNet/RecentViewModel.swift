@@ -16,9 +16,9 @@ class RecentViewModel: ViewModel {
         let models = NSMutableArray()
         return models
     }()
-    var loadMoreStatus:Bool = false
+    dynamic var loadMoreStatus:Bool = false
     dynamic var downloading:Bool = false
-    dynamic var hasNextChunk:Bool = false;
+    dynamic var hasNextChunk:Bool = true;
     var model:RecentModel
     
     lazy var dateFormatter:NSDateFormatter = {
@@ -59,25 +59,18 @@ class RecentViewModel: ViewModel {
     
     func fetch() {
         self.downloading = true;
-        var viewModels = Array<RecentNotificationCellViewModel>()
-        self.model.getNotifications(nil, chunkSize: 20) { [weak self] (error, notifications) in
-            if notifications != nil {
-                for notification in notifications! {
-                    if let viewModel = self?.viewModelFromNotification(notification){
-                        viewModels.append(viewModel)
-                    }
-                }
-
-            }
-            self?.downloading = false;
-            self?.cellViewModels = NSMutableArray(array: viewModels)
-        }
+        self.startFetching()
     }
     
     func fetchNext() {
-        self.downloading = true;
+        self.loadMoreStatus = true;
+        self.startFetching()
+      
+    }
+    
+    func startFetching() {
         var viewModels = Array<RecentNotificationCellViewModel>()
-//        var model = self.cellViewModels.lastObject as! NotificationCellViewModel
+        var model = self.cellViewModels.lastObject as! RecentNotificationCellViewModel
         self.model.getNotifications(1, chunkSize: 20) { [weak self] (error, notifications) in
             if notifications != nil {
                 for notification in notifications! {
@@ -88,9 +81,9 @@ class RecentViewModel: ViewModel {
                 
             }
             self?.downloading = false;
+            self?.loadMoreStatus = false;
             self?.cellViewModels = NSMutableArray(array: viewModels)
         }
-
     }
     
     func viewModelFromNotification(notification:Notification) -> RecentNotificationCellViewModel {

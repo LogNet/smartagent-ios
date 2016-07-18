@@ -20,27 +20,13 @@ class RecentViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.tableView.tableFooterView = nil
         self.refreshControl?.addTarget(self, action:#selector(self.handleRefresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
-        weak var weakSelf = self
-        self.viewModel?.rac_valuesForKeyPath("cellViewModels", observer: self).subscribeNext({ (string:AnyObject!) in
-            weakSelf?.tableView.reloadData()
-        })
-        
-        let signal = self.viewModel?.rac_valuesForKeyPath("downloading", observer: self)
-        signal?.subscribeNext({x in
-            if x.boolValue == true {
-                HUD.show(.Progress)
-            } else if HUD.isVisible {
-                HUD.flash(.Progress)
-            }
-        })
+        self.bindViewModel()
     }
 
     override func viewDidAppear(animated: Bool) {
@@ -81,6 +67,34 @@ class RecentViewController: UITableViewController {
     
     // MARK: Private methods
     
+    func bindViewModel() {
+        
+        self.viewModel?.rac_valuesForKeyPath("loadMoreStatus", observer: self).subscribeNext({loadMoreStatus in
+            if loadMoreStatus.boolValue == false {
+                self.tableView.tableFooterView = nil
+                self.loadMoreIndicator.stopAnimating()
+            } else {
+                self.tableView.tableFooterView = self.footerView
+                self.loadMoreIndicator.startAnimating()
+            }
+
+        })
+        
+        self.viewModel?.rac_valuesForKeyPath("cellViewModels", observer: self).subscribeNext({[weak self] (string:AnyObject!) in
+            self!.tableView.reloadData()
+        })
+        
+        let signal = self.viewModel?.rac_valuesForKeyPath("downloading", observer: self)
+        signal?.subscribeNext({x in
+            if x.boolValue == true {
+                HUD.show(.Progress)
+            } else if HUD.isVisible {
+                HUD.flash(.Progress)
+            }
+        })
+
+    }
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         guard ((self.viewModel?.cellViewModels) != nil) else {
             let cell = tableView.dequeueReusableCellWithIdentifier("NothingCell")
@@ -108,6 +122,16 @@ class RecentViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let viewModel = self.viewModel?.cellViewModelForRow(indexPath.row)
+    }
+    
+    
+    override func scrollViewDidScroll(scrollView: UIScrollView) {
+        let currentOffset = scrollView.contentOffset.y
+        let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
+        let deltaOffset = maximumOffset - currentOffset
+        if deltaOffset <= 0 && self.viewModel?.hasNextChunk == true {
+//            self.viewModel?.fetchNext()
+        }
     }
     
     /*

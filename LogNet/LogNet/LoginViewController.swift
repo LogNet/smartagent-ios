@@ -21,6 +21,7 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
     
     var loginViewModel: LoginViewModel?
     var loginningNow = false;
