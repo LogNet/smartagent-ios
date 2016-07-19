@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="SanFranciscoText-Regular.otf">
+            <string>SanFranciscoText-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="6hn-cE-kLm">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bckgr_launch" translatesAutoresizingMaskIntoConstraints="NO" id="gAq-Jj-Bsb">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have no new messages" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iia-st-c51">
+                    <rect key="frame" x="8" y="223" width="359" height="21"/>
+                    <fontDescription key="fontDescription" name="SanFranciscoText-Regular" family="San Francisco Text" pointSize="18"/>
+                    <color key="textColor" red="0.60392156860000001" green="0.60392156860000001" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="highlightedColor" red="0.60392156860000001" green="0.60392156860000001" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="gAq-Jj-Bsb" secondAttribute="trailing" id="8Uz-R1-C4J"/>
+                <constraint firstItem="Iia-st-c51" firstAttribute="top" secondItem="6hn-cE-kLm" secondAttribute="top" constant="223" id="BoK-nX-n0t"/>
+                <constraint firstItem="gAq-Jj-Bsb" firstAttribute="top" secondItem="6hn-cE-kLm" secondAttribute="top" id="Ewu-Gy-vMS"/>
+                <constraint firstAttribute="bottom" secondItem="gAq-Jj-Bsb" secondAttribute="bottom" id="Igg-VR-kBI"/>
+                <constraint firstItem="gAq-Jj-Bsb" firstAttribute="centerX" secondItem="Iia-st-c51" secondAttribute="centerX" id="aGd-6K-zTw"/>
+                <constraint firstItem="gAq-Jj-Bsb" firstAttribute="leading" secondItem="6hn-cE-kLm" secondAttribute="leading" id="btB-kV-dZb"/>
+                <constraint firstItem="Iia-st-c51" firstAttribute="leading" secondItem="6hn-cE-kLm" secondAttribute="leading" constant="8" id="ljS-ua-MMW"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <point key="canvasLocation" x="402.5" y="548.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="bckgr_launch" width="640" height="1136"/>
+    </resources>
+</document>

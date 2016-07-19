@@ -12,10 +12,12 @@ class RecentNotificationCellViewModel {
     lazy var dateFormatter:NSDateFormatter = {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateStyle = .ShortStyle
-        dateFormatter.timeStyle = .MediumStyle
+        dateFormatter.timeStyle = .ShortStyle
+        dateFormatter.doesRelativeDateFormatting = true
         return dateFormatter
     }()
     var title:String?
+    var titleMessage:String?
     var contactName:String?
     var pnrSummary:String?
     var date:String?
@@ -27,6 +29,7 @@ class RecentNotificationCellViewModel {
     }
     
     func setupView() {
+        self.titleMessage = self.notification.title_message
         self.title = self.notification.title
         self.contactName = self.notification.contact_name;
         self.pnrSummary = self.notification.pnr_summary

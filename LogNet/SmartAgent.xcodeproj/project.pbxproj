@@ -20,6 +20,10 @@
 		EA2637631D16BEF400D5988D /* WebBrouserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2637621D16BEF400D5988D /* WebBrouserViewController.swift */; };
 		EA35A8581D3D6C4F00BE3618 /* UnderlinedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA35A8571D3D6C4F00BE3618 /* UnderlinedTextField.swift */; };
 		EA35A85A1D3D825300BE3618 /* ActivationMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA35A8591D3D825300BE3618 /* ActivationMessageViewController.swift */; };
+		EA35A85F1D3EAE4600BE3618 /* SanFranciscoText-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = EA35A85E1D3EAE4600BE3618 /* SanFranciscoText-Regular.otf */; };
+		EA35A8611D3EAFE300BE3618 /* SanFranciscoText-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = EA35A8601D3EAFE300BE3618 /* SanFranciscoText-Medium.otf */; };
+		EA35A8631D3EC5DE00BE3618 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA35A8621D3EC5DE00BE3618 /* NotificationCell.swift */; };
+		EA35A8651D3ED28700BE3618 /* NoMessagesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA35A8641D3ED28700BE3618 /* NoMessagesView.xib */; };
 		EA7ECA5B1D1BAD780014010A /* RecentNotificationCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7ECA5A1D1BAD780014010A /* RecentNotificationCellViewModel.swift */; };
 		EA7ECA5D1D1BB41E0014010A /* RecentNotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7ECA5C1D1BB41E0014010A /* RecentNotificationCell.swift */; };
 		EA8BB9401D21A04200D07561 /* PushTokenUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8BB93F1D21A04200D07561 /* PushTokenUtil.swift */; };
@@ -86,6 +90,10 @@
 		EA2637621D16BEF400D5988D /* WebBrouserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebBrouserViewController.swift; sourceTree = "<group>"; };
 		EA35A8571D3D6C4F00BE3618 /* UnderlinedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnderlinedTextField.swift; sourceTree = "<group>"; };
 		EA35A8591D3D825300BE3618 /* ActivationMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivationMessageViewController.swift; sourceTree = "<group>"; };
+		EA35A85E1D3EAE4600BE3618 /* SanFranciscoText-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SanFranciscoText-Regular.otf"; sourceTree = "<group>"; };
+		EA35A8601D3EAFE300BE3618 /* SanFranciscoText-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SanFranciscoText-Medium.otf"; sourceTree = "<group>"; };
+		EA35A8621D3EC5DE00BE3618 /* NotificationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
+		EA35A8641D3ED28700BE3618 /* NoMessagesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoMessagesView.xib; sourceTree = "<group>"; };
 		EA7ECA5A1D1BAD780014010A /* RecentNotificationCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentNotificationCellViewModel.swift; sourceTree = "<group>"; };
 		EA7ECA5C1D1BB41E0014010A /* RecentNotificationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentNotificationCell.swift; sourceTree = "<group>"; };
 		EA8BB93F1D21A04200D07561 /* PushTokenUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushTokenUtil.swift; sourceTree = "<group>"; };
@@ -192,6 +200,7 @@
 				EADC600D1D19785000B8743C /* RecentViewController.swift */,
 				EA7ECA5C1D1BB41E0014010A /* RecentNotificationCell.swift */,
 				EA35A8591D3D825300BE3618 /* ActivationMessageViewController.swift */,
+				EA35A8621D3EC5DE00BE3618 /* NotificationCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -226,8 +235,18 @@
 			isa = PBXGroup;
 			children = (
 				EA35A8571D3D6C4F00BE3618 /* UnderlinedTextField.swift */,
+				EA35A8641D3ED28700BE3618 /* NoMessagesView.xib */,
 			);
 			name = CustomViews;
+			sourceTree = "<group>";
+		};
+		EA35A85B1D3EADDB00BE3618 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				EA35A8601D3EAFE300BE3618 /* SanFranciscoText-Medium.otf */,
+				EA35A85E1D3EAE4600BE3618 /* SanFranciscoText-Regular.otf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 		EAD43D0A1D2C515300E1FF15 /* LoginService */ = {
@@ -306,6 +325,7 @@
 		EAE50A5A1D12CEEB00B4329B /* LogNet */ = {
 			isa = PBXGroup;
 			children = (
+				EA35A85B1D3EADDB00BE3618 /* Fonts */,
 				EA35A8561D3D6BE800BE3618 /* CustomViews */,
 				EADC601E1D1AD0F000B8743C /* Entities */,
 				EA2637551D16776600D5988D /* Services */,
@@ -460,6 +480,9 @@
 			files = (
 				EAD43D1D1D2CD16300E1FF15 /* ticket_due.json in Resources */,
 				EAE50A661D12CEEB00B4329B /* LaunchScreen.storyboard in Resources */,
+				EA35A8651D3ED28700BE3618 /* NoMessagesView.xib in Resources */,
+				EA35A85F1D3EAE4600BE3618 /* SanFranciscoText-Regular.otf in Resources */,
+				EA35A8611D3EAFE300BE3618 /* SanFranciscoText-Medium.otf in Resources */,
 				EA2637441D12E46600D5988D /* GoogleService-Info.plist in Resources */,
 				EAD43D1A1D2CD16300E1FF15 /* cancelled.json in Resources */,
 				EAE50A631D12CEEB00B4329B /* Assets.xcassets in Resources */,
@@ -568,6 +591,7 @@
 				EADC60041D16E44F00B8743C /* WebBrowserModel.swift in Sources */,
 				EA26375F1D16A59700D5988D /* SmartAgentServerParser.swift in Sources */,
 				EADC60021D16E3CE00B8743C /* WebBrowserViewModel.swift in Sources */,
+				EA35A8631D3EC5DE00BE3618 /* NotificationCell.swift in Sources */,
 				EA2637521D15BF9000D5988D /* LoginModel.swift in Sources */,
 				EADC60141D1A6FEA00B8743C /* ViewModel.swift in Sources */,
 				EA8BB9401D21A04200D07561 /* PushTokenUtil.swift in Sources */,

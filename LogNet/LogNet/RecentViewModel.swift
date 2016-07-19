@@ -12,10 +12,7 @@ import FirebaseInstanceID
 
 class RecentViewModel: ViewModel {
     
-    dynamic  lazy var cellViewModels:NSMutableArray = {
-        let models = NSMutableArray()
-        return models
-    }()
+    dynamic var cellViewModels:NSMutableArray?
     dynamic var loadMoreStatus:Bool = false
     dynamic var downloading:Bool = false
     dynamic var hasNextChunk:Bool = true;
@@ -69,20 +66,20 @@ class RecentViewModel: ViewModel {
     }
     
     func startFetching() {
-        var viewModels = Array<RecentNotificationCellViewModel>()
+        var viewModels:Array<RecentNotificationCellViewModel>?
 //        if let model = self.cellViewModels.lastObject as? RecentNotificationCellViewModel {
             self.model.getNotifications(1, chunkSize: 20) { [weak self] (error, notifications) in
                 if notifications != nil {
+                    viewModels = Array<RecentNotificationCellViewModel>()
                     for notification in notifications! {
                         if let viewModel = self?.viewModelFromNotification(notification){
-                            viewModels.append(viewModel)
+                            viewModels!.append(viewModel)
                         }
                     }
-                    
+                    self?.cellViewModels = NSMutableArray(array: viewModels!)
                 }
                 self?.downloading = false;
                 self?.loadMoreStatus = false;
-                self?.cellViewModels = NSMutableArray(array: viewModels)
 //            }
 
         }
@@ -94,7 +91,7 @@ class RecentViewModel: ViewModel {
     }
     
     func cellViewModelForRow(row:Int) -> RecentNotificationCellViewModel {
-        return self.cellViewModels[row] as! RecentNotificationCellViewModel
+        return self.cellViewModels![row] as! RecentNotificationCellViewModel
     }
     
 }

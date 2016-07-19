@@ -51,9 +51,9 @@ class RecentViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         if self.viewModel?.cellViewModels != nil {
-            return (self.viewModel?.cellViewModels.count)!
+            return (self.viewModel?.cellViewModels!.count)!
         }
-        return 1
+        return 0
     }
 
     func handleRefresh(refreshControl: UIRefreshControl) {
@@ -63,6 +63,11 @@ class RecentViewController: UITableViewController {
 
     func fetch() {
         self.viewModel?.fetch()
+    }
+    
+    func showNoNewMessages(){
+        let nib = UINib.init(nibName: "NoMessagesView", bundle: nil)
+        self.tableView.backgroundView = nib.instantiateWithOwner(self, options: nil).first as? UIView
     }
     
     // MARK: Private methods
@@ -80,8 +85,16 @@ class RecentViewController: UITableViewController {
 
         })
         
-        self.viewModel?.rac_valuesForKeyPath("cellViewModels", observer: self).subscribeNext({[weak self] (string:AnyObject!) in
-            self!.tableView.reloadData()
+        self.viewModel?.rac_valuesForKeyPath("cellViewModels", observer: self).subscribeNext({[weak self] (models:AnyObject!) in
+            if models == nil {
+                self?.showNoNewMessages()
+            } else {
+                if self?.tableView.backgroundView != nil {
+                    self?.tableView.backgroundView = nil
+                }
+                self!.tableView.reloadData()
+
+            }
         })
         
         let signal = self.viewModel?.rac_valuesForKeyPath("downloading", observer: self)
@@ -96,14 +109,12 @@ class RecentViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        guard ((self.viewModel?.cellViewModels) != nil) else {
-            let cell = tableView.dequeueReusableCellWithIdentifier("NothingCell")
-            return cell!
-        }
         let cell = tableView.dequeueReusableCellWithIdentifier("RecentNotificationCell", forIndexPath: indexPath) as! RecentNotificationCell
-        let viewModel = self.viewModel?.cellViewModelForRow(indexPath.row)
+        if let viewModel = self.viewModel?.cellViewModelForRow(indexPath.row) {
+            cell.setViewModel(viewModel)
+        }
         // Configure the cell...
-        cell.setViewModel(viewModel)
+        
 
         return cell
     }
