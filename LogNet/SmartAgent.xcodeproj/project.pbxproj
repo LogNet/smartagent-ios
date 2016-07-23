@@ -24,6 +24,9 @@
 		EA35A8611D3EAFE300BE3618 /* SanFranciscoText-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = EA35A8601D3EAFE300BE3618 /* SanFranciscoText-Medium.otf */; };
 		EA35A8631D3EC5DE00BE3618 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA35A8621D3EC5DE00BE3618 /* NotificationCell.swift */; };
 		EA35A8651D3ED28700BE3618 /* NoMessagesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA35A8641D3ED28700BE3618 /* NoMessagesView.xib */; };
+		EA35A8671D40025400BE3618 /* RepriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA35A8661D40025400BE3618 /* RepriceViewController.swift */; };
+		EA35A8691D4014FF00BE3618 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA35A8681D4014FF00BE3618 /* DataSource.swift */; };
+		EA35A86B1D40152100BE3618 /* AbstractContentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA35A86A1D40152100BE3618 /* AbstractContentProvider.swift */; };
 		EA7ECA5B1D1BAD780014010A /* RecentNotificationCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7ECA5A1D1BAD780014010A /* RecentNotificationCellViewModel.swift */; };
 		EA7ECA5D1D1BB41E0014010A /* RecentNotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7ECA5C1D1BB41E0014010A /* RecentNotificationCell.swift */; };
 		EA8BB9401D21A04200D07561 /* PushTokenUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8BB93F1D21A04200D07561 /* PushTokenUtil.swift */; };
@@ -94,6 +97,9 @@
 		EA35A8601D3EAFE300BE3618 /* SanFranciscoText-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SanFranciscoText-Medium.otf"; sourceTree = "<group>"; };
 		EA35A8621D3EC5DE00BE3618 /* NotificationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
 		EA35A8641D3ED28700BE3618 /* NoMessagesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoMessagesView.xib; sourceTree = "<group>"; };
+		EA35A8661D40025400BE3618 /* RepriceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepriceViewController.swift; sourceTree = "<group>"; };
+		EA35A8681D4014FF00BE3618 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		EA35A86A1D40152100BE3618 /* AbstractContentProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractContentProvider.swift; sourceTree = "<group>"; };
 		EA7ECA5A1D1BAD780014010A /* RecentNotificationCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentNotificationCellViewModel.swift; sourceTree = "<group>"; };
 		EA7ECA5C1D1BB41E0014010A /* RecentNotificationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentNotificationCell.swift; sourceTree = "<group>"; };
 		EA8BB93F1D21A04200D07561 /* PushTokenUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushTokenUtil.swift; sourceTree = "<group>"; };
@@ -201,6 +207,7 @@
 				EA7ECA5C1D1BB41E0014010A /* RecentNotificationCell.swift */,
 				EA35A8591D3D825300BE3618 /* ActivationMessageViewController.swift */,
 				EA35A8621D3EC5DE00BE3618 /* NotificationCell.swift */,
+				EA35A8661D40025400BE3618 /* RepriceViewController.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -292,6 +299,8 @@
 			children = (
 				EAD43D0D1D2C56B600E1FF15 /* Parsers */,
 				EADC601A1D1A8A5100B8743C /* Typealiases.swift */,
+				EA35A8681D4014FF00BE3618 /* DataSource.swift */,
+				EA35A86A1D40152100BE3618 /* AbstractContentProvider.swift */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -585,6 +594,7 @@
 				EA35A8581D3D6C4F00BE3618 /* UnderlinedTextField.swift in Sources */,
 				EADC60101D1A6EB200B8743C /* RecentViewModel.swift in Sources */,
 				EADC60061D17017E00B8743C /* ServerService.swift in Sources */,
+				EA35A8671D40025400BE3618 /* RepriceViewController.swift in Sources */,
 				EA26374E1D15BE3D00D5988D /* Router.swift in Sources */,
 				EA2637631D16BEF400D5988D /* WebBrouserViewController.swift in Sources */,
 				EA8CDA4A1D2C44A50090E9C1 /* SmartAgentServerServise.swift in Sources */,
@@ -597,6 +607,7 @@
 				EA8BB9401D21A04200D07561 /* PushTokenUtil.swift in Sources */,
 				EAE50A5E1D12CEEB00B4329B /* LoginViewController.swift in Sources */,
 				EA7ECA5B1D1BAD780014010A /* RecentNotificationCellViewModel.swift in Sources */,
+				EA35A86B1D40152100BE3618 /* AbstractContentProvider.swift in Sources */,
 				EADC60161D1A77AB00B8743C /* NotificationsStorageServise.swift in Sources */,
 				EADC60121D1A6EF500B8743C /* RecentModel.swift in Sources */,
 				EA26375D1D16A4F100D5988D /* ServerParser.swift in Sources */,
@@ -604,6 +615,7 @@
 				EAD43D151D2CC4AB00E1FF15 /* APIFacade.swift in Sources */,
 				EA8CDA481D2AE5490090E9C1 /* SmartAgentLoginServise.swift in Sources */,
 				EADC601B1D1A8A5100B8743C /* Typealiases.swift in Sources */,
+				EA35A8691D4014FF00BE3618 /* DataSource.swift in Sources */,
 				EA35A85A1D3D825300BE3618 /* ActivationMessageViewController.swift in Sources */,
 				EA26374A1D15B95A00D5988D /* LoginViewModel.swift in Sources */,
 				EAD43D0F1D2CBAB600E1FF15 /* DummyServerService.swift in Sources */,

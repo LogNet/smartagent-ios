@@ -145,15 +145,14 @@ class RecentViewController: UITableViewController {
         }
     }
     
-    /*
+
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-    */
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
@@ -163,7 +162,22 @@ class RecentViewController: UITableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
+
+    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        let titleForWidth = "         "
+        let delete = UITableViewRowAction(style: .Default, title:titleForWidth) { action, index in
+            print("more button tapped")
+        }
+        delete.backgroundColor = UIColor(patternImage:UIImage(named: "delete")!)
+        
+        let share = UITableViewRowAction(style: .Normal, title: titleForWidth) { action, index in
+            print("favorite button tapped")
+        }
+        share.backgroundColor = UIColor(patternImage:UIImage(named: "share")!)
+        
+        return [delete, share]
+    }
+    
 
     /*
     // Override to support rearranging the table view.
