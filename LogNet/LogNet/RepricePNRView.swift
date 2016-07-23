@@ -1,16 +1,14 @@
 //
-//  RepriceViewController.swift
+//  RepricePNRView.swift
 //  SmartAgent
 //
-//  Created by Anton Tikhonov on 7/20/16.
+//  Created by Anton Tikhonov on 7/23/16.
 //  Copyright © 2016 Anton Tikhonov. All rights reserved.
 //
 
 import UIKit
 
-class RepriceViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
-    @IBOutlet weak var tableView: UITableView!
+class RepricePNRView: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +18,6 @@ class RepriceViewController: UIViewController, UITableViewDataSource, UITableVie
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        self.addSegmentedControl()
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,42 +25,30 @@ class RepriceViewController: UIViewController, UITableViewDataSource, UITableVie
         // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Methods
-    
-    func addSegmentedControl() {
-        let control = UISegmentedControl(items: ["Pending", "Completed"])
-        control.addTarget(self, action: #selector(self.segmentedControlAction(_:)), forControlEvents: .TouchUpInside)
-    }
-
-    func segmentedControlAction(sender:AnyObject?){
-        
-    }
-    
     // MARK: - Table view data source
 
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
+        return 2
+    }
+
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        if section == 1 {
+            return 5
+        }
         return 1
     }
 
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 10
-    }
-
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("NotificationCell", forIndexPath: indexPath)
+    /*
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
 
         // Configure the cell...
 
         return cell
     }
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-    }
-    
+    */
 
     /*
     // Override to support conditional editing of the table view.

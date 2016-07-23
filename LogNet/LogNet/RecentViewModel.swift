@@ -24,11 +24,15 @@ class RecentViewModel: ViewModel {
         return formatter
     }()
     
-    // MARK: Methods
-    
     init(model:RecentModel, router:Router) {
         self.model = model
         super.init(router: router)
+    
+    }
+    // MARK: Public Methods
+    
+    func selectModelForIndex(index:Int) {
+        self.router.showPNRDetailsFromNotification(nil)
     }
     
     func checkUserLoggedIn() {
@@ -39,20 +43,6 @@ class RecentViewModel: ViewModel {
             self.router.showLoginView()
         }
     }
-    
-    private func checkOldUser() {
-            }
-    
-    // MARK: Push Notifications
-    
-//    func sendFirebaseTokenToServer() {
-//        if FIRInstanceID.instanceID().token() != nil {
-//            print("InstanceID token: \(FIRInstanceID.instanceID().token())")
-//            // Connect to FCM since connection may have failed when attempted before having a token.
-//            let serverService = GoandroidServerService()
-//            serverService.postDeviceToken(FIRInstanceID.instanceID().token()!)
-//        }
-//    }
     
     func fetch() {
         self.downloading = true;
@@ -65,9 +55,28 @@ class RecentViewModel: ViewModel {
       
     }
     
-    func startFetching() {
+    func cellViewModelForRow(row:Int) -> RecentNotificationCellViewModel {
+        return self.cellViewModels![row] as! RecentNotificationCellViewModel
+    }
+    
+    //    func sendFirebaseTokenToServer() {
+    //        if FIRInstanceID.instanceID().token() != nil {
+    //            print("InstanceID token: \(FIRInstanceID.instanceID().token())")
+    //            // Connect to FCM since connection may have failed when attempted before having a token.
+    //            let serverService = GoandroidServerService()
+    //            serverService.postDeviceToken(FIRInstanceID.instanceID().token()!)
+    //        }
+    //    }
+    
+    
+    // MARK: Private Methods
+    
+    private func checkOldUser() {
+        
+    }
+    
+    private func startFetching() {
         var viewModels:Array<RecentNotificationCellViewModel>?
-//        if let model = self.cellViewModels.lastObject as? RecentNotificationCellViewModel {
             self.model.getNotifications(1, chunkSize: 20) { [weak self] (error, notifications) in
                 if notifications != nil {
                     viewModels = Array<RecentNotificationCellViewModel>()
@@ -80,18 +89,11 @@ class RecentViewModel: ViewModel {
                 }
                 self?.downloading = false;
                 self?.loadMoreStatus = false;
-//            }
-
         }
     }
     
-    func viewModelFromNotification(notification:Notification) -> RecentNotificationCellViewModel {
+    private func viewModelFromNotification(notification:Notification) -> RecentNotificationCellViewModel {
         let viewModel = RecentNotificationCellViewModel(notification: notification)
         return viewModel
     }
-    
-    func cellViewModelForRow(row:Int) -> RecentNotificationCellViewModel {
-        return self.cellViewModels![row] as! RecentNotificationCellViewModel
-    }
-    
 }

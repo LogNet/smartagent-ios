@@ -132,7 +132,8 @@ class RecentViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let viewModel = self.viewModel?.cellViewModelForRow(indexPath.row)
+        self.viewModel?.selectModelForIndex(indexPath.row)
+        
     }
     
     
@@ -178,7 +179,6 @@ class RecentViewController: UITableViewController {
         return [delete, share]
     }
     
-
     /*
     // Override to support rearranging the table view.
     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {

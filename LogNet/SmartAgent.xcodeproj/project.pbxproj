@@ -27,6 +27,8 @@
 		EA35A8671D40025400BE3618 /* RepriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA35A8661D40025400BE3618 /* RepriceViewController.swift */; };
 		EA35A8691D4014FF00BE3618 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA35A8681D4014FF00BE3618 /* DataSource.swift */; };
 		EA35A86B1D40152100BE3618 /* AbstractContentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA35A86A1D40152100BE3618 /* AbstractContentProvider.swift */; };
+		EA42EAF11D438C7600451BB9 /* RepricePNRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA42EAF01D438C7600451BB9 /* RepricePNRView.swift */; };
+		EA42EAF31D43AD6800451BB9 /* RepricePNRViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA42EAF21D43AD6800451BB9 /* RepricePNRViewModel.swift */; };
 		EA7ECA5B1D1BAD780014010A /* RecentNotificationCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7ECA5A1D1BAD780014010A /* RecentNotificationCellViewModel.swift */; };
 		EA7ECA5D1D1BB41E0014010A /* RecentNotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7ECA5C1D1BB41E0014010A /* RecentNotificationCell.swift */; };
 		EA8BB9401D21A04200D07561 /* PushTokenUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8BB93F1D21A04200D07561 /* PushTokenUtil.swift */; };
@@ -100,6 +102,8 @@
 		EA35A8661D40025400BE3618 /* RepriceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepriceViewController.swift; sourceTree = "<group>"; };
 		EA35A8681D4014FF00BE3618 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		EA35A86A1D40152100BE3618 /* AbstractContentProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractContentProvider.swift; sourceTree = "<group>"; };
+		EA42EAF01D438C7600451BB9 /* RepricePNRView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepricePNRView.swift; sourceTree = "<group>"; };
+		EA42EAF21D43AD6800451BB9 /* RepricePNRViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepricePNRViewModel.swift; sourceTree = "<group>"; };
 		EA7ECA5A1D1BAD780014010A /* RecentNotificationCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentNotificationCellViewModel.swift; sourceTree = "<group>"; };
 		EA7ECA5C1D1BB41E0014010A /* RecentNotificationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentNotificationCell.swift; sourceTree = "<group>"; };
 		EA8BB93F1D21A04200D07561 /* PushTokenUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushTokenUtil.swift; sourceTree = "<group>"; };
@@ -208,6 +212,7 @@
 				EA35A8591D3D825300BE3618 /* ActivationMessageViewController.swift */,
 				EA35A8621D3EC5DE00BE3618 /* NotificationCell.swift */,
 				EA35A8661D40025400BE3618 /* RepriceViewController.swift */,
+				EA42EAF01D438C7600451BB9 /* RepricePNRView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -223,6 +228,7 @@
 				EADC600F1D1A6EB200B8743C /* RecentViewModel.swift */,
 				EADC60171D1A782B00B8743C /* RecentModelFactory.swift */,
 				EA7ECA5A1D1BAD780014010A /* RecentNotificationCellViewModel.swift */,
+				EA42EAF21D43AD6800451BB9 /* RepricePNRViewModel.swift */,
 			);
 			name = ViewModels;
 			sourceTree = "<group>";
@@ -584,6 +590,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA42EAF11D438C7600451BB9 /* RepricePNRView.swift in Sources */,
 				EA26375B1D16A1F700D5988D /* LoginModelsFactory.swift in Sources */,
 				EA2637571D16779B00D5988D /* LoginService.swift in Sources */,
 				EADC60201D1B125C00B8743C /* NotificationsStorageServiseRealm.swift in Sources */,
@@ -606,6 +613,7 @@
 				EADC60141D1A6FEA00B8743C /* ViewModel.swift in Sources */,
 				EA8BB9401D21A04200D07561 /* PushTokenUtil.swift in Sources */,
 				EAE50A5E1D12CEEB00B4329B /* LoginViewController.swift in Sources */,
+				EA42EAF31D43AD6800451BB9 /* RepricePNRViewModel.swift in Sources */,
 				EA7ECA5B1D1BAD780014010A /* RecentNotificationCellViewModel.swift in Sources */,
 				EA35A86B1D40152100BE3618 /* AbstractContentProvider.swift in Sources */,
 				EADC60161D1A77AB00B8743C /* NotificationsStorageServise.swift in Sources */,

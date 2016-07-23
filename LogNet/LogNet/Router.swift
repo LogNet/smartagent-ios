@@ -63,7 +63,6 @@ class Router {
             
             alert.addAction(open)
             alert.addAction(cancel)
-//            self.navigationController?.topViewController!.presentViewController(alert, animated: true, completion: nil)
     }
     
     func openURLString(urlString:String) {
@@ -72,7 +71,6 @@ class Router {
         let viewModel = WebBrowserViewModel(browserModel: model, router: self)
         viewModel.urlString = urlString
         browserViewController?.viewModel = viewModel
-//        self.navigationController?.pushViewController(browserViewController!, animated: true)
     }
     
     func registerForPushNotifications() {
@@ -80,5 +78,11 @@ class Router {
         let notificationSettings =
                 UIUserNotificationSettings(forTypes: [.Badge, .Sound, .Alert], categories: nil)
         application.registerUserNotificationSettings(notificationSettings)
+    }
+    
+    func showPNRDetailsFromNotification(notification: Notification?) {
+        let navigationController = self.tabBarController.selectedViewController as! UINavigationController
+        let pnrViewController = self.storyboard.instantiateViewControllerWithIdentifier("RepricePNRView")
+        navigationController.pushViewController(pnrViewController, animated: true)
     }
 }
