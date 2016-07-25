@@ -7,11 +7,18 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class RepricePNRView: UITableViewController {
 
+    @IBOutlet weak var showStatusPrices: UIButton!
+    var statusPriceOpened = Variable(false)
+    let disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.bindView()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -24,6 +31,16 @@ class RepricePNRView: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // MARK: - Private methods
+    
+    private func bindView(){
+        self.statusPriceOpened.asObservable().subscribeNext { (isOpened) in
+            let image = isOpened ? UIImage(named:"More up") : UIImage(named:"More down")
+            self.showStatusPrices.setImage(image, forState: .Normal)
+            }.addDisposableTo(disposeBag)
+    }
+    
 
     // MARK: - Table view data source
 
@@ -40,6 +57,23 @@ class RepricePNRView: UITableViewController {
         return 1
     }
 
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if indexPath.section == 0  && self.statusPriceOpened.value.boolValue == true{
+            return 130;
+        } else if indexPath.section == 0 {
+            return 90;
+        } else {
+            return super.tableView(tableView, heightForRowAtIndexPath: indexPath)
+        }
+    }
+    
+    @IBAction func statusPricesChanged(sender: AnyObject?) {
+        self.statusPriceOpened.value = !self.statusPriceOpened.value
+        self.tableView.beginUpdates()
+        self.tableView.reloadData()
+        self.tableView.endUpdates()
+    }
+    
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)

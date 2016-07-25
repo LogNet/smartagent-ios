@@ -63,7 +63,6 @@ class RepriceViewController: UIViewController, UITableViewDataSource, UITableVie
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
     }
-    
 
     /*
     // Override to support conditional editing of the table view.
