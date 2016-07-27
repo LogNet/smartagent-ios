@@ -29,6 +29,7 @@
 		EA35A86B1D40152100BE3618 /* AbstractContentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA35A86A1D40152100BE3618 /* AbstractContentProvider.swift */; };
 		EA42EAF11D438C7600451BB9 /* RepricePNRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA42EAF01D438C7600451BB9 /* RepricePNRView.swift */; };
 		EA42EAF31D43AD6800451BB9 /* RepricePNRViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA42EAF21D43AD6800451BB9 /* RepricePNRViewModel.swift */; };
+		EA42EAF51D47DF6600451BB9 /* TicketingDueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA42EAF41D47DF6600451BB9 /* TicketingDueViewController.swift */; };
 		EA7ECA5B1D1BAD780014010A /* RecentNotificationCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7ECA5A1D1BAD780014010A /* RecentNotificationCellViewModel.swift */; };
 		EA7ECA5D1D1BB41E0014010A /* RecentNotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7ECA5C1D1BB41E0014010A /* RecentNotificationCell.swift */; };
 		EA8BB9401D21A04200D07561 /* PushTokenUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8BB93F1D21A04200D07561 /* PushTokenUtil.swift */; };
@@ -104,6 +105,7 @@
 		EA35A86A1D40152100BE3618 /* AbstractContentProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractContentProvider.swift; sourceTree = "<group>"; };
 		EA42EAF01D438C7600451BB9 /* RepricePNRView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepricePNRView.swift; sourceTree = "<group>"; };
 		EA42EAF21D43AD6800451BB9 /* RepricePNRViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepricePNRViewModel.swift; sourceTree = "<group>"; };
+		EA42EAF41D47DF6600451BB9 /* TicketingDueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketingDueViewController.swift; sourceTree = "<group>"; };
 		EA7ECA5A1D1BAD780014010A /* RecentNotificationCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentNotificationCellViewModel.swift; sourceTree = "<group>"; };
 		EA7ECA5C1D1BB41E0014010A /* RecentNotificationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentNotificationCell.swift; sourceTree = "<group>"; };
 		EA8BB93F1D21A04200D07561 /* PushTokenUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushTokenUtil.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 				EA35A8621D3EC5DE00BE3618 /* NotificationCell.swift */,
 				EA35A8661D40025400BE3618 /* RepriceViewController.swift */,
 				EA42EAF01D438C7600451BB9 /* RepricePNRView.swift */,
+				EA42EAF41D47DF6600451BB9 /* TicketingDueViewController.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -618,6 +621,7 @@
 				EA35A86B1D40152100BE3618 /* AbstractContentProvider.swift in Sources */,
 				EADC60161D1A77AB00B8743C /* NotificationsStorageServise.swift in Sources */,
 				EADC60121D1A6EF500B8743C /* RecentModel.swift in Sources */,
+				EA42EAF51D47DF6600451BB9 /* TicketingDueViewController.swift in Sources */,
 				EA26375D1D16A4F100D5988D /* ServerParser.swift in Sources */,
 				EAE50A5C1D12CEEB00B4329B /* AppDelegate.swift in Sources */,
 				EAD43D151D2CC4AB00E1FF15 /* APIFacade.swift in Sources */,

@@ -50,7 +50,7 @@ class LoginViewController: UIViewController {
         // Observe name.
         self.nameTextField.rac_textSignal().subscribeNext { (next:AnyObject!) in
             if let text = next as? String {
-                self.loginViewModel?.name = text
+                self.loginViewModel?.full_name = text
             }
         }
     }

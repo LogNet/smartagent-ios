@@ -9,7 +9,9 @@
 import Foundation
 
 protocol LoginService {
-    func login(phoneNumber: String, name:String, completion: ErrorCompletionBlock?)
+    func login(phoneNumber: String, first_name:String,
+               last_name:String, email:String, uuid:String,
+               completion: ErrorCompletionBlock?)
     func sendNotificationToken(notificationToken:String)
     func getToken() -> String?
     func isAutorized() -> Bool

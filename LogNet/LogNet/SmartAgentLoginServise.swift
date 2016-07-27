@@ -10,11 +10,14 @@ import Foundation
 
 class SmartAgentLoginServise: LoginService {
     let TOKEN_KEY = "TOKEN_KEY"
-    func login(phoneNumber: String, name:String, completion: ErrorCompletionBlock?) {
+    func login(phoneNumber: String, first_name: String,
+               last_name: String, email: String, uuid: String,
+               completion: ErrorCompletionBlock?) {
         self.storeToken("token")
         if completion != nil {
             completion!(error: nil)
         }
+
     }
     
     func sendNotificationToken(notificationToken: String) {

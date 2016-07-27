@@ -8,9 +8,10 @@
 
 import Foundation
 import FirebaseAuth
+import KeychainAccess
 
 class LoginModel {
-    
+    let UUID_KEY = "UUID_KEY"
     var parser:ServerParser?
     
     private var loginService:LoginService
@@ -25,12 +26,28 @@ class LoginModel {
         return FIRAuth.auth()?.currentUser != nil
     }
     
-    func login(phoneNumber:String, name:String, completed: (NSError?)->Void) {
-        loginService.login(phoneNumber,name:name) { (error:NSError?) in
-            completed(error)
+    func login(phoneNumber:String, full_name:String, email:String, completed: (NSError?)->Void) {
+        let uuid = self.getUUID()
+        let array = full_name.characters.split{$0 == " "}.map(String.init)
+        let first_name = array[0] as String
+        let last_name = array[1] as String
+        
+        loginService.login(phoneNumber, first_name: first_name,
+                           last_name: last_name, email: email, uuid: uuid) { (error) in
+            
         }
     }
     
     // MARK: Private methods
+    
+    private func getUUID() -> String  {
+        let keychain = Keychain()
+        guard (keychain[UUID_KEY] != nil) else {
+            let uuid = NSUUID().UUIDString
+            keychain[UUID_KEY] = uuid
+            return uuid
+        }
+        return keychain[UUID_KEY]!
+    }
     
 }

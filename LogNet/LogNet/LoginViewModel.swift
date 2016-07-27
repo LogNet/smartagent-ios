@@ -11,8 +11,9 @@ import Foundation
 class LoginViewModel:ViewModel {
     
     // MARK: Public Variables
-    var name:String?
+    var full_name:String?
     var phoneNumber:String?
+    var email:String?
     // MARK: Private Variables
 
     private var loginModel:LoginModel
@@ -25,14 +26,14 @@ class LoginViewModel:ViewModel {
     // MARK: Public methods
     
     func login(completion:(error:NSError?)->Void) -> Void {
-        if self.phoneNumber != nil || self.name != nil {
+        if self.phoneNumber != nil && self.full_name != nil && self.email != nil {
             weak var weakSelf = self
-            self.loginModel.login(self.phoneNumber!, name: self.name!) { (error:NSError?) in
+            self.loginModel.login(self.phoneNumber!, full_name: self.full_name!, email: self.email!, completed: { (error) in
                 if error == nil {
-                    weakSelf?.router.loginFinished()
+                   weakSelf?.router.loginFinished()
                 }
                 completion(error: error)
-            }
+            })
             print(self.phoneNumber!)
         }
         
