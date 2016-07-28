@@ -7,9 +7,9 @@
 //
 
 import UIKit
-import ReactiveCocoa
 import QuartzCore
 import PKHUD
+import RxSwift
 
 extension CALayer {
     func setBorderColorFromUIColor(color:UIColor) {
@@ -25,7 +25,8 @@ class LoginViewController: UIViewController {
     
     var loginViewModel: LoginViewModel?
     var loginningNow = false;
-
+    let disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -41,40 +42,53 @@ class LoginViewController: UIViewController {
     // MARK: Methods
     
     func bindViewModel() {
-        // Observe name.
-        self.phoneTextField.rac_textSignal().subscribeNext { (next:AnyObject!) in
-            if let text = next as? String {
+        // Observe phone number.
+        self.phoneTextField.rx_text.subscribeNext { (text) in
                 self.loginViewModel?.phoneNumber = text
-            }
-        }
+        }.addDisposableTo(self.disposeBag)
+        
         // Observe name.
-        self.nameTextField.rac_textSignal().subscribeNext { (next:AnyObject!) in
-            if let text = next as? String {
-                self.loginViewModel?.full_name = text
-            }
-        }
+        self.nameTextField.rx_text.subscribeNext { (text) in
+            self.loginViewModel?.full_name = text
+        }.addDisposableTo(self.disposeBag)
+
+        // Observe email.
+        self.emailTextField.rx_text.subscribeNext { (text) in
+            self.loginViewModel?.email = text
+        }.addDisposableTo(self.disposeBag)
     }
     
-    func isValidPhoneString(phoneString:String?) -> Bool {
-        if phoneString != nil {
-            return phoneString?.characters.count > 0
+    func isValidPhoneString() -> Bool {
+        if self.loginViewModel?.phoneNumber != nil {
+            return self.loginViewModel?.phoneNumber?.characters.count > 0
         }
         return false
     }
     
-    func isValidName(name:String?) -> Bool {
-        if name != nil {
-            return name?.characters.count > 0
+    func isValidName() -> Bool {
+        if self.loginViewModel?.full_name != nil {
+            return self.loginViewModel?.full_name?.characters.count > 0
         }
         return false
     }
     
-    func wrongRegistrationFields() {
-        if !self.isValidName(nameTextField.text) {
-            self.wrongName()
-        } else {
-            self.wrongPhoneNumber()
+    func isValidEmail() -> Bool {
+        if self.loginViewModel?.email != nil {
+            let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+            let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+            return emailTest.evaluateWithObject(self.loginViewModel?.email)
+            
         }
+        return false
+    }
+    
+    func wrongEmail(){
+        let alert =
+            UIAlertController(title: "Wrong email!",
+                              message: "Please, write a valid email.",
+                              preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
     }
     
     func wrongPhoneNumber() {
@@ -94,6 +108,24 @@ class LoginViewController: UIViewController {
                               preferredStyle: .Alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
         self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func wrongRegistrationFields() {
+        if !self.isValidName() {
+            self.wrongName()
+        } else if !self.isValidPhoneString() {
+            self.wrongPhoneNumber()
+        } else {
+            self.wrongEmail()
+        }
+    }
+    
+    func isValidAllFields() -> Bool {
+        if self.isValidPhoneString() && self.isValidName() && self.isValidEmail() {
+            return true
+        }
+        self.wrongRegistrationFields()
+        return false
     }
     
     func loginCompletedWithError(error:NSError?) {
@@ -131,13 +163,11 @@ class LoginViewController: UIViewController {
 // MARK: IBActions
     
     @IBAction func login(sender: AnyObject) {
-        if self.isValidPhoneString(self.phoneTextField.text) && self.isValidName(self.nameTextField.text) {
+        if self.isValidAllFields() {
             self.phoneTextField.resignFirstResponder()
             self.nameTextField.resignFirstResponder()
             self.startLogin()
             HUD.show(.SystemActivity)
-        } else {
-            self.wrongRegistrationFields()
         }
     }
     
