@@ -37,7 +37,7 @@ class RecentViewModel: ViewModel {
     
     func checkUserLoggedIn() {
         let loginService = SmartAgentLoginServise()
-        if loginService.isAutorized() {
+        if loginService.isLoggedIn() {
             self.fetch()
         } else {
             self.router.showLoginView()

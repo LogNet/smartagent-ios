@@ -32,7 +32,7 @@ class LoginModel {
         let first_name = array[0] as String
         let last_name = array[1] as String
         
-        loginService.login(phoneNumber, first_name: first_name,
+        self.loginService.login(phoneNumber, first_name: first_name,
                            last_name: last_name, email: email, uuid: uuid) { (error) in
             
         }

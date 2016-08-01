@@ -34,7 +34,6 @@ class LoginViewModel:ViewModel {
                 }
                 completion(error: error)
             })
-            print(self.phoneNumber!)
         }
         
     }

@@ -15,4 +15,5 @@ protocol LoginService {
     func sendNotificationToken(notificationToken:String)
     func getToken() -> String?
     func isAutorized() -> Bool
+    func isLoggedIn() -> Bool
 }

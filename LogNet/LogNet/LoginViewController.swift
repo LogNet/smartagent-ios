@@ -148,7 +148,7 @@ class LoginViewController: UIViewController {
         self.loginningNow = false;
         let alert =
             UIAlertController(title: "Push notifications disabled.",
-                              message: "Go to Settings->Notifications and enable it.",
+                              message: "Go to Settings -> Notifications and enable it.",
                               preferredStyle: .Alert)
         alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
         self.presentViewController(alert, animated: true, completion: nil)
