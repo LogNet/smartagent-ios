@@ -8,7 +8,7 @@
 
 import Foundation
 
-class DummyServerService: ServerService {
+class DummyServerService {
     
     func getNotificationList(type: NotificationType, subtype: String?, from_id: Int?, to_id: Int?, from_time: NSTimeInterval?, to_time: NSTimeInterval?, chunks_size: Int?, completion: JSONCompletionBlock?) {
         if (completion != nil) {

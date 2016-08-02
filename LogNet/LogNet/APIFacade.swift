@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RxSwift
 
 class APIFacade {
 	private var service: ServerService
@@ -15,7 +16,7 @@ class APIFacade {
 		self.service = service
 	}
 
-	func getRecentNotifications(fromID: Int?, chunkSize: Int8, completion: JSONCompletionBlock?) {
+	func getRecentNotifications(fromID: Int?, chunkSize: Int8, completion: JSONCompletionBlock?)  {
 		self.service.getNotificationList(.Recent, subtype: "", from_id: nil, to_id: nil, from_time: nil, to_time: nil, chunks_size: nil, completion: completion)
 	}
     
@@ -29,5 +30,10 @@ class APIFacade {
     
     func getTickedDueNotifications(fromID: Int?, chunkSize: Int8, completion: JSONCompletionBlock?) {
         self.service.getNotificationList(.TicketDue, subtype: "", from_id: nil, to_id: nil, from_time: nil, to_time: nil, chunks_size: nil, completion: completion)
+    }
+    
+    func register(phoneNumber: String, first_name: String,
+                  last_name: String, email: String, uuid: String) -> Observable<String> {
+        return self.service.register(phoneNumber, first_name: first_name, last_name: last_name, email: email, uuid: uuid)
     }
 }

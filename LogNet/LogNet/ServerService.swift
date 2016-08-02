@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RxSwift
 
 enum NotificationType {
     case Recent
@@ -16,12 +17,14 @@ enum NotificationType {
 }
 
 protocol ServerService {
+    func register(phoneNumber: String, first_name: String,
+                  last_name: String, email: String, uuid: String) -> Observable<String>
     func getNotificationList(type:NotificationType,
-                          subtype:String?,
-                          from_id:Int?,
-                            to_id:Int?,
-                        from_time:NSTimeInterval?,
-                          to_time:NSTimeInterval?,
-                      chunks_size:Int?,
-                       completion:JSONCompletionBlock?)
+                             subtype:String?,
+                             from_id:Int?,
+                             to_id:Int?,
+                             from_time:NSTimeInterval?,
+                             to_time:NSTimeInterval?,
+                             chunks_size:Int?,
+                             completion:JSONCompletionBlock?)
 }

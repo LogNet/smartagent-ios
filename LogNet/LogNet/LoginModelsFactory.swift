@@ -10,8 +10,9 @@ import Foundation
 
 class LoginModelsFactory {
     class func getLoginModel() -> LoginModel {
-        let serverService = SmartAgentLoginServise()
-        let loginModel = LoginModel(loginService: serverService)
+        let serverService = SmartAgentServerServise()
+        let apiFacade = APIFacade(service: serverService)
+        let loginModel = LoginModel(apiFacade: apiFacade)
         loginModel.parser = SmartAgentParser()
         return loginModel
     }

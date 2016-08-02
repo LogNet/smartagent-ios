@@ -12,8 +12,6 @@
 		EA26374A1D15B95A00D5988D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2637491D15B95A00D5988D /* LoginViewModel.swift */; };
 		EA26374E1D15BE3D00D5988D /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA26374D1D15BE3D00D5988D /* Router.swift */; };
 		EA2637521D15BF9000D5988D /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2637511D15BF9000D5988D /* LoginModel.swift */; };
-		EA2637571D16779B00D5988D /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2637561D16779B00D5988D /* LoginService.swift */; };
-		EA2637591D16787C00D5988D /* GoandroidServerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2637581D16787C00D5988D /* GoandroidServerService.swift */; };
 		EA26375B1D16A1F700D5988D /* LoginModelsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA26375A1D16A1F700D5988D /* LoginModelsFactory.swift */; };
 		EA26375D1D16A4F100D5988D /* ServerParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA26375C1D16A4F100D5988D /* ServerParser.swift */; };
 		EA26375F1D16A59700D5988D /* SmartAgentServerParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA26375E1D16A59700D5988D /* SmartAgentServerParser.swift */; };
@@ -33,7 +31,6 @@
 		EA7ECA5B1D1BAD780014010A /* RecentNotificationCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7ECA5A1D1BAD780014010A /* RecentNotificationCellViewModel.swift */; };
 		EA7ECA5D1D1BB41E0014010A /* RecentNotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7ECA5C1D1BB41E0014010A /* RecentNotificationCell.swift */; };
 		EA8BB9401D21A04200D07561 /* PushTokenUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8BB93F1D21A04200D07561 /* PushTokenUtil.swift */; };
-		EA8CDA481D2AE5490090E9C1 /* SmartAgentLoginServise.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8CDA471D2AE5490090E9C1 /* SmartAgentLoginServise.swift */; };
 		EA8CDA4A1D2C44A50090E9C1 /* SmartAgentServerServise.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8CDA491D2C44A50090E9C1 /* SmartAgentServerServise.swift */; };
 		EAD43D0F1D2CBAB600E1FF15 /* DummyServerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD43D0E1D2CBAB600E1FF15 /* DummyServerService.swift */; };
 		EAD43D151D2CC4AB00E1FF15 /* APIFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD43D141D2CC4AB00E1FF15 /* APIFacade.swift */; };
@@ -88,8 +85,6 @@
 		EA2637491D15B95A00D5988D /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		EA26374D1D15BE3D00D5988D /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		EA2637511D15BF9000D5988D /* LoginModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
-		EA2637561D16779B00D5988D /* LoginService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
-		EA2637581D16787C00D5988D /* GoandroidServerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoandroidServerService.swift; sourceTree = "<group>"; };
 		EA26375A1D16A1F700D5988D /* LoginModelsFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginModelsFactory.swift; sourceTree = "<group>"; };
 		EA26375C1D16A4F100D5988D /* ServerParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerParser.swift; sourceTree = "<group>"; };
 		EA26375E1D16A59700D5988D /* SmartAgentServerParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmartAgentServerParser.swift; sourceTree = "<group>"; };
@@ -109,7 +104,6 @@
 		EA7ECA5A1D1BAD780014010A /* RecentNotificationCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentNotificationCellViewModel.swift; sourceTree = "<group>"; };
 		EA7ECA5C1D1BB41E0014010A /* RecentNotificationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentNotificationCell.swift; sourceTree = "<group>"; };
 		EA8BB93F1D21A04200D07561 /* PushTokenUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushTokenUtil.swift; sourceTree = "<group>"; };
-		EA8CDA471D2AE5490090E9C1 /* SmartAgentLoginServise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmartAgentLoginServise.swift; sourceTree = "<group>"; };
 		EA8CDA491D2C44A50090E9C1 /* SmartAgentServerServise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmartAgentServerServise.swift; sourceTree = "<group>"; };
 		EAD43D0E1D2CBAB600E1FF15 /* DummyServerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyServerService.swift; sourceTree = "<group>"; };
 		EAD43D141D2CC4AB00E1FF15 /* APIFacade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIFacade.swift; sourceTree = "<group>"; };
@@ -241,7 +235,6 @@
 			children = (
 				EAD43D0C1D2C553C00E1FF15 /* ServerService */,
 				EAD43D0B1D2C516B00E1FF15 /* StorageService */,
-				EAD43D0A1D2C515300E1FF15 /* LoginService */,
 				EAD43D141D2CC4AB00E1FF15 /* APIFacade.swift */,
 			);
 			name = Services;
@@ -263,16 +256,6 @@
 				EA35A85E1D3EAE4600BE3618 /* SanFranciscoText-Regular.otf */,
 			);
 			name = Fonts;
-			sourceTree = "<group>";
-		};
-		EAD43D0A1D2C515300E1FF15 /* LoginService */ = {
-			isa = PBXGroup;
-			children = (
-				EA8CDA471D2AE5490090E9C1 /* SmartAgentLoginServise.swift */,
-				EA2637561D16779B00D5988D /* LoginService.swift */,
-				EA2637581D16787C00D5988D /* GoandroidServerService.swift */,
-			);
-			name = LoginService;
 			sourceTree = "<group>";
 		};
 		EAD43D0B1D2C516B00E1FF15 /* StorageService */ = {
@@ -595,7 +578,6 @@
 			files = (
 				EA42EAF11D438C7600451BB9 /* RepricePNRView.swift in Sources */,
 				EA26375B1D16A1F700D5988D /* LoginModelsFactory.swift in Sources */,
-				EA2637571D16779B00D5988D /* LoginService.swift in Sources */,
 				EADC60201D1B125C00B8743C /* NotificationsStorageServiseRealm.swift in Sources */,
 				EADC60181D1A782B00B8743C /* RecentModelFactory.swift in Sources */,
 				EA7ECA5D1D1BB41E0014010A /* RecentNotificationCell.swift in Sources */,
@@ -625,14 +607,12 @@
 				EA26375D1D16A4F100D5988D /* ServerParser.swift in Sources */,
 				EAE50A5C1D12CEEB00B4329B /* AppDelegate.swift in Sources */,
 				EAD43D151D2CC4AB00E1FF15 /* APIFacade.swift in Sources */,
-				EA8CDA481D2AE5490090E9C1 /* SmartAgentLoginServise.swift in Sources */,
 				EADC601B1D1A8A5100B8743C /* Typealiases.swift in Sources */,
 				EA35A8691D4014FF00BE3618 /* DataSource.swift in Sources */,
 				EA35A85A1D3D825300BE3618 /* ActivationMessageViewController.swift in Sources */,
 				EA26374A1D15B95A00D5988D /* LoginViewModel.swift in Sources */,
 				EAD43D0F1D2CBAB600E1FF15 /* DummyServerService.swift in Sources */,
 				EADC600A1D18543800B8743C /* AlertNotificationViewModel.swift in Sources */,
-				EA2637591D16787C00D5988D /* GoandroidServerService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

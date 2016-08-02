@@ -32,7 +32,7 @@ class RecentViewController: UITableViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         dispatch_once(&token) {
-            self.viewModel?.checkUserLoggedIn()
+            self.viewModel?.fetch()
         }
     }
     

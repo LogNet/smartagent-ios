@@ -14,10 +14,10 @@ class LoginModel {
     let UUID_KEY = "UUID_KEY"
     var parser:ServerParser?
     
-    private var loginService:LoginService
+    private var apiFacade: APIFacade
     
-    init (loginService:LoginService) {
-        self.loginService = loginService
+    init (apiFacade:APIFacade) {
+        self.apiFacade = apiFacade
     }
     
     // MARK: Public methods
@@ -32,10 +32,8 @@ class LoginModel {
         let first_name = array[0] as String
         let last_name = array[1] as String
         
-        self.loginService.login(phoneNumber, first_name: first_name,
-                           last_name: last_name, email: email, uuid: uuid) { (error) in
-            
-        }
+        self.apiFacade.register(phoneNumber, first_name: first_name,
+                           last_name: last_name, email: email, uuid: uuid)
     }
     
     // MARK: Private methods

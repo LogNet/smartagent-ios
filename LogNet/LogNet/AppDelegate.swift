@@ -56,8 +56,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func sendDeviceTokenToServer() {
         if FIRInstanceID.instanceID().token() != nil {
             print("InstanceID token: \(FIRInstanceID.instanceID().token())")
-            let loginService = SmartAgentLoginServise()
-            loginService.sendNotificationToken(FIRInstanceID.instanceID().token()!)
+//            let loginService = SmartAgentLoginServise()
+//            loginService.sendNotificationToken(FIRInstanceID.instanceID().token()!)
         }
     }
     

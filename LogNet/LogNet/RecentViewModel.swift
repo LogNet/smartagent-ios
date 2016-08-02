@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseAuth
 import FirebaseInstanceID
+import RxSwift
 
 class RecentViewModel: ViewModel {
     
@@ -17,6 +18,7 @@ class RecentViewModel: ViewModel {
     dynamic var downloading:Bool = false
     dynamic var hasNextChunk:Bool = true;
     var model:RecentModel
+    var disposeBag = DisposeBag()
     
     lazy var dateFormatter:NSDateFormatter = {
         let formatter = NSDateFormatter()
@@ -35,14 +37,6 @@ class RecentViewModel: ViewModel {
         self.router.showPNRDetailsFromNotification(nil)
     }
     
-    func checkUserLoggedIn() {
-        let loginService = SmartAgentLoginServise()
-        if loginService.isLoggedIn() {
-            self.fetch()
-        } else {
-            self.router.showLoginView()
-        }
-    }
     
     func fetch() {
         self.downloading = true;
@@ -76,20 +70,32 @@ class RecentViewModel: ViewModel {
     }
     
     private func startFetching() {
-        var viewModels:Array<RecentNotificationCellViewModel>?
-            self.model.getNotifications(1, chunkSize: 20) { [weak self] (error, notifications) in
-                if notifications != nil {
-                    viewModels = Array<RecentNotificationCellViewModel>()
-                    for notification in notifications! {
-                        if let viewModel = self?.viewModelFromNotification(notification){
-                            viewModels!.append(viewModel)
-                        }
-                    }
-                    self?.cellViewModels = NSMutableArray(array: viewModels!)
-                }
-                self?.downloading = false;
-                self?.loadMoreStatus = false;
-        }
+//        var viewModels:Array<RecentNotificationCellViewModel>?
+        let observable = self.model.getNotifications(1, chunkSize: 20)
+        observable.subscribeNext { (notifications) in
+            
+        }.dispose()
+        
+        observable.subscribeError { (error) in
+            self.downloading = false;
+            let receivedError = error as NSError
+            switch receivedError.code {
+            case 403:
+                self.router.showLoginView()
+                break
+            default:
+                break
+            }
+            
+            
+            
+            
+        }.dispose()
+        observable.subscribeCompleted { 
+            
+        }.dispose()
+        
+        
     }
     
     private func viewModelFromNotification(notification:Notification) -> RecentNotificationCellViewModel {
