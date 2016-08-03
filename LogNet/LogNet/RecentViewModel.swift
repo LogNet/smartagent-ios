@@ -72,31 +72,30 @@ class RecentViewModel: ViewModel {
     private func startFetching() {
 //        var viewModels:Array<RecentNotificationCellViewModel>?
         let observable = self.model.getNotifications(1, chunkSize: 20)
-        observable.subscribeNext { (notifications) in
-            
-        }.dispose()
-        
-        observable.subscribeError { (error) in
-            self.downloading = false;
-            let receivedError = error as NSError
-            switch receivedError.code {
-            case 403:
-                self.router.showLoginView()
-                break
-            default:
-                break
+        observable
+            .subscribeNext{ (notifications) in
             }
-            
-            
-            
-            
-        }.dispose()
-        observable.subscribeCompleted { 
-            
-        }.dispose()
+            .dispose()
         
-        
+        observable
+            .subscribeError { (error) in
+                self.downloading = false;
+                switch error {
+                case AppError.FORBIDDEN:
+                    self.router.showLoginView()
+                    break
+                case AppError.NOT_ACTIVATED:
+                    break
+                default:
+                    break
+                }
+            }
+            .dispose()
+        observable
+            .subscribeCompleted {
+            }.dispose()
     }
+    
     
     private func viewModelFromNotification(notification:Notification) -> RecentNotificationCellViewModel {
         let viewModel = RecentNotificationCellViewModel(notification: notification)

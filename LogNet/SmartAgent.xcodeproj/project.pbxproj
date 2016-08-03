@@ -59,6 +59,8 @@
 		EAE50A661D12CEEB00B4329B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAE50A641D12CEEB00B4329B /* LaunchScreen.storyboard */; };
 		EAE50A711D12CEEC00B4329B /* LogNetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE50A701D12CEEC00B4329B /* LogNetTests.swift */; };
 		EAE50A7C1D12CEEC00B4329B /* LogNetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE50A7B1D12CEEC00B4329B /* LogNetUITests.swift */; };
+		EAECB5A61D5277010080ED3D /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAECB5A51D5277010080ED3D /* Globals.swift */; };
+		EAECB5A81D5288AD0080ED3D /* Prefences.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAECB5A71D5288AD0080ED3D /* Prefences.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +140,8 @@
 		EAE50A771D12CEEC00B4329B /* SmartAgent.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartAgent.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAE50A7B1D12CEEC00B4329B /* LogNetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogNetUITests.swift; sourceTree = "<group>"; };
 		EAE50A7D1D12CEEC00B4329B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAECB5A51D5277010080ED3D /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		EAECB5A71D5288AD0080ED3D /* Prefences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prefences.swift; sourceTree = "<group>"; };
 		EE8F0BF2C4AFB1E94B6D9B3B /* Pods-SmartAgent.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartAgent.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartAgent/Pods-SmartAgent.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -293,6 +297,7 @@
 				EADC601A1D1A8A5100B8743C /* Typealiases.swift */,
 				EA35A8681D4014FF00BE3618 /* DataSource.swift */,
 				EA35A86A1D40152100BE3618 /* AbstractContentProvider.swift */,
+				EAECB5A71D5288AD0080ED3D /* Prefences.swift */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -340,6 +345,7 @@
 				EAE50A671D12CEEB00B4329B /* Info.plist */,
 				EA2637431D12E46600D5988D /* GoogleService-Info.plist */,
 				EA8BB93F1D21A04200D07561 /* PushTokenUtil.swift */,
+				EAECB5A51D5277010080ED3D /* Globals.swift */,
 			);
 			path = LogNet;
 			sourceTree = "<group>";
@@ -582,6 +588,7 @@
 				EADC60181D1A782B00B8743C /* RecentModelFactory.swift in Sources */,
 				EA7ECA5D1D1BB41E0014010A /* RecentNotificationCell.swift in Sources */,
 				EADC601D1D1A8EFC00B8743C /* Notification.swift in Sources */,
+				EAECB5A61D5277010080ED3D /* Globals.swift in Sources */,
 				EADC600E1D19785000B8743C /* RecentViewController.swift in Sources */,
 				EA35A8581D3D6C4F00BE3618 /* UnderlinedTextField.swift in Sources */,
 				EADC60101D1A6EB200B8743C /* RecentViewModel.swift in Sources */,
@@ -589,6 +596,7 @@
 				EA35A8671D40025400BE3618 /* RepriceViewController.swift in Sources */,
 				EA26374E1D15BE3D00D5988D /* Router.swift in Sources */,
 				EA2637631D16BEF400D5988D /* WebBrouserViewController.swift in Sources */,
+				EAECB5A81D5288AD0080ED3D /* Prefences.swift in Sources */,
 				EA8CDA4A1D2C44A50090E9C1 /* SmartAgentServerServise.swift in Sources */,
 				EADC60041D16E44F00B8743C /* WebBrowserModel.swift in Sources */,
 				EA26375F1D16A59700D5988D /* SmartAgentServerParser.swift in Sources */,

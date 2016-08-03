@@ -13,7 +13,8 @@ class RecentModelFactory {
     class func getSmartAgentRecentModel() -> RecentModel {
         let model = RecentModel()
         model.serverParser = SmartAgentParser()
-        model.apiFacade = APIFacade(service: SmartAgentServerServise())
+        let prefs = Prefences()
+        model.apiFacade = APIFacade(service: SmartAgentServerServise(), prefences: prefs)
         model.storageService = NotificationsStorageServiseRealm()
         return model
     }

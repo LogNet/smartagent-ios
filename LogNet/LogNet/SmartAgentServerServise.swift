@@ -16,16 +16,16 @@ class SmartAgentServerServise: ServerService {
     
     func register(phoneNumber: String, first_name: String,
                last_name: String, email: String, uuid: String) -> Observable<String> {
-        return Observable.create({[weak self] (observer) -> Disposable in
+        return Observable.create({(observer) -> Disposable in
                 let parameters =
                         ["device_number":phoneNumber,
                                  "email":email,
                            "mac_address":uuid,
                             "first_name":first_name,
                              "last_name":last_name]
-                let request = Alamofire.request(.POST, self!.baseURLString + "registerDevice",parameters:parameters).responseJSON {response in
+                let request = Alamofire.request(.POST, self.baseURLString + "registerDevice",parameters:parameters).responseJSON {response in
                     if response.result.error == nil {
-                        if let token = self!.parseToken(response.result.value) {
+                        if let token = self.parseToken(response.result.value) {
                             observer.onNext(token)
                             observer.onCompleted()
                         } else {
@@ -49,10 +49,15 @@ class SmartAgentServerServise: ServerService {
         return nil
     }
     
-    func getNotificationList(type: NotificationType, subtype: String?, from_id: Int?, to_id: Int?, from_time: NSTimeInterval?, to_time: NSTimeInterval?, chunks_size: Int?, completion: JSONCompletionBlock?) {
-        if (completion != nil) {
-            completion!(self.JSONFromBundle(self.JSONNameForType(type)),nil)
-        }
+    func getNotificationList(authHeaders:AuthHeaders,
+                                    type:NotificationType,
+                                 subtype:String?,
+                                 from_id:Int?,
+                                   to_id:Int?,
+                               from_time:NSTimeInterval?,
+                                 to_time:NSTimeInterval?,
+                             chunks_size:Int?) -> Observable<AnyObject> {
+        return Observable.just(self.JSONFromBundle(self.JSONNameForType(type))!)
     }
     
     func JSONFromBundle(name: String) -> AnyObject? {
