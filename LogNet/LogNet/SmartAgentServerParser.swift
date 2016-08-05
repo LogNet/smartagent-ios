@@ -24,7 +24,7 @@ class SmartAgentParser: ServerParser {
         return nil
     }
     
-    func parseNotifications(JSON:AnyObject?) -> Array<Notification>? {
+    func parseNotifications(JSON:AnyObject?) -> (array:Array<Notification>?, error:NSError?) {
         print(JSON)
         if let jsonNotifications = JSON as? [[String: AnyObject]]{
             var notifications = Array<Notification>()
@@ -43,9 +43,9 @@ class SmartAgentParser: ServerParser {
 
                 notifications.append(notification)
             }
-            return notifications;
+            return (notifications, nil);
         }
-        return nil
+        return (nil, nil)
     }
     
 }

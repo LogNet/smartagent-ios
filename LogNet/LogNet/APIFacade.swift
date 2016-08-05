@@ -19,9 +19,10 @@ class APIFacade {
         self.prefences = prefences
 	}
 
-    func getRecentNotifications(fromID: Int?, chunkSize: Int8) -> Observable<AnyObject> {
+    func getNotifications(type type:String?, offset: Int?, chunkSize: Int) -> Observable<AnyObject> {
         let observable = self.getFirebaseUserToken().flatMap{ token in
-            return self.service.getNotificationList(AuthHeaders(token:token,phoneNumber:self.prefences.phoneNumber!),type: .Recent, subtype: "", from_id: nil, to_id: nil, from_time: nil, to_time: nil, chunks_size: nil)
+            return self.service.getNotificationList(AuthHeaders(token:token,phoneNumber:self.prefences.phoneNumber!),
+                                                       type: "Recent", subtype: "", offset:offset, chunks_size: chunkSize)
         }
         return observable
 	}

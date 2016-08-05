@@ -50,41 +50,43 @@ class SmartAgentServerServise: ServerService {
     }
     
     func getNotificationList(authHeaders:AuthHeaders,
-                                    type:NotificationType,
+                                    type:String?,
                                  subtype:String?,
-                                 from_id:Int?,
-                                   to_id:Int?,
-                               from_time:NSTimeInterval?,
-                                 to_time:NSTimeInterval?,
+                                 offset:Int?,
                              chunks_size:Int?) -> Observable<AnyObject> {
-        return Observable.just(self.JSONFromBundle(self.JSONNameForType(type))!)
+        return Observable.create({ observer -> Disposable in
+            let parameters = ["type":self.validParameter(type),
+                           "subtype":self.validParameter(subtype),
+                            "offset":self.validParameter(offset),
+                             "chunk":self.validParameter(chunks_size)]
+            let headers = ["SA-DN":authHeaders.phoneNumber,
+                        "SA-REGID":authHeaders.token]
+            let request = Alamofire.request(.GET, self.baseURLString + "getNotificationList",
+                                            parameters: parameters, headers: headers)
+                .responseJSON(completionHandler: { response in
+                    if response.result.error == nil {
+                        if response.result.value != nil {
+                            observer.onNext(response.result.value!)
+                            observer.onCompleted()
+                        } else {
+                             let error = NSError(domain: "lognet.LogNet.SmartAgentServerService", code: -6123, userInfo: [NSLocalizedDescriptionKey: "Server response is nil."])
+                            observer.onError(error)
+                        }
+                    } else {
+                        observer.onError(response.result.error!)
+                    }
+                })
+            
+            return AnonymousDisposable {
+                request.cancel()
+            }
+        })
     }
     
-    func JSONFromBundle(name: String) -> AnyObject? {
-        let path = NSBundle.mainBundle().pathForResource(name, ofType: "json")
-        let data = NSData(contentsOfFile: path!)
-        let JSON =  try! NSJSONSerialization.JSONObjectWithData(data!, options:.MutableContainers)
-        return JSON
-    }
-    
-    
-    
-    func JSONNameForType(type:NotificationType) -> String {
-        var name:String?
-        switch type {
-        case .Reprice:
-            name = "reprice"
-            break
-        case .Cancelled:
-            name = "cancelled"
-            break
-        case .TicketDue:
-            name = "ticketdue"
-            break
-        default:
-            name = "recent"
+    private func validParameter(parameter:AnyObject?) -> AnyObject {
+        guard parameter != nil else {
+            return ""
         }
-        return name!
+        return parameter!
     }
-
 }

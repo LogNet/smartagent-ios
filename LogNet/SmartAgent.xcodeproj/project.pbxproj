@@ -45,7 +45,7 @@
 		EADC600A1D18543800B8743C /* AlertNotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60091D18543700B8743C /* AlertNotificationViewModel.swift */; };
 		EADC600E1D19785000B8743C /* RecentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC600D1D19785000B8743C /* RecentViewController.swift */; };
 		EADC60101D1A6EB200B8743C /* RecentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC600F1D1A6EB200B8743C /* RecentViewModel.swift */; };
-		EADC60121D1A6EF500B8743C /* RecentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60111D1A6EF500B8743C /* RecentModel.swift */; };
+		EADC60121D1A6EF500B8743C /* SingleListNotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60111D1A6EF500B8743C /* SingleListNotificationModel.swift */; };
 		EADC60141D1A6FEA00B8743C /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60131D1A6FEA00B8743C /* ViewModel.swift */; };
 		EADC60161D1A77AB00B8743C /* NotificationsStorageServise.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60151D1A77AB00B8743C /* NotificationsStorageServise.swift */; };
 		EADC60181D1A782B00B8743C /* RecentModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60171D1A782B00B8743C /* RecentModelFactory.swift */; };
@@ -120,7 +120,7 @@
 		EADC60091D18543700B8743C /* AlertNotificationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertNotificationViewModel.swift; sourceTree = "<group>"; };
 		EADC600D1D19785000B8743C /* RecentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentViewController.swift; sourceTree = "<group>"; };
 		EADC600F1D1A6EB200B8743C /* RecentViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentViewModel.swift; sourceTree = "<group>"; };
-		EADC60111D1A6EF500B8743C /* RecentModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentModel.swift; sourceTree = "<group>"; };
+		EADC60111D1A6EF500B8743C /* SingleListNotificationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleListNotificationModel.swift; sourceTree = "<group>"; };
 		EADC60131D1A6FEA00B8743C /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		EADC60151D1A77AB00B8743C /* NotificationsStorageServise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsStorageServise.swift; sourceTree = "<group>"; };
 		EADC60171D1A782B00B8743C /* RecentModelFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentModelFactory.swift; sourceTree = "<group>"; };
@@ -196,7 +196,7 @@
 				EA2637511D15BF9000D5988D /* LoginModel.swift */,
 				EA26375A1D16A1F700D5988D /* LoginModelsFactory.swift */,
 				EADC60031D16E44F00B8743C /* WebBrowserModel.swift */,
-				EADC60111D1A6EF500B8743C /* RecentModel.swift */,
+				EADC60111D1A6EF500B8743C /* SingleListNotificationModel.swift */,
 				EADC601C1D1A8EFC00B8743C /* Notification.swift */,
 			);
 			name = Models;
@@ -331,6 +331,7 @@
 		EAE50A5A1D12CEEB00B4329B /* LogNet */ = {
 			isa = PBXGroup;
 			children = (
+				EAECB5A91D552D9C0080ED3D /* Utils */,
 				EA35A85B1D3EADDB00BE3618 /* Fonts */,
 				EA35A8561D3D6BE800BE3618 /* CustomViews */,
 				EADC601E1D1AD0F000B8743C /* Entities */,
@@ -366,6 +367,13 @@
 				EAE50A7D1D12CEEC00B4329B /* Info.plist */,
 			);
 			path = LogNetUITests;
+			sourceTree = "<group>";
+		};
+		EAECB5A91D552D9C0080ED3D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -610,7 +618,7 @@
 				EA7ECA5B1D1BAD780014010A /* RecentNotificationCellViewModel.swift in Sources */,
 				EA35A86B1D40152100BE3618 /* AbstractContentProvider.swift in Sources */,
 				EADC60161D1A77AB00B8743C /* NotificationsStorageServise.swift in Sources */,
-				EADC60121D1A6EF500B8743C /* RecentModel.swift in Sources */,
+				EADC60121D1A6EF500B8743C /* SingleListNotificationModel.swift in Sources */,
 				EA42EAF51D47DF6600451BB9 /* TicketingDueViewController.swift in Sources */,
 				EA26375D1D16A4F100D5988D /* ServerParser.swift in Sources */,
 				EAE50A5C1D12CEEB00B4329B /* AppDelegate.swift in Sources */,

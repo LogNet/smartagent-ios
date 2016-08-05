@@ -17,7 +17,7 @@ class RecentViewModel: ViewModel {
     dynamic var loadMoreStatus:Bool = false
     dynamic var downloading:Bool = false
     dynamic var hasNextChunk:Bool = true;
-    var model:RecentModel
+    var model:SingleListNotificationModel
     var disposeBag = DisposeBag()
     
     lazy var dateFormatter:NSDateFormatter = {
@@ -26,7 +26,7 @@ class RecentViewModel: ViewModel {
         return formatter
     }()
     
-    init(model:RecentModel, router:Router) {
+    init(model:SingleListNotificationModel, router:Router) {
         self.model = model
         super.init(router: router)
     
@@ -71,14 +71,9 @@ class RecentViewModel: ViewModel {
     
     private func startFetching() {
 //        var viewModels:Array<RecentNotificationCellViewModel>?
-        let observable = self.model.getNotifications(1, chunkSize: 20)
-        observable
-            .subscribeNext{ (notifications) in
-            }
-            .dispose()
-        
-        observable
-            .subscribeError { (error) in
+        let observable = self.model.getNotifications(.Recent,fromID: 1, chunkSize: 20)
+        observable.subscribeNext{ (notifications) in }.dispose()
+        observable.subscribeError { (error) in
                 self.downloading = false;
                 switch error {
                 case AppError.FORBIDDEN:

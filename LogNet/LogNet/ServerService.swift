@@ -14,22 +14,12 @@ struct AuthHeaders {
     var phoneNumber:String
 }
 
-enum NotificationType {
-    case Recent
-    case Reprice
-    case Cancelled
-    case TicketDue
-}
-
 protocol ServerService {
     func register(phoneNumber: String, first_name: String,
                   last_name: String, email: String, uuid: String) -> Observable<String>
     func getNotificationList(authHeaders:AuthHeaders,
-                             type:NotificationType,
+                             type:String?,
                              subtype:String?,
-                             from_id:Int?,
-                             to_id:Int?,
-                             from_time:NSTimeInterval?,
-                             to_time:NSTimeInterval?,
+                             offset:Int?,
                              chunks_size:Int?) -> Observable<AnyObject>
 }
