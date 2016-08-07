@@ -7,15 +7,21 @@
 //
 
 import UIKit
+import RxSwift
 
 class ActivationMessageViewController: UIViewController {
 
     @IBOutlet weak var emailLabel: UILabel!
     
+    var viewModel:ActivationViewModel?
+    private let disposableBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        self.title = "Smart Agent"
+        self.bindViewModel()
+        self.subscribeToNotificationCenter()
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,7 +29,31 @@ class ActivationMessageViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
+    private func subscribeToNotificationCenter() {
+        let notificationCenter = NSNotificationCenter.defaultCenter()
+        notificationCenter.addObserver(self, selector: #selector(applicationDidBecomeActive),
+                                       name: UIApplicationDidBecomeActiveNotification, object: nil)
+    }
+    
+    private func bindViewModel() {
+        self.emailLabel.text = viewModel?.email
+    }
 
+    func applicationDidBecomeActive() {
+        self.viewModel?.isUserActivated().subscribeNext{ activated in
+            self.dismissViewControllerAnimated(true, completion: nil)
+            }.addDisposableTo(self.disposableBag)
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -34,4 +64,8 @@ class ActivationMessageViewController: UIViewController {
     }
     */
 
+    deinit {
+        let notificationCenter = NSNotificationCenter.defaultCenter()
+        notificationCenter.removeObserver(self)
+    }
 }

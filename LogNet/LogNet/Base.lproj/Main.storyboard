@@ -493,9 +493,36 @@
             <point key="canvasLocation" x="-1284" y="-57"/>
         </scene>
         <!--Activation Message View Controller-->
+        <scene sceneID="z3D-gk-Mgi">
+            <objects>
+                <viewController storyboardIdentifier="SpashViewController" id="LR1-UA-qow" customClass="ActivationMessageViewController" customModule="SmartAgent" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wfh-C0-HAY"/>
+                        <viewControllerLayoutGuide type="bottom" id="l58-bd-qXp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="grK-SI-K5O">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="GWj-rn-KTc">
+                                <rect key="frame" x="290" y="290" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GWj-rn-KTc" firstAttribute="centerX" secondItem="grK-SI-K5O" secondAttribute="centerX" id="U3o-qL-XnQ"/>
+                            <constraint firstItem="GWj-rn-KTc" firstAttribute="centerY" secondItem="grK-SI-K5O" secondAttribute="centerY" id="v2p-9I-I9w"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rQc-fe-zln" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1520" y="-2851"/>
+        </scene>
+        <!--Smart Agent-->
         <scene sceneID="nwc-nF-0lK">
             <objects>
-                <viewController id="1d8-kI-cqe" customClass="ActivationMessageViewController" customModule="SmartAgent" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ActivationMessageViewController" id="1d8-kI-cqe" customClass="ActivationMessageViewController" customModule="SmartAgent" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ErO-xQ-Dzl"/>
                         <viewControllerLayoutGuide type="bottom" id="jMM-Ft-39c"/>
@@ -552,13 +579,14 @@
                             <constraint firstItem="QNX-mr-iQD" firstAttribute="top" secondItem="tFE-en-n2N" secondAttribute="top" id="uUr-4w-Q19"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Smart Agent" id="sQh-nL-hJx"/>
                     <connections>
                         <outlet property="emailLabel" destination="6K0-h8-PaX" id="ifM-Bq-tGY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="etR-Ly-7DG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1480" y="-2132"/>
+            <point key="canvasLocation" x="-1180" y="-2090"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -972,7 +1000,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="132.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="PASSENGERS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L5p-gL-0ae">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PASSENGERS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L5p-gL-0ae">
                                                     <rect key="frame" x="14" y="14" width="79" height="12"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="12" id="gUI-dV-TcP"/>
@@ -1123,7 +1151,7 @@ HK</string>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Hotel" translatesAutoresizingMaskIntoConstraints="NO" id="22m-7t-amg">
                                                     <rect key="frame" x="14" y="45" width="17" height="16"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PWu-WU-7nh">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PWu-WU-7nh">
                                                     <rect key="frame" x="49" y="41" width="196" height="39"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="196" id="7Vk-Ij-jUa"/>
@@ -1137,13 +1165,13 @@ HK</string>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="US Dollar" translatesAutoresizingMaskIntoConstraints="NO" id="cgn-Rh-dT7">
                                                     <rect key="frame" x="14" y="105" width="18" height="18"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="2500.00 ILS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KVU-2h-dfD">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2500.00 ILS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KVU-2h-dfD">
                                                     <rect key="frame" x="49" y="102" width="302" height="21"/>
                                                     <fontDescription key="fontDescription" name="SanFranciscoText-Regular" family="San Francisco Text" pointSize="16"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="HK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7hj-LB-QXJ">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7hj-LB-QXJ">
                                                     <rect key="frame" x="305" y="77" width="55" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="55" id="16o-3S-qOJ"/>
@@ -1181,7 +1209,7 @@ HK</string>
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="229.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="CAR RENTAL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LWw-Es-Ntg">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CAR RENTAL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LWw-Es-Ntg">
                                                     <rect key="frame" x="14" y="14" width="79" height="16"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="79" id="b65-Oa-ZRQ"/>
@@ -1190,10 +1218,10 @@ HK</string>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Car Rental" translatesAutoresizingMaskIntoConstraints="NO" id="hV9-ag-uDZ">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Car Rental" translatesAutoresizingMaskIntoConstraints="NO" id="hV9-ag-uDZ">
                                                     <rect key="frame" x="14" y="45" width="16" height="19"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RWg-7B-Kwl">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RWg-7B-Kwl">
                                                     <rect key="frame" x="49" y="40" width="286" height="39"/>
                                                     <string key="text">Pick up: TLV | 24.02.16 00:00
 Return: 26.04.16 00:00</string>

@@ -34,6 +34,7 @@
 		EA8CDA4A1D2C44A50090E9C1 /* SmartAgentServerServise.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8CDA491D2C44A50090E9C1 /* SmartAgentServerServise.swift */; };
 		EAD0C6811D5787600033B307 /* NSErrorExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD0C6801D5787600033B307 /* NSErrorExtention.swift */; };
 		EAD0C6841D578BED0033B307 /* ErrorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD0C6831D578BED0033B307 /* ErrorUtil.swift */; };
+		EAD0C6881D57B46D0033B307 /* ActivationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD0C6871D57B46D0033B307 /* ActivationViewModel.swift */; };
 		EAD43D0F1D2CBAB600E1FF15 /* DummyServerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD43D0E1D2CBAB600E1FF15 /* DummyServerService.swift */; };
 		EAD43D151D2CC4AB00E1FF15 /* APIFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD43D141D2CC4AB00E1FF15 /* APIFacade.swift */; };
 		EAD43D1A1D2CD16300E1FF15 /* cancelled.json in Resources */ = {isa = PBXBuildFile; fileRef = EAD43D161D2CD16300E1FF15 /* cancelled.json */; };
@@ -110,6 +111,7 @@
 		EA8CDA491D2C44A50090E9C1 /* SmartAgentServerServise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmartAgentServerServise.swift; sourceTree = "<group>"; };
 		EAD0C6801D5787600033B307 /* NSErrorExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSErrorExtention.swift; sourceTree = "<group>"; };
 		EAD0C6831D578BED0033B307 /* ErrorUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorUtil.swift; sourceTree = "<group>"; };
+		EAD0C6871D57B46D0033B307 /* ActivationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivationViewModel.swift; sourceTree = "<group>"; };
 		EAD43D0E1D2CBAB600E1FF15 /* DummyServerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyServerService.swift; sourceTree = "<group>"; };
 		EAD43D141D2CC4AB00E1FF15 /* APIFacade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIFacade.swift; sourceTree = "<group>"; };
 		EAD43D161D2CD16300E1FF15 /* cancelled.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cancelled.json; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 				EADC60171D1A782B00B8743C /* RecentModelFactory.swift */,
 				EA7ECA5A1D1BAD780014010A /* RecentNotificationCellViewModel.swift */,
 				EA42EAF21D43AD6800451BB9 /* RepricePNRViewModel.swift */,
+				EAD0C6871D57B46D0033B307 /* ActivationViewModel.swift */,
 			);
 			name = ViewModels;
 			sourceTree = "<group>";
@@ -631,6 +634,7 @@
 				EA35A86B1D40152100BE3618 /* AbstractContentProvider.swift in Sources */,
 				EADC60161D1A77AB00B8743C /* NotificationsStorageServise.swift in Sources */,
 				EADC60121D1A6EF500B8743C /* SingleListNotificationModel.swift in Sources */,
+				EAD0C6881D57B46D0033B307 /* ActivationViewModel.swift in Sources */,
 				EA42EAF51D47DF6600451BB9 /* TicketingDueViewController.swift in Sources */,
 				EA26375D1D16A4F100D5988D /* ServerParser.swift in Sources */,
 				EAE50A5C1D12CEEB00B4329B /* AppDelegate.swift in Sources */,

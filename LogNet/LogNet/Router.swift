@@ -36,8 +36,12 @@ class Router {
     }
     
     func showNoActivatedView() {
-        let viewController = self.storyboard.instantiateViewControllerWithIdentifier("ActivationMessageViewController")
-        self.recentViewController?.presentViewController(viewController, animated: false, completion: nil)
+        let viewController = self.storyboard.instantiateViewControllerWithIdentifier("ActivationMessageViewController") as! ActivationMessageViewController
+        let model = RecentModelFactory.getSmartAgentRecentModel()
+        let viewModel = ActivationViewModel(model: model)
+        viewController.viewModel = viewModel
+        let navigationController = UINavigationController(rootViewController: viewController)
+        self.recentViewController?.presentViewController(navigationController, animated: false, completion: nil)
     }
     
     func getLoginViewController() -> UIViewController {

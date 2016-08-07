@@ -13,7 +13,7 @@ import Firebase
 class APIFacade {
     
 	private var service: ServerService
-    init(service: ServerService, prefences:Prefences) {
+    init(service: ServerService) {
 		self.service = service
 	}
 
@@ -68,6 +68,8 @@ class APIFacade {
                        last_name: String, email: String) -> Observable<()> {
         return Observable.create { observer in
             Prefences.savePhone(phoneNumber)
+            Prefences.saveEmail(email)
+            Prefences.saveFullName("\(last_name) \(first_name)")
             observer.onCompleted()
             return AnonymousDisposable {}
         }

@@ -160,12 +160,17 @@ class LoginViewController: UIViewController {
         })
     }
     
+    func hideKeyboard(){
+        self.phoneTextField.resignFirstResponder()
+        self.nameTextField.resignFirstResponder()
+        self.emailTextField.resignFirstResponder()
+    }
+    
 // MARK: IBActions
     
     @IBAction func login(sender: AnyObject) {
         if self.isValidAllFields() {
-            self.phoneTextField.resignFirstResponder()
-            self.nameTextField.resignFirstResponder()
+            self.hideKeyboard()
             self.startLogin()
             HUD.show(.SystemActivity)
         }
