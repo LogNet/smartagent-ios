@@ -64,6 +64,21 @@ class SmartAgentServerServise: ServerService {
         return nil
     }
     
+    func sendNotificationToken(notificationToken: String, phone: String, registrationToken: String) -> Observable<Void> {
+        return Observable.create{ observer in
+            let parameters = ["device_number":phone,
+            "registration_token":registrationToken,
+            "notification_token":notificationToken]
+            let request = self.manager.request(.POST, self.baseURLString + "setNotificationToken",
+                parameters: parameters).responseJSON(completionHandler: { response in
+                
+            })
+            return AnonymousDisposable {
+                request.cancel()
+            }
+        }
+    }
+    
     func getNotificationList(phoneNumber phoneNumber:String,
                                                token:String,
                                                 type:String?,

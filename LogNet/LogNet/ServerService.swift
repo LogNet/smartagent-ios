@@ -18,4 +18,5 @@ protocol ServerService {
                              subtype:String?,
                              offset:Int?,
                              chunks_size:Int?) -> Observable<AnyObject>
+    func sendNotificationToken(notificationToken:String, phone:String, registrationToken:String) -> Observable<Void>
 }

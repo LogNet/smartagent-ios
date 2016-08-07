@@ -11,6 +11,7 @@ import Foundation
 let PHONE_KEY = "PHONE_KEY"
 let EMAIL_KEY = "EMAIL_KEY"
 let FULL_NAME_KEY = "FULL_NAME_KEY"
+let TOKEN_KEY = "TOKEN_KEY"
 
 class Prefences {
     
@@ -45,5 +46,16 @@ class Prefences {
     class func getFullName() -> String? {
         let defaults = NSUserDefaults.standardUserDefaults()
         return defaults.objectForKey(FULL_NAME_KEY) as? String
+    }
+    
+    class func saveToken(token: String) {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setObject(token, forKey: TOKEN_KEY)
+        defaults.synchronize()
+    }
+    
+    class func getToken() -> String? {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        return defaults.objectForKey(TOKEN_KEY) as? String
     }
 }

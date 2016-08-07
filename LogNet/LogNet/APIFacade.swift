@@ -56,20 +56,29 @@ class APIFacade {
         }.flatMap {_ in
             self.getFirebaseUserToken()
         }.flatMap { userToken in
-            self.savePrefences(phoneNumber, first_name: first_name, last_name: last_name, email: email)
+            self.savePrefences(phoneNumber, first_name: first_name, last_name: last_name, email: email,token: userToken)
         }
         return observable
     
     }
     
+    func sendNotificationToken(token:String) {
+        let phone = Prefences.getPhone()
+        let userToken = Prefences.getToken()
+        if phone != nil && userToken != nil {
+            self.service.sendNotificationToken(token, phone: phone!, registrationToken: userToken!)
+        }
+    }
+    
     // MARK: - Private Methods
     
     private func savePrefences(phoneNumber: String, first_name: String,
-                       last_name: String, email: String) -> Observable<()> {
+                               last_name: String, email: String, token:String) -> Observable<()> {
         return Observable.create { observer in
             Prefences.savePhone(phoneNumber)
             Prefences.saveEmail(email)
             Prefences.saveFullName("\(last_name) \(first_name)")
+            Prefences.saveToken(token)
             observer.onCompleted()
             return AnonymousDisposable {}
         }
