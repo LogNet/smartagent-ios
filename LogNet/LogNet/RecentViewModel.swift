@@ -39,11 +39,13 @@ class RecentViewModel: ViewModel {
     
     
     func fetch() {
+        if self.downloading { return }
         self.downloading = true;
         self.startFetching()
     }
     
     func fetchNext() {
+        if self.loadMoreStatus { return }
         self.loadMoreStatus = true;
         self.startFetching()
       
@@ -71,24 +73,26 @@ class RecentViewModel: ViewModel {
     
     private func startFetching() {
 //        var viewModels:Array<RecentNotificationCellViewModel>?
-        let observable = self.model.getNotifications(.Recent,fromID: 1, chunkSize: 20)
-        observable.subscribeNext{ (notifications) in }.dispose()
-        observable.subscribeError { (error) in
+        _ = self.model.getNotifications(.Recent,fromID: 1, chunkSize: 20).subscribe(onNext:{ notifications in
+            
+            }, onError:{ error in
                 self.downloading = false;
                 switch error {
-                case AppError.FORBIDDEN:
+                case ApplicationError.FORBIDDEN:
                     self.router.showLoginView()
                     break
-                case AppError.NOT_ACTIVATED:
+                case ApplicationError.NOT_ACTIVATED:
+                    self.router.showNoActivatedView()
                     break
                 default:
                     break
                 }
-            }
-            .dispose()
-        observable
-            .subscribeCompleted {
-            }.dispose()
+            }, onCompleted: {
+                
+            }, onDisposed: {
+                
+        }).addDisposableTo(self.disposeBag)
+        
     }
     
     

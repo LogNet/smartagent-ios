@@ -9,15 +9,11 @@
 import Foundation
 import RxSwift
 
-struct AuthHeaders {
-    var token:String
-    var phoneNumber:String
-}
-
 protocol ServerService {
     func register(phoneNumber: String, first_name: String,
                   last_name: String, email: String, uuid: String) -> Observable<String>
-    func getNotificationList(authHeaders:AuthHeaders,
+    func getNotificationList(phoneNumber phoneNumber:String,
+                             token:String,
                              type:String?,
                              subtype:String?,
                              offset:Int?,

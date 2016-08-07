@@ -9,10 +9,12 @@
 import Foundation
 import FirebaseAuth
 import KeychainAccess
+import RxSwift
 
 class LoginModel {
     let UUID_KEY = "UUID_KEY"
     var parser:ServerParser?
+    var disposableBag = DisposeBag()
     
     private var apiFacade: APIFacade
     
@@ -32,14 +34,12 @@ class LoginModel {
         let first_name = array[0] as String
         let last_name = array[1] as String
         
-        let observable = self.apiFacade.register(phoneNumber, first_name: first_name,
-            last_name: last_name, email: email, uuid: uuid)
-        _ = observable.subscribeCompleted {
-            completed(nil)
-        }
-        _ = observable.subscribeError { error in
-            completed(NSError(domain: "LoginModel", code: 666, userInfo: [NSLocalizedDescriptionKey: "Something went wrong!"]))
-        }
+        _ = self.apiFacade.register(phoneNumber, first_name: first_name,
+        last_name: last_name, email: email, uuid: uuid).subscribe(onError: { error in
+                completed(NSError(domain: "LoginModel", code: 666, userInfo: [NSLocalizedDescriptionKey: "Something went wrong!"]))
+            }, onCompleted: { 
+                completed(nil)
+            }).addDisposableTo(self.disposableBag)
     }
     
     // MARK: Private methods

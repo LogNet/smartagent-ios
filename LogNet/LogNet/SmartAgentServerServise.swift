@@ -14,6 +14,21 @@ class SmartAgentServerServise: ServerService {
     
     let baseURLString = "http://62.90.233.18:8080/"
     
+    private lazy var manager : Alamofire.Manager = {
+        // Create the server trust policies
+        let serverTrustPolicies: [String: ServerTrustPolicy] = [
+            "62.90.233.18": .DisableEvaluation
+        ]
+        // Create custom manager
+        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        configuration.HTTPAdditionalHeaders = Alamofire.Manager.defaultHTTPHeaders
+        let man = Alamofire.Manager(
+            configuration: NSURLSessionConfiguration.defaultSessionConfiguration(),
+            serverTrustPolicyManager: ServerTrustPolicyManager(policies: serverTrustPolicies)
+        )
+        return man
+    }()
+    
     func register(phoneNumber: String, first_name: String,
                last_name: String, email: String, uuid: String) -> Observable<String> {
         return Observable.create({(observer) -> Disposable in
@@ -49,19 +64,20 @@ class SmartAgentServerServise: ServerService {
         return nil
     }
     
-    func getNotificationList(authHeaders:AuthHeaders,
-                                    type:String?,
-                                 subtype:String?,
-                                 offset:Int?,
-                             chunks_size:Int?) -> Observable<AnyObject> {
+    func getNotificationList(phoneNumber phoneNumber:String,
+                                               token:String,
+                                                type:String?,
+                                             subtype:String?,
+                                              offset:Int?,
+                                         chunks_size:Int?) -> Observable<AnyObject> {
         return Observable.create({ observer -> Disposable in
             let parameters = ["type":self.validParameter(type),
                            "subtype":self.validParameter(subtype),
                             "offset":self.validParameter(offset),
                              "chunk":self.validParameter(chunks_size)]
-            let headers = ["SA-DN":authHeaders.phoneNumber,
-                        "SA-REGID":authHeaders.token]
-            let request = Alamofire.request(.GET, self.baseURLString + "getNotificationList",
+            let headers = ["SA-DN":phoneNumber,
+                        "SA-REGID":token]
+            let request = self.manager.request(.GET, self.baseURLString + "getNotificationList",
                                             parameters: parameters, headers: headers)
                 .responseJSON(completionHandler: { response in
                     if response.result.error == nil {

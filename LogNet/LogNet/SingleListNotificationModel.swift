@@ -35,7 +35,7 @@ class SingleListNotificationModel: NSObject {
             if result?.array != nil {
                 observer.onNext(result!.array!)
             } else {
-                    observer.onError(result!.error!)
+                observer.onError(result!.error!)
             }
             return AnonymousDisposable { }
         }

@@ -27,10 +27,9 @@ class LoginViewModel:ViewModel {
     
     func login(completion:(error:NSError?)->Void) -> Void {
         if self.phoneNumber != nil && self.full_name != nil && self.email != nil {
-            weak var weakSelf = self
-            self.loginModel.login(self.phoneNumber!, full_name: self.full_name!, email: self.email!, completed: { (error) in
+            self.loginModel.login(self.phoneNumber!, full_name: self.full_name!, email: self.email!, completed: {[weak self] (error) in
                 if error == nil {
-                   weakSelf?.router.loginFinished()
+                   self!.router.loginFinished()
                 }
                 completion(error: error)
             })

@@ -32,6 +32,8 @@
 		EA7ECA5D1D1BB41E0014010A /* RecentNotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7ECA5C1D1BB41E0014010A /* RecentNotificationCell.swift */; };
 		EA8BB9401D21A04200D07561 /* PushTokenUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8BB93F1D21A04200D07561 /* PushTokenUtil.swift */; };
 		EA8CDA4A1D2C44A50090E9C1 /* SmartAgentServerServise.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8CDA491D2C44A50090E9C1 /* SmartAgentServerServise.swift */; };
+		EAD0C6811D5787600033B307 /* NSErrorExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD0C6801D5787600033B307 /* NSErrorExtention.swift */; };
+		EAD0C6841D578BED0033B307 /* ErrorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD0C6831D578BED0033B307 /* ErrorUtil.swift */; };
 		EAD43D0F1D2CBAB600E1FF15 /* DummyServerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD43D0E1D2CBAB600E1FF15 /* DummyServerService.swift */; };
 		EAD43D151D2CC4AB00E1FF15 /* APIFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD43D141D2CC4AB00E1FF15 /* APIFacade.swift */; };
 		EAD43D1A1D2CD16300E1FF15 /* cancelled.json in Resources */ = {isa = PBXBuildFile; fileRef = EAD43D161D2CD16300E1FF15 /* cancelled.json */; };
@@ -59,7 +61,6 @@
 		EAE50A661D12CEEB00B4329B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAE50A641D12CEEB00B4329B /* LaunchScreen.storyboard */; };
 		EAE50A711D12CEEC00B4329B /* LogNetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE50A701D12CEEC00B4329B /* LogNetTests.swift */; };
 		EAE50A7C1D12CEEC00B4329B /* LogNetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE50A7B1D12CEEC00B4329B /* LogNetUITests.swift */; };
-		EAECB5A61D5277010080ED3D /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAECB5A51D5277010080ED3D /* Globals.swift */; };
 		EAECB5A81D5288AD0080ED3D /* Prefences.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAECB5A71D5288AD0080ED3D /* Prefences.swift */; };
 /* End PBXBuildFile section */
 
@@ -107,6 +108,8 @@
 		EA7ECA5C1D1BB41E0014010A /* RecentNotificationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentNotificationCell.swift; sourceTree = "<group>"; };
 		EA8BB93F1D21A04200D07561 /* PushTokenUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushTokenUtil.swift; sourceTree = "<group>"; };
 		EA8CDA491D2C44A50090E9C1 /* SmartAgentServerServise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmartAgentServerServise.swift; sourceTree = "<group>"; };
+		EAD0C6801D5787600033B307 /* NSErrorExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSErrorExtention.swift; sourceTree = "<group>"; };
+		EAD0C6831D578BED0033B307 /* ErrorUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorUtil.swift; sourceTree = "<group>"; };
 		EAD43D0E1D2CBAB600E1FF15 /* DummyServerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyServerService.swift; sourceTree = "<group>"; };
 		EAD43D141D2CC4AB00E1FF15 /* APIFacade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIFacade.swift; sourceTree = "<group>"; };
 		EAD43D161D2CD16300E1FF15 /* cancelled.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cancelled.json; sourceTree = "<group>"; };
@@ -140,7 +143,6 @@
 		EAE50A771D12CEEC00B4329B /* SmartAgent.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartAgent.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAE50A7B1D12CEEC00B4329B /* LogNetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogNetUITests.swift; sourceTree = "<group>"; };
 		EAE50A7D1D12CEEC00B4329B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EAECB5A51D5277010080ED3D /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		EAECB5A71D5288AD0080ED3D /* Prefences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prefences.swift; sourceTree = "<group>"; };
 		EE8F0BF2C4AFB1E94B6D9B3B /* Pods-SmartAgent.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartAgent.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartAgent/Pods-SmartAgent.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -262,6 +264,14 @@
 			name = Fonts;
 			sourceTree = "<group>";
 		};
+		EAD0C6821D57888B0033B307 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				EAD0C6801D5787600033B307 /* NSErrorExtention.swift */,
+			);
+			name = Extentions;
+			sourceTree = "<group>";
+		};
 		EAD43D0B1D2C516B00E1FF15 /* StorageService */ = {
 			isa = PBXGroup;
 			children = (
@@ -331,6 +341,7 @@
 		EAE50A5A1D12CEEB00B4329B /* LogNet */ = {
 			isa = PBXGroup;
 			children = (
+				EAD0C6821D57888B0033B307 /* Extentions */,
 				EAECB5A91D552D9C0080ED3D /* Utils */,
 				EA35A85B1D3EADDB00BE3618 /* Fonts */,
 				EA35A8561D3D6BE800BE3618 /* CustomViews */,
@@ -346,7 +357,6 @@
 				EAE50A671D12CEEB00B4329B /* Info.plist */,
 				EA2637431D12E46600D5988D /* GoogleService-Info.plist */,
 				EA8BB93F1D21A04200D07561 /* PushTokenUtil.swift */,
-				EAECB5A51D5277010080ED3D /* Globals.swift */,
 			);
 			path = LogNet;
 			sourceTree = "<group>";
@@ -372,6 +382,7 @@
 		EAECB5A91D552D9C0080ED3D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				EAD0C6831D578BED0033B307 /* ErrorUtil.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -592,11 +603,11 @@
 			files = (
 				EA42EAF11D438C7600451BB9 /* RepricePNRView.swift in Sources */,
 				EA26375B1D16A1F700D5988D /* LoginModelsFactory.swift in Sources */,
+				EAD0C6811D5787600033B307 /* NSErrorExtention.swift in Sources */,
 				EADC60201D1B125C00B8743C /* NotificationsStorageServiseRealm.swift in Sources */,
 				EADC60181D1A782B00B8743C /* RecentModelFactory.swift in Sources */,
 				EA7ECA5D1D1BB41E0014010A /* RecentNotificationCell.swift in Sources */,
 				EADC601D1D1A8EFC00B8743C /* Notification.swift in Sources */,
-				EAECB5A61D5277010080ED3D /* Globals.swift in Sources */,
 				EADC600E1D19785000B8743C /* RecentViewController.swift in Sources */,
 				EA35A8581D3D6C4F00BE3618 /* UnderlinedTextField.swift in Sources */,
 				EADC60101D1A6EB200B8743C /* RecentViewModel.swift in Sources */,
@@ -608,6 +619,7 @@
 				EA8CDA4A1D2C44A50090E9C1 /* SmartAgentServerServise.swift in Sources */,
 				EADC60041D16E44F00B8743C /* WebBrowserModel.swift in Sources */,
 				EA26375F1D16A59700D5988D /* SmartAgentServerParser.swift in Sources */,
+				EAD0C6841D578BED0033B307 /* ErrorUtil.swift in Sources */,
 				EADC60021D16E3CE00B8743C /* WebBrowserViewModel.swift in Sources */,
 				EA35A8631D3EC5DE00BE3618 /* NotificationCell.swift in Sources */,
 				EA2637521D15BF9000D5988D /* LoginModel.swift in Sources */,

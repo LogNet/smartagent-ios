@@ -8,17 +8,18 @@
 
 import Foundation
 
+let PHONE_KEY = "TOKEN_KEY"
+
 class Prefences {
-    let PHONE_KEY = "TOKEN_KEY"
-    let userDefaults = NSUserDefaults.standardUserDefaults()
     
-    var phoneNumber: String? {
-        set {
-            self.userDefaults.setValue(phoneNumber, forKey: PHONE_KEY)
-            self.userDefaults.synchronize()
-        }
-        get {
-           return self.userDefaults.stringForKey(PHONE_KEY)
-        }
+    class func getPhone() -> String? {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        return defaults.objectForKey(PHONE_KEY) as? String
+    }
+    
+    class func savePhone(phone: String) {
+    let defaults = NSUserDefaults.standardUserDefaults()
+    defaults.setObject(phone, forKey: PHONE_KEY)
+    defaults.synchronize()
     }
 }

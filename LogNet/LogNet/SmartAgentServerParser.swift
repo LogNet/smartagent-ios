@@ -24,11 +24,11 @@ class SmartAgentParser: ServerParser {
         return nil
     }
     
-    func parseNotifications(JSON:AnyObject?) -> (array:Array<Notification>?, error:NSError?) {
+    func parseNotifications(JSON:AnyObject?) -> (array:Array<Notification>?, error:ErrorType?) {
         print(JSON)
-        if let jsonNotifications = JSON as? [[String: AnyObject]]{
+        if let jsonDict = JSON as? [[String: AnyObject]] {
             var notifications = Array<Notification>()
-            for jsonNotification in jsonNotifications {
+            for jsonNotification in jsonDict {
                 let notification = Notification()
                 notification.notification_id = jsonNotification["notification_id"] as? String
                 notification.status = jsonNotification["status"] as? String
@@ -45,7 +45,21 @@ class SmartAgentParser: ServerParser {
             }
             return (notifications, nil);
         }
-        return (nil, nil)
+        if let error = self.checkOnErrorStatus(JSON!){
+            return (nil, error)
+        } else {
+            return (nil, ApplicationError.Unknown)
+        }
+
     }
     
+    func checkOnErrorStatus(JSON:AnyObject) -> ErrorType? {
+        let jsonDict = JSON as? [String: AnyObject]
+        let code = jsonDict?["code"]
+        let status = jsonDict?["status"]
+        if (code != nil) && (status != nil) {
+            return ErrorUtil.ErrorWithMessage(code as! String)
+        }
+        return nil
+    }
 }

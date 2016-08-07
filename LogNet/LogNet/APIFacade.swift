@@ -13,15 +13,25 @@ import Firebase
 class APIFacade {
     
 	private var service: ServerService
-    private var prefences: Prefences
     init(service: ServerService, prefences:Prefences) {
 		self.service = service
-        self.prefences = prefences
 	}
 
     func getNotifications(type type:String?, offset: Int?, chunkSize: Int) -> Observable<AnyObject> {
+        
+        // Return error when phone number is empty.
+        let phone = Prefences.getPhone()
+        if phone == nil {
+            return Observable.create{ observer -> Disposable in
+                observer.onError(ApplicationError.FORBIDDEN)
+            return AnonymousDisposable {}
+           }
+            
+        }
+        
+        // Return sequense.
         let observable = self.getFirebaseUserToken().flatMap{ token in
-            return self.service.getNotificationList(AuthHeaders(token:token,phoneNumber:self.prefences.phoneNumber!),
+            return self.service.getNotificationList(phoneNumber: phone!,token: token,
                                                        type: "Recent", subtype: "", offset:offset, chunks_size: chunkSize)
         }
         return observable
@@ -46,13 +56,24 @@ class APIFacade {
         }.flatMap {_ in
             self.getFirebaseUserToken()
         }.flatMap { userToken in
-             return Observable.just()
+            self.savePrefences(phoneNumber, first_name: first_name, last_name: last_name, email: email)
         }
         return observable
     
     }
     
-    func getFirebaseUserToken() -> Observable<String> {
+    // MARK: - Private Methods
+    
+    private func savePrefences(phoneNumber: String, first_name: String,
+                       last_name: String, email: String) -> Observable<()> {
+        return Observable.create { observer in
+            Prefences.savePhone(phoneNumber)
+            observer.onCompleted()
+            return AnonymousDisposable {}
+        }
+    }
+    
+    private func getFirebaseUserToken() -> Observable<String> {
         return Observable.create({ (subscriber) -> Disposable in
             if let user = FIRAuth.auth()?.currentUser {
                 // User is signed in.
@@ -69,13 +90,13 @@ class APIFacade {
                     }
                 })
             } else {
-                subscriber.onError(AppError.FORBIDDEN)
+                subscriber.onError(ApplicationError.FORBIDDEN)
             }
             return AnonymousDisposable {}
         })
     }
     
-    func authorizeFirebase(token:String) -> Observable<FIRUser> {
+    private func authorizeFirebase(token:String) -> Observable<FIRUser> {
         return Observable.create { (subscriber) -> Disposable in
             FIRAuth.auth()?.signInWithCustomToken(token) { (user, error) in
                 if user != nil && error == nil {

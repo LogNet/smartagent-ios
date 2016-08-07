@@ -35,6 +35,11 @@ class Router {
         self.recentViewController?.presentViewController(loginViewController, animated: false, completion: nil)
     }
     
+    func showNoActivatedView() {
+        let viewController = self.storyboard.instantiateViewControllerWithIdentifier("ActivationMessageViewController")
+        self.recentViewController?.presentViewController(viewController, animated: false, completion: nil)
+    }
+    
     func getLoginViewController() -> UIViewController {
         let loginModel = LoginModelsFactory.getLoginModel()
         let loginViewModel = LoginViewModel(loginModel: loginModel,router: self)
