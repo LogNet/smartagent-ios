@@ -17,7 +17,7 @@ class APIFacade {
 		self.service = service
 	}
 
-    func getNotifications(type type:String?, offset: Int?, chunkSize: Int) -> Observable<AnyObject> {
+    func getNotifications(type type:String?, subtype:NotificationSubtype, offset: Int?, chunkSize: Int) -> Observable<AnyObject> {
         
         // Return error when phone number is empty.
         let phone = Prefences.getPhone()
@@ -32,7 +32,7 @@ class APIFacade {
         // Return sequense.
         let observable = self.getFirebaseUserToken().flatMap{ token in
             return self.service.getNotificationList(phoneNumber: phone!,token: token,
-                                                       type: "Recent", subtype: "", offset:offset, chunks_size: chunkSize)
+                                                       type: type, subtype: subtype.rawValue, offset:offset, chunks_size: chunkSize)
         }
         return observable
 	}

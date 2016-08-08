@@ -9,13 +9,6 @@
 import UIKit
 import RxSwift
 
-enum NotificationType:String {
-    case Recent = ""
-    case Reprice = "RP"
-    case Cancelled = "C"
-    case TicketDue = "TD"
-}
-
 class SingleListNotificationModel: NSObject {
     var apiFacade:APIFacade?
     var serverParser:ServerParser?
@@ -23,15 +16,53 @@ class SingleListNotificationModel: NSObject {
     
     // MARK: Public methods
     
-    func getNotifications(type:NotificationType,fromID:Int?, chunkSize:Int8) -> Observable<[Notification]> {
-        return self.apiFacade!.getNotifications(type:type.rawValue, offset:fromID, chunkSize: 20).flatMap{ JSON in
-            return self.parseJSON(JSON)
+    func fetchNotifications(type:ListType, subtype:NotificationSubtype,offset:Int?, chunkSize:Int) -> Observable<Void> {
+        return self.apiFacade!.getNotifications(type:type.rawValue,
+                                                subtype:subtype,
+                                                offset:offset, chunkSize: chunkSize)
+            .flatMap{ JSON in
+                return self.saveNotifications(JSON, type: type, offset: offset)
+            }
+    }
+
+    private func saveNotifications(JSON:AnyObject, type:ListType, offset:Int?) -> Observable<Void> {
+        return self.parseJSON(JSON, listType: type).flatMap { notifications in
+            self.storeNotifications(notifications, offset: offset, type: type)
         }
     }
     
-    private func parseJSON(JSON:AnyObject) -> Observable<[Notification]> {
+    func storeNotifications(notifications:[Notification], offset:Int?, type:ListType) -> Observable<Void> {
         return Observable.create{ observer in
-            let result = self.serverParser?.parseNotifications(JSON)
+            if offset == 0 {
+                self.storageService?.deleteAllByType(type, completion: { [weak self](error) in
+                    self?.storageService?.addNotifications(notifications, completion: { (error) in
+                        if error == nil {
+                            observer.onNext()
+                            observer.onCompleted()
+                        } else {
+                            observer.onError(error!)
+                        }
+                    })
+                })
+            } else {
+                self.storageService?.addNotifications(notifications, completion: { (error) in
+                    if error == nil {
+                        observer.onNext()
+                        observer.onCompleted()
+                    } else {
+                        observer.onError(error!)
+                    }
+
+                })
+            }
+            
+            return AnonymousDisposable {}
+        }
+    }
+    
+    private func parseJSON(JSON:AnyObject, listType:ListType) -> Observable<[Notification]> {
+        return Observable.create{ observer in
+            let result = self.serverParser?.parseNotifications(JSON, listType: listType)
             if result?.array != nil {
                 observer.onNext(result!.array!)
             } else {

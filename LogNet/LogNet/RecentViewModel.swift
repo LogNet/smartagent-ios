@@ -10,6 +10,8 @@ import UIKit
 import FirebaseAuth
 import FirebaseInstanceID
 import RxSwift
+import RealmSwift
+import Realm
 
 class RecentViewModel: ViewModel {
     
@@ -18,7 +20,15 @@ class RecentViewModel: ViewModel {
     dynamic var downloading:Bool = false
     dynamic var hasNextChunk:Bool = true;
     var model:SingleListNotificationModel
-    var disposeBag = DisposeBag()
+    
+    private var disposeBag = DisposeBag()
+    private let realm = try! Realm()
+    private var results:Results<Notification>?
+    
+    lazy var notifications:Results<Notification> = {
+        let results = self.realm.objects(Notification.self).filter("listType = '\(ListType.Recent.rawValue)'")
+        return results
+    }()
     
     lazy var dateFormatter:NSDateFormatter = {
         let formatter = NSDateFormatter()
@@ -31,6 +41,12 @@ class RecentViewModel: ViewModel {
         super.init(router: router)
     
     }
+    
+//    func fetchFromDatabase() {
+//        let realm = try! Realm()
+//        let results = realm.objects(Notification.self).filter("listType == \()")
+//    }
+    
     // MARK: Public Methods
     
     func selectModelForIndex(index:Int) {
@@ -52,7 +68,9 @@ class RecentViewModel: ViewModel {
     }
     
     func cellViewModelForRow(row:Int) -> RecentNotificationCellViewModel {
-        return self.cellViewModels![row] as! RecentNotificationCellViewModel
+        let notification = notifications[row]
+        return self.viewModelFromNotification(notification)
+//        return self.cellViewModels![row] as! RecentNotificationCellViewModel
     }
     
     //    func sendFirebaseTokenToServer() {
@@ -72,9 +90,9 @@ class RecentViewModel: ViewModel {
     }
     
     private func startFetching() {
-//        var viewModels:Array<RecentNotificationCellViewModel>?
-        _ = self.model.getNotifications(.Recent,fromID: 1, chunkSize: 20).subscribe(onNext:{ notifications in
-            
+        _ = self.model.fetchNotifications(.Recent,subtype: .All, offset: 0, chunkSize: 20).subscribe(onNext: { notifications in
+            self.downloading = false;
+            self.loadMoreStatus = false;
             }, onError:{ error in
                 self.downloading = false;
                 switch error {

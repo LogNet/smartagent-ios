@@ -9,6 +9,19 @@
 import Foundation
 import RealmSwift
 
+enum ListType: String {
+    case Recent = ""
+    case Reprice = "RP"
+    case TicketingDue = "TD"
+    case Cancelled = "C"
+}
+
+enum NotificationSubtype:String {
+    case All = ""
+    case Pending = "PENDING"
+    case Complete = "COMPLETE"
+}
+
 class Notification: Object {
     dynamic var notification_id:String?
     dynamic var status:String?
@@ -19,7 +32,7 @@ class Notification: Object {
     dynamic var notification_time:NSDate?
     dynamic var pnr_summary:String?
     dynamic var contact_name:String?
- 
+    dynamic var listType:String?
     override var description: String {
         get {
             return "title: \(self.title) date: \(self.notification_time)"

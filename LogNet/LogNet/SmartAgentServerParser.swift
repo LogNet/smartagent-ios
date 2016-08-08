@@ -24,7 +24,7 @@ class SmartAgentParser: ServerParser {
         return nil
     }
     
-    func parseNotifications(JSON:AnyObject?) -> (array:Array<Notification>?, error:ErrorType?) {
+    func parseNotifications(JSON:AnyObject?, listType:ListType) -> (array:Array<Notification>?, error:ErrorType?) {
         print(JSON)
         if let jsonDict = JSON as? [[String: AnyObject]] {
             var notifications = Array<Notification>()
@@ -40,6 +40,7 @@ class SmartAgentParser: ServerParser {
                 notification.notification_time = self.dateFormatter.dateFromString(time!)
                 notification.pnr_summary = jsonNotification["pnr_summary"] as? String
                 notification.contact_name = jsonNotification["contact_name"] as? String
+                notification.listType = listType.rawValue
 
                 notifications.append(notification)
             }

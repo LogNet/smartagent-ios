@@ -7,13 +7,19 @@
 //
 
 import UIKit
-import ReactiveCocoa
+//import ReactiveCocoa
 import PKHUD
+import RealmSwift
+import RxSwift
+import RxCocoa
+
 
 class RecentViewController: UITableViewController {
 
     var viewModel:RecentViewModel?
     var token: dispatch_once_t = 0
+    var notificationToken: NotificationToken? = nil
+    let disposableBag = DisposeBag()
     
     @IBOutlet weak var loadMoreIndicator: UIActivityIndicatorView!
     @IBOutlet weak var footerView: UIView!
@@ -27,6 +33,7 @@ class RecentViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         self.bindViewModel()
+        self.subscribeToRealm()
     }
 
     override func viewDidAppear(animated: Bool) {
@@ -41,6 +48,34 @@ class RecentViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func subscribeToRealm() {
+        // Observe Results Notifications
+        notificationToken = self.viewModel?.notifications.addNotificationBlock { [weak self] (changes: RealmCollectionChange) in
+            guard let tableView = self?.tableView else { return }
+            switch changes {
+            case .Initial:
+                // Results are now populated and can be accessed without blocking the UI
+                tableView.reloadData()
+                break
+            case .Update(_, let deletions, let insertions, let modifications):
+                // Query results have changed, so apply them to the UITableView
+                tableView.beginUpdates()
+                tableView.insertRowsAtIndexPaths(insertions.map { NSIndexPath(forRow: $0, inSection: 0) },
+                    withRowAnimation: .Automatic)
+                tableView.deleteRowsAtIndexPaths(deletions.map { NSIndexPath(forRow: $0, inSection: 0) },
+                    withRowAnimation: .Automatic)
+                tableView.reloadRowsAtIndexPaths(modifications.map { NSIndexPath(forRow: $0, inSection: 0) },
+                    withRowAnimation: .Automatic)
+                tableView.endUpdates()
+                break
+            case .Error(let error):
+                // An error occurred while opening the Realm file on the background worker thread
+                fatalError("\(error)")
+                break
+            }
+        }
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -50,10 +85,10 @@ class RecentViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        if self.viewModel?.cellViewModels != nil {
-            return (self.viewModel?.cellViewModels!.count)!
-        }
-        return 0
+//        if self.viewModel?.cellViewModels != nil {
+//            return (self.viewModel?.cellViewModels!.count)!
+//        }
+        return self.viewModel?.notifications.count ?? 0
     }
 
     func handleRefresh(refreshControl: UIRefreshControl) {
@@ -74,38 +109,33 @@ class RecentViewController: UITableViewController {
     
     func bindViewModel() {
         
-        self.viewModel?.rac_valuesForKeyPath("loadMoreStatus", observer: self).subscribeNext({loadMoreStatus in
-            if loadMoreStatus.boolValue == false {
+        Observable.just(self.viewModel?.loadMoreStatus).subscribeNext{ loadMore in
+            if loadMore == false {
                 self.loadMoreIndicator.stopAnimating()
-//                self.tableView.tableFooterView = nil
             } else {
                 self.tableView.tableFooterView = self.footerView
                 self.loadMoreIndicator.startAnimating()
             }
-
-        })
+        }.addDisposableTo(self.disposableBag)
         
-        self.viewModel?.rac_valuesForKeyPath("cellViewModels", observer: self).subscribeNext({[weak self] (models:AnyObject!) in
-            if models == nil {
-                self?.showNoNewMessages()
-            } else {
-                if self?.tableView.backgroundView != nil {
-                    self?.tableView.backgroundView = nil
+        Observable.just(self.viewModel?.notifications)
+            .subscribeNext { notifications in
+                if notifications == nil {
+                    self.showNoNewMessages()
+                } else {
+                    if self.tableView.backgroundView != nil {
+                        self.tableView.backgroundView = nil
+                    }
                 }
-                self!.tableView.reloadData()
-
-            }
-        })
+        }.addDisposableTo(self.disposableBag)
         
-        let signal = self.viewModel?.rac_valuesForKeyPath("downloading", observer: self)
-        signal?.subscribeNext({x in
-            if x.boolValue == true {
+        Observable.just(self.viewModel?.downloading).subscribeNext{ downloading in
+            if downloading == true {
                 HUD.show(.Progress)
             } else if HUD.isVisible {
                 HUD.flash(.Progress)
             }
-        })
-
+        }.addDisposableTo(self.disposableBag)
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -204,4 +234,8 @@ class RecentViewController: UITableViewController {
     }
     */
 
+    deinit {
+        notificationToken?.stop()
+    }
+    
 }

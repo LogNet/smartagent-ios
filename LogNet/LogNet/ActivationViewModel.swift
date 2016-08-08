@@ -8,6 +8,7 @@
 
 import Foundation
 import RxSwift
+import Firebase
 
 class ActivationViewModel: NSObject {
     private let model:SingleListNotificationModel
@@ -19,8 +20,17 @@ class ActivationViewModel: NSObject {
     }
     
     func isUserActivated() -> Observable<Bool> {
-        return self.model.getNotifications(.Recent, fromID: 0, chunkSize: 20).flatMap{ notifications in
+        return self.model.fetchNotifications(.Recent,subtype: .All, offset: 0, chunkSize: 20).flatMap{ notifications in
             return Observable.just(true)
         }
+    }
+    
+    func sendNotificationToken() {
+        if FIRInstanceID.instanceID().token() != nil {
+            print("InstanceID token: \(FIRInstanceID.instanceID().token())")
+            let apiFacade = self.model.apiFacade
+            apiFacade!.sendNotificationToken(FIRInstanceID.instanceID().token()!)
+        }
+
     }
 }

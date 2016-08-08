@@ -10,7 +10,7 @@ import Foundation
 
 class DummyServerService {
     
-    func getNotificationList(type: NotificationType, subtype: String?, from_id: Int?, to_id: Int?, from_time: NSTimeInterval?, to_time: NSTimeInterval?, chunks_size: Int?, completion: JSONCompletionBlock?) {
+    func getNotificationList(type: ListType, subtype: String?, from_id: Int?, to_id: Int?, from_time: NSTimeInterval?, to_time: NSTimeInterval?, chunks_size: Int?, completion: JSONCompletionBlock?) {
         if (completion != nil) {
             completion!(self.JSONFromBundle(self.JSONNameForType(type)),nil)
         }
@@ -25,7 +25,7 @@ class DummyServerService {
     
     
     
-    func JSONNameForType(type:NotificationType) -> String {
+    func JSONNameForType(type:ListType) -> String {
         var name:String?
         switch type {
         case .Reprice:
@@ -34,7 +34,7 @@ class DummyServerService {
         case .Cancelled:
             name = "cancelled"
             break
-        case .TicketDue:
+        case .TicketingDue:
             name = "ticketdue"
             break
         default:

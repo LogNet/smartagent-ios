@@ -16,6 +16,23 @@ class NotificationsStorageServiseRealm: NotificationsStorageServise {
 		return queue
 	}()
 
+    func deleteAllByType(type: ListType, completion: ErrorCompletionBlock) {
+        dispatch_async(self.saveQueue) {
+            autoreleasepool({
+                let realm = try! Realm()
+                let notifications = realm.objects(Notification.self).filter("listType == '\(type.rawValue)'")
+                if notifications.count > 0 {
+                    realm.beginWrite()
+                    realm.delete(notifications)
+                    try! realm.commitWrite()
+                }
+                dispatch_async(dispatch_get_main_queue(), {
+                    completion(error: nil)
+                })
+            })
+        }
+    }
+    
 	func cleanUp(completion: ErrorCompletionBlock) {
 		dispatch_async(self.saveQueue) {
 			autoreleasepool({
