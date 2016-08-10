@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DataSource: NSObject, UITableViewDataSource {
+class AbstractDataSource: NSObject, UITableViewDataSource {
     
     var contentProvider: AbstractContentProvider?
     var tableView: UITableView

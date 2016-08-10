@@ -23,7 +23,7 @@
 		EA35A8631D3EC5DE00BE3618 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA35A8621D3EC5DE00BE3618 /* NotificationCell.swift */; };
 		EA35A8651D3ED28700BE3618 /* NoMessagesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA35A8641D3ED28700BE3618 /* NoMessagesView.xib */; };
 		EA35A8671D40025400BE3618 /* RepriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA35A8661D40025400BE3618 /* RepriceViewController.swift */; };
-		EA35A8691D4014FF00BE3618 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA35A8681D4014FF00BE3618 /* DataSource.swift */; };
+		EA35A8691D4014FF00BE3618 /* AbstractDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA35A8681D4014FF00BE3618 /* AbstractDataSource.swift */; };
 		EA35A86B1D40152100BE3618 /* AbstractContentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA35A86A1D40152100BE3618 /* AbstractContentProvider.swift */; };
 		EA42EAF11D438C7600451BB9 /* RepricePNRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA42EAF01D438C7600451BB9 /* RepricePNRView.swift */; };
 		EA42EAF31D43AD6800451BB9 /* RepricePNRViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA42EAF21D43AD6800451BB9 /* RepricePNRViewModel.swift */; };
@@ -100,7 +100,7 @@
 		EA35A8621D3EC5DE00BE3618 /* NotificationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
 		EA35A8641D3ED28700BE3618 /* NoMessagesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoMessagesView.xib; sourceTree = "<group>"; };
 		EA35A8661D40025400BE3618 /* RepriceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepriceViewController.swift; sourceTree = "<group>"; };
-		EA35A8681D4014FF00BE3618 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		EA35A8681D4014FF00BE3618 /* AbstractDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractDataSource.swift; sourceTree = "<group>"; };
 		EA35A86A1D40152100BE3618 /* AbstractContentProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractContentProvider.swift; sourceTree = "<group>"; };
 		EA42EAF01D438C7600451BB9 /* RepricePNRView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepricePNRView.swift; sourceTree = "<group>"; };
 		EA42EAF21D43AD6800451BB9 /* RepricePNRViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepricePNRViewModel.swift; sourceTree = "<group>"; };
@@ -308,7 +308,7 @@
 			children = (
 				EAD43D0D1D2C56B600E1FF15 /* Parsers */,
 				EADC601A1D1A8A5100B8743C /* Typealiases.swift */,
-				EA35A8681D4014FF00BE3618 /* DataSource.swift */,
+				EA35A8681D4014FF00BE3618 /* AbstractDataSource.swift */,
 				EA35A86A1D40152100BE3618 /* AbstractContentProvider.swift */,
 				EAECB5A71D5288AD0080ED3D /* Prefences.swift */,
 			);
@@ -640,7 +640,7 @@
 				EAD43D151D2CC4AB00E1FF15 /* APIFacade.swift in Sources */,
 				EADC601B1D1A8A5100B8743C /* Typealiases.swift in Sources */,
 				EAFD27F71D5AF9EB00818E48 /* SingleListViewModel.swift in Sources */,
-				EA35A8691D4014FF00BE3618 /* DataSource.swift in Sources */,
+				EA35A8691D4014FF00BE3618 /* AbstractDataSource.swift in Sources */,
 				EA35A85A1D3D825300BE3618 /* ActivationMessageViewController.swift in Sources */,
 				EA26374A1D15B95A00D5988D /* LoginViewModel.swift in Sources */,
 				EAD43D0F1D2CBAB600E1FF15 /* DummyServerService.swift in Sources */,

@@ -90,8 +90,7 @@ class SmartAgentServerServise: ServerService {
                            "subtype":self.validParameter(subtype),
                             "offset":self.validParameter(offset),
                              "chunk":self.validParameter(chunks_size)]
-            let headers = ["SA-DN":phoneNumber,
-                        "SA-REGID":token]
+            let headers = ["SA-DN":phoneNumber, "SA-REGID":token]
             let request = self.manager.request(.GET, self.baseURLString + "getNotificationList",
                                             parameters: parameters, headers: headers)
                 .responseJSON(completionHandler: { response in
@@ -100,7 +99,9 @@ class SmartAgentServerServise: ServerService {
                             observer.onNext(response.result.value!)
                             observer.onCompleted()
                         } else {
-                             let error = NSError(domain: "lognet.LogNet.SmartAgentServerService", code: -6123, userInfo: [NSLocalizedDescriptionKey: "Server response is nil."])
+                             let error = NSError(domain: "lognet.LogNet.SmartAgentServerService",
+                                                 code: -6123,
+                                             userInfo: [NSLocalizedDescriptionKey: "Server response is nil."])
                             observer.onError(error)
                         }
                     } else {
