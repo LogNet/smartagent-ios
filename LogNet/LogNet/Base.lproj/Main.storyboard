@@ -155,8 +155,12 @@
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                             </userDefinedRuntimeAttributes>
                                         </view>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Refund Filled" translatesAutoresizingMaskIntoConstraints="NO" id="7uK-jd-fSW">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7uK-jd-fSW">
                                             <rect key="frame" x="15" y="15" width="24" height="24"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="24" id="C9C-uU-6Gb"/>
+                                                <constraint firstAttribute="height" constant="24" id="hlD-9K-7nw"/>
+                                            </constraints>
                                         </imageView>
                                     </subviews>
                                     <constraints>

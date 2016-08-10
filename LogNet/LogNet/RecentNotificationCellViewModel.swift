@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class RecentNotificationCellViewModel {
     lazy var dateFormatter:NSDateFormatter = {
@@ -21,6 +22,7 @@ class RecentNotificationCellViewModel {
     var contactName:String?
     var pnrSummary:String?
     var date:String?
+    var image:UIImage?
     private var notification:Notification
     
     init(notification: Notification) {
@@ -35,6 +37,26 @@ class RecentNotificationCellViewModel {
         self.pnrSummary = self.notification.pnr_summary
         if let time = self.notification.notification_time {
             self.date = self.dateFormatter.stringFromDate(time)
+        }
+        self.setupImage()
+    }
+    
+    func setupImage() {
+        guard let type = self.notification.type else {
+            return
+        }
+        switch type {
+        case "RP":
+            self.image = UIImage(named: "Refund Filled")
+            break
+        case "C":
+            self.image = UIImage(named: "Cancelled Filled circle")
+            break
+        case "TD":
+            self.image = UIImage(named: "Ticket Filled circle")
+            break
+        default:
+            break
         }
     }
 }

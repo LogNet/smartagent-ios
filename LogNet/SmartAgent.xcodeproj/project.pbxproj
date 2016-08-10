@@ -47,7 +47,6 @@
 		EADC60081D175DDA00B8743C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EADC60071D175DDA00B8743C /* QuartzCore.framework */; };
 		EADC600A1D18543800B8743C /* AlertNotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60091D18543700B8743C /* AlertNotificationViewModel.swift */; };
 		EADC600E1D19785000B8743C /* RecentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC600D1D19785000B8743C /* RecentViewController.swift */; };
-		EADC60101D1A6EB200B8743C /* RecentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC600F1D1A6EB200B8743C /* RecentViewModel.swift */; };
 		EADC60121D1A6EF500B8743C /* SingleListNotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60111D1A6EF500B8743C /* SingleListNotificationModel.swift */; };
 		EADC60141D1A6FEA00B8743C /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60131D1A6FEA00B8743C /* ViewModel.swift */; };
 		EADC60161D1A77AB00B8743C /* NotificationsStorageServise.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60151D1A77AB00B8743C /* NotificationsStorageServise.swift */; };
@@ -63,6 +62,7 @@
 		EAE50A711D12CEEC00B4329B /* LogNetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE50A701D12CEEC00B4329B /* LogNetTests.swift */; };
 		EAE50A7C1D12CEEC00B4329B /* LogNetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE50A7B1D12CEEC00B4329B /* LogNetUITests.swift */; };
 		EAECB5A81D5288AD0080ED3D /* Prefences.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAECB5A71D5288AD0080ED3D /* Prefences.swift */; };
+		EAFD27F71D5AF9EB00818E48 /* SingleListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFD27F61D5AF9EB00818E48 /* SingleListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,7 +124,6 @@
 		EADC60071D175DDA00B8743C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		EADC60091D18543700B8743C /* AlertNotificationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertNotificationViewModel.swift; sourceTree = "<group>"; };
 		EADC600D1D19785000B8743C /* RecentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentViewController.swift; sourceTree = "<group>"; };
-		EADC600F1D1A6EB200B8743C /* RecentViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentViewModel.swift; sourceTree = "<group>"; };
 		EADC60111D1A6EF500B8743C /* SingleListNotificationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleListNotificationModel.swift; sourceTree = "<group>"; };
 		EADC60131D1A6FEA00B8743C /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		EADC60151D1A77AB00B8743C /* NotificationsStorageServise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsStorageServise.swift; sourceTree = "<group>"; };
@@ -146,6 +145,7 @@
 		EAE50A7B1D12CEEC00B4329B /* LogNetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogNetUITests.swift; sourceTree = "<group>"; };
 		EAE50A7D1D12CEEC00B4329B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EAECB5A71D5288AD0080ED3D /* Prefences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prefences.swift; sourceTree = "<group>"; };
+		EAFD27F61D5AF9EB00818E48 /* SingleListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleListViewModel.swift; sourceTree = "<group>"; };
 		EE8F0BF2C4AFB1E94B6D9B3B /* Pods-SmartAgent.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartAgent.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartAgent/Pods-SmartAgent.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -230,11 +230,11 @@
 				EA2637491D15B95A00D5988D /* LoginViewModel.swift */,
 				EADC60011D16E3CE00B8743C /* WebBrowserViewModel.swift */,
 				EADC60091D18543700B8743C /* AlertNotificationViewModel.swift */,
-				EADC600F1D1A6EB200B8743C /* RecentViewModel.swift */,
 				EADC60171D1A782B00B8743C /* RecentModelFactory.swift */,
 				EA7ECA5A1D1BAD780014010A /* RecentNotificationCellViewModel.swift */,
 				EA42EAF21D43AD6800451BB9 /* RepricePNRViewModel.swift */,
 				EAD0C6871D57B46D0033B307 /* ActivationViewModel.swift */,
+				EAFD27F61D5AF9EB00818E48 /* SingleListViewModel.swift */,
 			);
 			name = ViewModels;
 			sourceTree = "<group>";
@@ -613,7 +613,6 @@
 				EADC601D1D1A8EFC00B8743C /* Notification.swift in Sources */,
 				EADC600E1D19785000B8743C /* RecentViewController.swift in Sources */,
 				EA35A8581D3D6C4F00BE3618 /* UnderlinedTextField.swift in Sources */,
-				EADC60101D1A6EB200B8743C /* RecentViewModel.swift in Sources */,
 				EADC60061D17017E00B8743C /* ServerService.swift in Sources */,
 				EA35A8671D40025400BE3618 /* RepriceViewController.swift in Sources */,
 				EA26374E1D15BE3D00D5988D /* Router.swift in Sources */,
@@ -640,6 +639,7 @@
 				EAE50A5C1D12CEEB00B4329B /* AppDelegate.swift in Sources */,
 				EAD43D151D2CC4AB00E1FF15 /* APIFacade.swift in Sources */,
 				EADC601B1D1A8A5100B8743C /* Typealiases.swift in Sources */,
+				EAFD27F71D5AF9EB00818E48 /* SingleListViewModel.swift in Sources */,
 				EA35A8691D4014FF00BE3618 /* DataSource.swift in Sources */,
 				EA35A85A1D3D825300BE3618 /* ActivationMessageViewController.swift in Sources */,
 				EA26374A1D15B95A00D5988D /* LoginViewModel.swift in Sources */,

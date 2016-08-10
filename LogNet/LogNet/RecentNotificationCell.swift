@@ -14,6 +14,6 @@ class RecentNotificationCell: NotificationCell {
     
     override func setViewModel(viewModel: RecentNotificationCellViewModel) {
         super.setViewModel(viewModel)
-        
+        self.typeIconView?.image = viewModel.image
     }
 }

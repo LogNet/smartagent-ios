@@ -1,11 +1,12 @@
 //
-//  NotificatonsTVCViewModel.swift
-//  LogNet
+//  SingleListViewModel.swift
+//  SmartAgent
 //
-//  Created by Anton Tikhonov on 6/22/16.
+//  Created by Anton Tikhonov on 8/10/16.
 //  Copyright © 2016 Anton Tikhonov. All rights reserved.
 //
 
+import Foundation
 import UIKit
 import FirebaseAuth
 import FirebaseInstanceID
@@ -13,20 +14,21 @@ import RxSwift
 import RealmSwift
 import Realm
 
-class RecentViewModel: ViewModel {
-    
+class SingleListViewModel: ViewModel {
     dynamic var cellViewModels:NSMutableArray?
     dynamic var loadMoreStatus:Bool = false
     dynamic var downloading:Bool = false
     dynamic var hasNextChunk:Bool = true;
     var model:SingleListNotificationModel
+    let listType:ListType
     
     private var disposeBag = DisposeBag()
     private let realm = try! Realm()
     private var results:Results<Notification>?
     
+    
     lazy var notifications:Results<Notification> = {
-        let results = self.realm.objects(Notification.self).filter("listType = '\(ListType.Recent.rawValue)'")
+        let results = self.realm.objects(Notification.self).filter("listType = '\(self.listType.rawValue)'")
         return results
     }()
     
@@ -36,16 +38,26 @@ class RecentViewModel: ViewModel {
         return formatter
     }()
     
-    init(model:SingleListNotificationModel, router:Router) {
-        self.model = model
-        super.init(router: router)
+    // Class cluster methods
     
+    class func recentViewModel(model:SingleListNotificationModel, router:Router) -> SingleListViewModel {
+        let viewModel = SingleListViewModel(model: model, router: router, listType: .Recent)
+        return viewModel
     }
     
-//    func fetchFromDatabase() {
-//        let realm = try! Realm()
-//        let results = realm.objects(Notification.self).filter("listType == \()")
-//    }
+    class func ticketingDueViewModel(model:SingleListNotificationModel, router:Router) -> SingleListViewModel {
+        let viewModel = SingleListViewModel(model: model, router: router, listType: .TicketingDue)
+        return viewModel
+    }
+    
+    // Init
+    
+    init(model:SingleListNotificationModel, router:Router, listType:ListType) {
+        self.model = model
+        self.listType = listType
+        super.init(router: router)
+        
+    }
     
     // MARK: Public Methods
     
@@ -64,33 +76,18 @@ class RecentViewModel: ViewModel {
         if self.loadMoreStatus { return }
         self.loadMoreStatus = true;
         self.startFetching()
-      
+        
     }
     
     func cellViewModelForRow(row:Int) -> RecentNotificationCellViewModel {
         let notification = notifications[row]
         return self.viewModelFromNotification(notification)
-//        return self.cellViewModels![row] as! RecentNotificationCellViewModel
     }
-    
-    //    func sendFirebaseTokenToServer() {
-    //        if FIRInstanceID.instanceID().token() != nil {
-    //            print("InstanceID token: \(FIRInstanceID.instanceID().token())")
-    //            // Connect to FCM since connection may have failed when attempted before having a token.
-    //            let serverService = GoandroidServerService()
-    //            serverService.postDeviceToken(FIRInstanceID.instanceID().token()!)
-    //        }
-    //    }
-    
     
     // MARK: Private Methods
     
-    private func checkOldUser() {
-        
-    }
-    
     private func startFetching() {
-        _ = self.model.fetchNotifications(.Recent,subtype: .All, offset: 0, chunkSize: 20).subscribe(onNext: { notifications in
+        _ = self.model.fetchNotifications(self.listType,subtype: .All, offset: 0, chunkSize: 20).subscribe(onNext: { notifications in
             self.downloading = false;
             self.loadMoreStatus = false;
             }, onError:{ error in
@@ -118,4 +115,5 @@ class RecentViewModel: ViewModel {
         let viewModel = RecentNotificationCellViewModel(notification: notification)
         return viewModel
     }
+
 }

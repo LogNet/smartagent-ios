@@ -16,7 +16,7 @@ import RxCocoa
 
 class RecentViewController: UITableViewController {
 
-    var viewModel:RecentViewModel?
+    var viewModel:SingleListViewModel?
     var token: dispatch_once_t = 0
     var notificationToken: NotificationToken? = nil
     let disposableBag = DisposeBag()
