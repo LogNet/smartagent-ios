@@ -46,7 +46,7 @@
 		EADC60061D17017E00B8743C /* ServerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60051D17017E00B8743C /* ServerService.swift */; };
 		EADC60081D175DDA00B8743C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EADC60071D175DDA00B8743C /* QuartzCore.framework */; };
 		EADC600A1D18543800B8743C /* AlertNotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60091D18543700B8743C /* AlertNotificationViewModel.swift */; };
-		EADC600E1D19785000B8743C /* RecentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC600D1D19785000B8743C /* RecentViewController.swift */; };
+		EADC600E1D19785000B8743C /* SingleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC600D1D19785000B8743C /* SingleListViewController.swift */; };
 		EADC60121D1A6EF500B8743C /* SingleListNotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60111D1A6EF500B8743C /* SingleListNotificationModel.swift */; };
 		EADC60141D1A6FEA00B8743C /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60131D1A6FEA00B8743C /* ViewModel.swift */; };
 		EADC60161D1A77AB00B8743C /* NotificationsStorageServise.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60151D1A77AB00B8743C /* NotificationsStorageServise.swift */; };
@@ -63,6 +63,9 @@
 		EAE50A7C1D12CEEC00B4329B /* LogNetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE50A7B1D12CEEC00B4329B /* LogNetUITests.swift */; };
 		EAECB5A81D5288AD0080ED3D /* Prefences.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAECB5A71D5288AD0080ED3D /* Prefences.swift */; };
 		EAFD27F71D5AF9EB00818E48 /* SingleListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFD27F61D5AF9EB00818E48 /* SingleListViewModel.swift */; };
+		EAFD27F91D5C3F7B00818E48 /* RecentDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFD27F81D5C3F7B00818E48 /* RecentDataSource.swift */; };
+		EAFD27FD1D5C43D300818E48 /* RecentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFD27FC1D5C43D300818E48 /* RecentViewController.swift */; };
+		EAFD27FF1D5C476100818E48 /* TicketingDueDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFD27FE1D5C476100818E48 /* TicketingDueDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,7 +126,7 @@
 		EADC60051D17017E00B8743C /* ServerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerService.swift; sourceTree = "<group>"; };
 		EADC60071D175DDA00B8743C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		EADC60091D18543700B8743C /* AlertNotificationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertNotificationViewModel.swift; sourceTree = "<group>"; };
-		EADC600D1D19785000B8743C /* RecentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentViewController.swift; sourceTree = "<group>"; };
+		EADC600D1D19785000B8743C /* SingleListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleListViewController.swift; sourceTree = "<group>"; };
 		EADC60111D1A6EF500B8743C /* SingleListNotificationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleListNotificationModel.swift; sourceTree = "<group>"; };
 		EADC60131D1A6FEA00B8743C /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		EADC60151D1A77AB00B8743C /* NotificationsStorageServise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsStorageServise.swift; sourceTree = "<group>"; };
@@ -146,6 +149,9 @@
 		EAE50A7D1D12CEEC00B4329B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EAECB5A71D5288AD0080ED3D /* Prefences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prefences.swift; sourceTree = "<group>"; };
 		EAFD27F61D5AF9EB00818E48 /* SingleListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleListViewModel.swift; sourceTree = "<group>"; };
+		EAFD27F81D5C3F7B00818E48 /* RecentDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentDataSource.swift; sourceTree = "<group>"; };
+		EAFD27FC1D5C43D300818E48 /* RecentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentViewController.swift; sourceTree = "<group>"; };
+		EAFD27FE1D5C476100818E48 /* TicketingDueDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketingDueDataSource.swift; sourceTree = "<group>"; };
 		EE8F0BF2C4AFB1E94B6D9B3B /* Pods-SmartAgent.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartAgent.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartAgent/Pods-SmartAgent.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -211,13 +217,14 @@
 			children = (
 				EAE50A5D1D12CEEB00B4329B /* LoginViewController.swift */,
 				EA2637621D16BEF400D5988D /* WebBrouserViewController.swift */,
-				EADC600D1D19785000B8743C /* RecentViewController.swift */,
+				EADC600D1D19785000B8743C /* SingleListViewController.swift */,
 				EA7ECA5C1D1BB41E0014010A /* RecentNotificationCell.swift */,
 				EA35A8591D3D825300BE3618 /* ActivationMessageViewController.swift */,
 				EA35A8621D3EC5DE00BE3618 /* NotificationCell.swift */,
 				EA35A8661D40025400BE3618 /* RepriceViewController.swift */,
 				EA42EAF01D438C7600451BB9 /* RepricePNRView.swift */,
 				EA42EAF41D47DF6600451BB9 /* TicketingDueViewController.swift */,
+				EAFD27FC1D5C43D300818E48 /* RecentViewController.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -311,6 +318,8 @@
 				EA35A8681D4014FF00BE3618 /* AbstractDataSource.swift */,
 				EA35A86A1D40152100BE3618 /* AbstractContentProvider.swift */,
 				EAECB5A71D5288AD0080ED3D /* Prefences.swift */,
+				EAFD27F81D5C3F7B00818E48 /* RecentDataSource.swift */,
+				EAFD27FE1D5C476100818E48 /* TicketingDueDataSource.swift */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -611,15 +620,18 @@
 				EADC60181D1A782B00B8743C /* RecentModelFactory.swift in Sources */,
 				EA7ECA5D1D1BB41E0014010A /* RecentNotificationCell.swift in Sources */,
 				EADC601D1D1A8EFC00B8743C /* Notification.swift in Sources */,
-				EADC600E1D19785000B8743C /* RecentViewController.swift in Sources */,
+				EADC600E1D19785000B8743C /* SingleListViewController.swift in Sources */,
 				EA35A8581D3D6C4F00BE3618 /* UnderlinedTextField.swift in Sources */,
+				EAFD27F91D5C3F7B00818E48 /* RecentDataSource.swift in Sources */,
 				EADC60061D17017E00B8743C /* ServerService.swift in Sources */,
 				EA35A8671D40025400BE3618 /* RepriceViewController.swift in Sources */,
 				EA26374E1D15BE3D00D5988D /* Router.swift in Sources */,
 				EA2637631D16BEF400D5988D /* WebBrouserViewController.swift in Sources */,
+				EAFD27FD1D5C43D300818E48 /* RecentViewController.swift in Sources */,
 				EAECB5A81D5288AD0080ED3D /* Prefences.swift in Sources */,
 				EA8CDA4A1D2C44A50090E9C1 /* SmartAgentServerServise.swift in Sources */,
 				EADC60041D16E44F00B8743C /* WebBrowserModel.swift in Sources */,
+				EAFD27FF1D5C476100818E48 /* TicketingDueDataSource.swift in Sources */,
 				EA26375F1D16A59700D5988D /* SmartAgentServerParser.swift in Sources */,
 				EAD0C6841D578BED0033B307 /* ErrorUtil.swift in Sources */,
 				EADC60021D16E3CE00B8743C /* WebBrowserViewModel.swift in Sources */,

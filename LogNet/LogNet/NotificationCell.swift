@@ -37,7 +37,6 @@ class NotificationCell: UITableViewCell {
         }
         
         self.title.attributedText = title
-        self.contactName.text = viewModel.contactName
         self.pnrSummary.text = viewModel.pnrSummary
         self.date.text = viewModel.date
     }

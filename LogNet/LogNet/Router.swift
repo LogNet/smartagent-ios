@@ -11,7 +11,7 @@ import UIKit
 
 class Router {
     private weak var loginViewController:LoginViewController?
-    private weak var recentViewController:RecentViewController?
+    private weak var recentViewController:SingleListViewController?
     private var tabBarController:UITabBarController
     private var storyboard:UIStoryboard
     
@@ -19,14 +19,25 @@ class Router {
         self.tabBarController = tabBarController
         self.storyboard = UIStoryboard(name: "Main", bundle: nil)
         self.setupHomeViewController()
+        self.setupTicketingDueViewControler()
     }
    
+    func setupTicketingDueViewControler() {
+        let navigationController = self.tabBarController.viewControllers?.last as? UINavigationController
+        let recentViewController = navigationController?.viewControllers.first as? SingleListViewController
+        let model = ListModelFactory.getSingleListModel()
+        let notificationsViewModel = SingleListViewModel.ticketingDueViewModel(model, router: self)
+        recentViewController!.viewModel = notificationsViewModel;
+        recentViewController?.dataSource = TicketingDueDataSource()
+    }
+    
     func setupHomeViewController() {
         let navigationController = self.tabBarController.viewControllers?.first as? UINavigationController
-        let recentViewController = navigationController?.viewControllers.first as? RecentViewController
-        let model = RecentModelFactory.getSmartAgentRecentModel()
+        let recentViewController = navigationController?.viewControllers.first as? SingleListViewController
+        let model = ListModelFactory.getSingleListModel()
         let notificationsViewModel = SingleListViewModel.recentViewModel(model, router: self)
         recentViewController!.viewModel = notificationsViewModel;
+        recentViewController?.dataSource = RecentDataSource()
         self.recentViewController = recentViewController
     }
     
@@ -37,7 +48,7 @@ class Router {
     
     func showNoActivatedView() {
         let viewController = self.storyboard.instantiateViewControllerWithIdentifier("ActivationMessageViewController") as! ActivationMessageViewController
-        let model = RecentModelFactory.getSmartAgentRecentModel()
+        let model = ListModelFactory.getSingleListModel()
         let viewModel = ActivationViewModel(model: model)
         viewController.viewModel = viewModel
         let navigationController = UINavigationController(rootViewController: viewController)

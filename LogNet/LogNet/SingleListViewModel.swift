@@ -20,17 +20,10 @@ class SingleListViewModel: ViewModel {
     dynamic var downloading:Bool = false
     dynamic var hasNextChunk:Bool = true;
     var model:SingleListNotificationModel
+    var contentProvider:AbstractContentProvider?
     let listType:ListType
     
     private var disposeBag = DisposeBag()
-    private let realm = try! Realm()
-    private var results:Results<Notification>?
-    
-    
-    lazy var notifications:Results<Notification> = {
-        let results = self.realm.objects(Notification.self).filter("listType = '\(self.listType.rawValue)'")
-        return results
-    }()
     
     lazy var dateFormatter:NSDateFormatter = {
         let formatter = NSDateFormatter()
@@ -55,6 +48,7 @@ class SingleListViewModel: ViewModel {
     init(model:SingleListNotificationModel, router:Router, listType:ListType) {
         self.model = model
         self.listType = listType
+        self.contentProvider = AbstractContentProvider(listType: listType)
         super.init(router: router)
         
     }
@@ -77,11 +71,6 @@ class SingleListViewModel: ViewModel {
         self.loadMoreStatus = true;
         self.startFetching()
         
-    }
-    
-    func cellViewModelForRow(row:Int) -> RecentNotificationCellViewModel {
-        let notification = notifications[row]
-        return self.viewModelFromNotification(notification)
     }
     
     // MARK: Private Methods
@@ -110,10 +99,4 @@ class SingleListViewModel: ViewModel {
         
     }
     
-    
-    private func viewModelFromNotification(notification:Notification) -> RecentNotificationCellViewModel {
-        let viewModel = RecentNotificationCellViewModel(notification: notification)
-        return viewModel
-    }
-
 }

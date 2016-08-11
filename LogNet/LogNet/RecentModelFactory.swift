@@ -8,9 +8,9 @@
 
 import Foundation
 
-class RecentModelFactory {
+class ListModelFactory {
     
-    class func getSmartAgentRecentModel() -> SingleListNotificationModel {
+    class func getSingleListModel() -> SingleListNotificationModel {
         let model = SingleListNotificationModel()
         model.serverParser = SmartAgentParser()
         model.apiFacade = APIFacade(service: SmartAgentServerServise())
