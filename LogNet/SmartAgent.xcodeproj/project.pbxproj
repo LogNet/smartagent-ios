@@ -66,6 +66,7 @@
 		EAFD27F91D5C3F7B00818E48 /* RecentDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFD27F81D5C3F7B00818E48 /* RecentDataSource.swift */; };
 		EAFD27FD1D5C43D300818E48 /* RecentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFD27FC1D5C43D300818E48 /* RecentViewController.swift */; };
 		EAFD27FF1D5C476100818E48 /* TicketingDueDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFD27FE1D5C476100818E48 /* TicketingDueDataSource.swift */; };
+		EAFD28011D5E47D400818E48 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFD28001D5E47D300818E48 /* ContainerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -152,6 +153,7 @@
 		EAFD27F81D5C3F7B00818E48 /* RecentDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentDataSource.swift; sourceTree = "<group>"; };
 		EAFD27FC1D5C43D300818E48 /* RecentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentViewController.swift; sourceTree = "<group>"; };
 		EAFD27FE1D5C476100818E48 /* TicketingDueDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketingDueDataSource.swift; sourceTree = "<group>"; };
+		EAFD28001D5E47D300818E48 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		EE8F0BF2C4AFB1E94B6D9B3B /* Pods-SmartAgent.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartAgent.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartAgent/Pods-SmartAgent.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -225,6 +227,7 @@
 				EA42EAF01D438C7600451BB9 /* RepricePNRView.swift */,
 				EA42EAF41D47DF6600451BB9 /* TicketingDueViewController.swift */,
 				EAFD27FC1D5C43D300818E48 /* RecentViewController.swift */,
+				EAFD28001D5E47D300818E48 /* ContainerViewController.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -620,6 +623,7 @@
 				EADC60181D1A782B00B8743C /* RecentModelFactory.swift in Sources */,
 				EA7ECA5D1D1BB41E0014010A /* RecentNotificationCell.swift in Sources */,
 				EADC601D1D1A8EFC00B8743C /* Notification.swift in Sources */,
+				EAFD28011D5E47D400818E48 /* ContainerViewController.swift in Sources */,
 				EADC600E1D19785000B8743C /* SingleListViewController.swift in Sources */,
 				EA35A8581D3D6C4F00BE3618 /* UnderlinedTextField.swift in Sources */,
 				EAFD27F91D5C3F7B00818E48 /* RecentDataSource.swift in Sources */,
