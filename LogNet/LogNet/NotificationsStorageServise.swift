@@ -10,7 +10,7 @@ import Foundation
 
 protocol NotificationsStorageServise {
     
-    func deleteAllByType(type: ListType,completion:ErrorCompletionBlock)
+    func deleteAllByType(type: ListType,subtype:NotificationSubtype,completion:ErrorCompletionBlock)
     func cleanUp(completion:ErrorCompletionBlock)
     func addNotification(notification:Notification, completion:ErrorCompletionBlock?)
     func addNotifications(notifications:[Notification],completion:ErrorCompletionBlock?)

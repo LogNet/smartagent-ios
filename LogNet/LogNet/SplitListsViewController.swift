@@ -8,7 +8,13 @@
 
 import UIKit
 
-class RepriceViewController: UIViewController {
+class SplitListsViewController: UIViewController {
+    
+    //TODO: Needs refactoring
+    var pendingViewModel:SingleListViewModel!
+    var completedViewModel:SingleListViewModel!
+    var pendingDataSource:AbstractDataSource!
+    var completedDataSource:AbstractDataSource!
     
     var containerViewController:ContainerViewController!
     
@@ -45,6 +51,13 @@ class RepriceViewController: UIViewController {
         // Pass the selected object to the new view controller.
         if segue.identifier == "embededContainer" {
             self.containerViewController = segue.destinationViewController as! ContainerViewController
+            
+            //TODO: Needs refactoring
+            self.containerViewController.pendingViewModel = self.pendingViewModel
+            self.containerViewController.pendingDataSource = self.pendingDataSource
+            self.containerViewController.completedViewModel = self.completedViewModel
+            self.containerViewController.completedDataSource = self.completedDataSource
+
         }
     }
 

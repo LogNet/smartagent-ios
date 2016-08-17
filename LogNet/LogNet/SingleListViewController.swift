@@ -23,6 +23,10 @@ class SingleListViewController: UITableViewController {
     @IBOutlet weak var loadMoreIndicator: UIActivityIndicatorView!
     @IBOutlet weak var footerView: UIView!
     
+    override func loadView() {
+        super.loadView()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.refreshControl?.addTarget(self, action:#selector(self.handleRefresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
@@ -65,6 +69,7 @@ class SingleListViewController: UITableViewController {
     
     private func configureDataSource(){
         if self.dataSource != nil {
+            self.dataSource?.tableView = self.tableView
             self.tableView.dataSource = dataSource
             self.dataSource?.contentProvider = self.viewModel?.contentProvider
         }

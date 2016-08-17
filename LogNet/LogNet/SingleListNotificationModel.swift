@@ -21,20 +21,20 @@ class SingleListNotificationModel: NSObject {
                                                 subtype:subtype,
                                                 offset:offset, chunkSize: chunkSize)
             .flatMap{ JSON in
-                return self.saveNotifications(JSON, type: type, offset: offset)
+                return self.saveNotifications(JSON, type: type,subtype: subtype, offset: offset)
             }
     }
 
-    private func saveNotifications(JSON:AnyObject, type:ListType, offset:Int?) -> Observable<Void> {
+    private func saveNotifications(JSON:AnyObject, type:ListType, subtype:NotificationSubtype, offset:Int?) -> Observable<Void> {
         return self.parseJSON(JSON, listType: type).flatMap { notifications in
-            self.storeNotifications(notifications, offset: offset, type: type)
+            self.storeNotifications(notifications, offset: offset, type: type, subtype: subtype)
         }
     }
     
-    func storeNotifications(notifications:[Notification], offset:Int?, type:ListType) -> Observable<Void> {
+    func storeNotifications(notifications:[Notification], offset:Int?, type:ListType, subtype:NotificationSubtype) -> Observable<Void> {
         return Observable.create{ observer in
             if offset == 0 {
-                self.storageService?.deleteAllByType(type, completion: { [weak self](error) in
+                self.storageService?.deleteAllByType(type, subtype: subtype, completion: { [weak self](error) in
                     self?.storageService?.addNotifications(notifications, completion: { (error) in
                         if error == nil {
                             observer.onNext()

@@ -12,7 +12,7 @@ class SmartAgentParser: ServerParser {
     
     lazy var dateFormatter:NSDateFormatter = {
        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss.SSS'Z'"
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss'"
         return dateFormatter
     }()
     
@@ -33,7 +33,7 @@ class SmartAgentParser: ServerParser {
                 notification.notification_id = jsonNotification["notification_id"] as? String
                 notification.status = jsonNotification["status"] as? String
                 notification.type = jsonNotification["type"] as? String
-                notification.sub_type = jsonNotification["sub_type"] as? String
+                notification.sub_type = jsonNotification["subtype"] as? String
                 notification.title = jsonNotification["title"] as? String
                 notification.title_message = jsonNotification["title_message"] as? String
                 let time = jsonNotification["notification_time"] as? String

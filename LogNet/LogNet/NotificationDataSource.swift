@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class TicketingDueDataSource: AbstractDataSource {
+class NotificationDataSource: AbstractDataSource {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("NotificationCell", forIndexPath: indexPath) as! NotificationCell
         if let viewModel = self.contentProvider?.cellViewModelForRow(indexPath.row) {

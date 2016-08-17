@@ -15,13 +15,16 @@ import Realm
 class AbstractContentProvider: NSObject {
     private let realm = try! Realm()
     let listType:ListType
+    let subtype:NotificationSubtype
+
     lazy var notifications:Results<Notification> = {
-        let results = self.realm.objects(Notification.self).filter("listType = '\(self.listType.rawValue)'")
+        let results = self.realm.objects(Notification.self).filter( self.subtype.rawValue == "" ? "listType == '\(self.listType.rawValue)'" : "listType = '\(self.listType.rawValue)' AND sub_type == '\(self.subtype.rawValue)'")
         return results
     }()
     
-    init(listType:ListType) {
+    init(listType:ListType, subtype: NotificationSubtype) {
         self.listType = listType
+        self.subtype = subtype
     }
     
     func cellViewModelForRow(row:Int) -> RecentNotificationCellViewModel {

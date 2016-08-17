@@ -20,6 +20,8 @@ class Router {
         self.storyboard = UIStoryboard(name: "Main", bundle: nil)
         self.setupHomeViewController()
         self.setupTicketingDueViewControler()
+        self.setupRepriceViewController()
+        self.setupCancelledViewController()
     }
    
     func setupTicketingDueViewControler() {
@@ -28,7 +30,7 @@ class Router {
         let model = ListModelFactory.getSingleListModel()
         let notificationsViewModel = SingleListViewModel.ticketingDueViewModel(model, router: self)
         recentViewController!.viewModel = notificationsViewModel;
-        recentViewController?.dataSource = TicketingDueDataSource()
+        recentViewController?.dataSource = NotificationDataSource()
     }
     
     func setupHomeViewController() {
@@ -39,6 +41,49 @@ class Router {
         recentViewController!.viewModel = notificationsViewModel;
         recentViewController?.dataSource = RecentDataSource()
         self.recentViewController = recentViewController
+    }
+    
+    func setupRepriceViewController() {
+        let navigationController = self.tabBarController.viewControllers?[1] as? UINavigationController
+        let splitListsViewController = navigationController?.viewControllers.first as? SplitListsViewController
+        
+        // TODO: Needs refactoring
+        // Pending view controller
+        let model = ListModelFactory.getSingleListModel()
+        let notificationsViewModel = SingleListViewModel.repriceViewModel(model, subtype: .Pending, router: self)
+        splitListsViewController?.pendingViewModel = notificationsViewModel
+        splitListsViewController?.pendingDataSource = NotificationDataSource()
+
+        // TODO: Needs refactoring
+        // Completed view controller
+        let model2 = ListModelFactory.getSingleListModel()
+        let notificationsViewModel2 = SingleListViewModel.repriceViewModel(model2, subtype: .Complete, router: self)
+
+        splitListsViewController?.completedViewModel = notificationsViewModel2
+        splitListsViewController?.completedDataSource = NotificationDataSource()
+    }
+    
+    func setupCancelledViewController() {
+        let navigationController = self.tabBarController.viewControllers?[2] as? UINavigationController
+        let splitListsViewController = navigationController?.viewControllers.first as? SplitListsViewController
+        
+        // TODO: Needs refactoring
+        // Pending view controller
+        let model = ListModelFactory.getSingleListModel()
+        let notificationsViewModel = SingleListViewModel.cancelledViewModel(model, subtype: .Pending, router: self)
+        splitListsViewController?.pendingViewModel = notificationsViewModel
+        splitListsViewController?.pendingDataSource = NotificationDataSource()
+        
+        // TODO: Needs refactoring
+        // Completed view controller
+        let model2 = ListModelFactory.getSingleListModel()
+        let notificationsViewModel2 = SingleListViewModel.cancelledViewModel(model2, subtype: .Complete, router: self)
+        
+        splitListsViewController?.completedViewModel = notificationsViewModel2
+        splitListsViewController?.completedDataSource = NotificationDataSource()
+        
+        //        recentViewController!.viewModel = notificationsViewModel;
+        //        recentViewController?.dataSource = TicketingDueDataSource()
     }
     
     func showLoginView() {

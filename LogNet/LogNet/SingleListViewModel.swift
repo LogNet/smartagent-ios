@@ -22,6 +22,7 @@ class SingleListViewModel: ViewModel {
     var model:SingleListNotificationModel
     var contentProvider:AbstractContentProvider?
     let listType:ListType
+    let subtype: NotificationSubtype
     
     private var disposeBag = DisposeBag()
     
@@ -34,21 +35,32 @@ class SingleListViewModel: ViewModel {
     // Class cluster methods
     
     class func recentViewModel(model:SingleListNotificationModel, router:Router) -> SingleListViewModel {
-        let viewModel = SingleListViewModel(model: model, router: router, listType: .Recent)
+        let viewModel = SingleListViewModel(model: model, router: router, listType: .Recent, subtype: .All)
         return viewModel
     }
     
     class func ticketingDueViewModel(model:SingleListNotificationModel, router:Router) -> SingleListViewModel {
-        let viewModel = SingleListViewModel(model: model, router: router, listType: .TicketingDue)
+        let viewModel = SingleListViewModel(model: model, router: router, listType: .TicketingDue, subtype: .All)
+        return viewModel
+    }
+    
+    class func repriceViewModel(model:SingleListNotificationModel,subtype: NotificationSubtype, router:Router) -> SingleListViewModel {
+        let viewModel = SingleListViewModel(model: model, router: router, listType: .Reprice, subtype: subtype)
+        return viewModel
+    }
+    
+    class func cancelledViewModel(model:SingleListNotificationModel,subtype: NotificationSubtype, router:Router) -> SingleListViewModel {
+        let viewModel = SingleListViewModel(model: model, router: router, listType: .Cancelled, subtype: subtype)
         return viewModel
     }
     
     // Init
     
-    init(model:SingleListNotificationModel, router:Router, listType:ListType) {
+    init(model:SingleListNotificationModel, router:Router, listType:ListType, subtype: NotificationSubtype) {
         self.model = model
         self.listType = listType
-        self.contentProvider = AbstractContentProvider(listType: listType)
+        self.contentProvider = AbstractContentProvider(listType: listType, subtype: subtype)
+        self.subtype = subtype
         super.init(router: router)
         
     }
@@ -76,7 +88,7 @@ class SingleListViewModel: ViewModel {
     // MARK: Private Methods
     
     private func startFetching() {
-        _ = self.model.fetchNotifications(self.listType,subtype: .All, offset: 0, chunkSize: 20).subscribe(onNext: { notifications in
+        _ = self.model.fetchNotifications(self.listType,subtype: self.subtype, offset: 0, chunkSize: 20).subscribe(onNext: { notifications in
             self.downloading = false;
             self.loadMoreStatus = false;
             }, onError:{ error in

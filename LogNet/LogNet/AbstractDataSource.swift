@@ -13,7 +13,7 @@ import RxCocoa
 
 class AbstractDataSource: NSObject, UITableViewDataSource {
     
-    var tableView: UITableView?
+    var tableView: UITableView!
     var contentProvider: AbstractContentProvider? {
         didSet{
             self.subscribeToRealm()
@@ -24,22 +24,21 @@ class AbstractDataSource: NSObject, UITableViewDataSource {
     private func subscribeToRealm() {
         // Observe Results Notifications
         self.notificationToken = self.contentProvider?.notifications.addNotificationBlock { [weak self] (changes: RealmCollectionChange) in
-            guard let tableView = self?.tableView else { return }
             switch changes {
             case .Initial:
                 // Results are now populated and can be accessed without blocking the UI
-                tableView.reloadData()
+                self!.tableView.reloadData()
                 break
             case .Update(_, let deletions, let insertions, let modifications):
                 // Query results have changed, so apply them to the UITableView
-                tableView.beginUpdates()
-                tableView.insertRowsAtIndexPaths(insertions.map { NSIndexPath(forRow: $0, inSection: 0) },
+                self!.tableView.beginUpdates()
+                self!.tableView.insertRowsAtIndexPaths(insertions.map { NSIndexPath(forRow: $0, inSection: 0) },
                     withRowAnimation: .Automatic)
-                tableView.deleteRowsAtIndexPaths(deletions.map { NSIndexPath(forRow: $0, inSection: 0) },
+                self!.tableView.deleteRowsAtIndexPaths(deletions.map { NSIndexPath(forRow: $0, inSection: 0) },
                     withRowAnimation: .Automatic)
-                tableView.reloadRowsAtIndexPaths(modifications.map { NSIndexPath(forRow: $0, inSection: 0) },
+                self!.tableView.reloadRowsAtIndexPaths(modifications.map { NSIndexPath(forRow: $0, inSection: 0) },
                     withRowAnimation: .Automatic)
-                tableView.endUpdates()
+                self!.tableView.endUpdates()
                 break
             case .Error(let error):
                 // An error occurred while opening the Realm file on the background worker thread
