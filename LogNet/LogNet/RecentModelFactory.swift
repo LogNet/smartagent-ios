@@ -11,7 +11,7 @@ import Foundation
 class ListModelFactory {
     
     class func getSingleListModel() -> SingleListNotificationModel {
-        let model = SingleListNotificationModel()
+        let model = SingleListNotificationModel(chunkSize: CHUNK_SIZE)
         model.serverParser = SmartAgentParser()
         model.apiFacade = APIFacade(service: SmartAgentServerServise())
         model.storageService = NotificationsStorageServiseRealm()

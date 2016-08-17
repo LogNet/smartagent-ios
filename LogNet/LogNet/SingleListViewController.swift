@@ -20,8 +20,8 @@ class SingleListViewController: UITableViewController {
     var token: dispatch_once_t = 0
     let disposableBag = DisposeBag()
     
-    @IBOutlet weak var loadMoreIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var footerView: UIView!
+    @IBOutlet var loadMoreIndicator: UIActivityIndicatorView!
+    @IBOutlet var footerView: UIView!
     
     override func loadView() {
         super.loadView()
@@ -42,7 +42,7 @@ class SingleListViewController: UITableViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         dispatch_once(&token) {
-            self.viewModel?.fetch()
+            self.viewModel?.fetchInitial()
         }
     }
     
@@ -57,7 +57,7 @@ class SingleListViewController: UITableViewController {
     }
 
     func fetch() {
-        self.viewModel?.fetch()
+        self.viewModel?.fetchInitial()
     }
     
     func showNoNewMessages(){
@@ -76,12 +76,14 @@ class SingleListViewController: UITableViewController {
     }
     
     private func bindViewModel() {
-        Observable.just(self.viewModel?.loadMoreStatus).subscribeNext{ loadMore in
+        self.viewModel?.loadMoreStatus.asObservable().subscribeNext{ loadMore in
             if loadMore == false {
-                self.loadMoreIndicator.stopAnimating()
+                self.loadMoreIndicator?.stopAnimating()
+                self.tableView.tableFooterView = nil
+
             } else {
                 self.tableView.tableFooterView = self.footerView
-                self.loadMoreIndicator.startAnimating()
+                self.loadMoreIndicator?.startAnimating()
             }
         }.addDisposableTo(self.disposableBag)
         
@@ -129,7 +131,7 @@ class SingleListViewController: UITableViewController {
         let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
         let deltaOffset = maximumOffset - currentOffset
         if deltaOffset <= 0 && self.viewModel?.hasNextChunk == true {
-//            self.viewModel?.fetchNext()
+            self.viewModel?.fetchNext()
         }
     }
     

@@ -13,31 +13,42 @@ class SingleListNotificationModel: NSObject {
     var apiFacade:APIFacade?
     var serverParser:ServerParser?
     var storageService: NotificationsStorageServise?
+    let chunkSize:Int
+    
+    init(chunkSize:Int) {
+        self.chunkSize = chunkSize
+    }
     
     // MARK: Public methods
     
-    func fetchNotifications(type:ListType, subtype:NotificationSubtype,offset:Int?, chunkSize:Int) -> Observable<Void> {
+    func fetchNotifications(type:ListType, subtype:NotificationSubtype,offset:Int?) -> Observable<Bool> {
         return self.apiFacade!.getNotifications(type:type.rawValue,
                                                 subtype:subtype,
-                                                offset:offset, chunkSize: chunkSize)
+                                                offset:offset, chunkSize: self.chunkSize + 1)
             .flatMap{ JSON in
                 return self.saveNotifications(JSON, type: type,subtype: subtype, offset: offset)
             }
     }
 
-    private func saveNotifications(JSON:AnyObject, type:ListType, subtype:NotificationSubtype, offset:Int?) -> Observable<Void> {
+    private func saveNotifications(JSON:AnyObject, type:ListType, subtype:NotificationSubtype, offset:Int?) -> Observable<Bool> {
         return self.parseJSON(JSON, listType: type).flatMap { notifications in
             self.storeNotifications(notifications, offset: offset, type: type, subtype: subtype)
         }
     }
     
-    func storeNotifications(notifications:[Notification], offset:Int?, type:ListType, subtype:NotificationSubtype) -> Observable<Void> {
+    func storeNotifications(notifications:[Notification], offset:Int?, type:ListType, subtype:NotificationSubtype) -> Observable<Bool> {
         return Observable.create{ observer in
+            var hasNextChunk = false
+            var notifications_to_save = notifications
+            if notifications_to_save.count > self.chunkSize {
+                hasNextChunk = true
+                notifications_to_save.removeLast()
+            }
             if offset == 0 {
                 self.storageService?.deleteAllByType(type, subtype: subtype, completion: { [weak self](error) in
-                    self?.storageService?.addNotifications(notifications, completion: { (error) in
+                    self?.storageService?.addNotifications(notifications_to_save, completion: { (error) in
                         if error == nil {
-                            observer.onNext()
+                            observer.onNext(hasNextChunk)
                             observer.onCompleted()
                         } else {
                             observer.onError(error!)
@@ -45,9 +56,9 @@ class SingleListNotificationModel: NSObject {
                     })
                 })
             } else {
-                self.storageService?.addNotifications(notifications, completion: { (error) in
+                self.storageService?.addNotifications(notifications_to_save, completion: { (error) in
                     if error == nil {
-                        observer.onNext()
+                        observer.onNext(hasNextChunk)
                         observer.onCompleted()
                     } else {
                         observer.onError(error!)

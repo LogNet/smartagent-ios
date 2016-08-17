@@ -12,6 +12,7 @@ let PHONE_KEY = "PHONE_KEY"
 let EMAIL_KEY = "EMAIL_KEY"
 let FULL_NAME_KEY = "FULL_NAME_KEY"
 let TOKEN_KEY = "TOKEN_KEY"
+let CHUNK_SIZE = 20
 
 class Prefences {
     

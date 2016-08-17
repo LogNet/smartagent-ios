@@ -210,8 +210,8 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </refreshControl>
                     <connections>
-                        <outlet property="footerView" destination="efb-oE-qgC" id="mdw-ML-wup"/>
-                        <outlet property="loadMoreIndicator" destination="jyG-od-TbY" id="Mle-Vr-aId"/>
+                        <outlet property="footerView" destination="efb-oE-qgC" id="703-X3-XiO"/>
+                        <outlet property="loadMoreIndicator" destination="jyG-od-TbY" id="hHO-1a-GOu"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VGX-kG-Urs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1125,7 +1125,7 @@ Return: 26.04.16 00:00</string>
             </objects>
             <point key="canvasLocation" x="1199.5" y="1520.5"/>
         </scene>
-        <!--Smart Agent-->
+        <!--Ticketing Due-->
         <scene sceneID="Cj3-ov-0zN">
             <objects>
                 <tableViewController storyboardIdentifier="TicketingDueViewController" id="kJI-Yt-uAL" customClass="TicketingDueViewController" customModule="SmartAgent" customModuleProvider="target" sceneMemberID="viewController">
@@ -1236,7 +1236,7 @@ Return: 26.04.16 00:00</string>
                             <outlet property="delegate" destination="kJI-Yt-uAL" id="lMJ-Ev-ESu"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Smart Agent" id="AQc-LM-RLC"/>
+                    <navigationItem key="navigationItem" title="Ticketing Due" id="AQc-LM-RLC"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="2MV-Ga-dH4">
@@ -1254,7 +1254,6 @@ Return: 26.04.16 00:00</string>
         <!--Container View Controller-->
         <scene sceneID="Od0-Xz-gyA">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tCi-Jh-CNW" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="geo-OZ-8OW" customClass="ContainerViewController" customModule="SmartAgent" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="r9d-1B-OGn"/>
@@ -1270,6 +1269,7 @@ Return: 26.04.16 00:00</string>
                         <segue destination="9w1-vn-igK" kind="custom" identifier="embedCompleted" customClass="EmptySegue" customModule="SmartAgent" customModuleProvider="target" id="eg4-dH-zhP"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tCi-Jh-CNW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="80.5" y="-49.5"/>
         </scene>
@@ -1573,7 +1573,6 @@ Return: 26.04.16 00:00</string>
         <!--Container View Controller-->
         <scene sceneID="dhI-XL-NXz">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pd5-iw-27U" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="aVg-XF-9QS" customClass="ContainerViewController" customModule="SmartAgent" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="45k-t6-aPr"/>
@@ -1589,6 +1588,7 @@ Return: 26.04.16 00:00</string>
                         <segue destination="Fek-rk-ttX" kind="custom" identifier="embedCompleted" customClass="EmptySegue" customModule="SmartAgent" id="S7G-Ne-YKB"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pd5-iw-27U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="20.5" y="714.5"/>
         </scene>

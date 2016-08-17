@@ -15,22 +15,16 @@ import RealmSwift
 import Realm
 
 class SingleListViewModel: ViewModel {
-    dynamic var cellViewModels:NSMutableArray?
-    dynamic var loadMoreStatus:Bool = false
+    var loadMoreStatus = Variable(false)
     dynamic var downloading:Bool = false
-    dynamic var hasNextChunk:Bool = true;
-    var model:SingleListNotificationModel
+    dynamic var hasNextChunk:Bool = false;
     var contentProvider:AbstractContentProvider?
-    let listType:ListType
-    let subtype: NotificationSubtype
     
+    private var model:SingleListNotificationModel
+    private let listType:ListType
+    private let subtype: NotificationSubtype
+    private let chunkSize = 20;
     private var disposeBag = DisposeBag()
-    
-    lazy var dateFormatter:NSDateFormatter = {
-        let formatter = NSDateFormatter()
-        formatter.dateStyle = .MediumStyle
-        return formatter
-    }()
     
     // Class cluster methods
     
@@ -71,34 +65,33 @@ class SingleListViewModel: ViewModel {
         self.router.showPNRDetailsFromNotification(nil)
     }
     
-    
-    func fetch() {
+    func fetchInitial() {
         if self.downloading { return }
         self.downloading = true;
-        self.startFetching()
+        self.startFetching(0)
     }
     
     func fetchNext() {
-        if self.loadMoreStatus { return }
-        self.loadMoreStatus = true;
-        self.startFetching()
-        
+        if self.loadMoreStatus.value.boolValue || self.downloading { return }
+        self.loadMoreStatus.value = true;
+        self.startFetching((self.contentProvider?.notifications.count)!/self.model.chunkSize)
     }
     
     // MARK: Private Methods
     
-    private func startFetching() {
-        _ = self.model.fetchNotifications(self.listType,subtype: self.subtype, offset: 0, chunkSize: 20).subscribe(onNext: { notifications in
-            self.downloading = false;
-            self.loadMoreStatus = false;
-            }, onError:{ error in
-                self.downloading = false;
+    private func startFetching(offset:Int) {
+        _ = self.model.fetchNotifications(self.listType,subtype: self.subtype, offset: offset).subscribe(onNext: { [weak self] hasNextChunk in
+            self!.hasNextChunk = hasNextChunk
+            self!.downloading = false;
+            self!.loadMoreStatus.value = false;
+            }, onError:{ [weak self] error in
+                self!.downloading = false;
                 switch error {
                 case ApplicationError.FORBIDDEN:
-                    self.router.showLoginView()
+                    self!.router.showLoginView()
                     break
                 case ApplicationError.NOT_ACTIVATED:
-                    self.router.showNoActivatedView()
+                    self!.router.showNoActivatedView()
                     break
                 default:
                     break

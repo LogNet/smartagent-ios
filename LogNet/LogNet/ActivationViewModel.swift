@@ -20,7 +20,7 @@ class ActivationViewModel: NSObject {
     }
     
     func isUserActivated() -> Observable<Bool> {
-        return self.model.fetchNotifications(.Recent,subtype: .All, offset: 0, chunkSize: 20).flatMap{ notifications in
+        return self.model.fetchNotifications(.Recent,subtype: .All, offset: 0).flatMap{ notifications in
             return Observable.just(true)
         }
     }
