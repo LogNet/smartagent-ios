@@ -16,7 +16,8 @@ class EmptySegue: UIStoryboardSegue {
 }
 
 class ContainerViewController: UIViewController {
-    
+   
+    //TODO: Needs refactoring
     var pendingViewController:SingleListViewController!
     var completedViewController:SingleListViewController!
     var currentSegueIdentifier:String! = SequeIdentifierPending
@@ -27,7 +28,7 @@ class ContainerViewController: UIViewController {
     var completedViewModel:SingleListViewModel!
     var pendingDataSource:AbstractDataSource!
     var completedDataSource:AbstractDataSource!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

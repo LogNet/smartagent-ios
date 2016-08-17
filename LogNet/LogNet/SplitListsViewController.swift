@@ -16,6 +16,9 @@ class SplitListsViewController: UIViewController {
     var pendingDataSource:AbstractDataSource!
     var completedDataSource:AbstractDataSource!
     
+    //TODO: Needs refactoring
+    var router:Router!
+
     var containerViewController:ContainerViewController!
     
     override func viewDidLoad() {
@@ -36,6 +39,10 @@ class SplitListsViewController: UIViewController {
 
     // MARK: - IBActions
 
+    @IBAction func openSearchView(sender: AnyObject) {
+        self.router.showSearchView()
+    }
+    
     @IBAction func switchTableView(sender: AnyObject) {
         self.containerViewController.switchViewControllers()
     }

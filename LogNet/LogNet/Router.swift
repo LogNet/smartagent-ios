@@ -46,6 +46,8 @@ class Router {
     func setupRepriceViewController() {
         let navigationController = self.tabBarController.viewControllers?[1] as? UINavigationController
         let splitListsViewController = navigationController?.viewControllers.first as? SplitListsViewController
+        // TODO: Needs refactoring
+        splitListsViewController?.router = self
         
         // TODO: Needs refactoring
         // Pending view controller
@@ -68,6 +70,9 @@ class Router {
         let splitListsViewController = navigationController?.viewControllers.first as? SplitListsViewController
         
         // TODO: Needs refactoring
+        splitListsViewController?.router = self
+        
+        // TODO: Needs refactoring
         // Pending view controller
         let model = ListModelFactory.getSingleListModel()
         let notificationsViewModel = SingleListViewModel.cancelledViewModel(model, subtype: .Pending, router: self)
@@ -84,6 +89,12 @@ class Router {
         
         //        recentViewController!.viewModel = notificationsViewModel;
         //        recentViewController?.dataSource = TicketingDueDataSource()
+    }
+    
+    func showSearchView() {
+        let searchViewController = self.storyboard.instantiateViewControllerWithIdentifier("SearchViewController")
+        let navigationController = self.tabBarController.selectedViewController as? UINavigationController
+        navigationController?.pushViewController(searchViewController, animated: true)
     }
     
     func showLoginView() {

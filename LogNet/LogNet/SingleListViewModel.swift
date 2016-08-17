@@ -61,6 +61,10 @@ class SingleListViewModel: ViewModel {
     
     // MARK: Public Methods
     
+    func openSearch() {
+        self.router.showSearchView()
+    }
+    
     func selectModelForIndex(index:Int) {
         self.router.showPNRDetailsFromNotification(nil)
     }

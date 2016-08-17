@@ -51,6 +51,10 @@ class SingleListViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func openSearchView(sender: AnyObject) {
+        self.viewModel?.openSearch()
+    }
+    
     func handleRefresh(refreshControl: UIRefreshControl) {
         self.fetch()
         refreshControl.endRefreshing()
