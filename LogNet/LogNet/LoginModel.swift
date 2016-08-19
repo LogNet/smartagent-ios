@@ -32,8 +32,10 @@ class LoginModel {
         let uuid = self.getUUID()
         let array = full_name.characters.split{$0 == " "}.map(String.init)
         let first_name = array[0] as String
-        let last_name = array[1] as String
-        
+        var last_name = ""
+        if array.count > 1 {
+            last_name = array[1] as String
+        }
         _ = self.apiFacade.register(phoneNumber, first_name: first_name,
         last_name: last_name, email: email, uuid: uuid).subscribe(onError: { error in
                 completed(NSError(domain: "LoginModel", code: 666, userInfo: [NSLocalizedDescriptionKey: "Something went wrong!"]))
