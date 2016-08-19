@@ -16,19 +16,43 @@ class NotificationsStorageServiseRealm: NotificationsStorageServise {
 		return queue
 	}()
 
+    // MARK: Private
+    
+    private func addRealmObject(object: Object) {
+        let realm = try! Realm()
+        realm.beginWrite()
+        realm.add(object)
+        try! realm.commitWrite()
+    }
+    
+    // MARK: Public
+    
     func deleteAllByType(type: ListType, subtype:NotificationSubtype, completion: ErrorCompletionBlock) {
         dispatch_async(self.saveQueue) {
             autoreleasepool({
-                let realm = try! Realm()
-                let notifications = realm.objects(Notification.self).filter(subtype == .All ? "listType == '\(type.rawValue)'" : "listType == '\(type.rawValue)' AND sub_type == '\(subtype.rawValue)'")
-                if notifications.count > 0 {
-                    realm.beginWrite()
-                    realm.delete(notifications)
-                    try! realm.commitWrite()
+                do {
+                    let realm = try Realm()
+                    let notifications = realm.objects(Notification.self).filter(subtype == .All ? "listType == '\(type.rawValue)'" : "listType == '\(type.rawValue)' AND sub_type == '\(subtype.rawValue)'")
+                    if notifications.count > 0 {
+                        realm.beginWrite()
+                        realm.delete(notifications)
+                        do {
+                            try realm.commitWrite()
+                        } catch let error as NSError {
+                            dispatch_async(dispatch_get_main_queue(), {
+                                completion(error: error)
+                            })
+                        }
+                    }
+                    dispatch_async(dispatch_get_main_queue(), {
+                        completion(error: nil)
+                    })
+
+                } catch let error as NSError {
+                    dispatch_async(dispatch_get_main_queue(), {
+                        completion(error: error)
+                    })
                 }
-                dispatch_async(dispatch_get_main_queue(), {
-                    completion(error: nil)
-                })
             })
         }
     }
@@ -69,18 +93,10 @@ class NotificationsStorageServiseRealm: NotificationsStorageServise {
 			})
 		}
 	}
-
-	private func addRealmObject(object: Object) {
-		let realm = try! Realm()
-		realm.beginWrite()
-		realm.add(object)
-		try! realm.commitWrite()
-	}
-
-	func fetch() -> [Notification]? {
-		let realm = try! Realm()
-		let type = Notification.self
-		let notifications = Array(realm.objects(type).sorted("time", ascending: false))
-		return notifications
-	}
+    
+    func search(query: String) throws -> [Notification]? {
+        let realm = try Realm()
+        let notifications = realm.objects(Notification.self).filter("title CONTAINS \(query) OR title_massage CONTAINS \(query)")
+        return Array(notifications)
+    }
 }

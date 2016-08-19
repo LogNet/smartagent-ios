@@ -61,6 +61,9 @@
 		EAE50A711D12CEEC00B4329B /* LogNetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE50A701D12CEEC00B4329B /* LogNetTests.swift */; };
 		EAE50A7C1D12CEEC00B4329B /* LogNetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE50A7B1D12CEEC00B4329B /* LogNetUITests.swift */; };
 		EAECB5A81D5288AD0080ED3D /* Prefences.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAECB5A71D5288AD0080ED3D /* Prefences.swift */; };
+		EAEF7B331D67998100E00729 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEF7B321D67998100E00729 /* SearchTableViewController.swift */; };
+		EAEF7B351D6799C900E00729 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEF7B341D6799C900E00729 /* SearchViewModel.swift */; };
+		EAEF7B371D67A03000E00729 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEF7B361D67A03000E00729 /* SearchModel.swift */; };
 		EAFD27F71D5AF9EB00818E48 /* SingleListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFD27F61D5AF9EB00818E48 /* SingleListViewModel.swift */; };
 		EAFD27F91D5C3F7B00818E48 /* RecentDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFD27F81D5C3F7B00818E48 /* RecentDataSource.swift */; };
 		EAFD27FD1D5C43D300818E48 /* RecentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFD27FC1D5C43D300818E48 /* RecentViewController.swift */; };
@@ -147,6 +150,9 @@
 		EAE50A7B1D12CEEC00B4329B /* LogNetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogNetUITests.swift; sourceTree = "<group>"; };
 		EAE50A7D1D12CEEC00B4329B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EAECB5A71D5288AD0080ED3D /* Prefences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prefences.swift; sourceTree = "<group>"; };
+		EAEF7B321D67998100E00729 /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
+		EAEF7B341D6799C900E00729 /* SearchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		EAEF7B361D67A03000E00729 /* SearchModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		EAFD27F61D5AF9EB00818E48 /* SingleListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleListViewModel.swift; sourceTree = "<group>"; };
 		EAFD27F81D5C3F7B00818E48 /* RecentDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentDataSource.swift; sourceTree = "<group>"; };
 		EAFD27FC1D5C43D300818E48 /* RecentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentViewController.swift; sourceTree = "<group>"; };
@@ -208,6 +214,7 @@
 				EADC60031D16E44F00B8743C /* WebBrowserModel.swift */,
 				EADC60111D1A6EF500B8743C /* SingleListNotificationModel.swift */,
 				EADC601C1D1A8EFC00B8743C /* Notification.swift */,
+				EAEF7B361D67A03000E00729 /* SearchModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -225,6 +232,7 @@
 				EA42EAF01D438C7600451BB9 /* RepricePNRView.swift */,
 				EAFD27FC1D5C43D300818E48 /* RecentViewController.swift */,
 				EAFD28001D5E47D300818E48 /* ContainerViewController.swift */,
+				EAEF7B321D67998100E00729 /* SearchTableViewController.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -242,6 +250,7 @@
 				EA42EAF21D43AD6800451BB9 /* RepricePNRViewModel.swift */,
 				EAD0C6871D57B46D0033B307 /* ActivationViewModel.swift */,
 				EAFD27F61D5AF9EB00818E48 /* SingleListViewModel.swift */,
+				EAEF7B341D6799C900E00729 /* SearchViewModel.swift */,
 			);
 			name = ViewModels;
 			sourceTree = "<group>";
@@ -642,6 +651,7 @@
 				EADC60061D17017E00B8743C /* ServerService.swift in Sources */,
 				EA35A8671D40025400BE3618 /* SplitListsViewController.swift in Sources */,
 				EA26374E1D15BE3D00D5988D /* Router.swift in Sources */,
+				EAEF7B351D6799C900E00729 /* SearchViewModel.swift in Sources */,
 				EA2637631D16BEF400D5988D /* WebBrouserViewController.swift in Sources */,
 				EAFD27FD1D5C43D300818E48 /* RecentViewController.swift in Sources */,
 				EAECB5A81D5288AD0080ED3D /* Prefences.swift in Sources */,
@@ -665,6 +675,8 @@
 				EA26375D1D16A4F100D5988D /* ServerParser.swift in Sources */,
 				EAE50A5C1D12CEEB00B4329B /* AppDelegate.swift in Sources */,
 				EAD43D151D2CC4AB00E1FF15 /* APIFacade.swift in Sources */,
+				EAEF7B331D67998100E00729 /* SearchTableViewController.swift in Sources */,
+				EAEF7B371D67A03000E00729 /* SearchModel.swift in Sources */,
 				EADC601B1D1A8A5100B8743C /* Typealiases.swift in Sources */,
 				EAFD27F71D5AF9EB00818E48 /* SingleListViewModel.swift in Sources */,
 				EA35A8691D4014FF00BE3618 /* AbstractDataSource.swift in Sources */,

@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-class SingleListNotificationModel: NSObject {
+class SingleListNotificationModel {
     var apiFacade:APIFacade?
     var serverParser:ServerParser?
     var storageService: NotificationsStorageServise?

@@ -14,7 +14,7 @@ protocol NotificationsStorageServise {
     func cleanUp(completion:ErrorCompletionBlock)
     func addNotification(notification:Notification, completion:ErrorCompletionBlock?)
     func addNotifications(notifications:[Notification],completion:ErrorCompletionBlock?)
-    func fetch() ->[Notification]?
+    func search(query: String) throws -> [Notification]?
     
 }
 
