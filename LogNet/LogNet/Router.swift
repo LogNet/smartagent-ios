@@ -92,7 +92,14 @@ class Router {
     }
     
     func showSearchView() {
-        let searchViewController = self.storyboard.instantiateViewControllerWithIdentifier("SearchViewController")
+        let model = SearchModel()
+        model.storageService = NotificationsStorageServiseRealm()
+        model.searchHistoryStorage = SearchHistoryStorageRealm()
+        let viewModel = SearchViewModel(model: model, router: self)
+        viewModel.contentProvider = SearchContentProvider()
+        let searchViewController = self.storyboard.instantiateViewControllerWithIdentifier("SearchTableViewController") as! SearchTableViewController
+        searchViewController.dataSource = SearchHistoryDataSource()
+        searchViewController.viewModel = viewModel
         let navigationController = self.tabBarController.selectedViewController as? UINavigationController
         navigationController?.pushViewController(searchViewController, animated: true)
     }

@@ -7,22 +7,60 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
-class SearchTableViewController: UITableViewController {
+class SearchTableViewController: UITableViewController, UISearchControllerDelegate, UISearchResultsUpdating, UISearchBarDelegate {
 
+    let disposableBag = DisposeBag()
+    var viewModel:SearchViewModel!
+    var searchController : UISearchController!
+    var dataSource:SearchHistoryDataSource!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.tableView.dataSource = self.dataSource
+        self.dataSource.tableView = self.tableView
+        self.dataSource.contentProvider = self.viewModel.contentProvider
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.searchController = UISearchController(searchResultsController:  nil)
+        
+        self.searchController.searchResultsUpdater = self
+        self.searchController.delegate = self
+        self.searchController.searchBar.delegate = self
+        
+        self.searchController.hidesNavigationBarDuringPresentation = false
+        self.searchController.dimsBackgroundDuringPresentation = true
+        
+        self.navigationItem.titleView = searchController.searchBar
+        
+        self.definesPresentationContext = true
+        self.viewModel.fetchHistory()
+        self.bindViewModel()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+
+    func bindViewModel() {
+        self.searchController.searchBar.rx_text
+            .throttle(0.3, scheduler: MainScheduler.instance)
+            .distinctUntilChanged().observeOn(MainScheduler.instance)
+            .subscribeNext{ query in
+                if !query.isEmpty {
+                    self.viewModel.fetchSuggests(query)
+                }
+        }.addDisposableTo(self.disposableBag)
+    }
+    
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        
     }
 
     // MARK: - Table view data source

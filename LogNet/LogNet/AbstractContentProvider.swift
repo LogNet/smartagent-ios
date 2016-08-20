@@ -12,7 +12,7 @@ import RealmSwift
 import Realm
 
 
-class AbstractContentProvider: NSObject {
+class AbstractContentProvider {
     private let realm = try! Realm()
     let listType:ListType
     let subtype:NotificationSubtype

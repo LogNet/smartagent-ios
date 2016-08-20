@@ -39,6 +39,7 @@
             <string>SanFranciscoText-Regular</string>
             <string>SanFranciscoText-Regular</string>
             <string>SanFranciscoText-Regular</string>
+            <string>SanFranciscoText-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -95,7 +96,7 @@
                                     <rect key="frame" x="177.5" y="12" width="20" height="20"/>
                                 </activityIndicatorView>
                             </subviews>
-                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstItem="jyG-od-TbY" firstAttribute="centerY" secondItem="efb-oE-qgC" secondAttribute="centerY" id="ctR-Ng-cww"/>
                                 <constraint firstItem="jyG-od-TbY" firstAttribute="centerX" secondItem="efb-oE-qgC" secondAttribute="centerX" id="urX-tg-65V"/>
@@ -200,6 +201,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Smart Agent" id="h5H-GB-5bI">
+                        <barButtonItem key="backBarButtonItem" title=" " id="mmt-mB-1Vs"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="87F-QC-fv8">
                             <connections>
                                 <action selector="openSearchView:" destination="Ck6-eK-VsL" id="iZC-oh-vps"/>
@@ -220,29 +222,54 @@
             </objects>
             <point key="canvasLocation" x="-505.5" y="-827.5"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Search Table View Controller-->
         <scene sceneID="rgp-Ae-Tqd">
             <objects>
-                <tableViewController storyboardIdentifier="SearchViewController" hidesBottomBarWhenPushed="YES" id="8NA-VZ-mez" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SearchTableViewController" hidesBottomBarWhenPushed="YES" id="8NA-VZ-mez" customClass="SearchTableViewController" customModule="SmartAgent" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Xqy-FW-vuz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="e8p-V2-pTJ">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchHistoryCell" id="e8p-V2-pTJ" customClass="SearchHistoryCell" customModule="SmartAgent" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="e8p-V2-pTJ" id="EsF-Me-OsP">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search gray" translatesAutoresizingMaskIntoConstraints="NO" id="43A-fo-hjf">
+                                            <rect key="frame" x="10" y="15" width="13" height="13"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="13" id="zVD-Hc-es7"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yna-Pw-g9h">
+                                            <rect key="frame" x="36" y="11" width="331" height="21"/>
+                                            <fontDescription key="fontDescription" name="SanFranciscoText-Regular" family="San Francisco Text" pointSize="17"/>
+                                            <color key="textColor" red="0.60392156860000001" green="0.60392156860000001" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="43A-fo-hjf" firstAttribute="centerY" secondItem="EsF-Me-OsP" secondAttribute="centerY" id="8lR-Fc-XsX"/>
+                                        <constraint firstItem="43A-fo-hjf" firstAttribute="centerY" secondItem="Yna-Pw-g9h" secondAttribute="centerY" id="Gsr-pf-z7M"/>
+                                        <constraint firstItem="Yna-Pw-g9h" firstAttribute="leading" secondItem="43A-fo-hjf" secondAttribute="trailing" constant="13" id="Pex-ra-4VR"/>
+                                        <constraint firstItem="Yna-Pw-g9h" firstAttribute="trailing" secondItem="EsF-Me-OsP" secondAttribute="trailingMargin" id="g5M-MU-1fg"/>
+                                        <constraint firstItem="43A-fo-hjf" firstAttribute="leading" secondItem="EsF-Me-OsP" secondAttribute="leadingMargin" constant="2" id="olx-6X-JGt"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="suggestTitle" destination="Yna-Pw-g9h" id="ViM-c3-28u"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="8NA-VZ-mez" id="AX9-wn-PDs"/>
                             <outlet property="delegate" destination="8NA-VZ-mez" id="rvr-K2-H7D"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="BCK-PO-zaG"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </tableViewController>
@@ -291,6 +318,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Reprice" id="bMq-7L-cBV">
+                        <barButtonItem key="backBarButtonItem" title=" " id="RCN-eH-67y"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="tcA-kv-Sga">
                             <connections>
                                 <action selector="openSearchView:" destination="jTp-1K-cLg" id="kYa-NF-8dw"/>
@@ -402,7 +430,7 @@
                                     <constraint firstAttribute="height" constant="21" id="PX3-OH-aXQ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="someone@somewhere.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6K0-h8-PaX">
@@ -420,7 +448,7 @@
                                     <constraint firstAttribute="height" constant="21" id="Pv1-DR-rij"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -515,7 +543,7 @@
                                     <constraint firstAttribute="width" constant="321" id="Htm-dA-a1t"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="23"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -618,7 +646,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" allowsSelection="NO" rowHeight="130" sectionHeaderHeight="18" sectionFooterHeight="18" id="PRr-2s-0oI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <sections>
                             <tableViewSection headerTitle="    Status" id="VL1-PY-Zcg">
@@ -812,7 +840,7 @@
                                                         <constraint firstAttribute="width" constant="76" id="wJ5-gF-Z8O"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="SanFranciscoText-Medium" family="San Francisco Text" pointSize="13"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ticket Black" translatesAutoresizingMaskIntoConstraints="NO" id="5ca-LL-X7v">
@@ -868,7 +896,7 @@
                                                         <constraint firstAttribute="height" constant="12" id="gUI-dV-TcP"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="SanFranciscoText-Medium" family="San Francisco Text" pointSize="13"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Contacts" translatesAutoresizingMaskIntoConstraints="NO" id="qaQ-WP-TBt">
@@ -929,7 +957,7 @@
                                                         <constraint firstAttribute="width" constant="79" id="zYA-Vt-sh5"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="SanFranciscoText-Medium" family="San Francisco Text" pointSize="13"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Airport" translatesAutoresizingMaskIntoConstraints="NO" id="LId-35-wrt">
@@ -1007,7 +1035,7 @@ HK</string>
                                                         <constraint firstAttribute="width" constant="79" id="XGn-aC-TfK"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="SanFranciscoText-Medium" family="San Francisco Text" pointSize="13"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Hotel" translatesAutoresizingMaskIntoConstraints="NO" id="22m-7t-amg">
@@ -1077,7 +1105,7 @@ HK</string>
                                                         <constraint firstAttribute="width" constant="79" id="b65-Oa-ZRQ"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="SanFranciscoText-Medium" family="San Francisco Text" pointSize="13"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Car Rental" translatesAutoresizingMaskIntoConstraints="NO" id="hV9-ag-uDZ">
@@ -1179,7 +1207,7 @@ Return: 26.04.16 00:00</string>
                                     <rect key="frame" x="177.5" y="12" width="20" height="20"/>
                                 </activityIndicatorView>
                             </subviews>
-                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstItem="ZQd-oI-tBO" firstAttribute="centerY" secondItem="mye-zU-hXr" secondAttribute="centerY" id="Mj5-dU-zhg"/>
                                 <constraint firstItem="ZQd-oI-tBO" firstAttribute="centerX" secondItem="mye-zU-hXr" secondAttribute="centerX" id="ZIJ-aJ-nc6"/>
@@ -1275,6 +1303,7 @@ Return: 26.04.16 00:00</string>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Ticketing Due" id="AQc-LM-RLC">
+                        <barButtonItem key="backBarButtonItem" title=" " id="05t-gf-flo"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="JM1-3w-Hqb">
                             <connections>
                                 <action selector="openSearchView:" destination="kJI-Yt-uAL" id="1qr-cf-fep"/>
@@ -1333,7 +1362,7 @@ Return: 26.04.16 00:00</string>
                                     <rect key="frame" x="177.5" y="12" width="20" height="20"/>
                                 </activityIndicatorView>
                             </subviews>
-                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstItem="Qcr-rA-35b" firstAttribute="centerX" secondItem="nYy-bQ-Fuu" secondAttribute="centerX" id="V4d-ej-sYE"/>
                                 <constraint firstItem="Qcr-rA-35b" firstAttribute="centerY" secondItem="nYy-bQ-Fuu" secondAttribute="centerY" id="hxl-je-yLm"/>
@@ -1445,7 +1474,6 @@ Return: 26.04.16 00:00</string>
         <!--Single List View Controller-->
         <scene sceneID="oVd-JF-cAO">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oMf-Fi-GZK" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="9w1-vn-igK" customClass="SingleListViewController" customModule="SmartAgent" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="80" sectionHeaderHeight="1" sectionFooterHeight="1" id="itM-6E-oeN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -1459,7 +1487,7 @@ Return: 26.04.16 00:00</string>
                                     <rect key="frame" x="177.5" y="12" width="20" height="20"/>
                                 </activityIndicatorView>
                             </subviews>
-                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstItem="fy0-tZ-WwT" firstAttribute="centerY" secondItem="ibk-1M-06V" secondAttribute="centerY" id="By3-P7-ZOv"/>
                                 <constraint firstItem="fy0-tZ-WwT" firstAttribute="centerX" secondItem="ibk-1M-06V" secondAttribute="centerX" id="rHU-aM-shZ"/>
@@ -1564,13 +1592,13 @@ Return: 26.04.16 00:00</string>
                         <outlet property="loadMoreIndicator" destination="fy0-tZ-WwT" id="pLI-Jw-NfZ"/>
                     </connections>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oMf-Fi-GZK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="930.5" y="842.5"/>
         </scene>
         <!--Cancelled-->
         <scene sceneID="hxv-DX-oip">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vaD-nv-KHa" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="ZT7-6a-tFC" customClass="SplitListsViewController" customModule="SmartAgent" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pcs-62-dvP"/>
@@ -1609,6 +1637,7 @@ Return: 26.04.16 00:00</string>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Cancelled" id="elW-YD-UFu">
+                        <barButtonItem key="backBarButtonItem" title=" " id="XG9-Pf-tep"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="Ti0-pq-96F">
                             <connections>
                                 <action selector="openSearchView:" destination="ZT7-6a-tFC" id="rnA-kV-ClI"/>
@@ -1617,8 +1646,9 @@ Return: 26.04.16 00:00</string>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vaD-nv-KHa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-593.5" y="842.5"/>
+            <point key="canvasLocation" x="-497.5" y="842.5"/>
         </scene>
     </scenes>
     <resources>
@@ -1640,6 +1670,7 @@ Return: 26.04.16 00:00</string>
         <image name="US Dollar" width="18" height="18"/>
         <image name="arrow right" width="27" height="14"/>
         <image name="bckgr_launch" width="640" height="1136"/>
+        <image name="search gray" width="13" height="13"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Yh4-AK-aYe"/>

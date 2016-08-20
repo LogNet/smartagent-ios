@@ -31,6 +31,14 @@
 		EA7ECA5D1D1BB41E0014010A /* RecentNotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7ECA5C1D1BB41E0014010A /* RecentNotificationCell.swift */; };
 		EA8BB9401D21A04200D07561 /* PushTokenUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8BB93F1D21A04200D07561 /* PushTokenUtil.swift */; };
 		EA8CDA4A1D2C44A50090E9C1 /* SmartAgentServerServise.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8CDA491D2C44A50090E9C1 /* SmartAgentServerServise.swift */; };
+		EA93F1371D68AA2400A12109 /* SearchHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F1361D68AA2400A12109 /* SearchHistoryCell.swift */; };
+		EA93F1391D68AAE000A12109 /* SearchHistoryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F1381D68AAE000A12109 /* SearchHistoryCellViewModel.swift */; };
+		EA93F13B1D68ABF700A12109 /* SearchHistoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F13A1D68ABF700A12109 /* SearchHistoryItem.swift */; };
+		EA93F13D1D68ACBD00A12109 /* SearchHistoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F13C1D68ACBD00A12109 /* SearchHistoryStorage.swift */; };
+		EA93F13F1D68AECA00A12109 /* RealmStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F13E1D68AECA00A12109 /* RealmStorage.swift */; };
+		EA93F1411D68B09500A12109 /* SearchHistoryStorageRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F1401D68B09500A12109 /* SearchHistoryStorageRealm.swift */; };
+		EA93F1431D68D84900A12109 /* SearchContentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F1421D68D84900A12109 /* SearchContentProvider.swift */; };
+		EA93F1451D68D8AA00A12109 /* SearchDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F1441D68D8AA00A12109 /* SearchDataSource.swift */; };
 		EAD0C6811D5787600033B307 /* NSErrorExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD0C6801D5787600033B307 /* NSErrorExtention.swift */; };
 		EAD0C6841D578BED0033B307 /* ErrorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD0C6831D578BED0033B307 /* ErrorUtil.swift */; };
 		EAD0C6881D57B46D0033B307 /* ActivationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD0C6871D57B46D0033B307 /* ActivationViewModel.swift */; };
@@ -114,6 +122,14 @@
 		EA7ECA5C1D1BB41E0014010A /* RecentNotificationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentNotificationCell.swift; sourceTree = "<group>"; };
 		EA8BB93F1D21A04200D07561 /* PushTokenUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushTokenUtil.swift; sourceTree = "<group>"; };
 		EA8CDA491D2C44A50090E9C1 /* SmartAgentServerServise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmartAgentServerServise.swift; sourceTree = "<group>"; };
+		EA93F1361D68AA2400A12109 /* SearchHistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchHistoryCell.swift; sourceTree = "<group>"; };
+		EA93F1381D68AAE000A12109 /* SearchHistoryCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchHistoryCellViewModel.swift; sourceTree = "<group>"; };
+		EA93F13A1D68ABF700A12109 /* SearchHistoryItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchHistoryItem.swift; sourceTree = "<group>"; };
+		EA93F13C1D68ACBD00A12109 /* SearchHistoryStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchHistoryStorage.swift; sourceTree = "<group>"; };
+		EA93F13E1D68AECA00A12109 /* RealmStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmStorage.swift; sourceTree = "<group>"; };
+		EA93F1401D68B09500A12109 /* SearchHistoryStorageRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchHistoryStorageRealm.swift; sourceTree = "<group>"; };
+		EA93F1421D68D84900A12109 /* SearchContentProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchContentProvider.swift; sourceTree = "<group>"; };
+		EA93F1441D68D8AA00A12109 /* SearchDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchDataSource.swift; sourceTree = "<group>"; };
 		EAD0C6801D5787600033B307 /* NSErrorExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSErrorExtention.swift; sourceTree = "<group>"; };
 		EAD0C6831D578BED0033B307 /* ErrorUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorUtil.swift; sourceTree = "<group>"; };
 		EAD0C6871D57B46D0033B307 /* ActivationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivationViewModel.swift; sourceTree = "<group>"; };
@@ -215,6 +231,7 @@
 				EADC60111D1A6EF500B8743C /* SingleListNotificationModel.swift */,
 				EADC601C1D1A8EFC00B8743C /* Notification.swift */,
 				EAEF7B361D67A03000E00729 /* SearchModel.swift */,
+				EA93F13A1D68ABF700A12109 /* SearchHistoryItem.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -233,6 +250,7 @@
 				EAFD27FC1D5C43D300818E48 /* RecentViewController.swift */,
 				EAFD28001D5E47D300818E48 /* ContainerViewController.swift */,
 				EAEF7B321D67998100E00729 /* SearchTableViewController.swift */,
+				EA93F1361D68AA2400A12109 /* SearchHistoryCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -251,6 +269,7 @@
 				EAD0C6871D57B46D0033B307 /* ActivationViewModel.swift */,
 				EAFD27F61D5AF9EB00818E48 /* SingleListViewModel.swift */,
 				EAEF7B341D6799C900E00729 /* SearchViewModel.swift */,
+				EA93F1381D68AAE000A12109 /* SearchHistoryCellViewModel.swift */,
 			);
 			name = ViewModels;
 			sourceTree = "<group>";
@@ -296,6 +315,9 @@
 			children = (
 				EADC60151D1A77AB00B8743C /* NotificationsStorageServise.swift */,
 				EADC601F1D1B125C00B8743C /* NotificationsStorageServiseRealm.swift */,
+				EA93F13C1D68ACBD00A12109 /* SearchHistoryStorage.swift */,
+				EA93F13E1D68AECA00A12109 /* RealmStorage.swift */,
+				EA93F1401D68B09500A12109 /* SearchHistoryStorageRealm.swift */,
 			);
 			name = StorageService;
 			sourceTree = "<group>";
@@ -329,6 +351,8 @@
 				EAECB5A71D5288AD0080ED3D /* Prefences.swift */,
 				EAFD27F81D5C3F7B00818E48 /* RecentDataSource.swift */,
 				EAFD27FE1D5C476100818E48 /* NotificationDataSource.swift */,
+				EA93F1421D68D84900A12109 /* SearchContentProvider.swift */,
+				EA93F1441D68D8AA00A12109 /* SearchDataSource.swift */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -653,25 +677,33 @@
 				EA26374E1D15BE3D00D5988D /* Router.swift in Sources */,
 				EAEF7B351D6799C900E00729 /* SearchViewModel.swift in Sources */,
 				EA2637631D16BEF400D5988D /* WebBrouserViewController.swift in Sources */,
+				EA93F1451D68D8AA00A12109 /* SearchDataSource.swift in Sources */,
 				EAFD27FD1D5C43D300818E48 /* RecentViewController.swift in Sources */,
 				EAECB5A81D5288AD0080ED3D /* Prefences.swift in Sources */,
 				EA8CDA4A1D2C44A50090E9C1 /* SmartAgentServerServise.swift in Sources */,
+				EA93F13F1D68AECA00A12109 /* RealmStorage.swift in Sources */,
 				EADC60041D16E44F00B8743C /* WebBrowserModel.swift in Sources */,
+				EA93F1431D68D84900A12109 /* SearchContentProvider.swift in Sources */,
+				EA93F1411D68B09500A12109 /* SearchHistoryStorageRealm.swift in Sources */,
 				EAFD27FF1D5C476100818E48 /* NotificationDataSource.swift in Sources */,
 				EA26375F1D16A59700D5988D /* SmartAgentServerParser.swift in Sources */,
 				EAD0C6841D578BED0033B307 /* ErrorUtil.swift in Sources */,
 				EADC60021D16E3CE00B8743C /* WebBrowserViewModel.swift in Sources */,
 				EA35A8631D3EC5DE00BE3618 /* NotificationCell.swift in Sources */,
 				EA2637521D15BF9000D5988D /* LoginModel.swift in Sources */,
+				EA93F1371D68AA2400A12109 /* SearchHistoryCell.swift in Sources */,
 				EADC60141D1A6FEA00B8743C /* ViewModel.swift in Sources */,
+				EA93F13D1D68ACBD00A12109 /* SearchHistoryStorage.swift in Sources */,
 				EA8BB9401D21A04200D07561 /* PushTokenUtil.swift in Sources */,
 				EAE50A5E1D12CEEB00B4329B /* LoginViewController.swift in Sources */,
 				EA42EAF31D43AD6800451BB9 /* RepricePNRViewModel.swift in Sources */,
+				EA93F13B1D68ABF700A12109 /* SearchHistoryItem.swift in Sources */,
 				EA7ECA5B1D1BAD780014010A /* RecentNotificationCellViewModel.swift in Sources */,
 				EA35A86B1D40152100BE3618 /* AbstractContentProvider.swift in Sources */,
 				EADC60161D1A77AB00B8743C /* NotificationsStorageServise.swift in Sources */,
 				EADC60121D1A6EF500B8743C /* SingleListNotificationModel.swift in Sources */,
 				EAD0C6881D57B46D0033B307 /* ActivationViewModel.swift in Sources */,
+				EA93F1391D68AAE000A12109 /* SearchHistoryCellViewModel.swift in Sources */,
 				EA26375D1D16A4F100D5988D /* ServerParser.swift in Sources */,
 				EAE50A5C1D12CEEB00B4329B /* AppDelegate.swift in Sources */,
 				EAD43D151D2CC4AB00E1FF15 /* APIFacade.swift in Sources */,

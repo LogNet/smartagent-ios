@@ -12,6 +12,8 @@ import RxCocoa
 
 class SearchModel {
     var storageService: NotificationsStorageServise!
+    var searchHistoryStorage: SearchHistoryStorage!
+
     
     func searchNotifications(query:String) -> Observable<[Notification]?> {
         assert(self.storageService != nil, "StorageService is nil")
@@ -27,4 +29,11 @@ class SearchModel {
         }
     }
     
+    func saveToHistory(searchItem:SearchHistoryItem) {
+        self.searchHistoryStorage.addSearchHistoryItem(searchItem, completion: nil)
+    }
+    
+    func fetchHistory() -> [SearchHistoryItem]? {
+        return self.searchHistoryStorage.fetchHistoryItems()
+    }
 }
