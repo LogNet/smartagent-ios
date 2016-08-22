@@ -11,5 +11,5 @@ import RxSwift
 import RxCocoa
 
 class SearchContentProvider {
-    var results:Variable<[AnyObject]?> = Variable([SearchHistoryCellViewModel(suggestTitle: "Hello"),SearchHistoryCellViewModel(suggestTitle: "Query")])
+    var results:Variable<[AnyObject]?> = Variable(nil)
 }

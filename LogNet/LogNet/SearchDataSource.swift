@@ -11,16 +11,15 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class SearchHistoryDataSource: NSObject,UITableViewDataSource{
+class SearchHistoryDataSource: NSObject,UITableViewDataSource {
     let disposeBag = DisposeBag()
-    
     var contentProvider:SearchContentProvider! {
         didSet{
             self.subscribeToProvider()
         }
     }
     var tableView: UITableView!
-
+    var rowHeight = 0
     // MARK: Private
     
     private func subscribeToProvider (){
@@ -47,18 +46,28 @@ class SearchHistoryDataSource: NSObject,UITableViewDataSource{
         
         if result is SearchHistoryCellViewModel {
             let historyCell = tableView.dequeueReusableCellWithIdentifier("SearchHistoryCell", forIndexPath: indexPath) as! SearchHistoryCell
-            historyCell.setViewModel(result as! SearchHistoryCellViewModel)
+            let viewModel = result as! SearchHistoryCellViewModel
+            historyCell.setViewModel(viewModel)
             cell = historyCell
             
+            // TODO: Needs refactoring
+            if tableView.rowHeight != viewModel.rowHeight {
+                tableView.rowHeight = viewModel.rowHeight
+            }
         } else if result is RecentNotificationCellViewModel {
             let recentCell = tableView.dequeueReusableCellWithIdentifier("RecentNotificationCell", forIndexPath: indexPath) as! RecentNotificationCell
-            recentCell.setViewModel(result as! RecentNotificationCellViewModel)
+            let viewModel = result as! RecentNotificationCellViewModel
+            recentCell.setViewModel(viewModel)
             cell = recentCell
             
+            // TODO: Needs refactoring
+            if tableView.rowHeight != viewModel.rowHeight {
+                tableView.rowHeight = viewModel.rowHeight
+            }
         } else {
             cell = UITableViewCell(style: .Default, reuseIdentifier: "Cell")
         }
-        
+
         return cell
     }
 

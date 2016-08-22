@@ -10,5 +10,10 @@ import Foundation
 import RealmSwift
 
 class SearchHistoryItem: Object {
-    var query: String?
+    dynamic var query: String?
+    dynamic var date: NSDate?
+    
+    override static func primaryKey() -> String? {
+        return "query"
+    }
 }

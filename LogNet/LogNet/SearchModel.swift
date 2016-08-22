@@ -29,6 +29,16 @@ class SearchModel {
         }
     }
     
+    func getSuggests(query:String) -> [String]? {
+        assert(self.storageService != nil, "StorageService is nil")
+        do {
+            let suggests = try self.storageService.getSuggestTitles(query)
+            return suggests
+        } catch _ as NSError {
+            return nil
+        }
+    }
+    
     func saveToHistory(searchItem:SearchHistoryItem) {
         self.searchHistoryStorage.addSearchHistoryItem(searchItem, completion: nil)
     }

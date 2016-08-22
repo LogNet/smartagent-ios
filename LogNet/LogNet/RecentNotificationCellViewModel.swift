@@ -17,6 +17,7 @@ class RecentNotificationCellViewModel {
         dateFormatter.doesRelativeDateFormatting = true
         return dateFormatter
     }()
+    let rowHeight = CGFloat(77.0)
     var title:String?
     var titleMessage:String?
     var contactName:String?

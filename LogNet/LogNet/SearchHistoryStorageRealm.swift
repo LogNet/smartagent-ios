@@ -17,11 +17,14 @@ class SearchHistoryStorageRealm: RealmStorage, SearchHistoryStorage {
     }
     
     func addSearchHistoryItem(item: SearchHistoryItem, completion: ErrorCompletionBlock?) {
-        self.addObject(item, completion: completion)
+        let searchItem = SearchHistoryItem()
+        searchItem.query = item.query
+        searchItem.date = NSDate()
+        self.addObject(searchItem, update: true, completion: completion)
     }
     
     func fetchHistoryItems() -> [SearchHistoryItem]? {
         let realm = try! Realm()
-        return Array(realm.objects(SearchHistoryItem.self))
+        return Array(realm.objects(SearchHistoryItem.self).sorted("date", ascending: false))
     }
 }

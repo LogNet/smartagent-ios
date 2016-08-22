@@ -12,8 +12,8 @@ protocol NotificationsStorageServise {
     
     func deleteAllByType(type: ListType,subtype:NotificationSubtype,completion:ErrorCompletionBlock)
     func addNotification(notification:Notification, completion:ErrorCompletionBlock?)
-    func addNotifications(notifications:[Notification],completion:ErrorCompletionBlock?)
+    func addNotifications(notifications: [Notification],completion:ErrorCompletionBlock?)
     func search(query: String) throws -> [Notification]?
-    
+    func getSuggestTitles(query:String) throws -> [String]?
 }
 

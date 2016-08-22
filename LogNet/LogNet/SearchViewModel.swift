@@ -34,18 +34,44 @@ class SearchViewModel: ViewModel {
     }
     
     func fetchSuggests(query:String) {
-        self.contentProvider.results = Variable([SearchHistoryCellViewModel(suggestTitle: "Hello"),SearchHistoryCellViewModel(suggestTitle: "Query")])
-        
+        guard let suggests = self.model.getSuggests(query) else {
+            self.contentProvider.results.value = nil
+            return
+        }
+        self.contentProvider.results.value = suggests.map{
+            let model = SearchHistoryItem()
+            model.query = $0
+            return SearchHistoryCellViewModel(model: model)
+        }
+        print("getSuggests")
     }
     
     func fetchHistory() {
-        self.contentProvider.results = Variable([SearchHistoryCellViewModel(suggestTitle: "Hello"),SearchHistoryCellViewModel(suggestTitle: "Query")])
+        if let queries = self.model.fetchHistory() {
+            self.contentProvider.results.value = queries.map{
+                SearchHistoryCellViewModel(model: $0)
+            }
+        }
     }
     
-    func saveToHistory(selectedIndex:Int) {
-        if let item = self.contentProvider.results.value?[selectedIndex] as? SearchHistoryItem{
-            self.model.saveToHistory(item)
+    func rowSelected(selectedRow:Int) -> String? {
+        if let item = self.contentProvider.results.value?[selectedRow] as? SearchHistoryCellViewModel{
+            self.model.saveToHistory(item.model)
+            guard let query = item.model.query else {
+                return nil
+            }
+            self.searchNotifications(query).subscribeNext {
+                notificationsViewModels in
+                self.contentProvider.results.value = notificationsViewModels
+            }.dispose()
+            
+            return query
         }
+        
+        if let item = self.contentProvider.results.value?[selectedRow] as? RecentNotificationCellViewModel{
+            self.router.showPNRDetailsFromNotification(nil)
+        }
+        return nil
     }
 
 }

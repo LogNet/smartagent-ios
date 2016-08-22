@@ -15,26 +15,26 @@ class RealmStorage {
     
     // MARK: Private
     
-    internal func addRealmObject(object: Object) {
+    internal func addRealmObject(object: Object, update:Bool) {
         let realm = try! Realm()
         realm.beginWrite()
-        realm.add(object)
+        realm.add(object, update: update)
         try! realm.commitWrite()
     }
     
-    func addObject(object: Object, completion: ErrorCompletionBlock?) {
+    func addObject(object: Object, update: Bool, completion: ErrorCompletionBlock?) {
         dispatch_async(self.saveQueue!) {
             autoreleasepool({
-                self.addRealmObject(object)
+                self.addRealmObject(object,update: update)
             })
         }
     }
     
-    func addObjects(objects: [Object], completion: ErrorCompletionBlock?) {
+    func addObjects(objects: [Object], update: Bool, completion: ErrorCompletionBlock?) {
         dispatch_async(self.saveQueue!) {
             autoreleasepool({
                 for object in objects {
-                    self.addRealmObject(object)
+                    self.addRealmObject(object, update: update)
                 }
                 if completion != nil {
                     dispatch_async(dispatch_get_main_queue(), {

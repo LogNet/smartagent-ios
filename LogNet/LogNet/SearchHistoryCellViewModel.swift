@@ -7,13 +7,15 @@
 //
 
 import Foundation
-
+import UIKit
 class SearchHistoryCellViewModel {
+    let rowHeight = CGFloat(44.0)
+    let model:SearchHistoryItem
+    var suggestTitle: String?
     
-    let suggestTitle:String
-    
-    init(suggestTitle:String){
-        self.suggestTitle = suggestTitle
+    init(model:SearchHistoryItem){
+        self.model = model
+        self.suggestTitle = self.model.query
     }
     
 }

@@ -34,7 +34,7 @@ class SearchTableViewController: UITableViewController, UISearchControllerDelega
         self.searchController.searchBar.delegate = self
         
         self.searchController.hidesNavigationBarDuringPresentation = false
-        self.searchController.dimsBackgroundDuringPresentation = true
+        self.searchController.dimsBackgroundDuringPresentation = false
         
         self.navigationItem.titleView = searchController.searchBar
         
@@ -55,8 +55,15 @@ class SearchTableViewController: UITableViewController, UISearchControllerDelega
             .subscribeNext{ query in
                 if !query.isEmpty {
                     self.viewModel.fetchSuggests(query)
+                } else {
+                    self.viewModel.fetchHistory()
                 }
         }.addDisposableTo(self.disposableBag)
+        
+        self.searchController.rx_didDismiss.asObservable().subscribeNext{
+            self.viewModel.fetchHistory()
+            }.addDisposableTo(self.disposableBag)
+
     }
     
     func updateSearchResultsForSearchController(searchController: UISearchController) {
@@ -75,6 +82,16 @@ class SearchTableViewController: UITableViewController, UISearchControllerDelega
         return 0
     }
 
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.searchController.searchBar.resignFirstResponder()
+        let query = self.viewModel.rowSelected(indexPath.row)
+        // TODO: Needs refactoring
+        if query != nil {
+            self.searchController.searchBar.text = query
+        }
+    }
+    
+    
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)

@@ -39,6 +39,7 @@
 		EA93F1411D68B09500A12109 /* SearchHistoryStorageRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F1401D68B09500A12109 /* SearchHistoryStorageRealm.swift */; };
 		EA93F1431D68D84900A12109 /* SearchContentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F1421D68D84900A12109 /* SearchContentProvider.swift */; };
 		EA93F1451D68D8AA00A12109 /* SearchDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F1441D68D8AA00A12109 /* SearchDataSource.swift */; };
+		EA93F1491D6AC53C00A12109 /* ArrayExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F1481D6AC53C00A12109 /* ArrayExtention.swift */; };
 		EAD0C6811D5787600033B307 /* NSErrorExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD0C6801D5787600033B307 /* NSErrorExtention.swift */; };
 		EAD0C6841D578BED0033B307 /* ErrorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD0C6831D578BED0033B307 /* ErrorUtil.swift */; };
 		EAD0C6881D57B46D0033B307 /* ActivationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD0C6871D57B46D0033B307 /* ActivationViewModel.swift */; };
@@ -130,6 +131,7 @@
 		EA93F1401D68B09500A12109 /* SearchHistoryStorageRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchHistoryStorageRealm.swift; sourceTree = "<group>"; };
 		EA93F1421D68D84900A12109 /* SearchContentProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchContentProvider.swift; sourceTree = "<group>"; };
 		EA93F1441D68D8AA00A12109 /* SearchDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchDataSource.swift; sourceTree = "<group>"; };
+		EA93F1481D6AC53C00A12109 /* ArrayExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtention.swift; sourceTree = "<group>"; };
 		EAD0C6801D5787600033B307 /* NSErrorExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSErrorExtention.swift; sourceTree = "<group>"; };
 		EAD0C6831D578BED0033B307 /* ErrorUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorUtil.swift; sourceTree = "<group>"; };
 		EAD0C6871D57B46D0033B307 /* ActivationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivationViewModel.swift; sourceTree = "<group>"; };
@@ -306,6 +308,7 @@
 			isa = PBXGroup;
 			children = (
 				EAD0C6801D5787600033B307 /* NSErrorExtention.swift */,
+				EA93F1481D6AC53C00A12109 /* ArrayExtention.swift */,
 			);
 			name = Extentions;
 			sourceTree = "<group>";
@@ -673,6 +676,7 @@
 				EA35A8581D3D6C4F00BE3618 /* UnderlinedTextField.swift in Sources */,
 				EAFD27F91D5C3F7B00818E48 /* RecentDataSource.swift in Sources */,
 				EADC60061D17017E00B8743C /* ServerService.swift in Sources */,
+				EA93F1491D6AC53C00A12109 /* ArrayExtention.swift in Sources */,
 				EA35A8671D40025400BE3618 /* SplitListsViewController.swift in Sources */,
 				EA26374E1D15BE3D00D5988D /* Router.swift in Sources */,
 				EAEF7B351D6799C900E00729 /* SearchViewModel.swift in Sources */,

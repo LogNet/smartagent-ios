@@ -18,12 +18,23 @@ class NotificationsStorageServiseRealm: RealmStorage, NotificationsStorageServis
     
     // MARK: Public
     
+    func getSuggestTitles(query:String) throws -> [String]? {
+        let notifications = try self.search(query)
+        if notifications?.count > 0{
+            return notifications!.map{
+                return $0.title!.containsString(query) ? $0.title! : $0.title_message!
+            }.unique
+        }
+        return []
+    }
+
+    
     func addNotification(notification: Notification, completion: ErrorCompletionBlock?) {
-        self.addObject(notification, completion: completion)
+        self.addObject(notification, update: false, completion: completion)
     }
     
     func addNotifications(notifications: [Notification], completion: ErrorCompletionBlock?) {
-        self.addObjects(notifications, completion: completion)
+        self.addObjects(notifications, update: false, completion: completion)
     }
     
     func deleteAllByType(type: ListType, subtype:NotificationSubtype, completion: ErrorCompletionBlock) {
@@ -59,8 +70,12 @@ class NotificationsStorageServiseRealm: RealmStorage, NotificationsStorageServis
 
     
     func search(query: String) throws -> [Notification]? {
+    
+        if query.containsString("\\") {
+            return nil
+        }
         let realm = try Realm()
-        let notifications = realm.objects(Notification.self).filter("title CONTAINS \(query) OR title_massage CONTAINS \(query)")
+        let notifications = realm.objects(Notification.self).filter("title CONTAINS '\(query)' OR title_message CONTAINS '\(query)'")
         return Array(notifications)
     }
 }
