@@ -11,4 +11,5 @@ import Foundation
 protocol ServerParser {
     func parseToken(JSON:AnyObject?) -> String?
     func parseNotifications(JSON:AnyObject?, listType:ListType) -> (array:Array<Notification>?, error:ErrorType?)
+    func parsePNRInfo(JSON:AnyObject) -> (pnrInfo:PNRInfo?, ErrorType?)
 }

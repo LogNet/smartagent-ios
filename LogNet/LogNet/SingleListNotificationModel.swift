@@ -29,12 +29,6 @@ class SingleListNotificationModel {
                 return self.saveNotifications(JSON, type: type,subtype: subtype, offset: offset)
             }
     }
-
-    private func saveNotifications(JSON:AnyObject, type:ListType, subtype:NotificationSubtype, offset:Int?) -> Observable<Bool> {
-        return self.parseJSON(JSON, listType: type).flatMap { notifications in
-            self.storeNotifications(notifications, offset: offset, type: type, subtype: subtype)
-        }
-    }
     
     func storeNotifications(notifications:[Notification], offset:Int?, type:ListType, subtype:NotificationSubtype) -> Observable<Bool> {
         return Observable.create{ observer in
@@ -68,6 +62,15 @@ class SingleListNotificationModel {
             }
             
             return AnonymousDisposable {}
+        }
+    }
+    
+    
+    // MARK: Private methods
+
+    private func saveNotifications(JSON:AnyObject, type:ListType, subtype:NotificationSubtype, offset:Int?) -> Observable<Bool> {
+        return self.parseJSON(JSON, listType: type).flatMap { notifications in
+            self.storeNotifications(notifications, offset: offset, type: type, subtype: subtype)
         }
     }
     

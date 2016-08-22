@@ -24,6 +24,11 @@ class SmartAgentParser: ServerParser {
         return nil
     }
     
+    func parsePNRInfo(JSON:AnyObject) -> (pnrInfo:PNRInfo?, ErrorType?) {
+        let pnrInfo = PNRInfo()
+        return (pnrInfo, nil)
+    }
+    
     func parseNotifications(JSON:AnyObject?, listType:ListType) -> (array:Array<Notification>?, error:ErrorType?) {
         print(JSON)
         if let jsonDict = JSON as? [[String: AnyObject]] {

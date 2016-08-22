@@ -19,4 +19,5 @@ protocol ServerService {
                              offset:Int?,
                              chunks_size:Int?) -> Observable<AnyObject>
     func sendNotificationToken(notificationToken:String, phone:String, registrationToken:String) -> Observable<Void>
+    func getNotificationData(phoneNumber:String, token:String, notification_id:String) -> Observable<AnyObject>
 }

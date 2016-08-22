@@ -26,6 +26,7 @@ class SmartAgentServerServise: ServerService {
             configuration: NSURLSessionConfiguration.defaultSessionConfiguration(),
             serverTrustPolicyManager: ServerTrustPolicyManager(policies: serverTrustPolicies)
         )
+        
         return man
     }()
     
@@ -93,6 +94,8 @@ class SmartAgentServerServise: ServerService {
             let headers = ["SA-DN":phoneNumber, "SA-REGID":token]
             let request = self.manager.request(.GET, self.baseURLString + "getNotificationList",
                                             parameters: parameters, headers: headers)
+                
+                // TODO: Create function for all methods to avoid code duplication.
                 .responseJSON(completionHandler: { response in
                     if response.result.error == nil {
                         if response.result.value != nil {
@@ -108,12 +111,43 @@ class SmartAgentServerServise: ServerService {
                         observer.onError(response.result.error!)
                     }
                 })
-            
             return AnonymousDisposable {
                 request.cancel()
             }
         })
     }
+    
+    func getNotificationData(phoneNumber:String, token:String, notification_id:String) -> Observable<AnyObject> {
+        return Observable.create { observer in
+            let parameters = ["notification_id":notification_id]
+            let headers = ["SA-DN":phoneNumber, "SA-REGID":token]
+            let request = self.manager.request(.GET, self.baseURLString + "getNotificationData",
+                parameters: parameters, headers: headers)
+            .responseJSON(completionHandler: { response in
+                
+                // TODO: Create function for all methods to avoid code duplication.
+                if response.result.error == nil {
+                    if response.result.value != nil {
+                        observer.onNext(response.result.value!)
+                        observer.onCompleted()
+                    } else {
+                        let error = NSError(domain: "lognet.LogNet.SmartAgentServerService",
+                            code: -6123,
+                            userInfo: [NSLocalizedDescriptionKey: "Server response is nil."])
+                        observer.onError(error)
+                    }
+                } else {
+                    observer.onError(response.result.error!)
+                }
+            })
+            return AnonymousDisposable {
+                request.cancel()
+            }
+            
+        }
+    }
+
+
     
     private func validParameter(parameter:AnyObject?) -> AnyObject {
         guard parameter != nil else {
