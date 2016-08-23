@@ -14,7 +14,7 @@ class ListModelFactory {
         let model = SingleListNotificationModel(chunkSize: CHUNK_SIZE)
         model.serverParser = SmartAgentParser()
         model.apiFacade = APIFacade(service: SmartAgentServerServise())
-        model.storageService = NotificationsStorageServiseRealm()
+        model.storageService = NotificationsStorageRealm()
         return model
     }
     

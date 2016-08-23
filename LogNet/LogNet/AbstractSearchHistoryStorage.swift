@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol SearchHistoryStorage {
+protocol AbstractSearchHistoryStorage {
     func addSearchHistoryItem(item:SearchHistoryItem, completion:ErrorCompletionBlock?)
     func fetchHistoryItems() -> [SearchHistoryItem]?
 }

@@ -93,7 +93,7 @@ class Router {
     
     func showSearchView() {
         let model = SearchModel()
-        model.storageService = NotificationsStorageServiseRealm()
+        model.storageService = NotificationsStorageRealm()
         model.searchHistoryStorage = SearchHistoryStorageRealm()
         let viewModel = SearchViewModel(model: model, router: self)
         viewModel.contentProvider = SearchContentProvider()

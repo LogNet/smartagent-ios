@@ -10,16 +10,45 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-class PNRDataModel {
+class PNRInfoModel {
     var apiFacade:APIFacade!
     var serverParser:ServerParser!
-    var storageService: AbstractNotificationsStorage!
-    
+    var storageService: AbstractPNRInfoStorage!
+    var disposeBag = DisposeBag()
     func getPNRInfo(notification_id:String) -> Observable<PNRInfo> {
-        return self.apiFacade.getNotificationDetails(notification_id).flatMap { JSON in
-            return self.parsePNRJSON(JSON)
+        
+        return Observable.create { observer in
+            self.sendPNRFromStorage(notification_id, observer: observer)
+            self.sendUpdatedPNRInfoFromServer(notification_id, observer: observer)
+            return AnonymousDisposable {}
         }
     }
+    
+    private func sendUpdatedPNRInfoFromServer(notification_id:String, observer:AnyObserver<PNRInfo>) {
+        self.apiFacade.getNotificationDetails(notification_id).flatMap { JSON in
+            return self.parsePNRJSON(JSON)
+            }.subscribeNext{ pnrInfo in
+                self.storageService.addPNFInfo(pnrInfo, completion: { (error) in
+                    if error != nil {
+                        observer.onError(error!)
+                    }
+                    self.sendPNRFromStorage(notification_id, observer: observer)
+                    observer.onCompleted()
+                })
+        }.addDisposableTo(self.disposeBag)
+    }
+    
+    private func sendPNRFromStorage(notification_id:String, observer:AnyObserver<PNRInfo>) {
+        do {
+            if let pnr = try self.storageService.getPNFInfo(notification_id) {
+                observer.onNext(pnr)
+            }
+        } catch let error as NSError {
+            observer.onError(error)
+        }
+
+    }
+    
     
     private func parsePNRJSON(JSON:AnyObject) -> Observable<PNRInfo> {
         return Observable.create { subscriber in
@@ -35,11 +64,4 @@ class PNRDataModel {
         }
     }
     
-    private func fetchFromDatabase(notification_id:String) -> PNRInfo {
-        
-    }
-    
-    private func savePNRInfo(pnrInfo: PNRInfo) -> Bool {
-        
-    }
 }

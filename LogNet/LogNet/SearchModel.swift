@@ -11,8 +11,8 @@ import RxSwift
 import RxCocoa
 
 class SearchModel {
-    var storageService: NotificationsStorageServise!
-    var searchHistoryStorage: SearchHistoryStorage!
+    var storageService: AbstractNotificationsStorage!
+    var searchHistoryStorage: AbstractSearchHistoryStorage!
 
     
     func searchNotifications(query:String) -> Observable<[Notification]?> {

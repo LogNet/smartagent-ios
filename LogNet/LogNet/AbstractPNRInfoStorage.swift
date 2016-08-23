@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+protocol AbstractPNRInfoStorage {
+    
+    func addPNFInfo(pnrInfo:PNRInfo, completion: ErrorCompletionBlock?)
+    func getPNFInfo(notification_id:String) throws -> PNRInfo?
+}

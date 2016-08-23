@@ -34,14 +34,17 @@
 		EA93F1371D68AA2400A12109 /* SearchHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F1361D68AA2400A12109 /* SearchHistoryCell.swift */; };
 		EA93F1391D68AAE000A12109 /* SearchHistoryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F1381D68AAE000A12109 /* SearchHistoryCellViewModel.swift */; };
 		EA93F13B1D68ABF700A12109 /* SearchHistoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F13A1D68ABF700A12109 /* SearchHistoryItem.swift */; };
-		EA93F13D1D68ACBD00A12109 /* SearchHistoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F13C1D68ACBD00A12109 /* SearchHistoryStorage.swift */; };
+		EA93F13D1D68ACBD00A12109 /* AbstractSearchHistoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F13C1D68ACBD00A12109 /* AbstractSearchHistoryStorage.swift */; };
 		EA93F13F1D68AECA00A12109 /* RealmStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F13E1D68AECA00A12109 /* RealmStorage.swift */; };
 		EA93F1411D68B09500A12109 /* SearchHistoryStorageRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F1401D68B09500A12109 /* SearchHistoryStorageRealm.swift */; };
 		EA93F1431D68D84900A12109 /* SearchContentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F1421D68D84900A12109 /* SearchContentProvider.swift */; };
 		EA93F1451D68D8AA00A12109 /* SearchDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F1441D68D8AA00A12109 /* SearchDataSource.swift */; };
 		EA93F1491D6AC53C00A12109 /* ArrayExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F1481D6AC53C00A12109 /* ArrayExtention.swift */; };
-		EA93F14B1D6B98AB00A12109 /* PNRDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F14A1D6B98AB00A12109 /* PNRDataModel.swift */; };
+		EA93F14B1D6B98AB00A12109 /* PNRInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F14A1D6B98AB00A12109 /* PNRInfoModel.swift */; };
 		EA93F14D1D6B996300A12109 /* PNRInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F14C1D6B996300A12109 /* PNRInfo.swift */; };
+		EA93F14F1D6C088700A12109 /* AbstractPNRInfoStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F14E1D6C088700A12109 /* AbstractPNRInfoStorage.swift */; };
+		EA93F1511D6C0A2900A12109 /* PNRInfoStorageRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F1501D6C0A2900A12109 /* PNRInfoStorageRealm.swift */; };
+		EA93F1531D6C15C400A12109 /* PNRInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F1521D6C15C400A12109 /* PNRInfoViewModel.swift */; };
 		EAD0C6811D5787600033B307 /* NSErrorExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD0C6801D5787600033B307 /* NSErrorExtention.swift */; };
 		EAD0C6841D578BED0033B307 /* ErrorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD0C6831D578BED0033B307 /* ErrorUtil.swift */; };
 		EAD0C6881D57B46D0033B307 /* ActivationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD0C6871D57B46D0033B307 /* ActivationViewModel.swift */; };
@@ -59,11 +62,11 @@
 		EADC600E1D19785000B8743C /* SingleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC600D1D19785000B8743C /* SingleListViewController.swift */; };
 		EADC60121D1A6EF500B8743C /* SingleListNotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60111D1A6EF500B8743C /* SingleListNotificationModel.swift */; };
 		EADC60141D1A6FEA00B8743C /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60131D1A6FEA00B8743C /* ViewModel.swift */; };
-		EADC60161D1A77AB00B8743C /* NotificationsStorageServise.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60151D1A77AB00B8743C /* NotificationsStorageServise.swift */; };
+		EADC60161D1A77AB00B8743C /* AbstractNotificationsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60151D1A77AB00B8743C /* AbstractNotificationsStorage.swift */; };
 		EADC60181D1A782B00B8743C /* RecentModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60171D1A782B00B8743C /* RecentModelFactory.swift */; };
 		EADC601B1D1A8A5100B8743C /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC601A1D1A8A5100B8743C /* Typealiases.swift */; };
 		EADC601D1D1A8EFC00B8743C /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC601C1D1A8EFC00B8743C /* Notification.swift */; };
-		EADC60201D1B125C00B8743C /* NotificationsStorageServiseRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC601F1D1B125C00B8743C /* NotificationsStorageServiseRealm.swift */; };
+		EADC60201D1B125C00B8743C /* NotificationsStorageRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC601F1D1B125C00B8743C /* NotificationsStorageRealm.swift */; };
 		EAE50A5C1D12CEEB00B4329B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE50A5B1D12CEEB00B4329B /* AppDelegate.swift */; };
 		EAE50A5E1D12CEEB00B4329B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE50A5D1D12CEEB00B4329B /* LoginViewController.swift */; };
 		EAE50A611D12CEEB00B4329B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAE50A5F1D12CEEB00B4329B /* Main.storyboard */; };
@@ -128,14 +131,17 @@
 		EA93F1361D68AA2400A12109 /* SearchHistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchHistoryCell.swift; sourceTree = "<group>"; };
 		EA93F1381D68AAE000A12109 /* SearchHistoryCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchHistoryCellViewModel.swift; sourceTree = "<group>"; };
 		EA93F13A1D68ABF700A12109 /* SearchHistoryItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchHistoryItem.swift; sourceTree = "<group>"; };
-		EA93F13C1D68ACBD00A12109 /* SearchHistoryStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchHistoryStorage.swift; sourceTree = "<group>"; };
+		EA93F13C1D68ACBD00A12109 /* AbstractSearchHistoryStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractSearchHistoryStorage.swift; sourceTree = "<group>"; };
 		EA93F13E1D68AECA00A12109 /* RealmStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmStorage.swift; sourceTree = "<group>"; };
 		EA93F1401D68B09500A12109 /* SearchHistoryStorageRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchHistoryStorageRealm.swift; sourceTree = "<group>"; };
 		EA93F1421D68D84900A12109 /* SearchContentProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchContentProvider.swift; sourceTree = "<group>"; };
 		EA93F1441D68D8AA00A12109 /* SearchDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchDataSource.swift; sourceTree = "<group>"; };
 		EA93F1481D6AC53C00A12109 /* ArrayExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtention.swift; sourceTree = "<group>"; };
-		EA93F14A1D6B98AB00A12109 /* PNRDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNRDataModel.swift; sourceTree = "<group>"; };
+		EA93F14A1D6B98AB00A12109 /* PNRInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNRInfoModel.swift; sourceTree = "<group>"; };
 		EA93F14C1D6B996300A12109 /* PNRInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNRInfo.swift; sourceTree = "<group>"; };
+		EA93F14E1D6C088700A12109 /* AbstractPNRInfoStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractPNRInfoStorage.swift; sourceTree = "<group>"; };
+		EA93F1501D6C0A2900A12109 /* PNRInfoStorageRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNRInfoStorageRealm.swift; sourceTree = "<group>"; };
+		EA93F1521D6C15C400A12109 /* PNRInfoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNRInfoViewModel.swift; sourceTree = "<group>"; };
 		EAD0C6801D5787600033B307 /* NSErrorExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSErrorExtention.swift; sourceTree = "<group>"; };
 		EAD0C6831D578BED0033B307 /* ErrorUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorUtil.swift; sourceTree = "<group>"; };
 		EAD0C6871D57B46D0033B307 /* ActivationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivationViewModel.swift; sourceTree = "<group>"; };
@@ -153,11 +159,11 @@
 		EADC600D1D19785000B8743C /* SingleListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleListViewController.swift; sourceTree = "<group>"; };
 		EADC60111D1A6EF500B8743C /* SingleListNotificationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleListNotificationModel.swift; sourceTree = "<group>"; };
 		EADC60131D1A6FEA00B8743C /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		EADC60151D1A77AB00B8743C /* NotificationsStorageServise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsStorageServise.swift; sourceTree = "<group>"; };
+		EADC60151D1A77AB00B8743C /* AbstractNotificationsStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractNotificationsStorage.swift; sourceTree = "<group>"; };
 		EADC60171D1A782B00B8743C /* RecentModelFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentModelFactory.swift; sourceTree = "<group>"; };
 		EADC601A1D1A8A5100B8743C /* Typealiases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Typealiases.swift; sourceTree = "<group>"; };
 		EADC601C1D1A8EFC00B8743C /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
-		EADC601F1D1B125C00B8743C /* NotificationsStorageServiseRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsStorageServiseRealm.swift; sourceTree = "<group>"; };
+		EADC601F1D1B125C00B8743C /* NotificationsStorageRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsStorageRealm.swift; sourceTree = "<group>"; };
 		EAE50A581D12CEEB00B4329B /* SmartAgent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartAgent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAE50A5B1D12CEEB00B4329B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EAE50A5D1D12CEEB00B4329B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -231,7 +237,7 @@
 		EA2637461D15B89E00D5988D /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				EA93F14A1D6B98AB00A12109 /* PNRDataModel.swift */,
+				EA93F14A1D6B98AB00A12109 /* PNRInfoModel.swift */,
 				EA2637511D15BF9000D5988D /* LoginModel.swift */,
 				EA26375A1D16A1F700D5988D /* LoginModelsFactory.swift */,
 				EADC60031D16E44F00B8743C /* WebBrowserModel.swift */,
@@ -278,6 +284,7 @@
 				EAFD27F61D5AF9EB00818E48 /* SingleListViewModel.swift */,
 				EAEF7B341D6799C900E00729 /* SearchViewModel.swift */,
 				EA93F1381D68AAE000A12109 /* SearchHistoryCellViewModel.swift */,
+				EA93F1521D6C15C400A12109 /* PNRInfoViewModel.swift */,
 			);
 			name = ViewModels;
 			sourceTree = "<group>";
@@ -322,11 +329,13 @@
 		EAD43D0B1D2C516B00E1FF15 /* StorageService */ = {
 			isa = PBXGroup;
 			children = (
-				EADC60151D1A77AB00B8743C /* NotificationsStorageServise.swift */,
-				EADC601F1D1B125C00B8743C /* NotificationsStorageServiseRealm.swift */,
-				EA93F13C1D68ACBD00A12109 /* SearchHistoryStorage.swift */,
+				EADC60151D1A77AB00B8743C /* AbstractNotificationsStorage.swift */,
+				EADC601F1D1B125C00B8743C /* NotificationsStorageRealm.swift */,
+				EA93F13C1D68ACBD00A12109 /* AbstractSearchHistoryStorage.swift */,
 				EA93F13E1D68AECA00A12109 /* RealmStorage.swift */,
 				EA93F1401D68B09500A12109 /* SearchHistoryStorageRealm.swift */,
+				EA93F14E1D6C088700A12109 /* AbstractPNRInfoStorage.swift */,
+				EA93F1501D6C0A2900A12109 /* PNRInfoStorageRealm.swift */,
 			);
 			name = StorageService;
 			sourceTree = "<group>";
@@ -673,8 +682,9 @@
 				EA42EAF11D438C7600451BB9 /* RepricePNRView.swift in Sources */,
 				EA26375B1D16A1F700D5988D /* LoginModelsFactory.swift in Sources */,
 				EAD0C6811D5787600033B307 /* NSErrorExtention.swift in Sources */,
-				EADC60201D1B125C00B8743C /* NotificationsStorageServiseRealm.swift in Sources */,
+				EADC60201D1B125C00B8743C /* NotificationsStorageRealm.swift in Sources */,
 				EADC60181D1A782B00B8743C /* RecentModelFactory.swift in Sources */,
+				EA93F14F1D6C088700A12109 /* AbstractPNRInfoStorage.swift in Sources */,
 				EA7ECA5D1D1BB41E0014010A /* RecentNotificationCell.swift in Sources */,
 				EADC601D1D1A8EFC00B8743C /* Notification.swift in Sources */,
 				EAFD28011D5E47D400818E48 /* ContainerViewController.swift in Sources */,
@@ -683,6 +693,7 @@
 				EAFD27F91D5C3F7B00818E48 /* RecentDataSource.swift in Sources */,
 				EADC60061D17017E00B8743C /* ServerService.swift in Sources */,
 				EA93F1491D6AC53C00A12109 /* ArrayExtention.swift in Sources */,
+				EA93F1511D6C0A2900A12109 /* PNRInfoStorageRealm.swift in Sources */,
 				EA35A8671D40025400BE3618 /* SplitListsViewController.swift in Sources */,
 				EA26374E1D15BE3D00D5988D /* Router.swift in Sources */,
 				EAEF7B351D6799C900E00729 /* SearchViewModel.swift in Sources */,
@@ -697,22 +708,23 @@
 				EA93F1411D68B09500A12109 /* SearchHistoryStorageRealm.swift in Sources */,
 				EAFD27FF1D5C476100818E48 /* NotificationDataSource.swift in Sources */,
 				EA26375F1D16A59700D5988D /* SmartAgentServerParser.swift in Sources */,
-				EA93F14B1D6B98AB00A12109 /* PNRDataModel.swift in Sources */,
+				EA93F14B1D6B98AB00A12109 /* PNRInfoModel.swift in Sources */,
 				EAD0C6841D578BED0033B307 /* ErrorUtil.swift in Sources */,
 				EADC60021D16E3CE00B8743C /* WebBrowserViewModel.swift in Sources */,
 				EA35A8631D3EC5DE00BE3618 /* NotificationCell.swift in Sources */,
 				EA2637521D15BF9000D5988D /* LoginModel.swift in Sources */,
 				EA93F1371D68AA2400A12109 /* SearchHistoryCell.swift in Sources */,
 				EADC60141D1A6FEA00B8743C /* ViewModel.swift in Sources */,
-				EA93F13D1D68ACBD00A12109 /* SearchHistoryStorage.swift in Sources */,
+				EA93F13D1D68ACBD00A12109 /* AbstractSearchHistoryStorage.swift in Sources */,
 				EA8BB9401D21A04200D07561 /* PushTokenUtil.swift in Sources */,
 				EA93F14D1D6B996300A12109 /* PNRInfo.swift in Sources */,
 				EAE50A5E1D12CEEB00B4329B /* LoginViewController.swift in Sources */,
 				EA42EAF31D43AD6800451BB9 /* RepricePNRViewModel.swift in Sources */,
+				EA93F1531D6C15C400A12109 /* PNRInfoViewModel.swift in Sources */,
 				EA93F13B1D68ABF700A12109 /* SearchHistoryItem.swift in Sources */,
 				EA7ECA5B1D1BAD780014010A /* RecentNotificationCellViewModel.swift in Sources */,
 				EA35A86B1D40152100BE3618 /* AbstractContentProvider.swift in Sources */,
-				EADC60161D1A77AB00B8743C /* NotificationsStorageServise.swift in Sources */,
+				EADC60161D1A77AB00B8743C /* AbstractNotificationsStorage.swift in Sources */,
 				EADC60121D1A6EF500B8743C /* SingleListNotificationModel.swift in Sources */,
 				EAD0C6881D57B46D0033B307 /* ActivationViewModel.swift in Sources */,
 				EA93F1391D68AAE000A12109 /* SearchHistoryCellViewModel.swift in Sources */,

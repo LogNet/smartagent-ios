@@ -12,7 +12,7 @@ import RxSwift
 class SingleListNotificationModel {
     var apiFacade:APIFacade?
     var serverParser:ServerParser?
-    var storageService: NotificationsStorageServise?
+    var storageService: AbstractNotificationsStorage?
     let chunkSize:Int
     
     init(chunkSize:Int) {

@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-class SearchHistoryStorageRealm: RealmStorage, SearchHistoryStorage {
+class SearchHistoryStorageRealm: RealmStorage, AbstractSearchHistoryStorage {
     
     override init() {
         super.init()
@@ -17,6 +17,8 @@ class SearchHistoryStorageRealm: RealmStorage, SearchHistoryStorage {
     }
     
     func addSearchHistoryItem(item: SearchHistoryItem, completion: ErrorCompletionBlock?) {
+        
+        // TODO Needs refactoring. Instead to crating a new object, should use write transactions.
         let searchItem = SearchHistoryItem()
         searchItem.query = item.query
         searchItem.date = NSDate()

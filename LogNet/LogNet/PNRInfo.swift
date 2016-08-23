@@ -10,5 +10,9 @@ import UIKit
 import RealmSwift
 
 class PNRInfo: Object {
-
+    dynamic var notificaion_id:String!
+    
+    override static func primaryKey() -> String? {
+        return "notificaion_id"
+    }
 }
