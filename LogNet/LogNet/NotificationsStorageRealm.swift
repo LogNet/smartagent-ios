@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-class NotificationsStorageServiseRealm: RealmStorage, NotificationsStorageServise {
+class NotificationsStorageRealm: RealmStorage, AbstractNotificationsStorage {
 
     override init() {
         super.init()

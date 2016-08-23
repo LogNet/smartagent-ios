@@ -13,7 +13,7 @@ import RxCocoa
 class PNRDataModel {
     var apiFacade:APIFacade!
     var serverParser:ServerParser!
-    var storageService: NotificationsStorageServise!
+    var storageService: AbstractNotificationsStorage!
     
     func getPNRInfo(notification_id:String) -> Observable<PNRInfo> {
         return self.apiFacade.getNotificationDetails(notification_id).flatMap { JSON in
@@ -35,7 +35,11 @@ class PNRDataModel {
         }
     }
     
-    private func savePNRInfo(pnrInfo: PNRInfo) -> Observable<Bool> {
+    private func fetchFromDatabase(notification_id:String) -> PNRInfo {
+        
+    }
+    
+    private func savePNRInfo(pnrInfo: PNRInfo) -> Bool {
         
     }
 }
