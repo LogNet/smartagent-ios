@@ -66,7 +66,9 @@ class SingleListViewModel: ViewModel {
     }
     
     func selectModelForIndex(index:Int) {
-        self.router.showPNRDetailsFromNotification(nil)
+        if let notification = self.contentProvider?.notifications[index] {
+            self.router.showPNRDetailsFromNotification(notification)
+        }
     }
     
     func fetchInitial() {

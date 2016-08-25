@@ -163,9 +163,15 @@ class Router {
         application.registerUserNotificationSettings(notificationSettings)
     }
     
-    func showPNRDetailsFromNotification(notification: Notification?) {
+    func showPNRDetailsFromNotification(notification: Notification) {
+        let model = PNRInfoModel()
+        model.serverParser = SmartAgentParser()
+        model.apiFacade = APIFacade(service: SmartAgentServerServise())
+        model.storageService = PNRInfoStorageRealm()
+        let viewModel = PNRInfoViewModel(model: model,notification_id:notification.notification_id!, router: self)
         let navigationController = self.tabBarController.selectedViewController as! UINavigationController
-        let pnrViewController = self.storyboard.instantiateViewControllerWithIdentifier("RepricePNRView")
+        let pnrViewController = self.storyboard.instantiateViewControllerWithIdentifier("RepricePNRView") as! RepricePNRView
+        pnrViewController.viewModel = viewModel
         navigationController.pushViewController(pnrViewController, animated: true)
     }
 }

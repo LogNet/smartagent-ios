@@ -19,14 +19,14 @@ class PNRInfoStorageRealm: RealmStorage, AbstractPNRInfoStorage {
     func addPNFInfo(pnrInfo:PNRInfo, completion: ErrorCompletionBlock?) {
         
         // TODO Needs refactoring. Instead to crating a new object, should use write transactions.
-        let pnr = PNRInfo()
-        pnr.notificaion_id = pnrInfo.notificaion_id
+        let pnr = pnrInfo.copy() as! PNRInfo
         self.addObject(pnr, update: true, completion: completion)
     }
     
     func getPNFInfo(notification_id:String) throws -> PNRInfo? {
         let realm = try Realm()
-        let pnrInfos = realm.objects(PNRInfo.self).filter("notificaion_id == \(notification_id)")
+        realm.refresh()
+        let pnrInfos = realm.objects(PNRInfo.self).filter("notification_id == '\(notification_id)'")
         return pnrInfos.first
     }
 }

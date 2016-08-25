@@ -14,9 +14,9 @@ class PNRInfoModel {
     var apiFacade:APIFacade!
     var serverParser:ServerParser!
     var storageService: AbstractPNRInfoStorage!
-    var disposeBag = DisposeBag()
+    private var disposeBag = DisposeBag()
+    
     func getPNRInfo(notification_id:String) -> Observable<PNRInfo> {
-        
         return Observable.create { observer in
             self.sendPNRFromStorage(notification_id, observer: observer)
             self.sendUpdatedPNRInfoFromServer(notification_id, observer: observer)
@@ -24,10 +24,13 @@ class PNRInfoModel {
         }
     }
     
+    // MARK: Private
+    
     private func sendUpdatedPNRInfoFromServer(notification_id:String, observer:AnyObserver<PNRInfo>) {
         self.apiFacade.getNotificationDetails(notification_id).flatMap { JSON in
             return self.parsePNRJSON(JSON)
             }.subscribeNext{ pnrInfo in
+                pnrInfo.notification_id = notification_id
                 self.storageService.addPNFInfo(pnrInfo, completion: { (error) in
                     if error != nil {
                         observer.onError(error!)
@@ -42,6 +45,8 @@ class PNRInfoModel {
         do {
             if let pnr = try self.storageService.getPNFInfo(notification_id) {
                 observer.onNext(pnr)
+            } else {
+                print("Has no pnr for this notificaion.")
             }
         } catch let error as NSError {
             observer.onError(error)
@@ -59,7 +64,7 @@ class PNRInfoModel {
             } else {
                 subscriber.onError(error!)
             }
-
+            
             return AnonymousDisposable {}
         }
     }

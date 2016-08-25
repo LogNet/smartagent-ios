@@ -11,15 +11,16 @@ import RxSwift
 
 
 class PNRInfoViewModel: ViewModel {
+    private let model:PNRInfoModel
+    private let notification_id:String
     
-    let model:PNRInfoModel
-    
-    init(model: PNRInfoModel,router: Router) {
+    init(model: PNRInfoModel,notification_id:String, router: Router) {
+        self.notification_id = notification_id
         self.model = model
         super.init(router: router)
     }
     
-    func fetchPNRInfo(notification_id:String) -> Observable<PNRInfo> {
-        return self.model.getPNRInfo(notification_id)
+    func fetchPNRInfo() -> Observable<PNRInfo> {
+        return self.model.getPNRInfo(self.notification_id)
     }
 }

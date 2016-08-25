@@ -15,11 +15,15 @@ class RepricePNRView: UITableViewController {
     @IBOutlet weak var showStatusPrices: UIButton!
     var statusPriceOpened = Variable(false)
     let disposeBag = DisposeBag()
+    var viewModel:PNRInfoViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.bindView()
-
+        self.viewModel.fetchPNRInfo().subscribeNext{ pnrInfo in
+            print("______________This is PNR____________________")
+            print(pnrInfo)
+        }.addDisposableTo(self.disposeBag)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
