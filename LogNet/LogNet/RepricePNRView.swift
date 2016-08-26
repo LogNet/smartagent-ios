@@ -20,10 +20,11 @@ class RepricePNRView: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.bindView()
-        self.viewModel.fetchPNRInfo().subscribeNext{ pnrInfo in
+        let results = self.viewModel.fetchPNRInfo().subscribeNext{ pnrInfo in
             print("______________This is PNR____________________")
             print(pnrInfo)
         }.addDisposableTo(self.disposeBag)
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

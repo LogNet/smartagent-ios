@@ -10,6 +10,6 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-class SearchContentProvider {
-    var results:Variable<[AnyObject]?> = Variable(nil)
+class SearchContentProvider:BaseRXContentProvider {
+    
 }

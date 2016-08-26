@@ -13,6 +13,7 @@ import RxSwift
 class PNRInfoViewModel: ViewModel {
     private let model:PNRInfoModel
     private let notification_id:String
+    var contentProvider:PNRContentProvider!
     
     init(model: PNRInfoModel,notification_id:String, router: Router) {
         self.notification_id = notification_id
@@ -20,7 +21,15 @@ class PNRInfoViewModel: ViewModel {
         super.init(router: router)
     }
     
-    func fetchPNRInfo() -> Observable<PNRInfo> {
-        return self.model.getPNRInfo(self.notification_id)
+    func fetchPNRInfo() -> Observable<Void> {
+        return self.model.getPNRInfo(self.notification_id).flatMap{ pnrInfo in
+            return self.fillPNRInfo(pnrInfo)
+        }
+    }
+    
+    func fillPNRInfo(pnrInfo:PNRInfo) -> Observable<Void> {
+        return Observable.create { observer in
+            return AnonymousDisposable{}
+        }
     }
 }

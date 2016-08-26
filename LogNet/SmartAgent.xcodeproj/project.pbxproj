@@ -45,6 +45,17 @@
 		EA93F14F1D6C088700A12109 /* AbstractPNRInfoStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F14E1D6C088700A12109 /* AbstractPNRInfoStorage.swift */; };
 		EA93F1511D6C0A2900A12109 /* PNRInfoStorageRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F1501D6C0A2900A12109 /* PNRInfoStorageRealm.swift */; };
 		EA93F1531D6C15C400A12109 /* PNRInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F1521D6C15C400A12109 /* PNRInfoViewModel.swift */; };
+		EA93F1551D6FF7F200A12109 /* StatusCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F1541D6FF7F200A12109 /* StatusCellViewModel.swift */; };
+		EA93F1571D6FF89600A12109 /* PNRCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F1561D6FF89600A12109 /* PNRCellViewModel.swift */; };
+		EA93F1591D6FF8DF00A12109 /* PassengerCellVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F1581D6FF8DF00A12109 /* PassengerCellVIewModel.swift */; };
+		EA93F15B1D6FF90300A12109 /* FlightCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F15A1D6FF90300A12109 /* FlightCellViewModel.swift */; };
+		EA93F15D1D6FF92500A12109 /* HotelCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F15C1D6FF92500A12109 /* HotelCellViewModel.swift */; };
+		EA93F15F1D6FF94500A12109 /* CarCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F15E1D6FF94500A12109 /* CarCellViewModel.swift */; };
+		EA93F1621D6FFAC200A12109 /* ContactCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F1611D6FFAC200A12109 /* ContactCellViewModel.swift */; };
+		EA93F1641D6FFFA500A12109 /* PNRContentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F1631D6FFFA500A12109 /* PNRContentProvider.swift */; };
+		EA93F1661D70003400A12109 /* BaseRXContentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F1651D70003400A12109 /* BaseRXContentProvider.swift */; };
+		EA93F1681D70017E00A12109 /* BaseRXDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F1671D70017E00A12109 /* BaseRXDataSource.swift */; };
+		EA93F16A1D7002B900A12109 /* PNRDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F1691D7002B900A12109 /* PNRDataSource.swift */; };
 		EAD0C6811D5787600033B307 /* NSErrorExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD0C6801D5787600033B307 /* NSErrorExtention.swift */; };
 		EAD0C6841D578BED0033B307 /* ErrorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD0C6831D578BED0033B307 /* ErrorUtil.swift */; };
 		EAD0C6881D57B46D0033B307 /* ActivationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD0C6871D57B46D0033B307 /* ActivationViewModel.swift */; };
@@ -142,6 +153,17 @@
 		EA93F14E1D6C088700A12109 /* AbstractPNRInfoStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractPNRInfoStorage.swift; sourceTree = "<group>"; };
 		EA93F1501D6C0A2900A12109 /* PNRInfoStorageRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNRInfoStorageRealm.swift; sourceTree = "<group>"; };
 		EA93F1521D6C15C400A12109 /* PNRInfoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNRInfoViewModel.swift; sourceTree = "<group>"; };
+		EA93F1541D6FF7F200A12109 /* StatusCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusCellViewModel.swift; sourceTree = "<group>"; };
+		EA93F1561D6FF89600A12109 /* PNRCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNRCellViewModel.swift; sourceTree = "<group>"; };
+		EA93F1581D6FF8DF00A12109 /* PassengerCellVIewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassengerCellVIewModel.swift; sourceTree = "<group>"; };
+		EA93F15A1D6FF90300A12109 /* FlightCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightCellViewModel.swift; sourceTree = "<group>"; };
+		EA93F15C1D6FF92500A12109 /* HotelCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotelCellViewModel.swift; sourceTree = "<group>"; };
+		EA93F15E1D6FF94500A12109 /* CarCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarCellViewModel.swift; sourceTree = "<group>"; };
+		EA93F1611D6FFAC200A12109 /* ContactCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactCellViewModel.swift; sourceTree = "<group>"; };
+		EA93F1631D6FFFA500A12109 /* PNRContentProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNRContentProvider.swift; sourceTree = "<group>"; };
+		EA93F1651D70003400A12109 /* BaseRXContentProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRXContentProvider.swift; sourceTree = "<group>"; };
+		EA93F1671D70017E00A12109 /* BaseRXDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRXDataSource.swift; sourceTree = "<group>"; };
+		EA93F1691D7002B900A12109 /* PNRDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNRDataSource.swift; sourceTree = "<group>"; };
 		EAD0C6801D5787600033B307 /* NSErrorExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSErrorExtention.swift; sourceTree = "<group>"; };
 		EAD0C6831D578BED0033B307 /* ErrorUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorUtil.swift; sourceTree = "<group>"; };
 		EAD0C6871D57B46D0033B307 /* ActivationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivationViewModel.swift; sourceTree = "<group>"; };
@@ -285,6 +307,7 @@
 				EAEF7B341D6799C900E00729 /* SearchViewModel.swift */,
 				EA93F1381D68AAE000A12109 /* SearchHistoryCellViewModel.swift */,
 				EA93F1521D6C15C400A12109 /* PNRInfoViewModel.swift */,
+				EA93F1601D6FF95800A12109 /* PNRCellViewModels */,
 			);
 			name = ViewModels;
 			sourceTree = "<group>";
@@ -315,6 +338,20 @@
 				EA35A85E1D3EAE4600BE3618 /* SanFranciscoText-Regular.otf */,
 			);
 			name = Fonts;
+			sourceTree = "<group>";
+		};
+		EA93F1601D6FF95800A12109 /* PNRCellViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				EA93F1541D6FF7F200A12109 /* StatusCellViewModel.swift */,
+				EA93F1561D6FF89600A12109 /* PNRCellViewModel.swift */,
+				EA93F1581D6FF8DF00A12109 /* PassengerCellVIewModel.swift */,
+				EA93F15A1D6FF90300A12109 /* FlightCellViewModel.swift */,
+				EA93F15C1D6FF92500A12109 /* HotelCellViewModel.swift */,
+				EA93F15E1D6FF94500A12109 /* CarCellViewModel.swift */,
+				EA93F1611D6FFAC200A12109 /* ContactCellViewModel.swift */,
+			);
+			name = PNRCellViewModels;
 			sourceTree = "<group>";
 		};
 		EAD0C6821D57888B0033B307 /* Extentions */ = {
@@ -371,6 +408,10 @@
 				EAFD27FE1D5C476100818E48 /* NotificationDataSource.swift */,
 				EA93F1421D68D84900A12109 /* SearchContentProvider.swift */,
 				EA93F1441D68D8AA00A12109 /* SearchDataSource.swift */,
+				EA93F1631D6FFFA500A12109 /* PNRContentProvider.swift */,
+				EA93F1651D70003400A12109 /* BaseRXContentProvider.swift */,
+				EA93F1671D70017E00A12109 /* BaseRXDataSource.swift */,
+				EA93F1691D7002B900A12109 /* PNRDataSource.swift */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -687,9 +728,12 @@
 				EA93F14F1D6C088700A12109 /* AbstractPNRInfoStorage.swift in Sources */,
 				EA7ECA5D1D1BB41E0014010A /* RecentNotificationCell.swift in Sources */,
 				EADC601D1D1A8EFC00B8743C /* Notification.swift in Sources */,
+				EA93F1551D6FF7F200A12109 /* StatusCellViewModel.swift in Sources */,
 				EAFD28011D5E47D400818E48 /* ContainerViewController.swift in Sources */,
 				EADC600E1D19785000B8743C /* SingleListViewController.swift in Sources */,
+				EA93F1591D6FF8DF00A12109 /* PassengerCellVIewModel.swift in Sources */,
 				EA35A8581D3D6C4F00BE3618 /* UnderlinedTextField.swift in Sources */,
+				EA93F1621D6FFAC200A12109 /* ContactCellViewModel.swift in Sources */,
 				EAFD27F91D5C3F7B00818E48 /* RecentDataSource.swift in Sources */,
 				EADC60061D17017E00B8743C /* ServerService.swift in Sources */,
 				EA93F1491D6AC53C00A12109 /* ArrayExtention.swift in Sources */,
@@ -701,7 +745,9 @@
 				EA93F1451D68D8AA00A12109 /* SearchDataSource.swift in Sources */,
 				EAFD27FD1D5C43D300818E48 /* RecentViewController.swift in Sources */,
 				EAECB5A81D5288AD0080ED3D /* Prefences.swift in Sources */,
+				EA93F16A1D7002B900A12109 /* PNRDataSource.swift in Sources */,
 				EA8CDA4A1D2C44A50090E9C1 /* SmartAgentServerServise.swift in Sources */,
+				EA93F15F1D6FF94500A12109 /* CarCellViewModel.swift in Sources */,
 				EA93F13F1D68AECA00A12109 /* RealmStorage.swift in Sources */,
 				EADC60041D16E44F00B8743C /* WebBrowserModel.swift in Sources */,
 				EA93F1431D68D84900A12109 /* SearchContentProvider.swift in Sources */,
@@ -717,15 +763,19 @@
 				EADC60141D1A6FEA00B8743C /* ViewModel.swift in Sources */,
 				EA93F13D1D68ACBD00A12109 /* AbstractSearchHistoryStorage.swift in Sources */,
 				EA8BB9401D21A04200D07561 /* PushTokenUtil.swift in Sources */,
+				EA93F1681D70017E00A12109 /* BaseRXDataSource.swift in Sources */,
 				EA93F14D1D6B996300A12109 /* PNRInfo.swift in Sources */,
+				EA93F15D1D6FF92500A12109 /* HotelCellViewModel.swift in Sources */,
 				EAE50A5E1D12CEEB00B4329B /* LoginViewController.swift in Sources */,
 				EA42EAF31D43AD6800451BB9 /* RepricePNRViewModel.swift in Sources */,
 				EA93F1531D6C15C400A12109 /* PNRInfoViewModel.swift in Sources */,
 				EA93F13B1D68ABF700A12109 /* SearchHistoryItem.swift in Sources */,
+				EA93F15B1D6FF90300A12109 /* FlightCellViewModel.swift in Sources */,
 				EA7ECA5B1D1BAD780014010A /* RecentNotificationCellViewModel.swift in Sources */,
 				EA35A86B1D40152100BE3618 /* AbstractContentProvider.swift in Sources */,
 				EADC60161D1A77AB00B8743C /* AbstractNotificationsStorage.swift in Sources */,
 				EADC60121D1A6EF500B8743C /* SingleListNotificationModel.swift in Sources */,
+				EA93F1641D6FFFA500A12109 /* PNRContentProvider.swift in Sources */,
 				EAD0C6881D57B46D0033B307 /* ActivationViewModel.swift in Sources */,
 				EA93F1391D68AAE000A12109 /* SearchHistoryCellViewModel.swift in Sources */,
 				EA26375D1D16A4F100D5988D /* ServerParser.swift in Sources */,
@@ -739,7 +789,9 @@
 				EA35A85A1D3D825300BE3618 /* ActivationMessageViewController.swift in Sources */,
 				EA26374A1D15B95A00D5988D /* LoginViewModel.swift in Sources */,
 				EAD43D0F1D2CBAB600E1FF15 /* DummyServerService.swift in Sources */,
+				EA93F1661D70003400A12109 /* BaseRXContentProvider.swift in Sources */,
 				EADC600A1D18543800B8743C /* AlertNotificationViewModel.swift in Sources */,
+				EA93F1571D6FF89600A12109 /* PNRCellViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

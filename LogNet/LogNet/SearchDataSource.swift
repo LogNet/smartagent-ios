@@ -11,21 +11,13 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class SearchHistoryDataSource: NSObject,UITableViewDataSource {
-    let disposeBag = DisposeBag()
-    var contentProvider:SearchContentProvider! {
-        didSet{
-            self.subscribeToProvider()
-        }
-    }
-    var tableView: UITableView!
+class SearchHistoryDataSource: BaseRXDataSource {
+
     var rowHeight = 0
     // MARK: Private
     
-    private func subscribeToProvider (){
-        self.contentProvider.results.asObservable().subscribeNext { object in
-            self.tableView.reloadData()
-        }.addDisposableTo(self.disposeBag)
+    override func subscribeToProvider (){
+        super.subscribeToProvider()
     }
     
     // MARK: - Table view data source
@@ -35,12 +27,12 @@ class SearchHistoryDataSource: NSObject,UITableViewDataSource {
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return self.contentProvider.results.value?.count ?? 0
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell: UITableViewCell!
         let result = self.contentProvider.results.value![indexPath.row]
         
