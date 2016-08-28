@@ -13,17 +13,16 @@ import RxCocoa
 class RepricePNRView: UITableViewController {
 
     @IBOutlet weak var showStatusPrices: UIButton!
-    var statusPriceOpened = Variable(false)
     let disposeBag = DisposeBag()
     var viewModel:PNRInfoViewModel!
+    var dataSource: BaseRXDataSource!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.dataSource = self.dataSource
+        self.dataSource.tableView = self.tableView
         self.bindView()
-        let results = self.viewModel.fetchPNRInfo().subscribeNext{ pnrInfo in
-            print("______________This is PNR____________________")
-            print(pnrInfo)
-        }.addDisposableTo(self.disposeBag)
+        self.viewModel.fetchPNRInfo()
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -40,10 +39,7 @@ class RepricePNRView: UITableViewController {
     // MARK: - Private methods
     
     private func bindView(){
-        self.statusPriceOpened.asObservable().subscribeNext { (isOpened) in
-            let image = isOpened ? UIImage(named:"More up") : UIImage(named:"More down")
-            self.showStatusPrices.setImage(image, forState: .Normal)
-            }.addDisposableTo(disposeBag)
+
     }
     
 
@@ -62,22 +58,16 @@ class RepricePNRView: UITableViewController {
         return 1
     }
 
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if indexPath.section == 0  && self.statusPriceOpened.value.boolValue == true{
-            return 130;
-        } else if indexPath.section == 0 {
-            return 90;
-        } else {
-            return super.tableView(tableView, heightForRowAtIndexPath: indexPath)
-        }
-    }
+//    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+////        if indexPath.section == 0  && self.statusPriceOpened.value.boolValue == true{
+////            return 130;
+////        } else if indexPath.section == 0 {
+////            return 90;
+////        } else {
+////            return super.tableView(tableView, heightForRowAtIndexPath: indexPath)
+////        }
+//    }
     
-    @IBAction func statusPricesChanged(sender: AnyObject?) {
-        self.statusPriceOpened.value = !self.statusPriceOpened.value
-        self.tableView.beginUpdates()
-        self.tableView.reloadData()
-        self.tableView.endUpdates()
-    }
     
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

@@ -56,6 +56,12 @@
 		EA93F1661D70003400A12109 /* BaseRXContentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F1651D70003400A12109 /* BaseRXContentProvider.swift */; };
 		EA93F1681D70017E00A12109 /* BaseRXDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F1671D70017E00A12109 /* BaseRXDataSource.swift */; };
 		EA93F16A1D7002B900A12109 /* PNRDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F1691D7002B900A12109 /* PNRDataSource.swift */; };
+		EA93F16D1D72F1B700A12109 /* PNRStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F16C1D72F1B700A12109 /* PNRStatusCell.swift */; };
+		EA93F16F1D72F1D700A12109 /* PNRCreatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F16E1D72F1D700A12109 /* PNRCreatorCell.swift */; };
+		EA93F1711D72F1F100A12109 /* PNRPassengerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F1701D72F1F100A12109 /* PNRPassengerCell.swift */; };
+		EA93F1731D72F20F00A12109 /* PNRFlightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F1721D72F20F00A12109 /* PNRFlightCell.swift */; };
+		EA93F1751D72F22100A12109 /* PNRHotelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F1741D72F22100A12109 /* PNRHotelCell.swift */; };
+		EA93F1771D72F23200A12109 /* PNRCarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F1761D72F23200A12109 /* PNRCarCell.swift */; };
 		EAD0C6811D5787600033B307 /* NSErrorExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD0C6801D5787600033B307 /* NSErrorExtention.swift */; };
 		EAD0C6841D578BED0033B307 /* ErrorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD0C6831D578BED0033B307 /* ErrorUtil.swift */; };
 		EAD0C6881D57B46D0033B307 /* ActivationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD0C6871D57B46D0033B307 /* ActivationViewModel.swift */; };
@@ -164,6 +170,12 @@
 		EA93F1651D70003400A12109 /* BaseRXContentProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRXContentProvider.swift; sourceTree = "<group>"; };
 		EA93F1671D70017E00A12109 /* BaseRXDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRXDataSource.swift; sourceTree = "<group>"; };
 		EA93F1691D7002B900A12109 /* PNRDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNRDataSource.swift; sourceTree = "<group>"; };
+		EA93F16C1D72F1B700A12109 /* PNRStatusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNRStatusCell.swift; sourceTree = "<group>"; };
+		EA93F16E1D72F1D700A12109 /* PNRCreatorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNRCreatorCell.swift; sourceTree = "<group>"; };
+		EA93F1701D72F1F100A12109 /* PNRPassengerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNRPassengerCell.swift; sourceTree = "<group>"; };
+		EA93F1721D72F20F00A12109 /* PNRFlightCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNRFlightCell.swift; sourceTree = "<group>"; };
+		EA93F1741D72F22100A12109 /* PNRHotelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNRHotelCell.swift; sourceTree = "<group>"; };
+		EA93F1761D72F23200A12109 /* PNRCarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNRCarCell.swift; sourceTree = "<group>"; };
 		EAD0C6801D5787600033B307 /* NSErrorExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSErrorExtention.swift; sourceTree = "<group>"; };
 		EAD0C6831D578BED0033B307 /* ErrorUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorUtil.swift; sourceTree = "<group>"; };
 		EAD0C6871D57B46D0033B307 /* ActivationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivationViewModel.swift; sourceTree = "<group>"; };
@@ -287,6 +299,7 @@
 				EAFD28001D5E47D300818E48 /* ContainerViewController.swift */,
 				EAEF7B321D67998100E00729 /* SearchTableViewController.swift */,
 				EA93F1361D68AA2400A12109 /* SearchHistoryCell.swift */,
+				EA93F16B1D72F18A00A12109 /* PNRCells */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -352,6 +365,19 @@
 				EA93F1611D6FFAC200A12109 /* ContactCellViewModel.swift */,
 			);
 			name = PNRCellViewModels;
+			sourceTree = "<group>";
+		};
+		EA93F16B1D72F18A00A12109 /* PNRCells */ = {
+			isa = PBXGroup;
+			children = (
+				EA93F16C1D72F1B700A12109 /* PNRStatusCell.swift */,
+				EA93F16E1D72F1D700A12109 /* PNRCreatorCell.swift */,
+				EA93F1701D72F1F100A12109 /* PNRPassengerCell.swift */,
+				EA93F1721D72F20F00A12109 /* PNRFlightCell.swift */,
+				EA93F1741D72F22100A12109 /* PNRHotelCell.swift */,
+				EA93F1761D72F23200A12109 /* PNRCarCell.swift */,
+			);
+			name = PNRCells;
 			sourceTree = "<group>";
 		};
 		EAD0C6821D57888B0033B307 /* Extentions */ = {
@@ -772,12 +798,16 @@
 				EA93F13B1D68ABF700A12109 /* SearchHistoryItem.swift in Sources */,
 				EA93F15B1D6FF90300A12109 /* FlightCellViewModel.swift in Sources */,
 				EA7ECA5B1D1BAD780014010A /* RecentNotificationCellViewModel.swift in Sources */,
+				EA93F1731D72F20F00A12109 /* PNRFlightCell.swift in Sources */,
 				EA35A86B1D40152100BE3618 /* AbstractContentProvider.swift in Sources */,
 				EADC60161D1A77AB00B8743C /* AbstractNotificationsStorage.swift in Sources */,
 				EADC60121D1A6EF500B8743C /* SingleListNotificationModel.swift in Sources */,
 				EA93F1641D6FFFA500A12109 /* PNRContentProvider.swift in Sources */,
+				EA93F1711D72F1F100A12109 /* PNRPassengerCell.swift in Sources */,
 				EAD0C6881D57B46D0033B307 /* ActivationViewModel.swift in Sources */,
 				EA93F1391D68AAE000A12109 /* SearchHistoryCellViewModel.swift in Sources */,
+				EA93F1751D72F22100A12109 /* PNRHotelCell.swift in Sources */,
+				EA93F1771D72F23200A12109 /* PNRCarCell.swift in Sources */,
 				EA26375D1D16A4F100D5988D /* ServerParser.swift in Sources */,
 				EAE50A5C1D12CEEB00B4329B /* AppDelegate.swift in Sources */,
 				EAD43D151D2CC4AB00E1FF15 /* APIFacade.swift in Sources */,
@@ -790,6 +820,8 @@
 				EA26374A1D15B95A00D5988D /* LoginViewModel.swift in Sources */,
 				EAD43D0F1D2CBAB600E1FF15 /* DummyServerService.swift in Sources */,
 				EA93F1661D70003400A12109 /* BaseRXContentProvider.swift in Sources */,
+				EA93F16D1D72F1B700A12109 /* PNRStatusCell.swift in Sources */,
+				EA93F16F1D72F1D700A12109 /* PNRCreatorCell.swift in Sources */,
 				EADC600A1D18543800B8743C /* AlertNotificationViewModel.swift in Sources */,
 				EA93F1571D6FF89600A12109 /* PNRCellViewModel.swift in Sources */,
 			);

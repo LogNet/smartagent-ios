@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import RxSwift
 
 class PNRDataSource: BaseRXDataSource {
     
@@ -19,7 +20,26 @@ class PNRDataSource: BaseRXDataSource {
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 6
+    }
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0:
+            return "STATUS"
+        case 0:
+            return "PNR DATA"
+        case 0:
+            return "PASSENGERS"
+        case 0:
+            return "FLIGHT"
+        case 0:
+            return "HOTEL"
+        case 0:
+            return "CAR RENTAL"
+        default:
+            return ""
+        }
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
