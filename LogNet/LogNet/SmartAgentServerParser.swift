@@ -77,12 +77,24 @@ class SmartAgentParser: ServerParser {
     // MARK: Private
     
     private func parseCars(array:[[String: String]]) -> [Car]? {
+        let carDateFormatter = NSDateFormatter()
+        carDateFormatter.dateFormat = "dd.MM.yyyy HH:mm"
         var entities:[Car] = []
         for dict in array {
             let car = Car()
             car.pickup_city = dict["pickup_city"]
-            car.pickup_date = dict["pickup_date"]
-            car.return_date = dict["return_date"]
+            if let dateString = dict["pickup_date"]{
+                if let date = self.dateFormatter.dateFromString(dateString) {
+                    car.pickup_date = carDateFormatter.stringFromDate(date)
+                }
+            }
+            
+            if let dateString = dict["return_date"]{
+                if let date = self.dateFormatter.dateFromString(dateString) {
+                    car.return_date = carDateFormatter.stringFromDate(date)
+                }
+            }
+
             car.car_type = dict["car_type"]
             car.amount = dict["amount"]
             car.vendor = dict["vendor"]
@@ -93,14 +105,24 @@ class SmartAgentParser: ServerParser {
     
     private func parseHotels(array:[[String: String]]) -> [Hotel]? {
         var entities:[Hotel] = []
+        let hotelDateFormatter = NSDateFormatter()
+        hotelDateFormatter.dateFormat = "dd.MM.yyyy"
         for dict in array {
             let hotel = Hotel()
             hotel.country = dict["country"]
             hotel.city = dict["city"]
             hotel.hotel_name = dict["hotel_name"]
             hotel.status = dict["status"]
-            hotel.start = dict["start"]
-            hotel.end = dict["end"]
+            if let dateString = dict["start"]{
+                if let date = self.dateFormatter.dateFromString(dateString) {
+                    hotel.start = hotelDateFormatter.stringFromDate(date)
+                }
+            }
+            if let dateString = dict["end"]{
+                if let date = self.dateFormatter.dateFromString(dateString) {
+                    hotel.end = hotelDateFormatter.stringFromDate(date)
+                }
+            }
             hotel.duration = dict["duration"]
             hotel.room_type = dict["room_type"]
             hotel.cost = dict["cost"]
@@ -110,13 +132,23 @@ class SmartAgentParser: ServerParser {
     }
     
     private func parseFlights(array:[[String: String]]) -> [Flight]? {
+        let flightDateFormatter = NSDateFormatter()
+        flightDateFormatter.dateFormat = "dd.MM.yyyy HH:mm"
         var entities:[Flight] = []
         for dict in array {
             let flight = Flight()
             flight.from = dict["from"]
             flight.to = dict["to"]
-            flight.departure = dict["departure"]
-            flight.arrival = dict["arrival"]
+            if let dateString = dict["departure"]{
+                if let date = self.dateFormatter.dateFromString(dateString) {
+                    flight.departure = flightDateFormatter.stringFromDate(date)
+                }
+            }
+            if let dateString = dict["arrival"]{
+                if let date = self.dateFormatter.dateFromString(dateString) {
+                    flight.arrival = flightDateFormatter.stringFromDate(date)
+                }
+            }
             flight.flight_number = dict["flight_number"]
             flight.flight_class = dict["flight_class"]
             flight.status = dict["status"]
