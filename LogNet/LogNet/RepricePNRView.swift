@@ -15,12 +15,14 @@ class RepricePNRView: UITableViewController {
     @IBOutlet weak var showStatusPrices: UIButton!
     let disposeBag = DisposeBag()
     var viewModel:PNRInfoViewModel!
-    var dataSource: BaseRXDataSource!
+    var dataSource: PNRDataSource!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.dataSource = self.dataSource
+        self.tableView.delegate = self.dataSource
         self.dataSource.tableView = self.tableView
+        self.dataSource.contentProvider = self.viewModel.contentProvider
         self.bindView()
         self.viewModel.fetchPNRInfo()
         

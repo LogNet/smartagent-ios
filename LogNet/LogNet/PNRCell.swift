@@ -8,9 +8,15 @@
 
 import UIKit
 
-class PNRCreatorCell: UITableViewCell {
+class PNRCell: UITableViewCell {
     @IBOutlet weak var pnrIDLabel: UILabel!
     @IBOutlet weak var creatorLabel: UILabel!
+    
+    var viewModel:PNRCellViewModel! {
+        didSet{
+            self.prepareView()
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,5 +28,9 @@ class PNRCreatorCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
+    private func prepareView() {
+        self.pnrIDLabel.text = self.viewModel.id
+        self.creatorLabel.text = self.viewModel.creator
+    }
 }

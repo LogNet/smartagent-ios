@@ -9,8 +9,15 @@
 import UIKit
 
 class PNRStatusCell: UITableViewCell {
+    
     @IBOutlet weak var notificationTitle: UILabel!
-
+    
+    var viewModel:StatusCellViewModel! {
+        didSet{
+            self.prepareView()
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,5 +28,8 @@ class PNRStatusCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
+    private func prepareView() {
+        self.notificationTitle.text = self.viewModel.title
+    }
 }

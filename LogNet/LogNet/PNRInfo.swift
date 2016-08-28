@@ -10,58 +10,59 @@ import UIKit
 import RealmSwift
 
 class PNR: Object {
-    var id:String?
-    var pcc:String?
-    var creator:String?
+    dynamic var id:String?
+    dynamic var pcc:String?
+    dynamic var creator:String?
 }
 
 class Contact: Object {
-    var name:String?
-    var phone:String?
-    var email:String?
+    dynamic var name:String?
+    dynamic var phone:String?
+    dynamic var email:String?
 }
 
 class Passenger: Object {
-    var title:String?
-    var first_name:String?
-    var last_name:String?
-    var type:String?
+    dynamic var title:String?
+    dynamic var first_name:String?
+    dynamic var last_name:String?
+    dynamic var type:String?
 }
 
 class Flight: Object {
-    var from:String?
-    var to:String?
-    var departure:String?
-    var arrival:String?
-    var flight_number:String?
-    var flight_class:String?
-    var status:String?
+    dynamic var from:String?
+    dynamic var to:String?
+    dynamic var departure:String?
+    dynamic var arrival:String?
+    dynamic var flight_number:String?
+    dynamic var flight_class:String?
+    dynamic var status:String?
 }
 
 class Hotel: Object {
-    var country:String?
-    var city:String?
-    var hotel_name:String?
-    var status:String?
-    var start:String?
-    var end:String?
-    var duration:String?
-    var room_type:String?
-    var cost:String?
+    dynamic var country:String?
+    dynamic var city:String?
+    dynamic var hotel_name:String?
+    dynamic var status:String?
+    dynamic var start:String?
+    dynamic var end:String?
+    dynamic var duration:String?
+    dynamic var room_type:String?
+    dynamic var cost:String?
 }
 
 class Car: Object {
-    var pickup_city:String?
-    var pickup_date:String?
-    var return_date:String?
-    var car_type:String?
-    var amount:String?
-    var vendor:String?
+    dynamic var pickup_city:String?
+    dynamic var pickup_date:String?
+    dynamic var return_date:String?
+    dynamic var car_type:String?
+    dynamic var amount:String?
+    dynamic var vendor:String?
 }
 
 
 class PNRInfo: Object {
     dynamic var notification_id:String?
+    dynamic var title:String?
     dynamic var pnr:PNR!
     dynamic var contact:Contact!
     let passengers = List<Passenger>()

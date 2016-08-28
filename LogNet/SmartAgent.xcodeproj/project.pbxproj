@@ -47,7 +47,7 @@
 		EA93F1531D6C15C400A12109 /* PNRInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F1521D6C15C400A12109 /* PNRInfoViewModel.swift */; };
 		EA93F1551D6FF7F200A12109 /* StatusCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F1541D6FF7F200A12109 /* StatusCellViewModel.swift */; };
 		EA93F1571D6FF89600A12109 /* PNRCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F1561D6FF89600A12109 /* PNRCellViewModel.swift */; };
-		EA93F1591D6FF8DF00A12109 /* PassengerCellVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F1581D6FF8DF00A12109 /* PassengerCellVIewModel.swift */; };
+		EA93F1591D6FF8DF00A12109 /* PassengerCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F1581D6FF8DF00A12109 /* PassengerCellViewModel.swift */; };
 		EA93F15B1D6FF90300A12109 /* FlightCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F15A1D6FF90300A12109 /* FlightCellViewModel.swift */; };
 		EA93F15D1D6FF92500A12109 /* HotelCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F15C1D6FF92500A12109 /* HotelCellViewModel.swift */; };
 		EA93F15F1D6FF94500A12109 /* CarCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F15E1D6FF94500A12109 /* CarCellViewModel.swift */; };
@@ -57,7 +57,7 @@
 		EA93F1681D70017E00A12109 /* BaseRXDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F1671D70017E00A12109 /* BaseRXDataSource.swift */; };
 		EA93F16A1D7002B900A12109 /* PNRDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F1691D7002B900A12109 /* PNRDataSource.swift */; };
 		EA93F16D1D72F1B700A12109 /* PNRStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F16C1D72F1B700A12109 /* PNRStatusCell.swift */; };
-		EA93F16F1D72F1D700A12109 /* PNRCreatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F16E1D72F1D700A12109 /* PNRCreatorCell.swift */; };
+		EA93F16F1D72F1D700A12109 /* PNRCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F16E1D72F1D700A12109 /* PNRCell.swift */; };
 		EA93F1711D72F1F100A12109 /* PNRPassengerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F1701D72F1F100A12109 /* PNRPassengerCell.swift */; };
 		EA93F1731D72F20F00A12109 /* PNRFlightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F1721D72F20F00A12109 /* PNRFlightCell.swift */; };
 		EA93F1751D72F22100A12109 /* PNRHotelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F1741D72F22100A12109 /* PNRHotelCell.swift */; };
@@ -161,7 +161,7 @@
 		EA93F1521D6C15C400A12109 /* PNRInfoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNRInfoViewModel.swift; sourceTree = "<group>"; };
 		EA93F1541D6FF7F200A12109 /* StatusCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusCellViewModel.swift; sourceTree = "<group>"; };
 		EA93F1561D6FF89600A12109 /* PNRCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNRCellViewModel.swift; sourceTree = "<group>"; };
-		EA93F1581D6FF8DF00A12109 /* PassengerCellVIewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassengerCellVIewModel.swift; sourceTree = "<group>"; };
+		EA93F1581D6FF8DF00A12109 /* PassengerCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassengerCellViewModel.swift; sourceTree = "<group>"; };
 		EA93F15A1D6FF90300A12109 /* FlightCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightCellViewModel.swift; sourceTree = "<group>"; };
 		EA93F15C1D6FF92500A12109 /* HotelCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotelCellViewModel.swift; sourceTree = "<group>"; };
 		EA93F15E1D6FF94500A12109 /* CarCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarCellViewModel.swift; sourceTree = "<group>"; };
@@ -171,7 +171,7 @@
 		EA93F1671D70017E00A12109 /* BaseRXDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRXDataSource.swift; sourceTree = "<group>"; };
 		EA93F1691D7002B900A12109 /* PNRDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNRDataSource.swift; sourceTree = "<group>"; };
 		EA93F16C1D72F1B700A12109 /* PNRStatusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNRStatusCell.swift; sourceTree = "<group>"; };
-		EA93F16E1D72F1D700A12109 /* PNRCreatorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNRCreatorCell.swift; sourceTree = "<group>"; };
+		EA93F16E1D72F1D700A12109 /* PNRCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNRCell.swift; sourceTree = "<group>"; };
 		EA93F1701D72F1F100A12109 /* PNRPassengerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNRPassengerCell.swift; sourceTree = "<group>"; };
 		EA93F1721D72F20F00A12109 /* PNRFlightCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNRFlightCell.swift; sourceTree = "<group>"; };
 		EA93F1741D72F22100A12109 /* PNRHotelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNRHotelCell.swift; sourceTree = "<group>"; };
@@ -358,7 +358,7 @@
 			children = (
 				EA93F1541D6FF7F200A12109 /* StatusCellViewModel.swift */,
 				EA93F1561D6FF89600A12109 /* PNRCellViewModel.swift */,
-				EA93F1581D6FF8DF00A12109 /* PassengerCellVIewModel.swift */,
+				EA93F1581D6FF8DF00A12109 /* PassengerCellViewModel.swift */,
 				EA93F15A1D6FF90300A12109 /* FlightCellViewModel.swift */,
 				EA93F15C1D6FF92500A12109 /* HotelCellViewModel.swift */,
 				EA93F15E1D6FF94500A12109 /* CarCellViewModel.swift */,
@@ -371,7 +371,7 @@
 			isa = PBXGroup;
 			children = (
 				EA93F16C1D72F1B700A12109 /* PNRStatusCell.swift */,
-				EA93F16E1D72F1D700A12109 /* PNRCreatorCell.swift */,
+				EA93F16E1D72F1D700A12109 /* PNRCell.swift */,
 				EA93F1701D72F1F100A12109 /* PNRPassengerCell.swift */,
 				EA93F1721D72F20F00A12109 /* PNRFlightCell.swift */,
 				EA93F1741D72F22100A12109 /* PNRHotelCell.swift */,
@@ -757,7 +757,7 @@
 				EA93F1551D6FF7F200A12109 /* StatusCellViewModel.swift in Sources */,
 				EAFD28011D5E47D400818E48 /* ContainerViewController.swift in Sources */,
 				EADC600E1D19785000B8743C /* SingleListViewController.swift in Sources */,
-				EA93F1591D6FF8DF00A12109 /* PassengerCellVIewModel.swift in Sources */,
+				EA93F1591D6FF8DF00A12109 /* PassengerCellViewModel.swift in Sources */,
 				EA35A8581D3D6C4F00BE3618 /* UnderlinedTextField.swift in Sources */,
 				EA93F1621D6FFAC200A12109 /* ContactCellViewModel.swift in Sources */,
 				EAFD27F91D5C3F7B00818E48 /* RecentDataSource.swift in Sources */,
@@ -821,7 +821,7 @@
 				EAD43D0F1D2CBAB600E1FF15 /* DummyServerService.swift in Sources */,
 				EA93F1661D70003400A12109 /* BaseRXContentProvider.swift in Sources */,
 				EA93F16D1D72F1B700A12109 /* PNRStatusCell.swift in Sources */,
-				EA93F16F1D72F1D700A12109 /* PNRCreatorCell.swift in Sources */,
+				EA93F16F1D72F1D700A12109 /* PNRCell.swift in Sources */,
 				EADC600A1D18543800B8743C /* AlertNotificationViewModel.swift in Sources */,
 				EA93F1571D6FF89600A12109 /* PNRCellViewModel.swift in Sources */,
 			);

@@ -173,6 +173,7 @@ class Router {
         let navigationController = self.tabBarController.selectedViewController as! UINavigationController
         let pnrViewController = self.storyboard.instantiateViewControllerWithIdentifier("RepricePNRView") as! RepricePNRView
         pnrViewController.viewModel = viewModel
+        pnrViewController.dataSource = PNRDataSource()
         navigationController.pushViewController(pnrViewController, animated: true)
     }
 }

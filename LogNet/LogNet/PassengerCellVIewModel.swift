@@ -8,7 +8,7 @@
 
 import Foundation
 
-class PassengerCellVIewModel {
+class PassengerCellViewModel {
     var title:String?
     var first_name:String?
     var last_name:String?

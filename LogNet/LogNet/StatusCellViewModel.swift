@@ -9,6 +9,11 @@
 import Foundation
 
 class StatusCellViewModel {
-    var title: String?
+    let title: String?
     var keepRepricing:Bool = false
+    
+    init (title:String?) {
+        self.title = title
     }
+
+}

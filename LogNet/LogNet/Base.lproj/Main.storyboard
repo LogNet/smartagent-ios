@@ -750,7 +750,7 @@
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StatusCell" rowHeight="87" id="mPK-W3-Onz" customClass="PNRStatusCell" customModule="SmartAgent" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PNRStatusCell" rowHeight="87" id="mPK-W3-Onz" customClass="PNRStatusCell" customModule="SmartAgent" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="113.5" width="375" height="87"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mPK-W3-Onz" id="iRX-mC-xNg">
@@ -821,7 +821,7 @@
                                     <outlet property="notificationTitle" destination="kon-Vi-oce" id="KDb-XH-8gp"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="CreatorCell" focusStyle="custom" rowHeight="62" id="l5j-L0-nh1" customClass="PNRCreatorCell" customModule="SmartAgent" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="PNRCell" focusStyle="custom" rowHeight="62" id="l5j-L0-nh1" customClass="PNRCell" customModule="SmartAgent" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="200.5" width="375" height="62"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="l5j-L0-nh1" id="Cya-kt-GOs">
@@ -889,11 +889,11 @@
                                 <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
-                                    <outlet property="creatorLabel" destination="1Id-g7-xGv" id="KDL-I3-uie"/>
-                                    <outlet property="pnrIDLabel" destination="aYl-Vi-v6f" id="Zg8-lb-yx9"/>
+                                    <outlet property="creatorLabel" destination="1Id-g7-xGv" id="4vw-7g-Pgp"/>
+                                    <outlet property="pnrIDLabel" destination="aYl-Vi-v6f" id="2eM-zL-KO8"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PassengerCell" rowHeight="61" id="wkK-CX-QqW" customClass="PNRPassengerCell" customModule="SmartAgent" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PNRPassengerCell" rowHeight="61" id="wkK-CX-QqW" customClass="PNRPassengerCell" customModule="SmartAgent" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="262.5" width="375" height="61"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wkK-CX-QqW" id="n3N-Eg-sCq">
@@ -928,7 +928,7 @@
                                     <outlet property="passengerName" destination="8hd-zT-RSI" id="PUp-2l-gIc"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FlightCell" rowHeight="93" id="gQ0-zS-YBZ" customClass="PNRFlightCell" customModule="SmartAgent" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PNRFlightCell" rowHeight="93" id="gQ0-zS-YBZ" customClass="PNRFlightCell" customModule="SmartAgent" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="323.5" width="375" height="93"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gQ0-zS-YBZ" id="Fh0-HQ-43O">
@@ -1038,7 +1038,7 @@
                                     <outlet property="toLabel" destination="XPc-YY-R3t" id="bHX-Iu-FrL"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HotelCell" rowHeight="114" id="6Bt-gp-zHs" customClass="PNRHotelCell" customModule="SmartAgent" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PNRHotelCell" rowHeight="114" id="6Bt-gp-zHs" customClass="PNRHotelCell" customModule="SmartAgent" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="416.5" width="375" height="114"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6Bt-gp-zHs" id="Axg-P2-8QY">
@@ -1108,7 +1108,7 @@
                                     <outlet property="statusLabel" destination="7hj-LB-QXJ" id="j9v-3B-cCi"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CarCell" rowHeight="193" id="yA1-Bm-JJj" customClass="PNRCarCell" customModule="SmartAgent" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PNRCarCell" rowHeight="193" id="yA1-Bm-JJj" customClass="PNRCarCell" customModule="SmartAgent" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="530.5" width="375" height="193"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yA1-Bm-JJj" id="mwd-tB-MnX">

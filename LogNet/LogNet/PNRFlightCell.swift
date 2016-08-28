@@ -17,6 +17,13 @@ class PNRFlightCell: UITableViewCell {
     @IBOutlet weak var flightNumberLabel: UILabel!
     @IBOutlet weak var flightClassLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
+    
+    var viewModel:FlightCellViewModel! {
+        didSet{
+            self.prepareView()
+        }
+    }
+    
     override func awakeFromNib() {
         
         super.awakeFromNib()
@@ -28,5 +35,14 @@ class PNRFlightCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
+    private func prepareView() {
+        self.fromLabel.text = self.viewModel.from
+        self.toLabel.text = self.viewModel.to
+        self.departureLabel.text = self.viewModel.departure
+        self.arrivalLabel.text = self.viewModel.arrival
+        self.flightNumberLabel.text = self.viewModel.flight_number
+        self.flightClassLabel.text = self.viewModel.flight_class
+        self.statusLabel.text = self.viewModel.status
+    }
 }

@@ -15,6 +15,13 @@ class PNRCarCell: UITableViewCell {
     @IBOutlet weak var carTypeLabel: UILabel!
     @IBOutlet weak var vendorLabel: UILabel!
     @IBOutlet weak var amountLabel: UILabel!
+    
+    var viewModel:CarCellViewModel! {
+        didSet{
+            self.prepareView()
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -26,4 +33,17 @@ class PNRCarCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    private func prepareView() {
+        self.pickupLabel.text = ""
+        if let text = self.viewModel.pickup_city {
+            self.pickupLabel.text = text
+        }
+        if let text = self.viewModel.pickup_date {
+            self.pickupLabel.text = "\(self.pickupLabel.text!)| \(text)"
+        }
+        self.returnLabel.text = self.viewModel.return_date
+        self.carTypeLabel.text = self.viewModel.car_type
+        self.vendorLabel.text = self.viewModel.vendor
+        self.amountLabel.text = self.viewModel.amount
+    }
 }
