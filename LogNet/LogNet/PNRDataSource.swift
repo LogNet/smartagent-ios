@@ -17,7 +17,8 @@ class PNRDataSource: BaseRXDataSource, UITableViewDelegate {
     var flights:[FlightCellViewModel]?
     var hotels:[HotelCellViewModel]?
     var cars:[CarCellViewModel]?
-
+    var type:String?
+    var contactCellViewModel:ContactCellViewModel?
     
     override func subscribeToProvider (){
         self.contentProvider.results.asObservable().subscribeNext { object in
@@ -33,7 +34,8 @@ class PNRDataSource: BaseRXDataSource, UITableViewDelegate {
     private func parsePNRInfo(pnrInfo:PNRInfo) {
         self.statusCellViewModel = StatusCellViewModel(title: pnrInfo.title)
         self.pnrCellViewModel = PNRCellViewModel(model: pnrInfo.pnr)
-        
+        self.contactCellViewModel = ContactCellViewModel(model: pnrInfo.contact)
+        self.type = pnrInfo.type
         // Passengers.
         self.passengers = [PassengerCellViewModel]()
         for passenger in pnrInfo.passengers {
@@ -65,7 +67,11 @@ class PNRDataSource: BaseRXDataSource, UITableViewDelegate {
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         switch indexPath.section {
         case 0:
-            return 87
+            if self.type != "RP"{
+                return 50
+            } else {
+                return 87
+            }
         case 1:
             return 62
         case 2:
@@ -89,6 +95,9 @@ class PNRDataSource: BaseRXDataSource, UITableViewDelegate {
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 0:
+            if self.type != "RP"{
+                return " CONTACT"
+            }
             return " STATUS"
         case 1:
             return " PNR DATA"
@@ -130,9 +139,16 @@ class PNRDataSource: BaseRXDataSource, UITableViewDelegate {
         
         switch indexPath.section {
         case 0:
-            let cell = tableView.dequeueReusableCellWithIdentifier("PNRStatusCell", forIndexPath: indexPath) as! PNRStatusCell
-            cell.viewModel = self.statusCellViewModel
-            cellForReturn = cell
+            if self.type != "RP"{
+                let cell = tableView.dequeueReusableCellWithIdentifier("PNRContactCell", forIndexPath: indexPath) as! PNRContactCell
+                cell.viewModel = self.contactCellViewModel
+                cellForReturn = cell
+            } else {
+                let cell = tableView.dequeueReusableCellWithIdentifier("PNRStatusCell", forIndexPath: indexPath) as! PNRStatusCell
+                cell.viewModel = self.statusCellViewModel
+                cellForReturn = cell
+
+            }
         case 1:
             let cell = tableView.dequeueReusableCellWithIdentifier("PNRCell", forIndexPath: indexPath) as! PNRCell
             cell.viewModel = self.pnrCellViewModel

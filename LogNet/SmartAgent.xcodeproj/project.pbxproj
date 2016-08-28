@@ -62,6 +62,7 @@
 		EA93F1731D72F20F00A12109 /* PNRFlightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F1721D72F20F00A12109 /* PNRFlightCell.swift */; };
 		EA93F1751D72F22100A12109 /* PNRHotelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F1741D72F22100A12109 /* PNRHotelCell.swift */; };
 		EA93F1771D72F23200A12109 /* PNRCarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F1761D72F23200A12109 /* PNRCarCell.swift */; };
+		EA93F1791D73393400A12109 /* PNRContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F1781D73393400A12109 /* PNRContactCell.swift */; };
 		EAD0C6811D5787600033B307 /* NSErrorExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD0C6801D5787600033B307 /* NSErrorExtention.swift */; };
 		EAD0C6841D578BED0033B307 /* ErrorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD0C6831D578BED0033B307 /* ErrorUtil.swift */; };
 		EAD0C6881D57B46D0033B307 /* ActivationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD0C6871D57B46D0033B307 /* ActivationViewModel.swift */; };
@@ -176,6 +177,7 @@
 		EA93F1721D72F20F00A12109 /* PNRFlightCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNRFlightCell.swift; sourceTree = "<group>"; };
 		EA93F1741D72F22100A12109 /* PNRHotelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNRHotelCell.swift; sourceTree = "<group>"; };
 		EA93F1761D72F23200A12109 /* PNRCarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNRCarCell.swift; sourceTree = "<group>"; };
+		EA93F1781D73393400A12109 /* PNRContactCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNRContactCell.swift; sourceTree = "<group>"; };
 		EAD0C6801D5787600033B307 /* NSErrorExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSErrorExtention.swift; sourceTree = "<group>"; };
 		EAD0C6831D578BED0033B307 /* ErrorUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorUtil.swift; sourceTree = "<group>"; };
 		EAD0C6871D57B46D0033B307 /* ActivationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivationViewModel.swift; sourceTree = "<group>"; };
@@ -376,6 +378,7 @@
 				EA93F1721D72F20F00A12109 /* PNRFlightCell.swift */,
 				EA93F1741D72F22100A12109 /* PNRHotelCell.swift */,
 				EA93F1761D72F23200A12109 /* PNRCarCell.swift */,
+				EA93F1781D73393400A12109 /* PNRContactCell.swift */,
 			);
 			name = PNRCells;
 			sourceTree = "<group>";
@@ -775,6 +778,7 @@
 				EA8CDA4A1D2C44A50090E9C1 /* SmartAgentServerServise.swift in Sources */,
 				EA93F15F1D6FF94500A12109 /* CarCellViewModel.swift in Sources */,
 				EA93F13F1D68AECA00A12109 /* RealmStorage.swift in Sources */,
+				EA93F1791D73393400A12109 /* PNRContactCell.swift in Sources */,
 				EADC60041D16E44F00B8743C /* WebBrowserModel.swift in Sources */,
 				EA93F1431D68D84900A12109 /* SearchContentProvider.swift in Sources */,
 				EA93F1411D68B09500A12109 /* SearchHistoryStorageRealm.swift in Sources */,

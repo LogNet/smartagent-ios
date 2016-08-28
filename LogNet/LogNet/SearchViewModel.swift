@@ -69,7 +69,7 @@ class SearchViewModel: ViewModel {
         }
         
         if let item = self.contentProvider.results.value?[selectedRow] as? RecentNotificationCellViewModel{
-            self.router.showPNRDetailsFromNotification(Notification())
+            self.router.showPNRDetailsFromNotification(item.notification)
         }
         return nil
     }

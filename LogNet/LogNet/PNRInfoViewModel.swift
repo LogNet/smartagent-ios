@@ -22,10 +22,14 @@ class PNRInfoViewModel: ViewModel {
         super.init(router: router)
     }
     
-    func fetchPNRInfo() {
-        self.model.getPNRInfo(self.notification_id).subscribeNext{ pnrInfo in
-            self.contentProvider.results.value = [pnrInfo]
-        }.addDisposableTo(self.disposableBag)
+    func fetchPNRInfo() -> Observable<Void> {
+        return self.model.getPNRInfo(self.notification_id).flatMap{ pnrInfo in
+            self.parsePnrInfo(pnrInfo)
+        }
     }
     
+    func parsePnrInfo(pnrInfo:PNRInfo) -> Observable<Void> {
+        self.contentProvider.results.value = [pnrInfo]
+        return Observable.just()
+    }
 }

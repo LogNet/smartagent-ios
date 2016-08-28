@@ -50,6 +50,7 @@
             <string>SanFranciscoText-Regular</string>
             <string>SanFranciscoText-Regular</string>
             <string>SanFranciscoText-Regular</string>
+            <string>SanFranciscoText-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -750,8 +751,48 @@
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PNRContactCell" rowHeight="50" id="hOr-NE-QFC" customClass="PNRContactCell" customModule="SmartAgent" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="113.5" width="375" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hOr-NE-QFC" id="JAA-Ui-Gdd">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Contacts" translatesAutoresizingMaskIntoConstraints="NO" id="mKT-c9-HXT">
+                                            <rect key="frame" x="14" y="17" width="16" height="16"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="16" id="cKg-yz-JeD"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mr. John Smith" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mVp-zL-Y77">
+                                            <rect key="frame" x="49" y="16" width="276" height="21"/>
+                                            <fontDescription key="fontDescription" name="SanFranciscoText-Regular" family="San Francisco Text" pointSize="16"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Phone blue" translatesAutoresizingMaskIntoConstraints="NO" id="Uf8-BP-ecx">
+                                            <rect key="frame" x="337" y="14" width="22" height="22"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="mVp-zL-Y77" firstAttribute="top" secondItem="JAA-Ui-Gdd" secondAttribute="topMargin" constant="8" id="8CO-Ij-971"/>
+                                        <constraint firstItem="mKT-c9-HXT" firstAttribute="centerY" secondItem="JAA-Ui-Gdd" secondAttribute="centerY" id="FcE-Bh-e9f"/>
+                                        <constraint firstItem="Uf8-BP-ecx" firstAttribute="trailing" secondItem="JAA-Ui-Gdd" secondAttribute="trailingMargin" constant="-8" id="RGq-pi-Jmi"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="mVp-zL-Y77" secondAttribute="bottom" constant="4.5" id="cKi-tG-8xf"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="mVp-zL-Y77" secondAttribute="trailing" constant="42" id="gbe-2o-1nf"/>
+                                        <constraint firstItem="mVp-zL-Y77" firstAttribute="leading" secondItem="mKT-c9-HXT" secondAttribute="trailing" constant="19" id="izB-32-IrH"/>
+                                        <constraint firstItem="Uf8-BP-ecx" firstAttribute="centerY" secondItem="mKT-c9-HXT" secondAttribute="centerY" id="lvm-iZ-e4H"/>
+                                        <constraint firstItem="mKT-c9-HXT" firstAttribute="leading" secondItem="JAA-Ui-Gdd" secondAttribute="leadingMargin" constant="6" id="vLy-E5-7CG"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="contactName" destination="mVp-zL-Y77" id="lFr-gY-6z9"/>
+                                </connections>
+                            </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PNRStatusCell" rowHeight="87" id="mPK-W3-Onz" customClass="PNRStatusCell" customModule="SmartAgent" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="113.5" width="375" height="87"/>
+                                <rect key="frame" x="0.0" y="163.5" width="375" height="87"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mPK-W3-Onz" id="iRX-mC-xNg">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="86.5"/>
@@ -822,7 +863,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="PNRCell" focusStyle="custom" rowHeight="62" id="l5j-L0-nh1" customClass="PNRCell" customModule="SmartAgent" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="200.5" width="375" height="62"/>
+                                <rect key="frame" x="0.0" y="250.5" width="375" height="62"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="l5j-L0-nh1" id="Cya-kt-GOs">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="61.5"/>
@@ -894,7 +935,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PNRPassengerCell" rowHeight="61" id="wkK-CX-QqW" customClass="PNRPassengerCell" customModule="SmartAgent" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="262.5" width="375" height="61"/>
+                                <rect key="frame" x="0.0" y="312.5" width="375" height="61"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wkK-CX-QqW" id="n3N-Eg-sCq">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="60.5"/>
@@ -929,7 +970,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PNRFlightCell" rowHeight="93" id="gQ0-zS-YBZ" customClass="PNRFlightCell" customModule="SmartAgent" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="323.5" width="375" height="93"/>
+                                <rect key="frame" x="0.0" y="373.5" width="375" height="93"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gQ0-zS-YBZ" id="Fh0-HQ-43O">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="92.5"/>
@@ -1043,7 +1084,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PNRHotelCell" rowHeight="114" id="6Bt-gp-zHs" customClass="PNRHotelCell" customModule="SmartAgent" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="416.5" width="375" height="114"/>
+                                <rect key="frame" x="0.0" y="466.5" width="375" height="114"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6Bt-gp-zHs" id="Axg-P2-8QY">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="113.5"/>
@@ -1116,7 +1157,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PNRCarCell" rowHeight="193" id="yA1-Bm-JJj" customClass="PNRCarCell" customModule="SmartAgent" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="530.5" width="375" height="193"/>
+                                <rect key="frame" x="0.0" y="580.5" width="375" height="193"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yA1-Bm-JJj" id="mwd-tB-MnX">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="192.5"/>
@@ -1727,6 +1768,7 @@
         <image name="Car Rental" width="16" height="19"/>
         <image name="Contacts" width="15" height="16"/>
         <image name="Hotel" width="17" height="16"/>
+        <image name="Phone blue" width="22" height="22"/>
         <image name="Recent" width="25" height="25"/>
         <image name="Recent Filled" width="25" height="25"/>
         <image name="Refund" width="24" height="24"/>

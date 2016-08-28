@@ -9,7 +9,13 @@
 import UIKit
 
 class PNRContactCell: UITableViewCell {
-
+    @IBOutlet weak var contactName: UILabel!
+    
+    var viewModel:ContactCellViewModel! {
+        didSet{
+            self.prepareView()
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,6 +25,10 @@ class PNRContactCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    private func prepareView(){
+        self.contactName.text = self.viewModel.name
     }
 
 }

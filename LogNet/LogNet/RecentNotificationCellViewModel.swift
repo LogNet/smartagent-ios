@@ -24,7 +24,7 @@ class RecentNotificationCellViewModel {
     var pnrSummary:String?
     var date:String?
     var image:UIImage?
-    private var notification:Notification
+    var notification:Notification
     
     init(notification: Notification) {
         self.notification = notification

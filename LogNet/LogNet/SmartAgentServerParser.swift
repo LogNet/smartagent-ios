@@ -26,14 +26,28 @@ class SmartAgentParser: ServerParser {
     
     func parsePNRInfo(JSON:AnyObject) -> (pnrInfo:PNRInfo?, ErrorType?) {
         print(JSON)
+        let pnrInfo = PNRInfo()
         if let jsonDict = JSON["data"] as? [String: AnyObject] {
-            let pnrInfo = PNRInfo()
             pnrInfo.pnr = self.parsePNR(jsonDict["pnr"] as! Dictionary)
             pnrInfo.contact = self.parseContact(jsonDict["contact"] as! Dictionary)
             pnrInfo.setPassengers(self.parsePassengers(jsonDict["passengers"] as! Array))
             pnrInfo.setFlights(self.parseFlights(jsonDict["flights"] as! Array))
             pnrInfo.setHotels(self.parseHotels(jsonDict["hotels"] as! Array))
             pnrInfo.setCars(self.parseCars(jsonDict["cars"] as! Array))
+        }
+        if let jsonHeaderDict = JSON["header"] as? [String: AnyObject] {
+            pnrInfo.title = ""
+            if let text = jsonHeaderDict["title"] as? String {
+                pnrInfo.title = text
+            }
+            
+            if let text = jsonHeaderDict["title_message"] as? String {
+                pnrInfo.title = "\(pnrInfo.title!) - \(text)"
+            }
+            
+            if let text = jsonHeaderDict["type"] as? String {
+                pnrInfo.type = text
+            }
             return (pnrInfo, nil)
         }
         if let error = self.checkOnErrorStatus(JSON){

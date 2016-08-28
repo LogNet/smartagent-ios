@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import PKHUD
 
 class RepricePNRView: UITableViewController {
 
@@ -24,7 +25,6 @@ class RepricePNRView: UITableViewController {
         self.dataSource.tableView = self.tableView
         self.dataSource.contentProvider = self.viewModel.contentProvider
         self.bindView()
-        self.viewModel.fetchPNRInfo()
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -33,6 +33,14 @@ class RepricePNRView: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        HUD.show(.SystemActivity)
+        self.viewModel.fetchPNRInfo().subscribeNext {
+            HUD.hide()
+        }.addDisposableTo(self.disposeBag)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
