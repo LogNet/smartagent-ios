@@ -24,6 +24,7 @@ class RecentNotificationCellViewModel {
     var pnrSummary:String?
     var date:String?
     var image:UIImage?
+    var isRead:Bool = false
     var notification:Notification
     
     init(notification: Notification) {
@@ -38,6 +39,9 @@ class RecentNotificationCellViewModel {
         self.pnrSummary = self.notification.pnr_summary
         if let time = self.notification.notification_time {
             self.date = self.dateFormatter.stringFromDate(time)
+        }
+        if self.notification.status == "READ" {
+            self.isRead = true
         }
         self.setupImage()
     }

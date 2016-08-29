@@ -39,6 +39,7 @@ class NotificationCell: UITableViewCell {
         self.title.attributedText = title
         self.pnrSummary.text = viewModel.pnrSummary
         self.date.text = viewModel.date
+        self.readIndicator.hidden = viewModel.isRead
     }
     
 }

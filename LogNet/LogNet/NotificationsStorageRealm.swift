@@ -18,6 +18,24 @@ class NotificationsStorageRealm: RealmStorage, AbstractNotificationsStorage {
     
     // MARK: Public
     
+    func updateNotification(notification:Notification) {
+        let realm = try! Realm()
+        let notifications = realm.objects(Notification.self).filter("notification_id == '\(notification.notification_id!)'")
+        realm.beginWrite()
+        for notif in notifications{
+            notif.status = notification.status
+            notif.type = notification.type
+            notif.sub_type = notification.sub_type
+            notif.title = notification.title
+            notif.title_message = notification.title_message
+            notif.notification_time = notification.notification_time
+            notif.pnr_summary = notification.pnr_summary
+            notif.contact_name = notification.pnr_summary
+        }
+        try! realm.commitWrite()
+    }
+
+    
     func getSuggestTitles(query:String) throws -> [String]? {
         let notifications = try self.search(query)
         if notifications?.count > 0{

@@ -24,7 +24,7 @@ class SmartAgentParser: ServerParser {
         return nil
     }
     
-    func parsePNRInfo(JSON:AnyObject) -> (pnrInfo:PNRInfo?, ErrorType?) {
+    func parsePNRInfo(JSON:AnyObject) -> (result:(PNRInfo?, Notification?), ErrorType?) {
         print(JSON)
         let pnrInfo = PNRInfo()
         if let jsonDict = JSON["data"] as? [String: AnyObject] {
@@ -48,14 +48,14 @@ class SmartAgentParser: ServerParser {
             if let text = jsonHeaderDict["type"] as? String {
                 pnrInfo.type = text
             }
-            return (pnrInfo, nil)
+            let notification = self.parseNotificationFormDictionary(jsonHeaderDict)
+            return ((pnrInfo, notification), nil)
         }
         if let error = self.checkOnErrorStatus(JSON){
-            return (nil, error)
+            return ((nil, nil), error)
         } else {
-            return (nil, ApplicationError.Unknown)
+            return ((nil, nil), ApplicationError.Unknown)
         }
-
     }
     
     func parseNotifications(JSON:AnyObject?, listType:ListType) -> (array:Array<Notification>?, error:ErrorType?) {
@@ -63,20 +63,10 @@ class SmartAgentParser: ServerParser {
         if let jsonDict = JSON as? [[String: AnyObject]] {
             var notifications = Array<Notification>()
             for jsonNotification in jsonDict {
-                let notification = Notification()
-                notification.notification_id = jsonNotification["notification_id"] as? String
-                notification.status = jsonNotification["status"] as? String
-                notification.type = jsonNotification["type"] as? String
-                notification.sub_type = jsonNotification["subtype"] as? String
-                notification.title = jsonNotification["title"] as? String
-                notification.title_message = jsonNotification["title_message"] as? String
-                let time = jsonNotification["notification_time"] as? String
-                notification.notification_time = self.dateFormatter.dateFromString(time!)
-                notification.pnr_summary = jsonNotification["pnr_summary"] as? String
-                notification.contact_name = jsonNotification["contact_name"] as? String
-                notification.listType = listType.rawValue
-
-                notifications.append(notification)
+                if let notification = self.parseNotificationFormDictionary(jsonNotification) {
+                    notification.listType = listType.rawValue
+                    notifications.append(notification)
+                }
             }
             return (notifications, nil);
         }
@@ -88,7 +78,23 @@ class SmartAgentParser: ServerParser {
 
     }
     
+    
     // MARK: Private
+    
+    private func parseNotificationFormDictionary(jsonNotification:[String: AnyObject]) -> Notification? {
+        let notification = Notification()
+        notification.notification_id = jsonNotification["notification_id"] as? String
+        notification.status = jsonNotification["status"] as? String
+        notification.type = jsonNotification["type"] as? String
+        notification.sub_type = jsonNotification["subtype"] as? String
+        notification.title = jsonNotification["title"] as? String
+        notification.title_message = jsonNotification["title_message"] as? String
+        let time = jsonNotification["notification_time"] as? String
+        notification.notification_time = self.dateFormatter.dateFromString(time!)
+        notification.pnr_summary = jsonNotification["pnr_summary"] as? String
+        notification.contact_name = jsonNotification["contact_name"] as? String
+        return notification
+    }
     
     private func parseCars(array:[[String: String]]) -> [Car]? {
         let carDateFormatter = NSDateFormatter()

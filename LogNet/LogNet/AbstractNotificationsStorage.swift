@@ -15,5 +15,6 @@ protocol AbstractNotificationsStorage {
     func addNotifications(notifications: [Notification],completion:ErrorCompletionBlock?)
     func search(query: String) throws -> [Notification]?
     func getSuggestTitles(query:String) throws -> [String]?
+    func updateNotification(notification:Notification)
 }
 
