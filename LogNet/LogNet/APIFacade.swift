@@ -51,7 +51,7 @@ import Firebase
         let phone = Prefences.getPhone()
         let userToken = Prefences.getToken()
         if phone != nil && userToken != nil {
-            self.service.sendNotificationToken(token, phone: phone!, registrationToken: userToken!)
+            self.service.sendNotificationToken(token, phone: phone!, registrationToken: userToken!).subscribeNext{}.dispose()
         }
     }
     

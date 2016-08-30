@@ -16,18 +16,33 @@ class SmartAgentServerServise: ServerService {
     
     private lazy var manager : Alamofire.Manager = {
         // Create the server trust policies
-        let serverTrustPolicies: [String: ServerTrustPolicy] = [
-            "62.90.233.18": .DisableEvaluation
-        ]
-        // Create custom manager
-        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
-        configuration.HTTPAdditionalHeaders = Alamofire.Manager.defaultHTTPHeaders
-        let man = Alamofire.Manager(
-            configuration: NSURLSessionConfiguration.defaultSessionConfiguration(),
-            serverTrustPolicyManager: ServerTrustPolicyManager(policies: serverTrustPolicies)
-        )
+       	
+    let manager = Alamofire.Manager.sharedInstance
         
-        return man
+        manager.delegate.sessionDidReceiveChallenge = { session, challenge in
+            var disposition: NSURLSessionAuthChallengeDisposition = .PerformDefaultHandling
+            var credential: NSURLCredential?
+            
+            if challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust {
+                disposition = NSURLSessionAuthChallengeDisposition.UseCredential
+                credential = NSURLCredential(forTrust: challenge.protectionSpace.serverTrust!)
+                print(credential)
+            } else {
+                if challenge.previousFailureCount > 0 {
+                    disposition = .CancelAuthenticationChallenge
+                } else {
+                    credential = manager.session.configuration.URLCredentialStorage?.defaultCredentialForProtectionSpace(challenge.protectionSpace)
+                    
+                    if credential != nil {
+                        disposition = .UseCredential
+                    }
+                }
+            }
+            
+            return (disposition, credential)
+        }
+        
+        return manager
     }()
     
     func register(phoneNumber: String, first_name: String,
@@ -39,7 +54,7 @@ class SmartAgentServerServise: ServerService {
                            "mac_address":uuid,
                             "first_name":first_name,
                              "last_name":last_name]
-                let request = Alamofire.request(.POST, self.baseURLString + "registerDevice",parameters:parameters).responseJSON {response in
+                let request = Alamofire.request(.POST, self.baseURLString + "registerDevice", parameters:parameters).responseJSON {response in
                     if response.result.error == nil {
                         if let token = self.parseToken(response.result.value) {
                             observer.onNext(token)
@@ -67,15 +82,15 @@ class SmartAgentServerServise: ServerService {
     
     func sendNotificationToken(notificationToken: String, phone: String, registrationToken: String) -> Observable<Void> {
         return Observable.create{ observer in
+            let headers = ["SA-DN":phone, "SA-REGID":registrationToken]
             let parameters = ["device_number":phone,
             "registration_token":registrationToken,
             "notification_token":notificationToken]
-            let request = self.manager.request(.POST, self.baseURLString + "setNotificationToken",
-                parameters: parameters).responseJSON(completionHandler: { response in
-                
+            self.manager.request(.POST,"https://62.90.233.18:8443/setNotificationToken",
+                parameters: parameters, headers: headers).responseJSON(completionHandler: { response in
+                print("response error \(response.result.error)")
             })
             return AnonymousDisposable {
-                request.cancel()
             }
         }
     }

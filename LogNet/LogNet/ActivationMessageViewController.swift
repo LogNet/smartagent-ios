@@ -50,6 +50,7 @@ class ActivationMessageViewController: UIViewController {
 
     func applicationDidBecomeActive() {
         self.viewModel?.isUserActivated().subscribeNext{ activated in
+            self.viewModel?.sendNotificationToken()
             self.dismissViewControllerAnimated(true, completion: nil)
             }.addDisposableTo(self.disposableBag)
     }
