@@ -31,10 +31,11 @@ class PNRInfoModel {
     private func sendUpdatedPNRInfoFromServer(notification_id:String, observer:AnyObserver<PNRInfo>) {
         self.apiFacade.getNotificationDetails(notification_id).flatMap { JSON in
             return self.parsePNRJSON(JSON)
-            }.subscribeNext{ result in
-                let pnrInfo = result.0
-                pnrInfo.notification_id = notification_id
-                self.pnrStorageService.addPNFInfo(pnrInfo, completion: { (error) in
+            }.subscribe(
+                onNext: {result in
+                    let pnrInfo = result.0
+                    pnrInfo.notification_id = notification_id
+                    self.pnrStorageService.addPNFInfo(pnrInfo, completion: { (error) in
                     if error != nil {
                         observer.onError(error!)
                     }
@@ -42,8 +43,13 @@ class PNRInfoModel {
                     self.sendPNRFromStorage(notification_id, observer: observer)
                     observer.onCompleted()
                 })
-                
-        }.addDisposableTo(self.disposeBag)
+                },onError: { error in
+                    observer.onError(error)
+                    }, onCompleted: {
+                        
+                    }, onDisposed: {
+                        print("onDisposed")
+                }).addDisposableTo(self.disposeBag)
     }
     
     private func sendPNRFromStorage(notification_id:String, observer:AnyObserver<PNRInfo>) {
@@ -69,7 +75,6 @@ class PNRInfoModel {
             } else {
                 subscriber.onError(error!)
             }
-            
             return AnonymousDisposable {}
         }
     }

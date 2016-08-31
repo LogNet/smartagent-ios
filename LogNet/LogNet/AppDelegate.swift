@@ -78,8 +78,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // this callback will not be fired till the user taps on the notification launching the application.
         // TODO: Handle data of notification
         // Print message ID.
-        print("Message ID: \(userInfo["gcm.message_id"]!)")
-        print("Push notification info: \(userInfo)")
+//        print("Message ID: \(userInfo["gcm.message_id"]!)")
+//        print("Push notification info: \(userInfo)")
         // Print full message.
         FIRMessaging.messaging().appDidReceiveMessage(userInfo)
         print("link = %@", userInfo["link"])

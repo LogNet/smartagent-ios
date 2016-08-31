@@ -36,9 +36,25 @@ class RepricePNRView: UITableViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         HUD.show(.SystemActivity)
-        self.viewModel.fetchPNRInfo().subscribeNext {
-            HUD.hide()
-        }.addDisposableTo(self.disposeBag)
+        self.viewModel.fetchPNRInfo().subscribe(onNext: {
+                HUD.hide()
+            },
+            onError: { error in
+                HUD.hide()
+                let alert =
+                    UIAlertController(title: "PNR data error.",
+                        message: "Something went wrong!",
+                        preferredStyle: .Alert)
+                alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: { (action:UIAlertAction)  in
+                    self.navigationController?.popViewControllerAnimated(true)
+                }))
+                self.presentViewController(alert, animated: true, completion: nil)
+            
+            },
+            onCompleted: {
+            },
+            onDisposed: {
+        }).addDisposableTo(self.disposeBag)
     }
     
     override func didReceiveMemoryWarning() {
