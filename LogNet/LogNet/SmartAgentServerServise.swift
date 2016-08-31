@@ -16,8 +16,12 @@ class SmartAgentServerServise: ServerService {
     
     private lazy var manager : Alamofire.Manager = {
         // Create the server trust policies
-       	
-    let manager = Alamofire.Manager.sharedInstance
+        let manager = Alamofire.Manager.sharedInstance
+
+        if let cookie = self.getCookie() {
+            NSHTTPCookieStorage.sharedHTTPCookieStorage().setCookie(cookie)
+            manager.session.configuration.HTTPCookieStorage?.setCookie(cookie)
+        }
         
         manager.delegate.sessionDidReceiveChallenge = { session, challenge in
             var disposition: NSURLSessionAuthChallengeDisposition = .PerformDefaultHandling
@@ -73,13 +77,6 @@ class SmartAgentServerServise: ServerService {
         })
     }
     
-    private func parseToken(JSON:AnyObject?) -> String? {
-        if let token = JSON?["registration_token"] as? String {
-            return token
-        }
-        return nil
-    }
-    
     func sendNotificationToken(notificationToken: String, phone: String, registrationToken: String) -> Observable<Void> {
         return Observable.create{ observer in
             let headers = ["SA-DN":phone, "SA-REGID":registrationToken]
@@ -113,6 +110,13 @@ class SmartAgentServerServise: ServerService {
                 // TODO: Create function for all methods to avoid code duplication.
                 .responseJSON(completionHandler: { response in
                     if response.result.error == nil {
+                        let cookies = NSHTTPCookie.cookiesWithResponseHeaderFields(response.response?.allHeaderFields as! [String: String], forURL: (response.response?.URL!)!)
+                        
+                        //Save method
+                        if let cookie = cookies.first {
+                            self.setCookie(cookie)
+                            self.manager.session.configuration.HTTPCookieStorage?.setCookie(cookie)
+                        }
                         if response.result.value != nil {
                             observer.onNext(response.result.value!)
                             observer.onCompleted()
@@ -162,7 +166,25 @@ class SmartAgentServerServise: ServerService {
         }
     }
 
-
+    private func setCookie (cookie:NSHTTPCookie) {
+        NSUserDefaults.standardUserDefaults().setObject(cookie.properties, forKey: "kCookie")
+        NSUserDefaults.standardUserDefaults().synchronize()
+    }
+    
+    private func getCookie () -> NSHTTPCookie? {
+        var cookie:NSHTTPCookie?
+        if let properties = NSUserDefaults.standardUserDefaults().objectForKey("kCookie") as? [String : AnyObject] {
+            cookie = NSHTTPCookie(properties: properties)
+        }
+        return cookie
+    }
+    
+    private func parseToken(JSON:AnyObject?) -> String? {
+        if let token = JSON?["registration_token"] as? String {
+            return token
+        }
+        return nil
+    }
     
     private func validParameter(parameter:AnyObject?) -> AnyObject {
         guard parameter != nil else {
