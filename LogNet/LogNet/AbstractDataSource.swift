@@ -14,6 +14,7 @@ import RxCocoa
 class AbstractDataSource:NSObject, UITableViewDataSource {
     
     var tableView: UITableView!
+    let noContent = Variable(false)
     var contentProvider: AbstractContentProvider! {
         didSet{
             self.subscribeToRealm()
@@ -24,6 +25,7 @@ class AbstractDataSource:NSObject, UITableViewDataSource {
     private func subscribeToRealm() {
         // Observe Results Notifications
         self.notificationToken = self.contentProvider.notifications.addNotificationBlock { [weak self] (changes: RealmCollectionChange) in
+            self?.noContent.value = self?.contentProvider.notifications.count <= 0
             switch changes {
             case .Initial:
                 // Results are now populated and can be accessed without blocking the UI

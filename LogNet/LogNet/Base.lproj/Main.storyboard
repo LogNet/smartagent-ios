@@ -392,7 +392,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="s1m-k2-yEw">
-                                <rect key="frame" x="20" y="79" width="335" height="29"/>
+                                <rect key="frame" x="19" y="76" width="335" height="29"/>
                                 <segments>
                                     <segment title="Pending"/>
                                     <segment title="Completed"/>
@@ -410,12 +410,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="s1m-k2-yEw" firstAttribute="top" secondItem="O50-AF-FNY" secondAttribute="bottom" constant="15" id="6Uu-W9-qzx"/>
-                            <constraint firstItem="s1m-k2-yEw" firstAttribute="centerX" secondItem="rE2-4K-9ug" secondAttribute="centerX" id="JOy-c5-Xlb"/>
+                            <constraint firstItem="s1m-k2-yEw" firstAttribute="leading" secondItem="CJK-PY-2Zi" secondAttribute="leadingMargin" constant="3" id="IOv-3S-jnV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="s1m-k2-yEw" secondAttribute="trailing" constant="5" id="M3x-Px-pdL"/>
                             <constraint firstAttribute="trailing" secondItem="rE2-4K-9ug" secondAttribute="trailing" id="QeC-bd-wgj"/>
                             <constraint firstItem="rE2-4K-9ug" firstAttribute="bottom" secondItem="qfY-ZW-VsH" secondAttribute="top" id="Wx5-7o-euP"/>
-                            <constraint firstItem="s1m-k2-yEw" firstAttribute="leading" secondItem="CJK-PY-2Zi" secondAttribute="leadingMargin" constant="4" id="cal-DI-m1M"/>
-                            <constraint firstItem="rE2-4K-9ug" firstAttribute="top" secondItem="s1m-k2-yEw" secondAttribute="bottom" constant="8" symbolic="YES" id="gS1-xs-zCD"/>
+                            <constraint firstItem="s1m-k2-yEw" firstAttribute="top" secondItem="O50-AF-FNY" secondAttribute="bottom" constant="12" id="YWt-2a-mng"/>
+                            <constraint firstItem="rE2-4K-9ug" firstAttribute="top" secondItem="s1m-k2-yEw" secondAttribute="bottom" constant="11" id="otT-R8-3LC"/>
                             <constraint firstItem="rE2-4K-9ug" firstAttribute="leading" secondItem="CJK-PY-2Zi" secondAttribute="leading" id="xBs-hr-cMl"/>
                         </constraints>
                     </view>
@@ -1719,7 +1719,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="nhR-7f-dRR">
-                                <rect key="frame" x="20" y="79" width="335" height="29"/>
+                                <rect key="frame" x="19" y="76" width="335" height="29"/>
                                 <segments>
                                     <segment title="Pending"/>
                                     <segment title="Completed"/>
@@ -1737,13 +1737,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Ksm-GE-NWD" firstAttribute="top" secondItem="nhR-7f-dRR" secondAttribute="bottom" constant="11" id="2RV-nl-k7A"/>
                             <constraint firstAttribute="trailing" secondItem="Ksm-GE-NWD" secondAttribute="trailing" id="BRZ-VC-b6y"/>
-                            <constraint firstItem="nhR-7f-dRR" firstAttribute="top" secondItem="pcs-62-dvP" secondAttribute="bottom" constant="15" id="JKj-VC-1Ue"/>
                             <constraint firstItem="Ksm-GE-NWD" firstAttribute="bottom" secondItem="uks-Kx-dVt" secondAttribute="top" id="T8t-k3-y3t"/>
+                            <constraint firstItem="nhR-7f-dRR" firstAttribute="leading" secondItem="r1z-9e-tSb" secondAttribute="leadingMargin" constant="3" id="Tzh-QQ-IzP"/>
                             <constraint firstItem="Ksm-GE-NWD" firstAttribute="leading" secondItem="r1z-9e-tSb" secondAttribute="leading" id="V3J-71-Ozz"/>
-                            <constraint firstItem="Ksm-GE-NWD" firstAttribute="top" secondItem="nhR-7f-dRR" secondAttribute="bottom" constant="8" symbolic="YES" id="f7m-cc-GMB"/>
-                            <constraint firstItem="nhR-7f-dRR" firstAttribute="centerX" secondItem="Ksm-GE-NWD" secondAttribute="centerX" id="mU7-q9-5Vv"/>
-                            <constraint firstItem="nhR-7f-dRR" firstAttribute="leading" secondItem="r1z-9e-tSb" secondAttribute="leadingMargin" constant="4" id="qHm-bA-WqH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nhR-7f-dRR" secondAttribute="trailing" constant="5" id="u2Y-gE-jaH"/>
+                            <constraint firstItem="nhR-7f-dRR" firstAttribute="top" secondItem="pcs-62-dvP" secondAttribute="bottom" constant="12" id="ukl-Mt-bqv"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Cancelled" id="elW-YD-UFu">

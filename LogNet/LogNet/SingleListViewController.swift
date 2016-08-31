@@ -91,9 +91,9 @@ class SingleListViewController: UITableViewController {
             }
         }.addDisposableTo(self.disposableBag)
         
-        Observable.just(self.viewModel?.contentProvider?.notifications)
-            .subscribeNext { notifications in
-                if notifications == nil {
+        self.dataSource?.noContent.asObservable()
+            .subscribeNext { noContent in
+                if noContent == true {
                     self.showNoNewMessages()
                 } else {
                     if self.tableView.backgroundView != nil {
