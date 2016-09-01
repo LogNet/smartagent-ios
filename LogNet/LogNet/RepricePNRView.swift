@@ -41,15 +41,9 @@ class RepricePNRView: UITableViewController {
             },
             onError: { error in
                 HUD.hide()
-                let alert =
-                    UIAlertController(title: "PNR data error.",
-                        message: "Something went wrong!",
-                        preferredStyle: .Alert)
-                alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: { (action:UIAlertAction)  in
+                self.showErrorAlert(error, action: { (UIAlertAction) in
                     self.navigationController?.popViewControllerAnimated(true)
-                }))
-                self.presentViewController(alert, animated: true, completion: nil)
-            
+                })
             },
             onCompleted: {
             },

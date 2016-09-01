@@ -71,42 +71,55 @@ class SingleListViewModel: ViewModel {
         }
     }
     
-    func fetchInitial() {
-        if self.downloading { return }
+    func fetchInitial() -> Observable<Void> {
+        if self.downloading { return Observable.just() }
         self.downloading = true;
-        self.startFetching(0)
+        return self.startFetching(0)
     }
     
-    func fetchNext() {
-        if self.loadMoreStatus.value.boolValue || self.downloading { return }
+    func fetchNext() -> Observable<Void> {
+        if self.loadMoreStatus.value.boolValue || self.downloading { return Observable.just() }
         self.loadMoreStatus.value = true;
-        self.startFetching((self.contentProvider?.notifications.count)!/self.model.chunkSize)
+        return self.startFetching((self.contentProvider?.notifications.count)!/self.model.chunkSize)
+    }
+    
+    func deleteNotificationForRow(row:Int){
+        if let notification = self.contentProvider?.notifications[row] {
+           self.model.deleteNotification(notification).subscribeNext{
+            
+           }.addDisposableTo(self.disposeBag)
+        }
     }
     
     // MARK: Private Methods
     
-    private func startFetching(offset:Int) {
-        _ = self.model.fetchNotifications(self.listType,subtype: self.subtype, offset: offset).subscribe(onNext: { [weak self] hasNextChunk in
-            self!.hasNextChunk = hasNextChunk
-            self!.downloading = false;
-            self!.loadMoreStatus.value = false;
-            }, onError:{ [weak self] error in
+    private func startFetching(offset:Int) -> Observable<Void> {
+        return Observable.create { observer in
+            _ = self.model.fetchNotifications(self.listType,subtype: self.subtype, offset: offset).subscribe(onNext: { [weak self] hasNextChunk in
+                self!.hasNextChunk = hasNextChunk
                 self!.downloading = false;
-                switch error {
-                case ApplicationError.FORBIDDEN:
-                    self!.router.showLoginView()
-                    break
-                case ApplicationError.NOT_ACTIVATED:
-                    self!.router.showNoActivatedView()
-                    break
-                default:
-                    break
-                }
-            }, onCompleted: {
-                
-            }, onDisposed: {
-                
-        }).addDisposableTo(self.disposeBag)
+                self!.loadMoreStatus.value = false;
+                }, onError:{ [weak self] error in
+                    self!.downloading = false;
+                    switch error {
+                    case ApplicationError.FORBIDDEN:
+                        self!.router.showLoginView()
+                        break
+                    case ApplicationError.NOT_ACTIVATED:
+                        self!.router.showNoActivatedView()
+                        break
+                    default:
+                        observer.onError(error)
+                        break
+                    }
+                }, onCompleted: {
+                    
+                }, onDisposed: {
+                    
+            }).addDisposableTo(self.disposeBag)
+            
+            return AnonymousDisposable{}
+        }
         
     }
     

@@ -134,12 +134,7 @@ class LoginViewController: UIViewController {
             self.dismissViewControllerAnimated(true, completion: nil)
         } else {
             HUD.hide()
-            let alert =
-                UIAlertController(title: "An error occurred!",
-                                  message: "Something went wrong.",
-                                  preferredStyle: .Alert)
-            alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
-            self.presentViewController(alert, animated: true, completion: nil)
+            self.showErrorAlert(error, action: nil)
         }
     }
     

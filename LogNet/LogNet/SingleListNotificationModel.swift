@@ -21,6 +21,12 @@ class SingleListNotificationModel {
     
     // MARK: Public methods
     
+    func deleteNotification(notification:Notification) -> Observable<Void> {
+        try! self.storageService?.markAsDeleted(notification.notification_id!)
+        return (self.apiFacade?.deleteNotification(notification.notification_id!))!
+    }
+    
+    
     func fetchNotifications(type:ListType, subtype:NotificationSubtype,offset:Int?) -> Observable<Bool> {
         return self.apiFacade!.getNotifications(type:type.rawValue,
                                                 subtype:subtype,

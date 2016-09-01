@@ -18,6 +18,13 @@ import Firebase
 		self.service = service
 	}
     
+    func deleteNotification(notificationID:String) -> Observable<Void> {
+        let observable = self.getCredentials().flatMap { (phone, token) in
+            return self.service.deleteNotification(phone, token: token, notification_id: notificationID)
+        }
+        return observable
+    }
+    
     func getNotificationDetails(notification_id:String) -> Observable<AnyObject> {
         let observable = self.getCredentials().flatMap { (phone, token) in
             return self.service.getNotificationData(phone, token: token, notification_id: notification_id)

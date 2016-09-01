@@ -42,7 +42,7 @@ class SingleListViewController: UITableViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         dispatch_once(&token) {
-            self.viewModel?.fetchInitial()
+            self.fetch()
         }
     }
     
@@ -61,7 +61,9 @@ class SingleListViewController: UITableViewController {
     }
 
     func fetch() {
-        self.viewModel?.fetchInitial()
+        self.viewModel?.fetchInitial().subscribeError{ [weak self] error in
+            self?.showErrorAlert(error, action: nil)
+            }.addDisposableTo(self.disposableBag)
     }
     
     func showNoNewMessages(){
@@ -135,7 +137,9 @@ class SingleListViewController: UITableViewController {
         let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
         let deltaOffset = maximumOffset - currentOffset
         if deltaOffset <= 0 && self.viewModel?.hasNextChunk == true {
-            self.viewModel?.fetchNext()
+            self.viewModel?.fetchNext().subscribeError{ [weak self] error in
+                self?.showErrorAlert(error, action: nil)
+                }.addDisposableTo(self.disposableBag)
         }
     }
     
@@ -160,7 +164,8 @@ class SingleListViewController: UITableViewController {
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
         let titleForWidth = "         "
         let delete = UITableViewRowAction(style: .Default, title:titleForWidth) { action, index in
-            print("more button tapped")
+            self.viewModel?.deleteNotificationForRow(indexPath.row)
+            print("delete")
         }
         delete.backgroundColor = UIColor(patternImage:UIImage(named: "delete")!)
         

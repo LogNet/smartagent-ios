@@ -33,6 +33,7 @@ class Notification: Object {
     dynamic var pnr_summary:String?
     dynamic var contact_name:String?
     dynamic var listType:String?
+    dynamic var isDeleted = false
     override var description: String {
         get {
             return "title: \(self.title) date: \(self.notification_time)"

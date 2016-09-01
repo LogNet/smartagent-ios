@@ -18,7 +18,7 @@ class AbstractContentProvider {
     let subtype:NotificationSubtype
 
     lazy var notifications:Results<Notification> = {
-        let results = self.realm.objects(Notification.self).filter( self.subtype.rawValue == "" ? "listType == '\(self.listType.rawValue)'" : "listType = '\(self.listType.rawValue)' AND sub_type == '\(self.subtype.rawValue)'")
+        let results = self.realm.objects(Notification.self).filter( self.subtype.rawValue == "" ? "listType == '\(self.listType.rawValue)' AND isDeleted == false" : "listType == '\(self.listType.rawValue)' AND sub_type == '\(self.subtype.rawValue)' AND isDeleted == false")
         return results
     }()
     

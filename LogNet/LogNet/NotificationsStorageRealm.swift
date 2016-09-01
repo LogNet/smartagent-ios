@@ -18,6 +18,16 @@ class NotificationsStorageRealm: RealmStorage, AbstractNotificationsStorage {
     
     // MARK: Public
     
+    func markAsDeleted(notification_id:String) throws {
+        let realm = try Realm()
+        let notifications = realm.objects(Notification.self).filter("notification_id == '\(notification_id)'")
+        realm.beginWrite()
+        for notif in notifications{
+            notif.isDeleted = true
+        }
+        try realm.commitWrite()
+    }
+    
     func updateNotification(notification:Notification) {
         let realm = try! Realm()
         let notifications = realm.objects(Notification.self).filter("notification_id == '\(notification.notification_id!)'")

@@ -12,6 +12,7 @@ import Foundation
 enum ApplicationError:ErrorType {
     case FORBIDDEN
     case NOT_ACTIVATED
+    case NoInternetConnection
     case Unknown
 }
 

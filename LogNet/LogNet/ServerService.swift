@@ -20,4 +20,5 @@ protocol ServerService {
                              chunks_size:Int?) -> Observable<AnyObject>
     func sendNotificationToken(notificationToken:String, phone:String, registrationToken:String) -> Observable<Void>
     func getNotificationData(phoneNumber:String, token:String, notification_id:String) -> Observable<AnyObject>
+    func deleteNotification(phoneNumber:String, token:String, notification_id:String) -> Observable<Void>
 }

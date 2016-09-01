@@ -49,6 +49,27 @@ class SmartAgentServerServise: ServerService {
         return manager
     }()
     
+    func deleteNotification(phoneNumber:String, token:String, notification_id:String) -> Observable<Void>{
+        return Observable.create{ observer in
+            let headers = ["SA-DN":phoneNumber, "SA-REGID":token]
+            let parameters = ["notification_id":notification_id]
+            self.manager.request(.DELETE,self.baseURLString + "deleteNotifications",
+                parameters: parameters, headers: headers).responseJSON(completionHandler: { response in
+                    print("deleted notification response error \(response)")
+                    if response.result.error == nil {
+                        observer.onNext()
+                        observer.onCompleted()
+                    } else {
+                        observer.onError(response.result.error!)
+                    }
+                })
+            return AnonymousDisposable {
+            }
+        }
+
+    }
+
+    
     func register(phoneNumber: String, first_name: String,
                last_name: String, email: String, uuid: String) -> Observable<String> {
         return Observable.create({(observer) -> Disposable in
