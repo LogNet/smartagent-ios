@@ -25,4 +25,11 @@ extension UIViewController {
         alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler:action))
         self.presentViewController(alert, animated: true, completion: nil)
     }
+    
+    func shareText(text:String) {
+        let activityViewController = UIActivityViewController(activityItems: [text], applicationActivities: nil)
+            self.navigationController?.presentViewController(activityViewController, animated: true) {
+            // ...
+        }
+    }
 }

@@ -24,7 +24,6 @@ class RepricePNRView: UITableViewController {
         self.tableView.delegate = self.dataSource
         self.dataSource.tableView = self.tableView
         self.dataSource.contentProvider = self.viewModel.contentProvider
-        self.bindView()
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -58,10 +57,9 @@ class RepricePNRView: UITableViewController {
     
     // MARK: - Private methods
     
-    private func bindView(){
-
+    @IBAction func share(sender: AnyObject) {
+        self.shareText(self.viewModel.getShareText())
     }
-    
 
     // MARK: - Table view data source
 

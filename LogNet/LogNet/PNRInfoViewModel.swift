@@ -12,18 +12,18 @@ import RxSwift
 
 class PNRInfoViewModel: ViewModel {
     private let model:PNRInfoModel
-    private let notification_id:String
+    private let notification:Notification
     var contentProvider:PNRContentProvider!
     let disposableBag = DisposeBag()
     
-    init(model: PNRInfoModel,notification_id:String, router: Router) {
-        self.notification_id = notification_id
+    init(model: PNRInfoModel,notification:Notification, router: Router) {
+        self.notification = notification
         self.model = model
         super.init(router: router)
     }
     
     func fetchPNRInfo() -> Observable<Void> {
-        return self.model.getPNRInfo(self.notification_id).flatMap{ pnrInfo in
+        return self.model.getPNRInfo(self.notification.notification_id!).flatMap{ pnrInfo in
             self.parsePnrInfo(pnrInfo)
         }
     }
@@ -31,5 +31,9 @@ class PNRInfoViewModel: ViewModel {
     func parsePnrInfo(pnrInfo:PNRInfo) -> Observable<Void> {
         self.contentProvider.results.value = [pnrInfo]
         return Observable.just()
+    }
+    
+    func getShareText() -> String {
+        return self.notification.getShareText()
     }
 }

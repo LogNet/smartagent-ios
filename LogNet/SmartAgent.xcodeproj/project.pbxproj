@@ -27,7 +27,6 @@
 		EA35A8691D4014FF00BE3618 /* AbstractDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA35A8681D4014FF00BE3618 /* AbstractDataSource.swift */; };
 		EA35A86B1D40152100BE3618 /* AbstractContentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA35A86A1D40152100BE3618 /* AbstractContentProvider.swift */; };
 		EA42EAF11D438C7600451BB9 /* RepricePNRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA42EAF01D438C7600451BB9 /* RepricePNRView.swift */; };
-		EA42EAF31D43AD6800451BB9 /* RepricePNRViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA42EAF21D43AD6800451BB9 /* RepricePNRViewModel.swift */; };
 		EA7ECA5B1D1BAD780014010A /* RecentNotificationCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7ECA5A1D1BAD780014010A /* RecentNotificationCellViewModel.swift */; };
 		EA7ECA5D1D1BB41E0014010A /* RecentNotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7ECA5C1D1BB41E0014010A /* RecentNotificationCell.swift */; };
 		EA8BB9401D21A04200D07561 /* PushTokenUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8BB93F1D21A04200D07561 /* PushTokenUtil.swift */; };
@@ -143,7 +142,6 @@
 		EA35A8681D4014FF00BE3618 /* AbstractDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractDataSource.swift; sourceTree = "<group>"; };
 		EA35A86A1D40152100BE3618 /* AbstractContentProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractContentProvider.swift; sourceTree = "<group>"; };
 		EA42EAF01D438C7600451BB9 /* RepricePNRView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepricePNRView.swift; sourceTree = "<group>"; };
-		EA42EAF21D43AD6800451BB9 /* RepricePNRViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepricePNRViewModel.swift; sourceTree = "<group>"; };
 		EA7ECA5A1D1BAD780014010A /* RecentNotificationCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentNotificationCellViewModel.swift; sourceTree = "<group>"; };
 		EA7ECA5C1D1BB41E0014010A /* RecentNotificationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentNotificationCell.swift; sourceTree = "<group>"; };
 		EA8BB93F1D21A04200D07561 /* PushTokenUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushTokenUtil.swift; sourceTree = "<group>"; };
@@ -318,7 +316,6 @@
 				EADC60091D18543700B8743C /* AlertNotificationViewModel.swift */,
 				EADC60171D1A782B00B8743C /* RecentModelFactory.swift */,
 				EA7ECA5A1D1BAD780014010A /* RecentNotificationCellViewModel.swift */,
-				EA42EAF21D43AD6800451BB9 /* RepricePNRViewModel.swift */,
 				EAD0C6871D57B46D0033B307 /* ActivationViewModel.swift */,
 				EAFD27F61D5AF9EB00818E48 /* SingleListViewModel.swift */,
 				EAEF7B341D6799C900E00729 /* SearchViewModel.swift */,
@@ -801,7 +798,6 @@
 				EA93F14D1D6B996300A12109 /* PNRInfo.swift in Sources */,
 				EA93F15D1D6FF92500A12109 /* HotelCellViewModel.swift in Sources */,
 				EAE50A5E1D12CEEB00B4329B /* LoginViewController.swift in Sources */,
-				EA42EAF31D43AD6800451BB9 /* RepricePNRViewModel.swift in Sources */,
 				EA93F1531D6C15C400A12109 /* PNRInfoViewModel.swift in Sources */,
 				EA93F13B1D68ABF700A12109 /* SearchHistoryItem.swift in Sources */,
 				EA93F15B1D6FF90300A12109 /* FlightCellViewModel.swift in Sources */,

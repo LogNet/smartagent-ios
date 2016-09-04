@@ -91,6 +91,13 @@ class SingleListViewModel: ViewModel {
         }
     }
     
+    func getShareTextForRow(row:Int) -> String? {
+        if let notification = self.contentProvider?.notifications[row] {
+            return notification.getShareText()
+        }
+        return nil
+    }
+    
     // MARK: Private Methods
     
     private func startFetching(offset:Int) -> Observable<Void> {

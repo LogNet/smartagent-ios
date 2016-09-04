@@ -34,6 +34,21 @@ class Notification: Object {
     dynamic var contact_name:String?
     dynamic var listType:String?
     dynamic var isDeleted = false
+    
+    func getShareText() -> String {
+        var text = ""
+        if let title = self.title {
+            text = title
+        }
+        if let message = self.title_message{
+            text += "\n\(message)"
+        }
+        if let summary = self.pnr_summary{
+            text += "\n\(summary)"
+        }
+        return text
+    }
+    
     override var description: String {
         get {
             return "title: \(self.title) date: \(self.notification_time)"

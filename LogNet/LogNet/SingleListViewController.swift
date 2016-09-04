@@ -165,12 +165,13 @@ class SingleListViewController: UITableViewController {
         let titleForWidth = "         "
         let delete = UITableViewRowAction(style: .Default, title:titleForWidth) { action, index in
             self.viewModel?.deleteNotificationForRow(indexPath.row)
-            print("delete")
         }
         delete.backgroundColor = UIColor(patternImage:UIImage(named: "delete")!)
         
         let share = UITableViewRowAction(style: .Normal, title: titleForWidth) { action, index in
-            print("favorite button tapped")
+            if let text = self.viewModel?.getShareTextForRow(indexPath.row) {
+                self.shareText(text)
+            }
         }
         share.backgroundColor = UIColor(patternImage:UIImage(named: "share")!)
         

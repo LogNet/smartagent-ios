@@ -1292,7 +1292,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Details" id="uoc-yL-Bfo">
-                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="cqa-Ja-HDe"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="cqa-Ja-HDe">
+                            <connections>
+                                <action selector="share:" destination="UmQ-6U-jYB" id="Ozv-vJ-j1d"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -1783,6 +1787,6 @@
         <image name="search gray" width="13" height="13"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Yh4-AK-aYe"/>
+        <segue reference="VMj-r5-nR8"/>
     </inferredMetricsTieBreakers>
 </document>

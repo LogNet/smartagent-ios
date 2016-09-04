@@ -169,7 +169,7 @@ class Router {
         model.apiFacade = APIFacade(service: SmartAgentServerServise())
         model.pnrStorageService = PNRInfoStorageRealm()
         model.notificationStorageService = NotificationsStorageRealm()
-        let viewModel = PNRInfoViewModel(model: model,notification_id:notification.notification_id!, router: self)
+        let viewModel = PNRInfoViewModel(model: model,notification:notification, router: self)
         viewModel.contentProvider = PNRContentProvider()
         let navigationController = self.tabBarController.selectedViewController as! UINavigationController
         let pnrViewController = self.storyboard.instantiateViewControllerWithIdentifier("RepricePNRView") as! RepricePNRView
