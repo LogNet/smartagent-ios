@@ -35,6 +35,7 @@ class PNRInfoModel {
                 onNext: {result in
                     let pnrInfo = result.0
                     pnrInfo.notification_id = notification_id
+                    pnrInfo.shareText = result.1.getShareText()
                     self.pnrStorageService.addPNFInfo(pnrInfo, completion: { (error) in
                     if error != nil {
                         observer.onError(error!)

@@ -23,7 +23,7 @@ enum NotificationSubtype:String {
 }
 
 class Notification: Object {
-    dynamic var notification_id:String?
+    dynamic var notification_id:String!
     dynamic var status:String?
     dynamic var type:String?
     dynamic var sub_type:String?

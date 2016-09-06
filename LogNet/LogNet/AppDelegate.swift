@@ -26,6 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Add observer for InstanceID token refresh callback.
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.tokenRefreshNotification),
                                                          name: kFIRInstanceIDTokenRefreshNotification, object: nil)
+        application.registerForRemoteNotifications()
         Fabric.with([Crashlytics.self])
         self.configureViewController()
         return true
@@ -76,29 +77,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
         // If you are receiving a notification message while your app is in the background,
         // this callback will not be fired till the user taps on the notification launching the application.
-        // TODO: Handle data of notification
         // Print message ID.
 //        print("Message ID: \(userInfo["gcm.message_id"]!)")
 //        print("Push notification info: \(userInfo)")
         // Print full message.
         FIRMessaging.messaging().appDidReceiveMessage(userInfo)
-        print("link = %@", userInfo["link"])
-        if application.applicationState == UIApplicationState.Active {
-            
-            if let aps = userInfo["aps"] {
-                if let alert = aps["alert"] {
-                     let alertViewModel = AlertNotificationViewModel()
-                    alertViewModel.title = alert!["title"] as? String
-                    alertViewModel.text = alert!["body"] as? String
-                    if let link:String = userInfo["link"] as? String {
-                        alertViewModel.urlString = link
-                    }
-                    self.router?.showNotificationAlert(alertViewModel)
-                }
-            }
-        } else {
-            if let link:String = userInfo["link"] as? String {
-                self.router?.openURLString(link)
+        if application.applicationState != UIApplicationState.Active {
+            if let id = userInfo["notification_id"] as? String {
+                self.router?.openPNRFromRemouteNotification(id)
             }
         }
         completionHandler(.NewData)

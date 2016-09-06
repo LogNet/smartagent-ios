@@ -40,23 +40,11 @@ PODS:
     - GoogleSymbolUtilities (~> 1.0)
   - KeychainAccess (2.3.6)
   - PKHUD (3.1.0)
-  - ReactiveCocoa (4.1.0):
-    - ReactiveCocoa/UI (= 4.1.0)
-    - Result (~> 2.0)
-  - ReactiveCocoa/Core (4.1.0):
-    - ReactiveCocoa/no-arc
-    - Result (~> 2.0)
-  - ReactiveCocoa/no-arc (4.1.0):
-    - Result (~> 2.0)
-  - ReactiveCocoa/UI (4.1.0):
-    - ReactiveCocoa/Core
-    - Result (~> 2.0)
   - Realm (1.0.0):
     - Realm/Headers (= 1.0.0)
   - Realm/Headers (1.0.0)
   - RealmSwift (1.0.0):
     - Realm (= 1.0.0)
-  - Result (2.0.0)
   - RxCocoa (2.6.0):
     - RxSwift (~> 2.5)
   - RxSwift (2.6.0)
@@ -71,7 +59,6 @@ DEPENDENCIES:
   - FirebaseAuth (~> 3.0)
   - KeychainAccess (~> 2.3)
   - PKHUD (~> 3.1)
-  - ReactiveCocoa (~> 4.1)
   - RealmSwift (~> 1.0)
   - RxCocoa (~> 2.0)
   - RxSwift (~> 2.0)
@@ -93,13 +80,11 @@ SPEC CHECKSUMS:
   GoogleUtilities: 56c5ac05b7aa5dc417a1bb85221a9516e04d7032
   KeychainAccess: 7f10e2ef998ddf954a64d5d608be08677774684d
   PKHUD: 4167eccdb1b3a892fd80ce2b51cb6ba412a889ab
-  ReactiveCocoa: d70004d7a366a7b8e87e60ce2347182c77701949
   Realm: e15cd8e7c11d3e576f628ba0b7cb855269b4991c
   RealmSwift: 3229306d020d96f83b335f87a0dcbf2cef0e6a2b
-  Result: 9e75e1111c774c6ac594e14907b15057053a7959
   RxCocoa: 89ab00d5753502520227940e3a0e0a0413683c6b
   RxSwift: 77f3a0b15324baa7a1c9bfa9f199648a82424e26
 
-PODFILE CHECKSUM: c1500a48190fbca2564f2f3326a4e1eed0124345
+PODFILE CHECKSUM: 45d92f73429f2f280e63add2dfe5a9f66cc857eb
 
 COCOAPODS: 1.0.1

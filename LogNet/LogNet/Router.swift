@@ -141,20 +141,13 @@ class Router {
                                   preferredStyle: .Alert)
             let cancel = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil);
             let open = UIAlertAction(title: "Open", style: .Default) { (action:UIAlertAction) in
-                self.openURLString(alertViewModel.urlString!)
-            }
+
+        }
             
             alert.addAction(open)
             alert.addAction(cancel)
     }
     
-    func openURLString(urlString:String) {
-        let browserViewController = self.storyboard.instantiateViewControllerWithIdentifier("WebBrouserViewController") as? WebBrouserViewController
-        let model = WebBrowserModel()
-        let viewModel = WebBrowserViewModel(browserModel: model, router: self)
-        viewModel.urlString = urlString
-        browserViewController?.viewModel = viewModel
-    }
     
     func registerForPushNotifications() {
         let application = UIApplication.sharedApplication()
@@ -163,18 +156,34 @@ class Router {
         application.registerUserNotificationSettings(notificationSettings)
     }
     
-    func showPNRDetailsFromNotification(notification: Notification) {
+    func openPNRFromRemouteNotification(notification_id: String) {
+        self.tabBarController.selectedIndex = 0
+        let navigationController = self.tabBarController.selectedViewController as! UINavigationController
+        let pnrViewController = self.storyboard.instantiateViewControllerWithIdentifier("RepricePNRView") as! RepricePNRView
+        pnrViewController.viewModel = self.getPNRViewModel(notification_id)
+        pnrViewController.dataSource = PNRDataSource()
+        navigationController.pushViewController(pnrViewController, animated: true)
+    }
+    
+    func showPNRDetails(notification_id: String) {
+        let navigationController = self.tabBarController.selectedViewController as! UINavigationController
+        let pnrViewController = self.storyboard.instantiateViewControllerWithIdentifier("RepricePNRView") as! RepricePNRView
+        pnrViewController.viewModel = self.getPNRViewModel(notification_id)
+        pnrViewController.dataSource = PNRDataSource()
+        navigationController.pushViewController(pnrViewController, animated: true)
+    }
+    
+    // MARK: Private
+    
+    private func getPNRViewModel(notification_id: String) -> PNRInfoViewModel {
         let model = PNRInfoModel()
         model.serverParser = SmartAgentParser()
         model.apiFacade = APIFacade(service: SmartAgentServerServise())
         model.pnrStorageService = PNRInfoStorageRealm()
         model.notificationStorageService = NotificationsStorageRealm()
-        let viewModel = PNRInfoViewModel(model: model,notification:notification, router: self)
+        let viewModel = PNRInfoViewModel(model: model,notification_id:notification_id, router: self)
         viewModel.contentProvider = PNRContentProvider()
-        let navigationController = self.tabBarController.selectedViewController as! UINavigationController
-        let pnrViewController = self.storyboard.instantiateViewControllerWithIdentifier("RepricePNRView") as! RepricePNRView
-        pnrViewController.viewModel = viewModel
-        pnrViewController.dataSource = PNRDataSource()
-        navigationController.pushViewController(pnrViewController, animated: true)
+        return viewModel
     }
+    
 }

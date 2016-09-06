@@ -66,7 +66,8 @@ class PNRInfo: Object {
     dynamic var title:String?
     dynamic var pnr:PNR!
     dynamic var contact:Contact!
-    
+    dynamic var shareText:String?
+
     let passengers = List<Passenger>()
     let flights = List<Flight>()
     let hotels = List<Hotel>()
@@ -104,6 +105,7 @@ class PNRInfo: Object {
         pnrInfo.hotels.appendContentsOf(self.hotels)
         pnrInfo.cars.appendContentsOf(self.cars)
         pnrInfo.flights.appendContentsOf(self.flights)
+        pnrInfo.shareText = self.shareText
         return pnrInfo
     }
     

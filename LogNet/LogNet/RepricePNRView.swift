@@ -57,8 +57,14 @@ class RepricePNRView: UITableViewController {
     
     // MARK: - Private methods
     
+    @IBAction func makeACall(sender: AnyObject) {
+            self.viewModel.callToContact()
+    }
+    
     @IBAction func share(sender: AnyObject) {
-        self.shareText(self.viewModel.getShareText())
+        if let text = self.viewModel.getShareText() {
+            self.shareText(text)
+        }
     }
 
     // MARK: - Table view data source

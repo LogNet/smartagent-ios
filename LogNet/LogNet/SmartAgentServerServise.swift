@@ -106,7 +106,6 @@ class SmartAgentServerServise: ServerService {
             "notification_token":notificationToken]
             self.manager.request(.POST,"https://62.90.233.18:8443/setNotificationToken",
                 parameters: parameters, headers: headers).responseJSON(completionHandler: { response in
-                print("response error \(response.result.error)")
             })
             return AnonymousDisposable {
             }

@@ -16,7 +16,6 @@
 		EA26375B1D16A1F700D5988D /* LoginModelsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA26375A1D16A1F700D5988D /* LoginModelsFactory.swift */; };
 		EA26375D1D16A4F100D5988D /* ServerParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA26375C1D16A4F100D5988D /* ServerParser.swift */; };
 		EA26375F1D16A59700D5988D /* SmartAgentServerParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA26375E1D16A59700D5988D /* SmartAgentServerParser.swift */; };
-		EA2637631D16BEF400D5988D /* WebBrouserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2637621D16BEF400D5988D /* WebBrouserViewController.swift */; };
 		EA35A8581D3D6C4F00BE3618 /* UnderlinedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA35A8571D3D6C4F00BE3618 /* UnderlinedTextField.swift */; };
 		EA35A85A1D3D825300BE3618 /* ActivationMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA35A8591D3D825300BE3618 /* ActivationMessageViewController.swift */; };
 		EA35A85F1D3EAE4600BE3618 /* SanFranciscoText-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = EA35A85E1D3EAE4600BE3618 /* SanFranciscoText-Regular.otf */; };
@@ -72,8 +71,6 @@
 		EAD43D1B1D2CD16300E1FF15 /* recent.json in Resources */ = {isa = PBXBuildFile; fileRef = EAD43D171D2CD16300E1FF15 /* recent.json */; };
 		EAD43D1C1D2CD16300E1FF15 /* reprice.json in Resources */ = {isa = PBXBuildFile; fileRef = EAD43D181D2CD16300E1FF15 /* reprice.json */; };
 		EAD43D1D1D2CD16300E1FF15 /* ticket_due.json in Resources */ = {isa = PBXBuildFile; fileRef = EAD43D191D2CD16300E1FF15 /* ticket_due.json */; };
-		EADC60021D16E3CE00B8743C /* WebBrowserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60011D16E3CE00B8743C /* WebBrowserViewModel.swift */; };
-		EADC60041D16E44F00B8743C /* WebBrowserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60031D16E44F00B8743C /* WebBrowserModel.swift */; };
 		EADC60061D17017E00B8743C /* ServerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60051D17017E00B8743C /* ServerService.swift */; };
 		EADC60081D175DDA00B8743C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EADC60071D175DDA00B8743C /* QuartzCore.framework */; };
 		EADC600A1D18543800B8743C /* AlertNotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60091D18543700B8743C /* AlertNotificationViewModel.swift */; };
@@ -131,7 +128,6 @@
 		EA26375A1D16A1F700D5988D /* LoginModelsFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginModelsFactory.swift; sourceTree = "<group>"; };
 		EA26375C1D16A4F100D5988D /* ServerParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerParser.swift; sourceTree = "<group>"; };
 		EA26375E1D16A59700D5988D /* SmartAgentServerParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmartAgentServerParser.swift; sourceTree = "<group>"; };
-		EA2637621D16BEF400D5988D /* WebBrouserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebBrouserViewController.swift; sourceTree = "<group>"; };
 		EA35A8571D3D6C4F00BE3618 /* UnderlinedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnderlinedTextField.swift; sourceTree = "<group>"; };
 		EA35A8591D3D825300BE3618 /* ActivationMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivationMessageViewController.swift; sourceTree = "<group>"; };
 		EA35A85E1D3EAE4600BE3618 /* SanFranciscoText-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SanFranciscoText-Regular.otf"; sourceTree = "<group>"; };
@@ -187,8 +183,6 @@
 		EAD43D171D2CD16300E1FF15 /* recent.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recent.json; sourceTree = "<group>"; };
 		EAD43D181D2CD16300E1FF15 /* reprice.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = reprice.json; sourceTree = "<group>"; };
 		EAD43D191D2CD16300E1FF15 /* ticket_due.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ticket_due.json; sourceTree = "<group>"; };
-		EADC60011D16E3CE00B8743C /* WebBrowserViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebBrowserViewModel.swift; sourceTree = "<group>"; };
-		EADC60031D16E44F00B8743C /* WebBrowserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebBrowserModel.swift; sourceTree = "<group>"; };
 		EADC60051D17017E00B8743C /* ServerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerService.swift; sourceTree = "<group>"; };
 		EADC60071D175DDA00B8743C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		EADC60091D18543700B8743C /* AlertNotificationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertNotificationViewModel.swift; sourceTree = "<group>"; };
@@ -276,7 +270,6 @@
 				EA93F14A1D6B98AB00A12109 /* PNRInfoModel.swift */,
 				EA2637511D15BF9000D5988D /* LoginModel.swift */,
 				EA26375A1D16A1F700D5988D /* LoginModelsFactory.swift */,
-				EADC60031D16E44F00B8743C /* WebBrowserModel.swift */,
 				EADC60111D1A6EF500B8743C /* SingleListNotificationModel.swift */,
 				EADC601C1D1A8EFC00B8743C /* Notification.swift */,
 				EAEF7B361D67A03000E00729 /* SearchModel.swift */,
@@ -290,7 +283,6 @@
 			isa = PBXGroup;
 			children = (
 				EAE50A5D1D12CEEB00B4329B /* LoginViewController.swift */,
-				EA2637621D16BEF400D5988D /* WebBrouserViewController.swift */,
 				EADC600D1D19785000B8743C /* SingleListViewController.swift */,
 				EA7ECA5C1D1BB41E0014010A /* RecentNotificationCell.swift */,
 				EA35A8591D3D825300BE3618 /* ActivationMessageViewController.swift */,
@@ -312,7 +304,6 @@
 				EA26374D1D15BE3D00D5988D /* Router.swift */,
 				EADC60131D1A6FEA00B8743C /* ViewModel.swift */,
 				EA2637491D15B95A00D5988D /* LoginViewModel.swift */,
-				EADC60011D16E3CE00B8743C /* WebBrowserViewModel.swift */,
 				EADC60091D18543700B8743C /* AlertNotificationViewModel.swift */,
 				EADC60171D1A782B00B8743C /* RecentModelFactory.swift */,
 				EA7ECA5A1D1BAD780014010A /* RecentNotificationCellViewModel.swift */,
@@ -771,7 +762,6 @@
 				EA26374E1D15BE3D00D5988D /* Router.swift in Sources */,
 				EAEF7B351D6799C900E00729 /* SearchViewModel.swift in Sources */,
 				EA25E74E1D7781C300EDE80A /* UIViewControllerExtention.swift in Sources */,
-				EA2637631D16BEF400D5988D /* WebBrouserViewController.swift in Sources */,
 				EA93F1451D68D8AA00A12109 /* SearchDataSource.swift in Sources */,
 				EAFD27FD1D5C43D300818E48 /* RecentViewController.swift in Sources */,
 				EAECB5A81D5288AD0080ED3D /* Prefences.swift in Sources */,
@@ -780,14 +770,12 @@
 				EA93F15F1D6FF94500A12109 /* CarCellViewModel.swift in Sources */,
 				EA93F13F1D68AECA00A12109 /* RealmStorage.swift in Sources */,
 				EA93F1791D73393400A12109 /* PNRContactCell.swift in Sources */,
-				EADC60041D16E44F00B8743C /* WebBrowserModel.swift in Sources */,
 				EA93F1431D68D84900A12109 /* SearchContentProvider.swift in Sources */,
 				EA93F1411D68B09500A12109 /* SearchHistoryStorageRealm.swift in Sources */,
 				EAFD27FF1D5C476100818E48 /* NotificationDataSource.swift in Sources */,
 				EA26375F1D16A59700D5988D /* SmartAgentServerParser.swift in Sources */,
 				EA93F14B1D6B98AB00A12109 /* PNRInfoModel.swift in Sources */,
 				EAD0C6841D578BED0033B307 /* ErrorUtil.swift in Sources */,
-				EADC60021D16E3CE00B8743C /* WebBrowserViewModel.swift in Sources */,
 				EA35A8631D3EC5DE00BE3618 /* NotificationCell.swift in Sources */,
 				EA2637521D15BF9000D5988D /* LoginModel.swift in Sources */,
 				EA93F1371D68AA2400A12109 /* SearchHistoryCell.swift in Sources */,
