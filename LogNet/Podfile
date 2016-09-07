@@ -15,5 +15,6 @@ pod 'RealmSwift', '~> 1.0'
 pod 'RxSwift',    '~> 2.0'
 pod 'RxCocoa',    '~> 2.0'
 pod 'KeychainAccess', '~> 2.3'
+pod 'MRCountryPicker', '~> 0.0.4'
 end
 

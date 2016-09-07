@@ -10,6 +10,7 @@ import UIKit
 import QuartzCore
 import PKHUD
 import RxSwift
+import MRCountryPicker
 
 extension CALayer {
     func setBorderColorFromUIColor(color:UIColor) {
@@ -17,12 +18,14 @@ extension CALayer {
     }
 }
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, MRCountryPickerDelegate, UITextFieldDelegate {
 
+    @IBOutlet weak var codeLabel: UILabel!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
-    
+    @IBOutlet weak var countryPicker: MRCountryPicker!
+
     var loginViewModel: LoginViewModel?
     var loginningNow = false;
     let disposeBag = DisposeBag()
@@ -31,7 +34,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.bindViewModel()
-
+        self.addCountryPicker()
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,11 +44,21 @@ class LoginViewController: UIViewController {
 
     // MARK: Methods
     
+    func addCountryPicker() {
+        self.countryPicker.countryPickerDelegate = self
+        self.countryPicker.showPhoneNumbers = true
+        self.countryPicker.setCountry("SI")
+    }
+    
     func bindViewModel() {
         // Observe phone number.
         self.phoneTextField.rx_text.subscribeNext { (text) in
-                self.loginViewModel?.phoneNumber = text
+                self.loginViewModel?.phoneNumber = self.codeLabel.text! + text
         }.addDisposableTo(self.disposeBag)
+        
+        self.phoneTextField.rx_text.subscribeNext { (text) in
+            self.loginViewModel?.phoneNumber = text
+            }.addDisposableTo(self.disposeBag)
         
         // Observe name.
         self.nameTextField.rx_text.subscribeNext { (text) in
@@ -60,7 +73,7 @@ class LoginViewController: UIViewController {
     
     func isValidPhoneString() -> Bool {
         if self.loginViewModel?.phoneNumber != nil {
-            return self.loginViewModel?.phoneNumber?.characters.count > 0
+            return self.loginViewModel?.phoneNumber?.characters.count == 9
         }
         return false
     }
@@ -161,8 +174,14 @@ class LoginViewController: UIViewController {
         self.emailTextField.resignFirstResponder()
     }
     
-// MARK: IBActions
+    // MARK: IBActions
     
+    @IBAction func showCountries(sender: AnyObject) {
+        if self.countryPicker.hidden {
+            self.countryPicker.hidden = false
+            self.hideKeyboard()
+        }
+    }
     @IBAction func login(sender: AnyObject) {
         if self.isValidAllFields() {
             self.hideKeyboard()
@@ -171,4 +190,20 @@ class LoginViewController: UIViewController {
         }
     }
     
+    // MARK: Text field delegate
+    
+    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+        self.countryPicker.hidden = true
+        return true
+    }
+
+    
+    // MARK: MRCountryPickerDelegate
+    
+    func countryPhoneCodePicker(picker: MRCountryPicker, didSelectCountryWithName name: String, countryCode: String, phoneCode: String, flag: UIImage) {
+        self.codeLabel.text = phoneCode
+        if let text = self.phoneTextField.text {
+            self.loginViewModel?.phoneNumber = phoneCode + text
+        }
+    }
 }

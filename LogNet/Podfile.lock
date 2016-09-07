@@ -39,6 +39,7 @@ PODS:
   - GoogleUtilities (1.3.1):
     - GoogleSymbolUtilities (~> 1.0)
   - KeychainAccess (2.3.6)
+  - MRCountryPicker (0.0.4)
   - PKHUD (3.1.0)
   - Realm (1.0.0):
     - Realm/Headers (= 1.0.0)
@@ -58,6 +59,7 @@ DEPENDENCIES:
   - Firebase/Messaging
   - FirebaseAuth (~> 3.0)
   - KeychainAccess (~> 2.3)
+  - MRCountryPicker (~> 0.0.4)
   - PKHUD (~> 3.1)
   - RealmSwift (~> 1.0)
   - RxCocoa (~> 2.0)
@@ -79,12 +81,13 @@ SPEC CHECKSUMS:
   GoogleSymbolUtilities: 33117db1b5f290c6fbf259585e4885b4c84b98d7
   GoogleUtilities: 56c5ac05b7aa5dc417a1bb85221a9516e04d7032
   KeychainAccess: 7f10e2ef998ddf954a64d5d608be08677774684d
+  MRCountryPicker: 5d5b956984c07cfd9768dd6aea5b93247d5af0e8
   PKHUD: 4167eccdb1b3a892fd80ce2b51cb6ba412a889ab
   Realm: e15cd8e7c11d3e576f628ba0b7cb855269b4991c
   RealmSwift: 3229306d020d96f83b335f87a0dcbf2cef0e6a2b
   RxCocoa: 89ab00d5753502520227940e3a0e0a0413683c6b
   RxSwift: 77f3a0b15324baa7a1c9bfa9f199648a82424e26
 
-PODFILE CHECKSUM: 45d92f73429f2f280e63add2dfe5a9f66cc857eb
+PODFILE CHECKSUM: 2869c043bbb2d22ab0526a1e9e659de889d4f5de
 
 COCOAPODS: 1.0.1

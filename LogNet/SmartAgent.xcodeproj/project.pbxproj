@@ -67,10 +67,6 @@
 		EAD0C6881D57B46D0033B307 /* ActivationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD0C6871D57B46D0033B307 /* ActivationViewModel.swift */; };
 		EAD43D0F1D2CBAB600E1FF15 /* DummyServerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD43D0E1D2CBAB600E1FF15 /* DummyServerService.swift */; };
 		EAD43D151D2CC4AB00E1FF15 /* APIFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD43D141D2CC4AB00E1FF15 /* APIFacade.swift */; };
-		EAD43D1A1D2CD16300E1FF15 /* cancelled.json in Resources */ = {isa = PBXBuildFile; fileRef = EAD43D161D2CD16300E1FF15 /* cancelled.json */; };
-		EAD43D1B1D2CD16300E1FF15 /* recent.json in Resources */ = {isa = PBXBuildFile; fileRef = EAD43D171D2CD16300E1FF15 /* recent.json */; };
-		EAD43D1C1D2CD16300E1FF15 /* reprice.json in Resources */ = {isa = PBXBuildFile; fileRef = EAD43D181D2CD16300E1FF15 /* reprice.json */; };
-		EAD43D1D1D2CD16300E1FF15 /* ticket_due.json in Resources */ = {isa = PBXBuildFile; fileRef = EAD43D191D2CD16300E1FF15 /* ticket_due.json */; };
 		EADC60061D17017E00B8743C /* ServerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60051D17017E00B8743C /* ServerService.swift */; };
 		EADC60081D175DDA00B8743C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EADC60071D175DDA00B8743C /* QuartzCore.framework */; };
 		EADC600A1D18543800B8743C /* AlertNotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC60091D18543700B8743C /* AlertNotificationViewModel.swift */; };
@@ -179,10 +175,6 @@
 		EAD0C6871D57B46D0033B307 /* ActivationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivationViewModel.swift; sourceTree = "<group>"; };
 		EAD43D0E1D2CBAB600E1FF15 /* DummyServerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyServerService.swift; sourceTree = "<group>"; };
 		EAD43D141D2CC4AB00E1FF15 /* APIFacade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIFacade.swift; sourceTree = "<group>"; };
-		EAD43D161D2CD16300E1FF15 /* cancelled.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cancelled.json; sourceTree = "<group>"; };
-		EAD43D171D2CD16300E1FF15 /* recent.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recent.json; sourceTree = "<group>"; };
-		EAD43D181D2CD16300E1FF15 /* reprice.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = reprice.json; sourceTree = "<group>"; };
-		EAD43D191D2CD16300E1FF15 /* ticket_due.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ticket_due.json; sourceTree = "<group>"; };
 		EADC60051D17017E00B8743C /* ServerService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerService.swift; sourceTree = "<group>"; };
 		EADC60071D175DDA00B8743C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		EADC60091D18543700B8743C /* AlertNotificationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertNotificationViewModel.swift; sourceTree = "<group>"; };
@@ -439,10 +431,6 @@
 		EAE50A4F1D12CEEB00B4329B = {
 			isa = PBXGroup;
 			children = (
-				EAD43D161D2CD16300E1FF15 /* cancelled.json */,
-				EAD43D171D2CD16300E1FF15 /* recent.json */,
-				EAD43D181D2CD16300E1FF15 /* reprice.json */,
-				EAD43D191D2CD16300E1FF15 /* ticket_due.json */,
 				EAE50A5A1D12CEEB00B4329B /* LogNet */,
 				EAE50A6F1D12CEEC00B4329B /* LogNetTests */,
 				EAE50A7A1D12CEEC00B4329B /* LogNetUITests */,
@@ -629,17 +617,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAD43D1D1D2CD16300E1FF15 /* ticket_due.json in Resources */,
 				EAE50A661D12CEEB00B4329B /* LaunchScreen.storyboard in Resources */,
 				EA35A8651D3ED28700BE3618 /* NoMessagesView.xib in Resources */,
 				EA35A85F1D3EAE4600BE3618 /* SanFranciscoText-Regular.otf in Resources */,
 				EA35A8611D3EAFE300BE3618 /* SanFranciscoText-Medium.otf in Resources */,
 				EA2637441D12E46600D5988D /* GoogleService-Info.plist in Resources */,
-				EAD43D1A1D2CD16300E1FF15 /* cancelled.json in Resources */,
 				EAE50A631D12CEEB00B4329B /* Assets.xcassets in Resources */,
-				EAD43D1B1D2CD16300E1FF15 /* recent.json in Resources */,
 				EAE50A611D12CEEB00B4329B /* Main.storyboard in Resources */,
-				EAD43D1C1D2CD16300E1FF15 /* reprice.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
