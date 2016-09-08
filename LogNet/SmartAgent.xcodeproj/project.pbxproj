@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4DF12A834A791E311C0B74FC /* Pods_SmartAgent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18C9ED9DFC1AA6D8F3C46204 /* Pods_SmartAgent.framework */; };
+		EA0252281D811D830021525A /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0252271D811D830021525A /* StringExtension.swift */; };
 		EA25E74E1D7781C300EDE80A /* UIViewControllerExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA25E74D1D7781C300EDE80A /* UIViewControllerExtention.swift */; };
 		EA2637441D12E46600D5988D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA2637431D12E46600D5988D /* GoogleService-Info.plist */; };
 		EA26374A1D15B95A00D5988D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2637491D15B95A00D5988D /* LoginViewModel.swift */; };
@@ -116,6 +117,7 @@
 /* Begin PBXFileReference section */
 		18C9ED9DFC1AA6D8F3C46204 /* Pods_SmartAgent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartAgent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71C3FF208C0ECE1879EE4482 /* Pods-SmartAgent.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartAgent.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartAgent/Pods-SmartAgent.debug.xcconfig"; sourceTree = "<group>"; };
+		EA0252271D811D830021525A /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		EA25E74D1D7781C300EDE80A /* UIViewControllerExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtention.swift; sourceTree = "<group>"; };
 		EA2637431D12E46600D5988D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EA2637491D15B95A00D5988D /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -371,6 +373,7 @@
 				EAD0C6801D5787600033B307 /* NSErrorExtention.swift */,
 				EA93F1481D6AC53C00A12109 /* ArrayExtention.swift */,
 				EA25E74D1D7781C300EDE80A /* UIViewControllerExtention.swift */,
+				EA0252271D811D830021525A /* StringExtension.swift */,
 			);
 			name = Extentions;
 			sourceTree = "<group>";
@@ -788,6 +791,7 @@
 				EAE50A5C1D12CEEB00B4329B /* AppDelegate.swift in Sources */,
 				EAD43D151D2CC4AB00E1FF15 /* APIFacade.swift in Sources */,
 				EAEF7B331D67998100E00729 /* SearchTableViewController.swift in Sources */,
+				EA0252281D811D830021525A /* StringExtension.swift in Sources */,
 				EAEF7B371D67A03000E00729 /* SearchModel.swift in Sources */,
 				EADC601B1D1A8A5100B8743C /* Typealiases.swift in Sources */,
 				EAFD27F71D5AF9EB00818E48 /* SingleListViewModel.swift in Sources */,

@@ -25,7 +25,7 @@ class LoginViewController: UIViewController, MRCountryPickerDelegate, UITextFiel
     @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var countryPicker: MRCountryPicker!
-
+    private var isPhoneValid = false
     var loginViewModel: LoginViewModel?
     var loginningNow = false;
     let disposeBag = DisposeBag()
@@ -47,18 +47,25 @@ class LoginViewController: UIViewController, MRCountryPickerDelegate, UITextFiel
     func addCountryPicker() {
         self.countryPicker.countryPickerDelegate = self
         self.countryPicker.showPhoneNumbers = true
-        self.countryPicker.setCountry("SI")
+        self.countryPicker.setCountry("IL")
     }
     
     func bindViewModel() {
         // Observe phone number.
         self.phoneTextField.rx_text.subscribeNext { (text) in
-                self.loginViewModel?.phoneNumber = self.codeLabel.text! + text
+            var phone = text
+            if !String.isEmpty(phone) {
+                let leadCharacterIndex = text.startIndex.advancedBy(0)
+                let leadCharacter = text[leadCharacterIndex]
+                if leadCharacter == "0" {
+                    phone = String(text.characters.dropFirst())
+                }
+            }
+            let phoneLength = 9
+            self.isPhoneValid = phone.characters.count == phoneLength
+            self.loginViewModel?.phoneNumber = self.codeLabel.text! + phone
+            print(self.loginViewModel?.phoneNumber)
         }.addDisposableTo(self.disposeBag)
-        
-        self.phoneTextField.rx_text.subscribeNext { (text) in
-            self.loginViewModel?.phoneNumber = text
-            }.addDisposableTo(self.disposeBag)
         
         // Observe name.
         self.nameTextField.rx_text.subscribeNext { (text) in
@@ -72,10 +79,7 @@ class LoginViewController: UIViewController, MRCountryPickerDelegate, UITextFiel
     }
     
     func isValidPhoneString() -> Bool {
-        if self.loginViewModel?.phoneNumber != nil {
-            return self.loginViewModel?.phoneNumber?.characters.count == 9
-        }
-        return false
+        return self.isPhoneValid
     }
     
     func isValidName() -> Bool {
