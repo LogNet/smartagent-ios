@@ -132,7 +132,7 @@ class SmartAgentServerServise: ServerService {
                     if response.result.error == nil {
                         let cookies = NSHTTPCookie.cookiesWithResponseHeaderFields(response.response?.allHeaderFields as! [String: String], forURL: (response.response?.URL!)!)
                         
-                        //Save method
+                        //Save method.
                         if let cookie = cookies.first {
                             self.setCookie(cookie)
                             self.manager.session.configuration.HTTPCookieStorage?.setCookie(cookie)
