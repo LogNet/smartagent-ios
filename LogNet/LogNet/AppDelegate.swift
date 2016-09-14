@@ -85,6 +85,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if let id = userInfo["notification_id"] as? String {
                 self.router?.openPNRFromRemouteNotification(id)
             }
+        } else {
+            // Notify about content changes.
+            NSNotificationCenter.defaultCenter().postNotificationName(UpdateContentNotification, object: nil)
         }
         completionHandler(.NewData)
     }
@@ -105,7 +108,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FIRInstanceID.instanceID().setAPNSToken(deviceToken, type: .Unknown)
         print("InstanceID token: \(FIRInstanceID.instanceID().token())")
-
+        self.sendDeviceTokenToServer()
     }
     
     

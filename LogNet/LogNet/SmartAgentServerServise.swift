@@ -12,7 +12,7 @@ import Alamofire
 
 class SmartAgentServerServise: ServerService {
     
-    let baseURLString = "http://62.90.233.18:8080/"
+    let baseURLString = "https://www.lognet-smartagent.com/"
     
     private lazy var manager : Alamofire.Manager = {
         // Create the server trust policies
@@ -23,28 +23,28 @@ class SmartAgentServerServise: ServerService {
             manager.session.configuration.HTTPCookieStorage?.setCookie(cookie)
         }
         
-        manager.delegate.sessionDidReceiveChallenge = { session, challenge in
-            var disposition: NSURLSessionAuthChallengeDisposition = .PerformDefaultHandling
-            var credential: NSURLCredential?
-            
-            if challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust {
-                disposition = NSURLSessionAuthChallengeDisposition.UseCredential
-                credential = NSURLCredential(forTrust: challenge.protectionSpace.serverTrust!)
-                print(credential)
-            } else {
-                if challenge.previousFailureCount > 0 {
-                    disposition = .CancelAuthenticationChallenge
-                } else {
-                    credential = manager.session.configuration.URLCredentialStorage?.defaultCredentialForProtectionSpace(challenge.protectionSpace)
-                    
-                    if credential != nil {
-                        disposition = .UseCredential
-                    }
-                }
-            }
-            
-            return (disposition, credential)
-        }
+//        manager.delegate.sessionDidReceiveChallenge = { session, challenge in
+//            var disposition: NSURLSessionAuthChallengeDisposition = .PerformDefaultHandling
+//            var credential: NSURLCredential?
+//            
+//            if challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust {
+//                disposition = NSURLSessionAuthChallengeDisposition.UseCredential
+//                credential = NSURLCredential(forTrust: challenge.protectionSpace.serverTrust!)
+//                print(credential)
+//            } else {
+//                if challenge.previousFailureCount > 0 {
+//                    disposition = .CancelAuthenticationChallenge
+//                } else {
+//                    credential = manager.session.configuration.URLCredentialStorage?.defaultCredentialForProtectionSpace(challenge.protectionSpace)
+//                    
+//                    if credential != nil {
+//                        disposition = .UseCredential
+//                    }
+//                }
+//            }
+//            
+//            return (disposition, credential)
+//        }
         
         return manager
     }()
@@ -104,8 +104,9 @@ class SmartAgentServerServise: ServerService {
             let parameters = ["device_number":phone,
             "registration_token":registrationToken,
             "notification_token":notificationToken]
-            self.manager.request(.POST,"https://62.90.233.18:8443/setNotificationToken",
+            self.manager.request(.POST,self.baseURLString + "setNotificationToken",
                 parameters: parameters, headers: headers).responseJSON(completionHandler: { response in
+                    print(response.response?.statusCode)
             })
             return AnonymousDisposable {
             }

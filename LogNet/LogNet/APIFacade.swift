@@ -13,7 +13,7 @@ import Firebase
  class APIFacade {
     
 	private var service: ServerService
-    
+    private var disposeBag = DisposeBag()
     init(service: ServerService) {
 		self.service = service
 	}
@@ -58,7 +58,7 @@ import Firebase
         let phone = Prefences.getPhone()
         let userToken = Prefences.getToken()
         if phone != nil && userToken != nil {
-            self.service.sendNotificationToken(token, phone: phone!, registrationToken: userToken!).subscribeNext{}.dispose()
+            self.service.sendNotificationToken(token, phone: phone!, registrationToken: userToken!).subscribeNext{}.addDisposableTo(self.disposeBag)
         }
     }
     
@@ -95,7 +95,7 @@ import Firebase
         return Observable.create({ (subscriber) -> Disposable in
             if let user = FIRAuth.auth()?.currentUser {
                 // User is signed in.
-                user.getTokenWithCompletion({ (token, error) in
+                user.getTokenForcingRefresh(true, completion: { (token, error) in
                     if token != nil && error == nil {
                         subscriber.onNext(token!)
                         subscriber.onCompleted()
@@ -125,7 +125,7 @@ import Firebase
                 } else {
                     subscriber.onError(NSError(domain: "APIFacade",
                                                  code: 771,
-                                             userInfo: [NSLocalizedDescriptionKey:"Cant't  sisgn in with firebase"]))
+                                             userInfo: [NSLocalizedDescriptionKey:"Cant't  sign in with firebase"]))
                 }
             }
             return AnonymousDisposable { }

@@ -12,6 +12,7 @@ import RealmSwift
 import RxSwift
 import RxCocoa
 
+let UpdateContentNotification = "UpdateContentNotification"
 
 class SingleListViewController: UITableViewController {
 
@@ -37,6 +38,9 @@ class SingleListViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         self.bindViewModel()
         self.configureDataSource()
+        
+        // Observe when content is updated.
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(fetch), name: UpdateContentNotification, object: nil)
     }
 
     override func viewDidAppear(animated: Bool) {
@@ -60,7 +64,7 @@ class SingleListViewController: UITableViewController {
         refreshControl.endRefreshing()
     }
 
-    func fetch() {
+    @objc func fetch() {
         self.viewModel?.fetchInitial().subscribeError{ [weak self] error in
             self?.showErrorAlert(error, action: nil)
             }.addDisposableTo(self.disposableBag)
@@ -176,6 +180,10 @@ class SingleListViewController: UITableViewController {
         share.backgroundColor = UIColor(patternImage:UIImage(named: "share")!)
         
         return [delete, share]
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UpdateContentNotification, object: nil)
     }
     
     /*
