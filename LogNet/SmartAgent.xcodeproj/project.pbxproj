@@ -576,6 +576,7 @@
 					EAE50A571D12CEEB00B4329B = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 8UGVNM2VM6;
+						LastSwiftMigration = 0800;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -587,10 +588,12 @@
 					};
 					EAE50A6B1D12CEEC00B4329B = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = EAE50A571D12CEEB00B4329B;
 					};
 					EAE50A761D12CEEC00B4329B = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = EAE50A571D12CEEB00B4329B;
 					};
 				};
@@ -954,6 +957,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = lognet.LogNet;
 				PRODUCT_NAME = SmartAgent;
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -970,6 +974,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = lognet.LogNet;
 				PRODUCT_NAME = SmartAgent;
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
@@ -981,6 +986,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = lognet.LogNetTests;
 				PRODUCT_NAME = SmartAgent;
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SmartAgent.app/SmartAgent";
 			};
 			name = Debug;
@@ -993,6 +999,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = lognet.LogNetTests;
 				PRODUCT_NAME = SmartAgent;
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SmartAgent.app/SmartAgent";
 			};
 			name = Release;
@@ -1004,6 +1011,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = lognet.LogNetUITests;
 				PRODUCT_NAME = SmartAgent;
+				SWIFT_VERSION = 2.3;
 				TEST_TARGET_NAME = LogNet;
 			};
 			name = Debug;
@@ -1015,6 +1023,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = lognet.LogNetUITests;
 				PRODUCT_NAME = SmartAgent;
+				SWIFT_VERSION = 2.3;
 				TEST_TARGET_NAME = LogNet;
 			};
 			name = Release;
