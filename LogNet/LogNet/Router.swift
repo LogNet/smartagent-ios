@@ -12,6 +12,10 @@ import UIKit
 class Router {
     private weak var loginViewController:LoginViewController?
     private weak var recentViewController:SingleListViewController?
+    private weak var ticketingDueViewController:SingleListViewController?
+    private weak var repriceViewController:SplitListsViewController?
+    private weak var cancelledViewController:SplitListsViewController?
+
     private var tabBarController:UITabBarController
     private var storyboard:UIStoryboard
     
@@ -24,13 +28,21 @@ class Router {
         self.setupCancelledViewController()
     }
    
+    func showUnreadNotificationsBages(unreadNotificationsInfo:UnreadMessagesInfo) {
+        self.repriceViewController?.navigationController?.tabBarItem.badgeValue = unreadNotificationsInfo.reprice
+        self.ticketingDueViewController?.navigationController?.tabBarItem.badgeValue = unreadNotificationsInfo.ticketingDue
+        self.recentViewController?.navigationController?.tabBarItem.badgeValue = unreadNotificationsInfo.total
+        self.cancelledViewController?.navigationController?.tabBarItem.badgeValue = unreadNotificationsInfo.cancelled
+    }
+    
     func setupTicketingDueViewControler() {
         let navigationController = self.tabBarController.viewControllers?.last as? UINavigationController
-        let recentViewController = navigationController?.viewControllers.first as? SingleListViewController
+        let ticketingDueViewController = navigationController?.viewControllers.first as? SingleListViewController
         let model = ListModelFactory.getSingleListModel()
         let notificationsViewModel = SingleListViewModel.ticketingDueViewModel(model, router: self)
-        recentViewController!.viewModel = notificationsViewModel;
-        recentViewController?.dataSource = NotificationDataSource()
+        ticketingDueViewController!.viewModel = notificationsViewModel;
+        ticketingDueViewController?.dataSource = NotificationDataSource()
+        self.ticketingDueViewController = ticketingDueViewController
     }
     
     func setupHomeViewController() {
@@ -48,6 +60,7 @@ class Router {
         let splitListsViewController = navigationController?.viewControllers.first as? SplitListsViewController
         // TODO: Needs refactoring
         splitListsViewController?.router = self
+        splitListsViewController?.listType = ListType.Reprice
         
         // TODO: Needs refactoring
         // Pending view controller
@@ -63,6 +76,7 @@ class Router {
 
         splitListsViewController?.completedViewModel = notificationsViewModel2
         splitListsViewController?.completedDataSource = NotificationDataSource()
+        self.repriceViewController = splitListsViewController
     }
     
     func setupCancelledViewController() {
@@ -71,7 +85,8 @@ class Router {
         
         // TODO: Needs refactoring
         splitListsViewController?.router = self
-        
+        splitListsViewController?.listType = ListType.Cancelled
+
         // TODO: Needs refactoring
         // Pending view controller
         let model = ListModelFactory.getSingleListModel()
@@ -86,9 +101,7 @@ class Router {
         
         splitListsViewController?.completedViewModel = notificationsViewModel2
         splitListsViewController?.completedDataSource = NotificationDataSource()
-        
-        //        recentViewController!.viewModel = notificationsViewModel;
-        //        recentViewController?.dataSource = TicketingDueDataSource()
+        self.cancelledViewController = splitListsViewController
     }
     
     func showSearchView() {
@@ -159,7 +172,7 @@ class Router {
     func openPNRFromRemouteNotification(notification_id: String) {
         self.tabBarController.selectedIndex = 0
         let navigationController = self.tabBarController.selectedViewController as! UINavigationController
-        let pnrViewController = self.storyboard.instantiateViewControllerWithIdentifier("RepricePNRView") as! RepricePNRView
+        let pnrViewController = self.storyboard.instantiateViewControllerWithIdentifier("PNRInfoViewController") as! PNRInfoViewController
         pnrViewController.viewModel = self.getPNRViewModel(notification_id)
         pnrViewController.dataSource = PNRDataSource()
         navigationController.pushViewController(pnrViewController, animated: true)
@@ -167,7 +180,7 @@ class Router {
     
     func showPNRDetails(notification_id: String) {
         let navigationController = self.tabBarController.selectedViewController as! UINavigationController
-        let pnrViewController = self.storyboard.instantiateViewControllerWithIdentifier("RepricePNRView") as! RepricePNRView
+        let pnrViewController = self.storyboard.instantiateViewControllerWithIdentifier("PNRInfoViewController") as! PNRInfoViewController
         pnrViewController.viewModel = self.getPNRViewModel(notification_id)
         pnrViewController.dataSource = PNRDataSource()
         navigationController.pushViewController(pnrViewController, animated: true)

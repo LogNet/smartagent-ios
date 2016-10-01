@@ -26,10 +26,13 @@
 		EA35A8671D40025400BE3618 /* SplitListsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA35A8661D40025400BE3618 /* SplitListsViewController.swift */; };
 		EA35A8691D4014FF00BE3618 /* AbstractDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA35A8681D4014FF00BE3618 /* AbstractDataSource.swift */; };
 		EA35A86B1D40152100BE3618 /* AbstractContentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA35A86A1D40152100BE3618 /* AbstractContentProvider.swift */; };
-		EA42EAF11D438C7600451BB9 /* RepricePNRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA42EAF01D438C7600451BB9 /* RepricePNRView.swift */; };
+		EA42EAF11D438C7600451BB9 /* PNRInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA42EAF01D438C7600451BB9 /* PNRInfoViewController.swift */; };
 		EA7ECA5B1D1BAD780014010A /* RecentNotificationCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7ECA5A1D1BAD780014010A /* RecentNotificationCellViewModel.swift */; };
 		EA7ECA5D1D1BB41E0014010A /* RecentNotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7ECA5C1D1BB41E0014010A /* RecentNotificationCell.swift */; };
 		EA8BB9401D21A04200D07561 /* PushTokenUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8BB93F1D21A04200D07561 /* PushTokenUtil.swift */; };
+		EA8C3CFB1D8D69CB00904E72 /* TickeningDueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8C3CFA1D8D69CB00904E72 /* TickeningDueViewController.swift */; };
+		EA8C3CFD1D8D6B8C00904E72 /* RepriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8C3CFC1D8D6B8C00904E72 /* RepriceViewController.swift */; };
+		EA8C3CFF1D8D6B9E00904E72 /* CancelledViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8C3CFE1D8D6B9E00904E72 /* CancelledViewController.swift */; };
 		EA8CDA4A1D2C44A50090E9C1 /* SmartAgentServerServise.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8CDA491D2C44A50090E9C1 /* SmartAgentServerServise.swift */; };
 		EA93F1371D68AA2400A12109 /* SearchHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F1361D68AA2400A12109 /* SearchHistoryCell.swift */; };
 		EA93F1391D68AAE000A12109 /* SearchHistoryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F1381D68AAE000A12109 /* SearchHistoryCellViewModel.swift */; };
@@ -63,6 +66,10 @@
 		EA93F1751D72F22100A12109 /* PNRHotelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F1741D72F22100A12109 /* PNRHotelCell.swift */; };
 		EA93F1771D72F23200A12109 /* PNRCarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F1761D72F23200A12109 /* PNRCarCell.swift */; };
 		EA93F1791D73393400A12109 /* PNRContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F1781D73393400A12109 /* PNRContactCell.swift */; };
+		EAAD18771D91D607006D6EF7 /* AppAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAD18761D91D607006D6EF7 /* AppAnalytics.swift */; };
+		EAAD18791D91D7C6006D6EF7 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAD18781D91D7C6006D6EF7 /* Events.swift */; };
+		EAB680D21D8E9E1C0027C0BE /* UnreadMessagesInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB680D11D8E9E1C0027C0BE /* UnreadMessagesInfo.swift */; };
+		EAB680D41D8EA1350027C0BE /* UnreadMessagesInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB680D31D8EA1350027C0BE /* UnreadMessagesInfoModel.swift */; };
 		EAD0C6811D5787600033B307 /* NSErrorExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD0C6801D5787600033B307 /* NSErrorExtention.swift */; };
 		EAD0C6841D578BED0033B307 /* ErrorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD0C6831D578BED0033B307 /* ErrorUtil.swift */; };
 		EAD0C6881D57B46D0033B307 /* ActivationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD0C6871D57B46D0033B307 /* ActivationViewModel.swift */; };
@@ -90,6 +97,7 @@
 		EAEF7B331D67998100E00729 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEF7B321D67998100E00729 /* SearchTableViewController.swift */; };
 		EAEF7B351D6799C900E00729 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEF7B341D6799C900E00729 /* SearchViewModel.swift */; };
 		EAEF7B371D67A03000E00729 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEF7B361D67A03000E00729 /* SearchModel.swift */; };
+		EAF70C501D8ECA6C002349BB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF70C4F1D8ECA6C002349BB /* Constants.swift */; };
 		EAFD27F71D5AF9EB00818E48 /* SingleListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFD27F61D5AF9EB00818E48 /* SingleListViewModel.swift */; };
 		EAFD27F91D5C3F7B00818E48 /* RecentDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFD27F81D5C3F7B00818E48 /* RecentDataSource.swift */; };
 		EAFD27FD1D5C43D300818E48 /* RecentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAFD27FC1D5C43D300818E48 /* RecentViewController.swift */; };
@@ -135,10 +143,13 @@
 		EA35A8661D40025400BE3618 /* SplitListsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitListsViewController.swift; sourceTree = "<group>"; };
 		EA35A8681D4014FF00BE3618 /* AbstractDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractDataSource.swift; sourceTree = "<group>"; };
 		EA35A86A1D40152100BE3618 /* AbstractContentProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractContentProvider.swift; sourceTree = "<group>"; };
-		EA42EAF01D438C7600451BB9 /* RepricePNRView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepricePNRView.swift; sourceTree = "<group>"; };
+		EA42EAF01D438C7600451BB9 /* PNRInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNRInfoViewController.swift; sourceTree = "<group>"; };
 		EA7ECA5A1D1BAD780014010A /* RecentNotificationCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentNotificationCellViewModel.swift; sourceTree = "<group>"; };
 		EA7ECA5C1D1BB41E0014010A /* RecentNotificationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentNotificationCell.swift; sourceTree = "<group>"; };
 		EA8BB93F1D21A04200D07561 /* PushTokenUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushTokenUtil.swift; sourceTree = "<group>"; };
+		EA8C3CFA1D8D69CB00904E72 /* TickeningDueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickeningDueViewController.swift; sourceTree = "<group>"; };
+		EA8C3CFC1D8D6B8C00904E72 /* RepriceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepriceViewController.swift; sourceTree = "<group>"; };
+		EA8C3CFE1D8D6B9E00904E72 /* CancelledViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelledViewController.swift; sourceTree = "<group>"; };
 		EA8CDA491D2C44A50090E9C1 /* SmartAgentServerServise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmartAgentServerServise.swift; sourceTree = "<group>"; };
 		EA93F1361D68AA2400A12109 /* SearchHistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchHistoryCell.swift; sourceTree = "<group>"; };
 		EA93F1381D68AAE000A12109 /* SearchHistoryCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchHistoryCellViewModel.swift; sourceTree = "<group>"; };
@@ -172,6 +183,10 @@
 		EA93F1741D72F22100A12109 /* PNRHotelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNRHotelCell.swift; sourceTree = "<group>"; };
 		EA93F1761D72F23200A12109 /* PNRCarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNRCarCell.swift; sourceTree = "<group>"; };
 		EA93F1781D73393400A12109 /* PNRContactCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNRContactCell.swift; sourceTree = "<group>"; };
+		EAAD18761D91D607006D6EF7 /* AppAnalytics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppAnalytics.swift; sourceTree = "<group>"; };
+		EAAD18781D91D7C6006D6EF7 /* Events.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
+		EAB680D11D8E9E1C0027C0BE /* UnreadMessagesInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnreadMessagesInfo.swift; sourceTree = "<group>"; };
+		EAB680D31D8EA1350027C0BE /* UnreadMessagesInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnreadMessagesInfoModel.swift; sourceTree = "<group>"; };
 		EAD0C6801D5787600033B307 /* NSErrorExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSErrorExtention.swift; sourceTree = "<group>"; };
 		EAD0C6831D578BED0033B307 /* ErrorUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorUtil.swift; sourceTree = "<group>"; };
 		EAD0C6871D57B46D0033B307 /* ActivationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivationViewModel.swift; sourceTree = "<group>"; };
@@ -205,6 +220,7 @@
 		EAEF7B321D67998100E00729 /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		EAEF7B341D6799C900E00729 /* SearchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		EAEF7B361D67A03000E00729 /* SearchModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
+		EAF70C4F1D8ECA6C002349BB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EAFD27F61D5AF9EB00818E48 /* SingleListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleListViewModel.swift; sourceTree = "<group>"; };
 		EAFD27F81D5C3F7B00818E48 /* RecentDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentDataSource.swift; sourceTree = "<group>"; };
 		EAFD27FC1D5C43D300818E48 /* RecentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentViewController.swift; sourceTree = "<group>"; };
@@ -269,6 +285,8 @@
 				EAEF7B361D67A03000E00729 /* SearchModel.swift */,
 				EA93F13A1D68ABF700A12109 /* SearchHistoryItem.swift */,
 				EA93F14C1D6B996300A12109 /* PNRInfo.swift */,
+				EAB680D11D8E9E1C0027C0BE /* UnreadMessagesInfo.swift */,
+				EAB680D31D8EA1350027C0BE /* UnreadMessagesInfoModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -282,12 +300,15 @@
 				EA35A8591D3D825300BE3618 /* ActivationMessageViewController.swift */,
 				EA35A8621D3EC5DE00BE3618 /* NotificationCell.swift */,
 				EA35A8661D40025400BE3618 /* SplitListsViewController.swift */,
-				EA42EAF01D438C7600451BB9 /* RepricePNRView.swift */,
-				EAFD27FC1D5C43D300818E48 /* RecentViewController.swift */,
+				EA42EAF01D438C7600451BB9 /* PNRInfoViewController.swift */,
 				EAFD28001D5E47D300818E48 /* ContainerViewController.swift */,
 				EAEF7B321D67998100E00729 /* SearchTableViewController.swift */,
 				EA93F1361D68AA2400A12109 /* SearchHistoryCell.swift */,
+				EAFD27FC1D5C43D300818E48 /* RecentViewController.swift */,
+				EA8C3CFA1D8D69CB00904E72 /* TickeningDueViewController.swift */,
 				EA93F16B1D72F18A00A12109 /* PNRCells */,
+				EA8C3CFC1D8D6B8C00904E72 /* RepriceViewController.swift */,
+				EA8C3CFE1D8D6B9E00904E72 /* CancelledViewController.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -472,6 +493,7 @@
 				EAE50A671D12CEEB00B4329B /* Info.plist */,
 				EA2637431D12E46600D5988D /* GoogleService-Info.plist */,
 				EA8BB93F1D21A04200D07561 /* PushTokenUtil.swift */,
+				EAF70C4F1D8ECA6C002349BB /* Constants.swift */,
 			);
 			path = LogNet;
 			sourceTree = "<group>";
@@ -498,6 +520,8 @@
 			isa = PBXGroup;
 			children = (
 				EAD0C6831D578BED0033B307 /* ErrorUtil.swift */,
+				EAAD18761D91D607006D6EF7 /* AppAnalytics.swift */,
+				EAAD18781D91D7C6006D6EF7 /* Events.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -575,8 +599,7 @@
 				TargetAttributes = {
 					EAE50A571D12CEEB00B4329B = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 8UGVNM2VM6;
-						LastSwiftMigration = 0800;
+						DevelopmentTeam = VQ79GX695K;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -588,12 +611,10 @@
 					};
 					EAE50A6B1D12CEEC00B4329B = {
 						CreatedOnToolsVersion = 7.3.1;
-						LastSwiftMigration = 0800;
 						TestTargetID = EAE50A571D12CEEB00B4329B;
 					};
 					EAE50A761D12CEEC00B4329B = {
 						CreatedOnToolsVersion = 7.3.1;
-						LastSwiftMigration = 0800;
 						TestTargetID = EAE50A571D12CEEB00B4329B;
 					};
 				};
@@ -730,9 +751,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA42EAF11D438C7600451BB9 /* RepricePNRView.swift in Sources */,
+				EA42EAF11D438C7600451BB9 /* PNRInfoViewController.swift in Sources */,
 				EA26375B1D16A1F700D5988D /* LoginModelsFactory.swift in Sources */,
 				EAD0C6811D5787600033B307 /* NSErrorExtention.swift in Sources */,
+				EAB680D21D8E9E1C0027C0BE /* UnreadMessagesInfo.swift in Sources */,
 				EADC60201D1B125C00B8743C /* NotificationsStorageRealm.swift in Sources */,
 				EADC60181D1A782B00B8743C /* RecentModelFactory.swift in Sources */,
 				EA93F14F1D6C088700A12109 /* AbstractPNRInfoStorage.swift in Sources */,
@@ -742,6 +764,8 @@
 				EAFD28011D5E47D400818E48 /* ContainerViewController.swift in Sources */,
 				EADC600E1D19785000B8743C /* SingleListViewController.swift in Sources */,
 				EA93F1591D6FF8DF00A12109 /* PassengerCellViewModel.swift in Sources */,
+				EA8C3CFB1D8D69CB00904E72 /* TickeningDueViewController.swift in Sources */,
+				EAAD18791D91D7C6006D6EF7 /* Events.swift in Sources */,
 				EA35A8581D3D6C4F00BE3618 /* UnderlinedTextField.swift in Sources */,
 				EA93F1621D6FFAC200A12109 /* ContactCellViewModel.swift in Sources */,
 				EAFD27F91D5C3F7B00818E48 /* RecentDataSource.swift in Sources */,
@@ -750,6 +774,7 @@
 				EA93F1511D6C0A2900A12109 /* PNRInfoStorageRealm.swift in Sources */,
 				EA35A8671D40025400BE3618 /* SplitListsViewController.swift in Sources */,
 				EA26374E1D15BE3D00D5988D /* Router.swift in Sources */,
+				EAAD18771D91D607006D6EF7 /* AppAnalytics.swift in Sources */,
 				EAEF7B351D6799C900E00729 /* SearchViewModel.swift in Sources */,
 				EA25E74E1D7781C300EDE80A /* UIViewControllerExtention.swift in Sources */,
 				EA93F1451D68D8AA00A12109 /* SearchDataSource.swift in Sources */,
@@ -762,12 +787,15 @@
 				EA93F1791D73393400A12109 /* PNRContactCell.swift in Sources */,
 				EA93F1431D68D84900A12109 /* SearchContentProvider.swift in Sources */,
 				EA93F1411D68B09500A12109 /* SearchHistoryStorageRealm.swift in Sources */,
+				EAB680D41D8EA1350027C0BE /* UnreadMessagesInfoModel.swift in Sources */,
+				EAF70C501D8ECA6C002349BB /* Constants.swift in Sources */,
 				EAFD27FF1D5C476100818E48 /* NotificationDataSource.swift in Sources */,
 				EA26375F1D16A59700D5988D /* SmartAgentServerParser.swift in Sources */,
 				EA93F14B1D6B98AB00A12109 /* PNRInfoModel.swift in Sources */,
 				EAD0C6841D578BED0033B307 /* ErrorUtil.swift in Sources */,
 				EA35A8631D3EC5DE00BE3618 /* NotificationCell.swift in Sources */,
 				EA2637521D15BF9000D5988D /* LoginModel.swift in Sources */,
+				EA8C3CFD1D8D6B8C00904E72 /* RepriceViewController.swift in Sources */,
 				EA93F1371D68AA2400A12109 /* SearchHistoryCell.swift in Sources */,
 				EADC60141D1A6FEA00B8743C /* ViewModel.swift in Sources */,
 				EA93F13D1D68ACBD00A12109 /* AbstractSearchHistoryStorage.swift in Sources */,
@@ -778,6 +806,7 @@
 				EAE50A5E1D12CEEB00B4329B /* LoginViewController.swift in Sources */,
 				EA93F1531D6C15C400A12109 /* PNRInfoViewModel.swift in Sources */,
 				EA93F13B1D68ABF700A12109 /* SearchHistoryItem.swift in Sources */,
+				EA8C3CFF1D8D6B9E00904E72 /* CancelledViewController.swift in Sources */,
 				EA93F15B1D6FF90300A12109 /* FlightCellViewModel.swift in Sources */,
 				EA7ECA5B1D1BAD780014010A /* RecentNotificationCellViewModel.swift in Sources */,
 				EA93F1731D72F20F00A12109 /* PNRFlightCell.swift in Sources */,
@@ -949,15 +978,15 @@
 			baseConfigurationReference = 71C3FF208C0ECE1879EE4482 /* Pods-SmartAgent.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				INFOPLIST_FILE = LogNet/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = lognet.LogNet;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lognet.SmartAgent;
 				PRODUCT_NAME = SmartAgent;
 				PROVISIONING_PROFILE = "";
-				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -966,15 +995,14 @@
 			baseConfigurationReference = EE8F0BF2C4AFB1E94B6D9B3B /* Pods-SmartAgent.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				INFOPLIST_FILE = LogNet/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = lognet.LogNet;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lognet.SmartAgent;
 				PRODUCT_NAME = SmartAgent;
 				PROVISIONING_PROFILE = "";
-				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
@@ -986,7 +1014,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = lognet.LogNetTests;
 				PRODUCT_NAME = SmartAgent;
-				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SmartAgent.app/SmartAgent";
 			};
 			name = Debug;
@@ -999,7 +1026,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = lognet.LogNetTests;
 				PRODUCT_NAME = SmartAgent;
-				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SmartAgent.app/SmartAgent";
 			};
 			name = Release;
@@ -1011,7 +1037,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = lognet.LogNetUITests;
 				PRODUCT_NAME = SmartAgent;
-				SWIFT_VERSION = 2.3;
 				TEST_TARGET_NAME = LogNet;
 			};
 			name = Debug;
@@ -1023,7 +1048,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = lognet.LogNetUITests;
 				PRODUCT_NAME = SmartAgent;
-				SWIFT_VERSION = 2.3;
 				TEST_TARGET_NAME = LogNet;
 			};
 			name = Release;

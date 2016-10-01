@@ -11,6 +11,7 @@ import UIKit
 class PNRStatusCell: UITableViewCell {
     
     @IBOutlet weak var notificationTitle: UILabel!
+    @IBOutlet weak var switchControl: UISwitch!
     
     var viewModel:StatusCellViewModel! {
         didSet{
@@ -31,5 +32,7 @@ class PNRStatusCell: UITableViewCell {
     
     private func prepareView() {
         self.notificationTitle.text = self.viewModel.title
+        self.switchControl.on = self.viewModel.keepRepricing
+        self.switchControl.enabled = true
     }
 }

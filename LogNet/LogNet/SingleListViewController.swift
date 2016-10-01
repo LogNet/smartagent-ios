@@ -41,10 +41,13 @@ class SingleListViewController: UITableViewController {
         
         // Observe when content is updated.
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(fetch), name: UpdateContentNotification, object: nil)
+//        self.tabBarController?.selectedViewController?.tabBarItem.badgeValue = "3"
+        
     }
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        self.viewModel?.trackScreen()
         dispatch_once(&token) {
             self.fetch()
         }
@@ -66,6 +69,7 @@ class SingleListViewController: UITableViewController {
 
     @objc func fetch() {
         self.viewModel?.fetchInitial().subscribeError{ [weak self] error in
+            error.logToCrashlytics()
             self?.showErrorAlert(error, action: nil)
             }.addDisposableTo(self.disposableBag)
     }
@@ -142,6 +146,7 @@ class SingleListViewController: UITableViewController {
         let deltaOffset = maximumOffset - currentOffset
         if deltaOffset <= 0 && self.viewModel?.hasNextChunk == true {
             self.viewModel?.fetchNext().subscribeError{ [weak self] error in
+                error.logToCrashlytics()
                 self?.showErrorAlert(error, action: nil)
                 }.addDisposableTo(self.disposableBag)
         }

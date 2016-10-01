@@ -12,6 +12,10 @@ import UIKit
 extension UIViewController {
     func showErrorAlert (error:ErrorType?, action:((UIAlertAction) -> Void)? ) {
         var message = "Something went wrong!"
+        if let ns_error = error as? NSError {
+            message = ns_error.localizedDescription
+        }
+        
         if error != nil {
             let ns_error = error as! NSError
             if ns_error.code == -1009 {
@@ -27,6 +31,9 @@ extension UIViewController {
     }
     
     func shareText(text:String) {
+        // Analytics.
+        AppAnalytics.logEvent(Events.ACTION_SHARE)
+        
         let activityViewController = UIActivityViewController(activityItems: [text], applicationActivities: nil)
             self.navigationController?.presentViewController(activityViewController, animated: true) {
             // ...

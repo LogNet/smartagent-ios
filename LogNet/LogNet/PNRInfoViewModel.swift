@@ -9,23 +9,40 @@
 import Foundation
 import RxSwift
 
-
 class PNRInfoViewModel: ViewModel {
     private let model:PNRInfoModel
     private let notification_id:String
     private var shareText:String?
     private let disposableBag = DisposeBag()
     private var contactNumber:String?
-    
+    let hasActiveAction = Variable(false)
+    var unreadNotificationsModel:UnreadMessagesInfoModel!
     var contentProvider:PNRContentProvider!
     
     init(model: PNRInfoModel,notification_id:String, router: Router) {
         self.notification_id = notification_id
         self.model = model
+        self.unreadNotificationsModel = UnreadMessagesInfoModel(apiFacade: self.model.apiFacade)
+        self.unreadNotificationsModel.parser = self.model.serverParser
         super.init(router: router)
     }
     
     // MARK: Public methods
+    
+    func reprice() -> Observable<Void> {
+        return self.model.executePendingOperation(self.notification_id, action: PNROperationAction.Reprice).flatMap{ result in
+            self.parseInfo(result)
+        }
+    }
+    
+    func keepRepricing() -> Observable<Void> {
+        let info = self.contentProvider.results.value?.first as! (PNRInfo, Notification)
+        let notification = info.1
+        let action = notification.typeStatus == TypeStatus.INACTIVE.rawValue ? PNROperationAction.ContinueRepricing : PNROperationAction.StopRepricing
+        return self.model.executePendingOperation(self.notification_id, action: action).flatMap { result in
+            self.parseInfo(result)
+        }
+    }
     
     func callToContact() {
         if let phone = self.contactNumber {
@@ -36,8 +53,12 @@ class PNRInfoViewModel: ViewModel {
     }
     
     func fetchPNRInfo() -> Observable<Void> {
-        return self.model.getPNRInfo(self.notification_id).flatMap{ pnrInfo in
-            self.parsePnrInfo(pnrInfo)
+        self.unreadNotificationsModel.getUnreadMessages().subscribeNext { [weak self] info in
+            self?.router.showUnreadNotificationsBages(info)
+        }.addDisposableTo(self.disposableBag)
+        
+        return self.model.getPNRInfo(self.notification_id).flatMap{ (pnrInfo, notification) in
+            self.parseInfo((pnrInfo, notification))
         }
     }
     
@@ -47,10 +68,13 @@ class PNRInfoViewModel: ViewModel {
     
     // MARK: Private methods
     
-    private func parsePnrInfo(pnrInfo:PNRInfo) -> Observable<Void> {
-        self.contentProvider.results.value = [pnrInfo]
-        self.contactNumber = pnrInfo.contact.phone
-        self.shareText = pnrInfo.shareText
+    private func parseInfo(info:(PNRInfo, Notification)) -> Observable<Void> {
+        self.contentProvider.results.value = [info]
+        if  let phone = info.0.contact?.phone {
+            self.contactNumber = phone
+        }
+        self.shareText = info.1.getShareText()
+        self.hasActiveAction.value = info.0.type == "RP"
         return Observable.just()
     }
 }

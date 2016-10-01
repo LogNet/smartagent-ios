@@ -11,5 +11,5 @@ import RxSwift
 import RxCocoa
 
 class BaseRXContentProvider {
-    let results:Variable<[AnyObject]?> = Variable(nil)
+    let results:Variable<[Any]?> = Variable(nil)
 }

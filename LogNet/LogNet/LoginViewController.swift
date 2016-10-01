@@ -35,6 +35,9 @@ class LoginViewController: UIViewController, MRCountryPickerDelegate, UITextFiel
         // Do any additional setup after loading the view, typically from a nib.
         self.bindViewModel()
         self.addCountryPicker()
+        
+        // Analytics.
+        AppAnalytics.logEvent(Events.SCREEN_LOGIN)
     }
 
     override func didReceiveMemoryWarning() {
@@ -91,10 +94,9 @@ class LoginViewController: UIViewController, MRCountryPickerDelegate, UITextFiel
     
     func isValidEmail() -> Bool {
         if self.loginViewModel?.email != nil {
-            let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+            let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
             let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
             return emailTest.evaluateWithObject(self.loginViewModel?.email)
-            
         }
         return false
     }
@@ -152,6 +154,7 @@ class LoginViewController: UIViewController, MRCountryPickerDelegate, UITextFiel
         } else {
             HUD.hide()
             self.showErrorAlert(error, action: nil)
+            error?.logToCrashlytics()
         }
     }
     
@@ -167,6 +170,9 @@ class LoginViewController: UIViewController, MRCountryPickerDelegate, UITextFiel
     }
     
     func startLogin()  {
+        // Analytics.
+        AppAnalytics.logEvent(Events.ACTION_LOGIN)
+        
         self.loginViewModel?.login({ [weak self] (error) in
             self?.loginCompletedWithError(error)
         })

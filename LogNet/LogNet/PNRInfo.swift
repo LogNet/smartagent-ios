@@ -61,12 +61,12 @@ class Car: Object {
 
 
 class PNRInfo: Object {
+    var isValid:Bool = true
     dynamic var type:String?
     dynamic var notification_id:String?
     dynamic var title:String?
-    dynamic var pnr:PNR!
-    dynamic var contact:Contact!
-    dynamic var shareText:String?
+    dynamic var pnr:PNR?
+    dynamic var contact:Contact?
 
     let passengers = List<Passenger>()
     let flights = List<Flight>()
@@ -105,7 +105,6 @@ class PNRInfo: Object {
         pnrInfo.hotels.appendContentsOf(self.hotels)
         pnrInfo.cars.appendContentsOf(self.cars)
         pnrInfo.flights.appendContentsOf(self.flights)
-        pnrInfo.shareText = self.shareText
         return pnrInfo
     }
     

@@ -12,6 +12,8 @@ import Alamofire
 
 class SmartAgentServerServise: ServerService {
     
+    static let ERROR_DOMAIN = "lognet.LogNet.SmartAgentServerService"
+    
     let baseURLString = "https://www.lognet-smartagent.com/"
     
     private lazy var manager : Alamofire.Manager = {
@@ -22,29 +24,6 @@ class SmartAgentServerServise: ServerService {
             NSHTTPCookieStorage.sharedHTTPCookieStorage().setCookie(cookie)
             manager.session.configuration.HTTPCookieStorage?.setCookie(cookie)
         }
-        
-//        manager.delegate.sessionDidReceiveChallenge = { session, challenge in
-//            var disposition: NSURLSessionAuthChallengeDisposition = .PerformDefaultHandling
-//            var credential: NSURLCredential?
-//            
-//            if challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust {
-//                disposition = NSURLSessionAuthChallengeDisposition.UseCredential
-//                credential = NSURLCredential(forTrust: challenge.protectionSpace.serverTrust!)
-//                print(credential)
-//            } else {
-//                if challenge.previousFailureCount > 0 {
-//                    disposition = .CancelAuthenticationChallenge
-//                } else {
-//                    credential = manager.session.configuration.URLCredentialStorage?.defaultCredentialForProtectionSpace(challenge.protectionSpace)
-//                    
-//                    if credential != nil {
-//                        disposition = .UseCredential
-//                    }
-//                }
-//            }
-//            
-//            return (disposition, credential)
-//        }
         
         return manager
     }()
@@ -81,12 +60,17 @@ class SmartAgentServerServise: ServerService {
                              "last_name":last_name]
                 let request = Alamofire.request(.POST, self.baseURLString + "registerDevice", parameters:parameters).responseJSON {response in
                     if response.result.error == nil {
-                        if let token = self.parseToken(response.result.value) {
+                        let result = self.parseToken(response.result.value)
+                        if let token = result.0 {
                             observer.onNext(token)
                             observer.onCompleted()
                         } else {
-                            let error = NSError(domain: "lognet.LogNet.SmartAgentServerService", code: -6123, userInfo: [NSLocalizedDescriptionKey: "Token can't be parsed."])
-                            observer.onError(error)
+                            if let error = result.1 {
+                                observer.onError(error)
+                            } else {
+                                let error = NSError(domain: SmartAgentServerServise.ERROR_DOMAIN, code: 0, userInfo: [NSLocalizedDescriptionKey: "Token can't be parsed. URL:\(response.response?.URL)"])
+                                observer.onError(error)
+                            }
                         }
                     } else {
                         observer.onError(response.result.error!)
@@ -111,6 +95,60 @@ class SmartAgentServerServise: ServerService {
             return AnonymousDisposable {
             }
         }
+    }
+    
+    func executePendingOperation(token: String, phone: String, notificationID:String, op_code:String) -> Observable<AnyObject> {
+        return Observable.create{ observer in
+            let headers = ["SA-DN":phone, "SA-REGID":token]
+            let parameters = ["device_number":phone,
+                "notification_id":notificationID,
+                "op_code":op_code]
+            let responce = self.manager.request(.POST,self.baseURLString + "executePendingOperation",
+                parameters: parameters, headers: headers).responseJSON(completionHandler: { response in
+                    if response.result.error == nil {
+                        if response.result.value != nil {
+                            observer.onNext(response.result.value!)
+                            observer.onCompleted()
+                        } else {
+                            let error = NSError(domain: SmartAgentServerServise.ERROR_DOMAIN,
+                                code: 0,
+                                userInfo: [NSLocalizedDescriptionKey: "Server response is nil. URL:\(response.response?.URL)"])
+                            observer.onError(error)
+                        }
+                    } else {
+                        observer.onError(response.result.error!)
+                    }
+                })
+            return AnonymousDisposable {
+                responce.cancel()
+            }
+        }
+    }
+    
+    func getUnreadNotificationsCount(phoneNumber phoneNumber:String,
+        token:String) -> Observable<AnyObject> {
+        return Observable.create({ observer in
+            let headers = ["SA-DN":phoneNumber, "SA-REGID":token]
+            let request = self.manager.request(.GET, self.baseURLString + "getUnreadNotificationsCount",
+                parameters: nil, headers: headers).responseJSON(completionHandler: { response in
+                    if response.result.error == nil {
+                        if response.result.value != nil {
+                            observer.onNext(response.result.value!)
+                            observer.onCompleted()
+                        } else {
+                            let error = NSError(domain: SmartAgentServerServise.ERROR_DOMAIN,
+                                code: 0,
+                                userInfo: [NSLocalizedDescriptionKey: "Server response is nil. URL:\(response.response?.URL)"])
+                            observer.onError(error)
+                        }
+                    } else {
+                        observer.onError(response.result.error!)
+                    }
+                })
+            return AnonymousDisposable {
+                request.cancel()
+            }
+        })
     }
     
     func getNotificationList(phoneNumber phoneNumber:String,
@@ -142,9 +180,9 @@ class SmartAgentServerServise: ServerService {
                             observer.onNext(response.result.value!)
                             observer.onCompleted()
                         } else {
-                             let error = NSError(domain: "lognet.LogNet.SmartAgentServerService",
-                                                 code: -6123,
-                                             userInfo: [NSLocalizedDescriptionKey: "Server response is nil."])
+                             let error = NSError(domain: SmartAgentServerServise.ERROR_DOMAIN,
+                                                 code: 0,
+                                             userInfo: [NSLocalizedDescriptionKey: "Server response is nil. URL:\(response.response?.URL)"])
                             observer.onError(error)
                         }
                     } else {
@@ -171,9 +209,9 @@ class SmartAgentServerServise: ServerService {
                         observer.onNext(response.result.value!)
                         observer.onCompleted()
                     } else {
-                        let error = NSError(domain: "lognet.LogNet.SmartAgentServerService",
-                            code: -6123,
-                            userInfo: [NSLocalizedDescriptionKey: "Server response is nil."])
+                        let error = NSError(domain: SmartAgentServerServise.ERROR_DOMAIN,
+                            code: 0,
+                            userInfo: [NSLocalizedDescriptionKey: "Server response is nil. URL:\(response.response?.URL)"])
                         observer.onError(error)
                     }
                 } else {
@@ -200,11 +238,18 @@ class SmartAgentServerServise: ServerService {
         return cookie
     }
     
-    private func parseToken(JSON:AnyObject?) -> String? {
+    private func parseToken(JSON:AnyObject?) -> (String?, NSError?) {
         if let token = JSON?["registration_token"] as? String {
-            return token
+            return (token, nil)
+        } else {
+            if let message = JSON?["message"] as? String {
+                let error = NSError(domain: SmartAgentServerServise.ERROR_DOMAIN,
+                                    code: 0,
+                                    userInfo: [NSLocalizedDescriptionKey: message])
+                return (nil, error)
+            }
         }
-        return nil
+        return (nil, nil)
     }
     
     private func validParameter(parameter:AnyObject?) -> AnyObject {

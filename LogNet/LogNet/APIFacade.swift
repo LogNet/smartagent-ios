@@ -18,6 +18,13 @@ import Firebase
 		self.service = service
 	}
     
+    func executePendingOperation(notificationID:String, op_code:String) -> Observable<AnyObject> {
+        let observable = self.getCredentials().flatMap { (phone, token) in
+            return self.service.executePendingOperation(token, phone: phone, notificationID: notificationID, op_code: op_code)
+        }
+        return observable
+    }
+    
     func deleteNotification(notificationID:String) -> Observable<Void> {
         let observable = self.getCredentials().flatMap { (phone, token) in
             return self.service.deleteNotification(phone, token: token, notification_id: notificationID)
@@ -40,6 +47,14 @@ import Firebase
         }
         return observable
 	}
+    
+    func getUnreadNotificationsCount() -> Observable<AnyObject> {
+        // Return sequense.
+        let observable = self.getCredentials().flatMap { (phone, token) in
+            return self.service.getUnreadNotificationsCount(phoneNumber: phone, token: token)
+        }
+        return observable
+    }
     
     func register(phoneNumber: String, first_name: String,
                   last_name: String, email: String, uuid: String) -> Observable<()> {
@@ -95,7 +110,7 @@ import Firebase
         return Observable.create({ (subscriber) -> Disposable in
             if let user = FIRAuth.auth()?.currentUser {
                 // User is signed in.
-                user.getTokenForcingRefresh(true, completion: { (token, error) in
+                user.getTokenForcingRefresh(false, completion: { (token, error) in
                     if token != nil && error == nil {
                         subscriber.onNext(token!)
                         subscriber.onCompleted()

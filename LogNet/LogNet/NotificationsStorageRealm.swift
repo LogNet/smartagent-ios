@@ -18,6 +18,13 @@ class NotificationsStorageRealm: RealmStorage, AbstractNotificationsStorage {
     
     // MARK: Public
     
+    func notificationByID(notification_id:String) throws -> Notification? {
+        let realm = try Realm()
+        let notifications = realm.objects(Notification.self).filter("notification_id == '\(notification_id)'")
+        return notifications.first
+    }
+
+    
     func markAsDeleted(notification_id:String) throws {
         let realm = try Realm()
         let notifications = realm.objects(Notification.self).filter("notification_id == '\(notification_id)'")
@@ -41,6 +48,7 @@ class NotificationsStorageRealm: RealmStorage, AbstractNotificationsStorage {
             notif.notification_time = notification.notification_time
             notif.pnr_summary = notification.pnr_summary
             notif.contact_name = notification.pnr_summary
+            notif.typeStatus = notification.typeStatus
         }
         try! realm.commitWrite()
     }
@@ -94,8 +102,7 @@ class NotificationsStorageRealm: RealmStorage, AbstractNotificationsStorage {
             })
         }
     }
-
-
+    
     
     func search(query: String) throws -> [Notification]? {
     

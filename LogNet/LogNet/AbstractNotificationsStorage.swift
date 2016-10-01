@@ -17,5 +17,6 @@ protocol AbstractNotificationsStorage {
     func getSuggestTitles(query:String) throws -> [String]?
     func updateNotification(notification:Notification)
     func markAsDeleted(notification_id:String) throws
+    func notificationByID(notification_id:String) throws -> Notification?
 }
 

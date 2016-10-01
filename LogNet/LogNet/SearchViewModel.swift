@@ -20,13 +20,13 @@ class SearchViewModel: ViewModel {
         super.init(router: router)
     }
     
-    func searchNotifications(query:String) -> Observable <[RecentNotificationCellViewModel]?> {
+    func searchNotifications(query:String) -> Observable <[Any]?> {
         return self.model.searchNotifications(query).flatMap { notifications in
             self.notificationsViewModels(notifications)
         }
     }
     
-    func notificationsViewModels(notifications:[Notification]?) -> Observable<[RecentNotificationCellViewModel]?> {
+    func notificationsViewModels(notifications:[Notification]?) -> Observable<[Any]?> {
         guard notifications != nil else {
             return Observable.just([])
         }
@@ -70,6 +70,21 @@ class SearchViewModel: ViewModel {
         
         if let item = self.contentProvider.results.value?[selectedRow] as? RecentNotificationCellViewModel{
             self.router.showPNRDetails(item.notification.notification_id)
+            switch item.notification.type! {
+            case "RP":
+                // Analytics.
+                AppAnalytics.logEvent(Events.SCREEN_REPRICE_DETAILS)
+                break
+            case "C":
+                // Analytics.
+                AppAnalytics.logEvent(Events.SCREEN_CANCELLED_DETAILS)
+                break
+            default:
+                // Analytics.
+                AppAnalytics.logEvent(Events.SCREEN_TICKET_DUE_DETAILS)
+                break
+            }
+
         }
         return nil
     }

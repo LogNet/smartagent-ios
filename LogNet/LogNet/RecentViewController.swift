@@ -21,7 +21,12 @@ class RecentViewController: SingleListViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.tintColor = UIColor(red: 24/255.0, green: 89/255.0, blue: 217/255.0, alpha: 1)
 
+    }
+    
     /*
     // MARK: - Navigation
 

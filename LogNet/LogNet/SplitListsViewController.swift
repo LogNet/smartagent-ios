@@ -15,7 +15,7 @@ class SplitListsViewController: UIViewController {
     var completedViewModel:SingleListViewModel!
     var pendingDataSource:AbstractDataSource!
     var completedDataSource:AbstractDataSource!
-    
+    var listType:ListType!
     //TODO: Needs refactoring
     var router:Router!
 
@@ -36,6 +36,11 @@ class SplitListsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        // Analytics.
+        AppAnalytics.logEvent(self.listType == ListType.Reprice ? Events.SCREEN_REPRICE_LIST : Events.SCREEN_CANCELLED_LIST)
+    }
 
     // MARK: - IBActions
 

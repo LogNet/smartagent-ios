@@ -25,6 +25,34 @@ class SmartAgentParser: ServerParser {
         return nil
     }
     
+    func parseUnreadMessagesInfo(JSON: AnyObject) -> (UnreadMessagesInfo?, ErrorType?) {
+        guard let dict = JSON as? [String:Int] else {
+            if let error = self.checkOnErrorStatus(JSON){
+                return (nil, error)
+            } else {
+                return (nil, ApplicationError.Unknown)
+            }
+        }
+        let unreadMessagesInfo = UnreadMessagesInfo()
+        
+        if let count = dict["RP"] {
+            unreadMessagesInfo.reprice = String(count)
+        }
+        
+        if let count = dict["TD"] {
+            unreadMessagesInfo.ticketingDue = String(count)
+        }
+        
+        if let count = dict["C"] {
+            unreadMessagesInfo.cancelled = String(count)
+        }
+        
+        if let count = dict["total"] {
+            unreadMessagesInfo.total = String(count)
+        }
+        return (unreadMessagesInfo, nil)
+    }
+    
     func parsePNRInfo(JSON:AnyObject) -> (result:(PNRInfo?, Notification?), ErrorType?) {
         print(JSON)
         let pnrInfo = PNRInfo()
@@ -35,20 +63,10 @@ class SmartAgentParser: ServerParser {
             pnrInfo.setFlights(self.parseFlights(jsonDict["flights"] as! Array))
             pnrInfo.setHotels(self.parseHotels(jsonDict["hotels"] as! Array))
             pnrInfo.setCars(self.parseCars(jsonDict["cars"] as! Array))
+        } else {
+            pnrInfo.isValid = false
         }
         if let jsonHeaderDict = JSON["header"] as? [String: AnyObject] {
-            pnrInfo.title = ""
-            if let text = jsonHeaderDict["title"] as? String {
-                pnrInfo.title = text
-            }
-            
-            if let text = jsonHeaderDict["title_message"] as? String {
-                pnrInfo.title = "\(pnrInfo.title!) - \(text)"
-            }
-            
-            if let text = jsonHeaderDict["type"] as? String {
-                pnrInfo.type = text
-            }
             let notification = self.parseNotificationFormDictionary(jsonHeaderDict)
             return ((pnrInfo, notification), nil)
         }
@@ -94,6 +112,7 @@ class SmartAgentParser: ServerParser {
         notification.notification_time = self.dateFormatter.dateFromString(time!)
         notification.pnr_summary = jsonNotification["pnr_summary"] as? String
         notification.contact_name = jsonNotification["contact_name"] as? String
+        notification.typeStatus = jsonNotification["typeStatus"] as? String
         return notification
     }
     
@@ -212,6 +231,9 @@ class SmartAgentParser: ServerParser {
         let code = jsonDict?["code"]
         let status = jsonDict?["status"]
         if (code != nil) && (status != nil) {
+            if jsonDict != nil {
+                NSError.logError(jsonDict!)
+            }
             return ErrorUtil.ErrorWithMessage(code as! String)
         }
         return nil

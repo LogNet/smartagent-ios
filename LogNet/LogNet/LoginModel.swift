@@ -38,7 +38,7 @@ class LoginModel {
         }
         _ = self.apiFacade.register(phoneNumber, first_name: first_name,
         last_name: last_name, email: email, uuid: uuid).subscribe(onError: { error in
-                completed(NSError(domain: "LoginModel", code: 666, userInfo: [NSLocalizedDescriptionKey: "Something went wrong!"]))
+                completed(error as NSError)
             }, onCompleted: { 
                 completed(nil)
             }).addDisposableTo(self.disposableBag)

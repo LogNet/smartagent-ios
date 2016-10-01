@@ -41,6 +41,10 @@ class SearchTableViewController: UITableViewController, UISearchControllerDelega
         self.definesPresentationContext = true
         self.viewModel.fetchHistory()
         self.bindViewModel()
+        
+        // Analytics.
+        AppAnalytics.logEvent(Events.ACTION_SHARE)
+
     }
 
     override func didReceiveMemoryWarning() {

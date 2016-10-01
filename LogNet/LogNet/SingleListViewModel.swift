@@ -19,7 +19,7 @@ class SingleListViewModel: ViewModel {
     dynamic var downloading:Bool = false
     dynamic var hasNextChunk:Bool = false;
     var contentProvider:AbstractContentProvider?
-    
+    var unreadMessageInfoModel:UnreadMessagesInfoModel!
     private var model:SingleListNotificationModel
     private let listType:ListType
     private let subtype: NotificationSubtype
@@ -55,11 +55,34 @@ class SingleListViewModel: ViewModel {
         self.listType = listType
         self.contentProvider = AbstractContentProvider(listType: listType, subtype: subtype)
         self.subtype = subtype
+// TODO: Needs refactoring.
+        self.unreadMessageInfoModel = UnreadMessagesInfoModel(apiFacade: model.apiFacade!)
+        self.unreadMessageInfoModel.parser = model.serverParser!
         super.init(router: router)
-        
     }
     
     // MARK: Public Methods
+    
+    func trackScreen()  {
+        switch self.listType {
+        case .Reprice:
+            // Analytics.
+            AppAnalytics.logEvent(self.subtype == NotificationSubtype.Pending ? Events.SCREEN_REPRICE_PENDING_LIST : Events.SCREEN_REPRICE_COMPLETE_LIST)
+            break
+        case .Cancelled:
+            // Analytics.
+            AppAnalytics.logEvent(self.subtype == NotificationSubtype.Pending ? Events.SCREEN_CANCELLED_PENDING_LIST : Events.SCREEN_CANCELLED_COMPLETE_LIST)
+            break
+        case .TicketingDue:
+            // Analytics.
+            AppAnalytics.logEvent(Events.SCREEN_TICKET_DUE_LIST)
+            break
+        default:
+            // Analytics.
+            AppAnalytics.logEvent(Events.SCREEN_RECENT_LIST)
+            break
+        }
+    }
     
     func openSearch() {
         self.router.showSearchView()
@@ -67,6 +90,20 @@ class SingleListViewModel: ViewModel {
     
     func selectModelForIndex(index:Int) {
         if let notification = self.contentProvider?.notifications[index] {
+            switch notification.type! {
+            case "RP":
+                // Analytics.
+                AppAnalytics.logEvent(Events.SCREEN_REPRICE_DETAILS)
+                break
+            case "C":
+                // Analytics.
+                AppAnalytics.logEvent(Events.SCREEN_CANCELLED_DETAILS)
+                break
+            default:
+                // Analytics.
+                AppAnalytics.logEvent(Events.SCREEN_TICKET_DUE_DETAILS)
+                break
+            }
             self.router.showPNRDetails(notification.notification_id)
         }
     }
@@ -101,6 +138,10 @@ class SingleListViewModel: ViewModel {
     // MARK: Private Methods
     
     private func startFetching(offset:Int) -> Observable<Void> {
+        self.unreadMessageInfoModel.getUnreadMessages().subscribeNext{ [weak self] info in
+            self?.router.showUnreadNotificationsBages(info)
+        }.addDisposableTo(self.disposeBag)
+        
         return Observable.create { observer in
             _ = self.model.fetchNotifications(self.listType,subtype: self.subtype, offset: offset).subscribe(onNext: { [weak self] hasNextChunk in
                 self!.hasNextChunk = hasNextChunk
@@ -110,12 +151,15 @@ class SingleListViewModel: ViewModel {
                     self!.downloading = false;
                     switch error {
                     case ApplicationError.FORBIDDEN:
+                        ApplicationError.FORBIDDEN.getError().logToCrashlytics()
                         self!.router.showLoginView()
                         break
                     case ApplicationError.NOT_ACTIVATED:
+                        ApplicationError.NOT_ACTIVATED.getError().logToCrashlytics()
                         self!.router.showNoActivatedView()
                         break
                     default:
+                        error.logToCrashlytics()
                         observer.onError(error)
                         break
                     }

@@ -22,6 +22,9 @@ class ActivationMessageViewController: UIViewController {
         self.title = "Smart Agent"
         self.bindViewModel()
         self.subscribeToNotificationCenter()
+        
+        // Analytics.
+        AppAnalytics.logEvent(Events.SCREEN_NOT_ACTIVATED)
     }
 
     override func didReceiveMemoryWarning() {

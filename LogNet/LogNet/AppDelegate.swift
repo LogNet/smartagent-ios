@@ -76,9 +76,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
         // If you are receiving a notification message while your app is in the background,
         // this callback will not be fired till the user taps on the notification launching the application.
-        // Print message ID.
-//        print("Message ID: \(userInfo["gcm.message_id"]!)")
-//        print("Push notification info: \(userInfo)")
         // Print full message.
         FIRMessaging.messaging().appDidReceiveMessage(userInfo)
         if application.applicationState != UIApplicationState.Active {
@@ -113,7 +110,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
-        print("Failed to register:", error)
+        error.logToCrashlytics()
     }
     
     // MARK: Application Lifecycle

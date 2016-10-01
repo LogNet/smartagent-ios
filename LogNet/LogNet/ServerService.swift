@@ -21,4 +21,7 @@ protocol ServerService {
     func sendNotificationToken(notificationToken:String, phone:String, registrationToken:String) -> Observable<Void>
     func getNotificationData(phoneNumber:String, token:String, notification_id:String) -> Observable<AnyObject>
     func deleteNotification(phoneNumber:String, token:String, notification_id:String) -> Observable<Void>
+    func getUnreadNotificationsCount(phoneNumber phoneNumber:String,
+                                                 token:String) -> Observable<AnyObject>
+    func executePendingOperation(token: String, phone: String, notificationID:String, op_code:String) -> Observable<AnyObject>
 }

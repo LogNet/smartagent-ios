@@ -7,9 +7,9 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>107254090042-vrgfo7ptgahgb6tbe89a4gvne9ga1fss.apps.googleusercontent.com</string>
+	<string>107254090042-d3di6vi4s15m8klbt7bcv8c1u3otki4l.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.107254090042-vrgfo7ptgahgb6tbe89a4gvne9ga1fss</string>
+	<string>com.googleusercontent.apps.107254090042-d3di6vi4s15m8klbt7bcv8c1u3otki4l</string>
 	<key>API_KEY</key>
 	<string>AIzaSyDMlPvhZw_cKJVsYLGM-7PEExjTKRsUkdA</string>
 	<key>GCM_SENDER_ID</key>
@@ -17,7 +17,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>lognet.LogNet</string>
+	<string>com.lognet.SmartAgent</string>
 	<key>PROJECT_ID</key>
 	<string>project-6956468642047301028</string>
 	<key>STORAGE_BUCKET</key>
@@ -33,7 +33,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:107254090042:ios:c03d54c2464ed185</string>
+	<string>1:107254090042:ios:70fb44aae2377519</string>
 	<key>DATABASE_URL</key>
 	<string>https://project-6956468642047301028.firebaseio.com</string>
 </dict>
