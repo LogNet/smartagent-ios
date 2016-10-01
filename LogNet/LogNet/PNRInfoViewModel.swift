@@ -74,7 +74,7 @@ class PNRInfoViewModel: ViewModel {
             self.contactNumber = phone
         }
         self.shareText = info.1.getShareText()
-        self.hasActiveAction.value = info.0.type == "RP"
+        self.hasActiveAction.value = info.1.type == "RP"
         return Observable.just()
     }
 }

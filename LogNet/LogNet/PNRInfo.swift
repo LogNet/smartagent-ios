@@ -62,7 +62,6 @@ class Car: Object {
 
 class PNRInfo: Object {
     var isValid:Bool = true
-    dynamic var type:String?
     dynamic var notification_id:String?
     dynamic var title:String?
     dynamic var pnr:PNR?
@@ -97,7 +96,6 @@ class PNRInfo: Object {
     override func copy() -> AnyObject {
         let pnrInfo = PNRInfo()
         pnrInfo.title = self.title
-        pnrInfo.type = self.type
         pnrInfo.notification_id = self.notification_id
         pnrInfo.pnr = self.pnr
         pnrInfo.contact = self.contact
