@@ -21,6 +21,8 @@ class RecentNotificationCellViewModel {
     var title:String?
     var titleMessage:String?
     var contactName:String?
+    var alert_indicator = false
+    
     var pnrSummary:String?
     var date:String?
     var image:UIImage?
@@ -35,7 +37,8 @@ class RecentNotificationCellViewModel {
     func setupView() {
         self.titleMessage = self.notification.title_message
         self.title = self.notification.title
-        self.contactName = self.notification.contact_name;
+        self.contactName = self.notification.contact_name
+        self.alert_indicator = self.notification.alert_indicator
         self.pnrSummary = self.notification.pnr_summary
         if let time = self.notification.notification_time {
             self.date = self.dateFormatter.stringFromDate(time)

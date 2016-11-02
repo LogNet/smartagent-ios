@@ -163,6 +163,7 @@ class SmartAgentServerServise: ServerService {
                             "offset":self.validParameter(offset),
                              "chunk":self.validParameter(chunks_size)]
             let headers = ["SA-DN":phoneNumber, "SA-REGID":token]
+            print(headers)
             let request = self.manager.request(.GET, self.baseURLString + "getNotificationList",
                                             parameters: parameters, headers: headers)
                 

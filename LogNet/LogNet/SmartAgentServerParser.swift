@@ -113,6 +113,7 @@ class SmartAgentParser: ServerParser {
         notification.pnr_summary = jsonNotification["pnr_summary"] as? String
         notification.contact_name = jsonNotification["contact_name"] as? String
         notification.typeStatus = jsonNotification["typeStatus"] as? String
+        notification.alert_indicator = jsonNotification["alert_indicator"] as! Bool
         return notification
     }
     

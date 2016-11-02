@@ -177,6 +177,13 @@
                                                 <constraint firstAttribute="height" constant="24" id="hlD-9K-7nw"/>
                                             </constraints>
                                         </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="exclamation" translatesAutoresizingMaskIntoConstraints="NO" id="mL1-CV-JGS">
+                                            <rect key="frame" x="336" y="42" width="19" height="19"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="19" id="VCL-V7-gHv"/>
+                                                <constraint firstAttribute="height" constant="19" id="Xxk-DB-LMZ"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="HGH-de-ZAl" firstAttribute="trailing" secondItem="AUr-FO-cyE" secondAttribute="trailing" constant="-55" id="1pO-sG-629"/>
@@ -191,9 +198,11 @@
                                         <constraint firstItem="7uK-jd-fSW" firstAttribute="leading" secondItem="Vvg-aW-Q3P" secondAttribute="leadingMargin" constant="7" id="Sn8-iB-erp"/>
                                         <constraint firstItem="BJI-e4-tS3" firstAttribute="leading" secondItem="Og8-5S-qtg" secondAttribute="trailing" constant="6" id="W06-CZ-Hni"/>
                                         <constraint firstItem="7uK-jd-fSW" firstAttribute="top" secondItem="Vvg-aW-Q3P" secondAttribute="topMargin" constant="7" id="XGE-Fl-VNv"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="mL1-CV-JGS" secondAttribute="trailing" constant="12" id="XQ7-Th-6fn"/>
                                         <constraint firstItem="BJI-e4-tS3" firstAttribute="leading" secondItem="HGH-de-ZAl" secondAttribute="leading" id="dm1-xL-va6"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="BJI-e4-tS3" secondAttribute="trailing" constant="91" id="hHP-Yv-E1H"/>
                                         <constraint firstItem="7uK-jd-fSW" firstAttribute="top" secondItem="BJI-e4-tS3" secondAttribute="top" id="hrB-Dh-4Bf"/>
+                                        <constraint firstItem="mL1-CV-JGS" firstAttribute="top" secondItem="1S4-6d-RLi" secondAttribute="bottom" constant="8" id="jfa-mC-rhi"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="AUr-FO-cyE" secondAttribute="bottom" constant="-3" id="ow4-wc-Hkz"/>
                                         <constraint firstItem="HGH-de-ZAl" firstAttribute="top" secondItem="BJI-e4-tS3" secondAttribute="bottom" constant="5" id="rH8-gr-QmO"/>
                                         <constraint firstItem="AUr-FO-cyE" firstAttribute="top" secondItem="HGH-de-ZAl" secondAttribute="bottom" constant="6" id="sL9-Ke-8Gw"/>
@@ -202,6 +211,7 @@
                                 <connections>
                                     <outlet property="contactName" destination="HGH-de-ZAl" id="Y2u-0u-GS2"/>
                                     <outlet property="date" destination="1S4-6d-RLi" id="yYV-ff-z3o"/>
+                                    <outlet property="noticeIndicator" destination="mL1-CV-JGS" id="H0n-Z6-1hj"/>
                                     <outlet property="pnrSummary" destination="AUr-FO-cyE" id="eUP-Sg-bjQ"/>
                                     <outlet property="readIndicator" destination="Og8-5S-qtg" id="ZY2-gj-eER"/>
                                     <outlet property="title" destination="BJI-e4-tS3" id="4SK-ND-Ye9"/>
@@ -337,6 +347,13 @@
                                                 <constraint firstAttribute="width" constant="24" id="rfa-Zo-vwW"/>
                                             </constraints>
                                         </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="exclamation" translatesAutoresizingMaskIntoConstraints="NO" id="zZM-Wm-Gzp">
+                                            <rect key="frame" x="335" y="42" width="19" height="19"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="19" id="MUd-Tg-46F"/>
+                                                <constraint firstAttribute="height" constant="19" id="VPK-6c-gXx"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="HZn-Td-vzc" firstAttribute="leading" secondItem="xY6-SP-bYF" secondAttribute="trailing" constant="6" id="45E-7j-Ebc"/>
@@ -348,9 +365,11 @@
                                         <constraint firstAttribute="trailingMargin" secondItem="SLx-VA-a7N" secondAttribute="trailing" constant="-3" id="Dr8-rV-Md5"/>
                                         <constraint firstItem="Pca-10-VLw" firstAttribute="top" secondItem="HZn-Td-vzc" secondAttribute="bottom" constant="5" id="I8y-Vc-ptB"/>
                                         <constraint firstItem="xY6-SP-bYF" firstAttribute="top" secondItem="E0s-Ih-5ym" secondAttribute="topMargin" constant="9" id="KPd-m0-Zca"/>
+                                        <constraint firstItem="zZM-Wm-Gzp" firstAttribute="top" secondItem="SLx-VA-a7N" secondAttribute="bottom" constant="8" id="LTk-9O-iiu"/>
                                         <constraint firstItem="xY6-SP-bYF" firstAttribute="centerY" secondItem="HZn-Td-vzc" secondAttribute="centerY" id="MBK-wa-IpY"/>
                                         <constraint firstItem="Pca-10-VLw" firstAttribute="leading" secondItem="E0s-Ih-5ym" secondAttribute="leadingMargin" constant="60" id="PwF-Ri-MGf"/>
                                         <constraint firstItem="2ps-9w-xPY" firstAttribute="top" secondItem="HZn-Td-vzc" secondAttribute="top" id="Uej-iP-rTq"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="zZM-Wm-Gzp" secondAttribute="trailing" constant="13" id="VkJ-LM-DR2"/>
                                         <constraint firstItem="Pca-10-VLw" firstAttribute="leading" secondItem="deJ-Ih-aZV" secondAttribute="leading" id="VkT-dB-Ieo"/>
                                         <constraint firstItem="Pca-10-VLw" firstAttribute="trailing" secondItem="deJ-Ih-aZV" secondAttribute="trailing" constant="-48" id="Yp0-Qo-1kq"/>
                                         <constraint firstItem="2ps-9w-xPY" firstAttribute="top" secondItem="E0s-Ih-5ym" secondAttribute="topMargin" constant="7" id="ZmB-DV-yAq"/>
@@ -362,6 +381,7 @@
                                 <connections>
                                     <outlet property="contactName" destination="Pca-10-VLw" id="Nde-Jd-3EQ"/>
                                     <outlet property="date" destination="SLx-VA-a7N" id="lJZ-q9-PeS"/>
+                                    <outlet property="noticeIndicator" destination="zZM-Wm-Gzp" id="nHG-JE-dwn"/>
                                     <outlet property="pnrSummary" destination="deJ-Ih-aZV" id="zLm-u6-9Ih"/>
                                     <outlet property="readIndicator" destination="xY6-SP-bYF" id="hn5-5u-P5l"/>
                                     <outlet property="title" destination="HZn-Td-vzc" id="uQI-DY-vW5"/>
@@ -1323,7 +1343,7 @@
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NotificationCell" rowHeight="78" id="WMb-AQ-CmL" customClass="NotificationCell" customModule="SmartAgent" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="114" width="375" height="78"/>
+                                <rect key="frame" x="0.0" y="113.5" width="375" height="78"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WMb-AQ-CmL" id="zus-rr-LSs">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="77.5"/>
@@ -1389,8 +1409,16 @@
                                             <color key="textColor" red="0.60392156860000001" green="0.60392156860000001" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="exclamation" translatesAutoresizingMaskIntoConstraints="NO" id="dv2-Nz-e8V">
+                                            <rect key="frame" x="335" y="42" width="19" height="19"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="19" id="fsL-aw-76h"/>
+                                                <constraint firstAttribute="width" constant="19" id="jBj-qV-ccl"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="dv2-Nz-e8V" firstAttribute="top" secondItem="sxc-Sp-VW7" secondAttribute="bottom" constant="8" id="0kd-kA-kvA"/>
                                         <constraint firstItem="sxc-Sp-VW7" firstAttribute="top" secondItem="zus-rr-LSs" secondAttribute="topMargin" constant="9" id="9DR-Lq-ysb"/>
                                         <constraint firstItem="SoP-1v-5Ga" firstAttribute="leading" secondItem="zus-rr-LSs" secondAttribute="leadingMargin" constant="32" id="AKZ-Xq-bV9"/>
                                         <constraint firstItem="6R0-YQ-5xL" firstAttribute="leading" secondItem="SoP-1v-5Ga" secondAttribute="leading" id="C0z-so-y9c"/>
@@ -1403,6 +1431,7 @@
                                         <constraint firstItem="6R0-YQ-5xL" firstAttribute="leading" secondItem="cJQ-HP-EpJ" secondAttribute="trailing" constant="8" symbolic="YES" id="fkE-35-bYE"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="sxc-Sp-VW7" secondAttribute="bottom" constant="36" id="gUo-Nc-aNr"/>
                                         <constraint firstItem="cJQ-HP-EpJ" firstAttribute="top" secondItem="zus-rr-LSs" secondAttribute="topMargin" constant="12" id="iE0-pb-sle"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="dv2-Nz-e8V" secondAttribute="trailing" constant="13" id="j3b-Pk-UgW"/>
                                         <constraint firstItem="sxc-Sp-VW7" firstAttribute="leading" secondItem="CXd-N4-llW" secondAttribute="trailing" constant="52" id="k2f-Oi-nc0"/>
                                         <constraint firstItem="CXd-N4-llW" firstAttribute="top" secondItem="6R0-YQ-5xL" secondAttribute="bottom" constant="3" id="mxO-7x-62A"/>
                                         <constraint firstItem="cJQ-HP-EpJ" firstAttribute="centerY" secondItem="6R0-YQ-5xL" secondAttribute="centerY" constant="1" id="tvJ-OW-2yR"/>
@@ -1410,7 +1439,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="contactName" destination="CXd-N4-llW" id="kTF-7Y-fGW"/>
                                     <outlet property="date" destination="sxc-Sp-VW7" id="987-Ip-lG4"/>
+                                    <outlet property="noticeIndicator" destination="dv2-Nz-e8V" id="tad-Nd-env"/>
                                     <outlet property="pnrSummary" destination="SoP-1v-5Ga" id="jid-C3-Onf"/>
                                     <outlet property="readIndicator" destination="cJQ-HP-EpJ" id="Fhb-hJ-Dhl"/>
                                     <outlet property="title" destination="6R0-YQ-5xL" id="TAa-ly-l0f"/>
@@ -1490,10 +1521,10 @@
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NotificationCell" rowHeight="78" id="r7r-pv-zdM" customClass="NotificationCell" customModule="SmartAgent" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="50" width="375" height="78"/>
+                                <rect key="frame" x="0.0" y="49.5" width="375" height="78"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="r7r-pv-zdM" id="qHR-uq-jXp">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="78"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="77.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F5e-7Y-k9i">
@@ -1556,6 +1587,13 @@
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                             </userDefinedRuntimeAttributes>
                                         </view>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="exclamation" translatesAutoresizingMaskIntoConstraints="NO" id="WoP-hE-G7e">
+                                            <rect key="frame" x="335" y="42" width="19" height="19"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="19" id="4Fn-Z0-XVp"/>
+                                                <constraint firstAttribute="height" constant="19" id="XS6-Pz-ZLw"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="kmQ-xV-eGE" firstAttribute="top" secondItem="qHR-uq-jXp" secondAttribute="topMargin" constant="12" id="7pd-4A-MRT"/>
@@ -1563,8 +1601,10 @@
                                         <constraint firstAttribute="trailingMargin" secondItem="mnI-TS-zSt" secondAttribute="trailing" constant="-3" id="NqW-yM-zEv"/>
                                         <constraint firstItem="F5e-7Y-k9i" firstAttribute="leading" secondItem="gK8-Og-ohr" secondAttribute="leading" id="R07-1c-CYE"/>
                                         <constraint firstItem="mnI-TS-zSt" firstAttribute="top" secondItem="qHR-uq-jXp" secondAttribute="topMargin" constant="9" id="Syo-sQ-9sL"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="WoP-hE-G7e" secondAttribute="trailing" constant="13" id="YGE-i7-iq4"/>
                                         <constraint firstItem="kmQ-xV-eGE" firstAttribute="centerY" secondItem="F5e-7Y-k9i" secondAttribute="centerY" constant="1" id="b15-t5-kkd"/>
                                         <constraint firstItem="mnI-TS-zSt" firstAttribute="leading" secondItem="vdt-3Y-EYk" secondAttribute="trailing" constant="52" id="dNN-jy-TOh"/>
+                                        <constraint firstItem="WoP-hE-G7e" firstAttribute="top" secondItem="mnI-TS-zSt" secondAttribute="bottom" constant="8" id="gaX-jd-lun"/>
                                         <constraint firstItem="vdt-3Y-EYk" firstAttribute="leading" secondItem="gK8-Og-ohr" secondAttribute="leading" id="gpd-61-zqo"/>
                                         <constraint firstItem="gK8-Og-ohr" firstAttribute="top" secondItem="F5e-7Y-k9i" secondAttribute="bottom" constant="21" id="mZA-Yl-K4e"/>
                                         <constraint firstItem="gK8-Og-ohr" firstAttribute="top" secondItem="vdt-3Y-EYk" secondAttribute="bottom" constant="4" id="n8w-px-SLP"/>
@@ -1577,7 +1617,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="contactName" destination="vdt-3Y-EYk" id="AzZ-8Q-pba"/>
                                     <outlet property="date" destination="mnI-TS-zSt" id="nbW-6B-prN"/>
+                                    <outlet property="noticeIndicator" destination="WoP-hE-G7e" id="cEx-0D-zfK"/>
                                     <outlet property="pnrSummary" destination="gK8-Og-ohr" id="ArC-7p-CwP"/>
                                     <outlet property="readIndicator" destination="kmQ-xV-eGE" id="Df2-Xh-0bh"/>
                                     <outlet property="title" destination="F5e-7Y-k9i" id="wqY-93-EDS"/>
@@ -1627,10 +1669,10 @@
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NotificationCell" rowHeight="78" id="J3H-WO-yvb" customClass="NotificationCell" customModule="SmartAgent" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="50" width="375" height="78"/>
+                                <rect key="frame" x="0.0" y="49.5" width="375" height="78"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="J3H-WO-yvb" id="mk3-wz-PId">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="78"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="77.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aRJ-4q-jSm">
@@ -1693,6 +1735,13 @@
                                             <color key="textColor" red="0.60392156860000001" green="0.60392156860000001" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="exclamation" translatesAutoresizingMaskIntoConstraints="NO" id="TAQ-El-s8B">
+                                            <rect key="frame" x="335" y="42" width="19" height="19"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="19" id="DYI-q7-6Lc"/>
+                                                <constraint firstAttribute="width" constant="19" id="U5t-jR-cgc"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="iS5-yw-DxH" firstAttribute="top" secondItem="mk3-wz-PId" secondAttribute="topMargin" constant="9" id="17b-xz-Bgu"/>
@@ -1702,6 +1751,8 @@
                                         <constraint firstItem="aRJ-4q-jSm" firstAttribute="top" secondItem="mk3-wz-PId" secondAttribute="topMargin" constant="7" id="8w3-8c-VBl"/>
                                         <constraint firstItem="WWB-TV-Ecp" firstAttribute="leading" secondItem="mk3-wz-PId" secondAttribute="leadingMargin" constant="12" id="Eey-cU-HP9"/>
                                         <constraint firstItem="WWB-TV-Ecp" firstAttribute="top" secondItem="mk3-wz-PId" secondAttribute="topMargin" constant="12" id="Fwk-FR-cd9"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="TAQ-El-s8B" secondAttribute="trailing" constant="13" id="MdR-Vp-pyp"/>
+                                        <constraint firstItem="TAQ-El-s8B" firstAttribute="top" secondItem="iS5-yw-DxH" secondAttribute="bottom" constant="8" id="PXu-pM-5Dw"/>
                                         <constraint firstItem="TBq-tY-X06" firstAttribute="top" secondItem="BXL-o4-cZD" secondAttribute="bottom" constant="4" id="Uyr-Tr-Z9i"/>
                                         <constraint firstItem="TBq-tY-X06" firstAttribute="leading" secondItem="mk3-wz-PId" secondAttribute="leadingMargin" constant="32" id="WDd-um-vTK"/>
                                         <constraint firstItem="aRJ-4q-jSm" firstAttribute="leading" secondItem="WWB-TV-Ecp" secondAttribute="trailing" constant="8" symbolic="YES" id="a5o-wh-B42"/>
@@ -1714,7 +1765,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="contactName" destination="BXL-o4-cZD" id="hoV-3l-pZJ"/>
                                     <outlet property="date" destination="iS5-yw-DxH" id="lpl-jw-egB"/>
+                                    <outlet property="noticeIndicator" destination="TAQ-El-s8B" id="jUb-a8-koa"/>
                                     <outlet property="pnrSummary" destination="TBq-tY-X06" id="KcT-mR-2kR"/>
                                     <outlet property="readIndicator" destination="WWB-TV-Ecp" id="Kyv-Iy-ECu"/>
                                     <outlet property="title" destination="aRJ-4q-jSm" id="8ie-7K-Rme"/>
@@ -1814,6 +1867,7 @@
         <image name="US Dollar" width="18" height="18"/>
         <image name="arrow right" width="27" height="14"/>
         <image name="bckgr_launch" width="640" height="1136"/>
+        <image name="exclamation" width="19" height="19"/>
         <image name="gray_down" width="40" height="40"/>
         <image name="search gray" width="13" height="13"/>
     </resources>

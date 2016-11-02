@@ -40,6 +40,7 @@ class Notification: Object {
     dynamic var listType:String?
     dynamic var typeStatus:String?
     dynamic var isDeleted = false
+    dynamic var alert_indicator = false
     
     func getShareText() -> String {
         var text = ""
@@ -81,6 +82,7 @@ class Notification: Object {
         notification.listType = self.listType
         notification.isDeleted = self.isDeleted
         notification.typeStatus = self.typeStatus
+        notification.alert_indicator = self.alert_indicator
         return notification
     }
     

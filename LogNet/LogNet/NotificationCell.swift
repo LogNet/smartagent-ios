@@ -16,7 +16,8 @@ class NotificationCell: UITableViewCell {
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var pnrSummary: UILabel!
     @IBOutlet weak var readIndicator:UIView!
-    
+    @IBOutlet weak var noticeIndicator:UIView!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -39,6 +40,8 @@ class NotificationCell: UITableViewCell {
         self.pnrSummary.text = viewModel.pnrSummary
         self.date.text = viewModel.date
         self.readIndicator.hidden = viewModel.isRead
+        self.contactName.text = viewModel.contactName
+        self.noticeIndicator.hidden = !viewModel.alert_indicator
     }
     
 }
