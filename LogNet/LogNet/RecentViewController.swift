@@ -24,6 +24,10 @@ class RecentViewController: SingleListViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.tintColor = UIColor(red: 24/255.0, green: 89/255.0, blue: 217/255.0, alpha: 1)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         self.viewModel?.checkTermsAgreement()
     }
     
