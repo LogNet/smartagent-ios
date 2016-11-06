@@ -58,19 +58,19 @@ class SmartAgentParser: ServerParser {
         let pnrInfo = PNRInfo()
         
         if let jsonDict = JSON["data"] as? [String: AnyObject] {
-            pnrInfo.pnr = self.parsePNR(jsonDict["pnr"] as! Dictionary)
-            pnrInfo.contact = self.parseContact(jsonDict["contact"] as! Dictionary)
-            pnrInfo.setPassengers(self.parsePassengers(jsonDict["passengers"] as! Array))
-            pnrInfo.setFlights(self.parseFlights(jsonDict["flights"] as! Array))
-            pnrInfo.setHotels(self.parseHotels(jsonDict["hotels"] as! Array))
-            pnrInfo.setCars(self.parseCars(jsonDict["cars"] as! Array))
+            pnrInfo.pnr = self.parsePNR(jsonDict["pnr"] as? Dictionary)
+            pnrInfo.contact = self.parseContact(jsonDict["contact"] as? Dictionary)
+            pnrInfo.setPassengers(self.parsePassengers(jsonDict["passengers"] as? Array))
+            pnrInfo.setFlights(self.parseFlights(jsonDict["flights"] as? Array))
+            pnrInfo.setHotels(self.parseHotels(jsonDict["hotels"] as? Array))
+            pnrInfo.setCars(self.parseCars(jsonDict["cars"] as? Array))
         } else {
             pnrInfo.isValid = false
         }
         
         if let payloadDict = JSON["payload"] as? [String: AnyObject] {
-            pnrInfo.setAlerts(self.parseAlerts(payloadDict["alerts"] as! Array))
-            pnrInfo.setRemarks(self.parseRemarks(payloadDict["remarks"] as! Array))
+            pnrInfo.setAlerts(self.parseAlerts(payloadDict["alerts"] as? Array))
+            pnrInfo.setRemarks(self.parseRemarks(payloadDict["remarks"] as? Array))
             pnrInfo.last_purchase_date = self.parseLastPurchaseDate(payloadDict["last_purchase_date"] as? String)
         }
         
@@ -137,9 +137,12 @@ class SmartAgentParser: ServerParser {
         return nil
     }
     
-    private func parseAlerts(array:[[String: String]]) -> [Alert]? {
+    private func parseAlerts(array:[[String: String]]?) -> [Alert]? {
+        guard array != nil else {
+            return nil
+        }
         var entities:[Alert] = []
-        for dict in array {
+        for dict in array! {
             let alert = Alert()
             alert.code = dict["code"]
             alert.text = dict["text"]
@@ -148,9 +151,12 @@ class SmartAgentParser: ServerParser {
         return entities
     }
     
-    private func parseRemarks(alerts:[String]) -> [Remark]? {
+    private func parseRemarks(array:[String]?) -> [Remark]? {
+        guard array != nil else {
+            return nil
+        }
         var entities:[Remark] = []
-        for string in alerts {
+        for string in array! {
             let remark = Remark()
             remark.text = string
             entities.append(remark)
@@ -158,11 +164,14 @@ class SmartAgentParser: ServerParser {
         return entities
     }
     
-    private func parseCars(array:[[String: String]]) -> [Car]? {
+    private func parseCars(array:[[String: String]]?) -> [Car]? {
+        guard array != nil else {
+            return nil
+        }
         let carDateFormatter = NSDateFormatter()
         carDateFormatter.dateFormat = "dd.MM.yyyy HH:mm"
         var entities:[Car] = []
-        for dict in array {
+        for dict in array! {
             let car = Car()
             car.pickup_city = dict["pickup_city"]
             if let dateString = dict["pickup_date"]{
@@ -185,11 +194,14 @@ class SmartAgentParser: ServerParser {
         return entities
     }
     
-    private func parseHotels(array:[[String: String]]) -> [Hotel]? {
+    private func parseHotels(array:[[String: String]]?) -> [Hotel]? {
+        guard array != nil else {
+            return nil
+        }
         var entities:[Hotel] = []
         let hotelDateFormatter = NSDateFormatter()
         hotelDateFormatter.dateFormat = "dd.MM.yyyy"
-        for dict in array {
+        for dict in array! {
             let hotel = Hotel()
             hotel.country = dict["country"]
             hotel.city = dict["city"]
@@ -213,11 +225,14 @@ class SmartAgentParser: ServerParser {
         return entities
     }
     
-    private func parseFlights(array:[[String: String]]) -> [Flight]? {
+    private func parseFlights(array:[[String: String]]?) -> [Flight]? {
+        guard array != nil else {
+            return nil
+        }
         let flightDateFormatter = NSDateFormatter()
         flightDateFormatter.dateFormat = "dd.MM.yyyy HH:mm"
         var entities:[Flight] = []
-        for dict in array {
+        for dict in array! {
             let flight = Flight()
             flight.from = dict["from"]
             flight.to = dict["to"]
@@ -239,9 +254,12 @@ class SmartAgentParser: ServerParser {
         return entities
     }
     
-    private func parsePassengers(array:[[String: String]]) -> [Passenger]? {
+    private func parsePassengers(array:[[String: String]]?) -> [Passenger]? {
+        guard array != nil else {
+            return nil
+        }
         var entities:[Passenger] = []
-        for dict in array {
+        for dict in array! {
             let passenger = Passenger()
             passenger.title = dict["title"]
             passenger.first_name = dict["first_name"]
@@ -252,19 +270,25 @@ class SmartAgentParser: ServerParser {
         return entities
     }
     
-    private func parseContact(contactDict:[String: String]) -> Contact {
+    private func parseContact(contactDict:[String: String]?) -> Contact? {
+        guard contactDict != nil else {
+            return nil
+        }
         let contact = Contact()
-        contact.name = contactDict["name"]
-        contact.phone = contactDict["phone"]
-        contact.email = contactDict["email"]
+        contact.name = contactDict!["name"]
+        contact.phone = contactDict!["phone"]
+        contact.email = contactDict!["email"]
         return contact
     }
     
-    private func parsePNR(pnrDict:[String: String]) -> PNR {
+    private func parsePNR(pnrDict:[String: String]?) -> PNR? {
+        guard pnrDict != nil else {
+            return nil
+        }
         let pnr = PNR()
-        pnr.id = pnrDict["id"]
-        pnr.pcc = pnrDict["pcc"]
-        pnr.creator = pnrDict["creator"]
+        pnr.id = pnrDict!["id"]
+        pnr.pcc = pnrDict!["pcc"]
+        pnr.creator = pnrDict!["creator"]
         return pnr
     }
     
