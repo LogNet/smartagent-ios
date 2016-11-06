@@ -122,6 +122,16 @@ class Router {
         self.recentViewController?.presentViewController(loginViewController, animated: false, completion: nil)
     }
     
+    func checkTerms() {
+        if Prefences.termsApproved() == true || Prefences.getToken() == nil {
+            return
+        }
+        
+        let viewController = self.storyboard.instantiateViewControllerWithIdentifier("TermsViewController") as! TermsViewController
+        let navigationController = UINavigationController(rootViewController: viewController)
+        self.recentViewController?.presentViewController(navigationController, animated: false, completion: nil)
+    }
+    
     func showNoActivatedView() {
         let viewController = self.storyboard.instantiateViewControllerWithIdentifier("ActivationMessageViewController") as! ActivationMessageViewController
         let model = ListModelFactory.getSingleListModel()

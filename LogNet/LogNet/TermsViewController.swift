@@ -1,18 +1,18 @@
 //
-//  RecentViewController.swift
+//  TermsViewController.swift
 //  SmartAgent
 //
-//  Created by Anton Tikhonov on 8/11/16.
+//  Created by Anton Tikhonov on 11/6/16.
 //  Copyright © 2016 Anton Tikhonov. All rights reserved.
 //
 
 import UIKit
 
-class RecentViewController: SingleListViewController {
+class TermsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.title = "Terms and conditions"
         // Do any additional setup after loading the view.
     }
 
@@ -21,12 +21,12 @@ class RecentViewController: SingleListViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        self.tabBarController?.tabBar.tintColor = UIColor(red: 24/255.0, green: 89/255.0, blue: 217/255.0, alpha: 1)
-        self.viewModel?.checkTermsAgreement()
+    @IBAction func agree(sender: AnyObject) {
+        Prefences.approveTerms()
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
+
     /*
     // MARK: - Navigation
 

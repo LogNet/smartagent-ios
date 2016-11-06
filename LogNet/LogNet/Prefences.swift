@@ -12,9 +12,22 @@ let PHONE_KEY = "PHONE_KEY"
 let EMAIL_KEY = "EMAIL_KEY"
 let FULL_NAME_KEY = "FULL_NAME_KEY"
 let TOKEN_KEY = "TOKEN_KEY"
+let TERMS_APPROVED = "TERMS_APPROVED"
+
 let CHUNK_SIZE = 20
 
 class Prefences {
+    
+    class func termsApproved() -> Bool{
+        let defaults = NSUserDefaults.standardUserDefaults()
+        return defaults.boolForKey(TERMS_APPROVED)
+    }
+    
+    class func approveTerms() {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setBool(true, forKey: TERMS_APPROVED)
+        defaults.synchronize()
+    }
     
     class func savePhone(phone: String) {
         let defaults = NSUserDefaults.standardUserDefaults()

@@ -33,6 +33,7 @@
 		EA3FBD8C1DCE81C300D993E8 /* RemarkCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3FBD8B1DCE81C300D993E8 /* RemarkCellViewModel.swift */; };
 		EA3FBD8E1DCE81E400D993E8 /* LatestPurchaseCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3FBD8D1DCE81E400D993E8 /* LatestPurchaseCellViewModel.swift */; };
 		EA42EAF11D438C7600451BB9 /* PNRInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA42EAF01D438C7600451BB9 /* PNRInfoViewController.swift */; };
+		EA7B8DF91DCEAF5F00D3D9A9 /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7B8DF81DCEAF5F00D3D9A9 /* TermsViewController.swift */; };
 		EA7ECA5B1D1BAD780014010A /* RecentNotificationCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7ECA5A1D1BAD780014010A /* RecentNotificationCellViewModel.swift */; };
 		EA7ECA5D1D1BB41E0014010A /* RecentNotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7ECA5C1D1BB41E0014010A /* RecentNotificationCell.swift */; };
 		EA8BB9401D21A04200D07561 /* PushTokenUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8BB93F1D21A04200D07561 /* PushTokenUtil.swift */; };
@@ -157,6 +158,7 @@
 		EA3FBD8B1DCE81C300D993E8 /* RemarkCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemarkCellViewModel.swift; sourceTree = "<group>"; };
 		EA3FBD8D1DCE81E400D993E8 /* LatestPurchaseCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LatestPurchaseCellViewModel.swift; sourceTree = "<group>"; };
 		EA42EAF01D438C7600451BB9 /* PNRInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNRInfoViewController.swift; sourceTree = "<group>"; };
+		EA7B8DF81DCEAF5F00D3D9A9 /* TermsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
 		EA7ECA5A1D1BAD780014010A /* RecentNotificationCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentNotificationCellViewModel.swift; sourceTree = "<group>"; };
 		EA7ECA5C1D1BB41E0014010A /* RecentNotificationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentNotificationCell.swift; sourceTree = "<group>"; };
 		EA8BB93F1D21A04200D07561 /* PushTokenUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushTokenUtil.swift; sourceTree = "<group>"; };
@@ -323,6 +325,7 @@
 				EA93F16B1D72F18A00A12109 /* PNRCells */,
 				EA8C3CFC1D8D6B8C00904E72 /* RepriceViewController.swift */,
 				EA8C3CFE1D8D6B9E00904E72 /* CancelledViewController.swift */,
+				EA7B8DF81DCEAF5F00D3D9A9 /* TermsViewController.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -818,6 +821,7 @@
 				EAF70C501D8ECA6C002349BB /* Constants.swift in Sources */,
 				EAFD27FF1D5C476100818E48 /* NotificationDataSource.swift in Sources */,
 				EA26375F1D16A59700D5988D /* SmartAgentParser.swift in Sources */,
+				EA7B8DF91DCEAF5F00D3D9A9 /* TermsViewController.swift in Sources */,
 				EA93F14B1D6B98AB00A12109 /* PNRInfoModel.swift in Sources */,
 				EAD0C6841D578BED0033B307 /* ErrorUtil.swift in Sources */,
 				EA35A8631D3EC5DE00BE3618 /* NotificationCell.swift in Sources */,

@@ -63,6 +63,10 @@ class SingleListViewModel: ViewModel {
     
     // MARK: Public Methods
     
+    func checkTermsAgreement() {
+        self.router.checkTerms()
+    }
+    
     func trackScreen()  {
         switch self.listType {
         case .Reprice:
