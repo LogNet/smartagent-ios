@@ -122,10 +122,23 @@ class PNRDataSource: BaseRXDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         switch section {
-        case 0:
+        case 0, 1, 2:
             return CGFloat.min
-        case 1, 2:
-            return CGFloat.min
+        case 3:
+            if self.type != "RP"{
+                return self.contactCellViewModel != nil ? tableView.sectionFooterHeight : CGFloat.min
+            }
+            return self.statusCellViewModel != nil ? tableView.sectionFooterHeight : CGFloat.min
+        case 4:
+            return self.pnrCellViewModel != nil ? tableView.sectionFooterHeight : CGFloat.min
+        case 5:
+            return self.passengers?.count > 0 ? tableView.sectionFooterHeight : CGFloat.min
+        case 6:
+            return self.flights?.count > 0 ? tableView.sectionFooterHeight : CGFloat.min
+        case 7:
+            return self.hotels?.count > 0 ? tableView.sectionFooterHeight : CGFloat.min
+        case 8:
+            return self.cars?.count > 0 ? tableView.sectionFooterHeight : CGFloat.min
         default:
             return tableView.sectionFooterHeight
         }
@@ -155,6 +168,11 @@ class PNRDataSource: BaseRXDataSource, UITableViewDelegate {
             cell.textTitle = nil
         }
 
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let cell = tableView.dequeueReusableCellWithIdentifier("FooterView")
         return cell
     }
     
