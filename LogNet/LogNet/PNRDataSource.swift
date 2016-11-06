@@ -20,6 +20,9 @@ class PNRDataSource: BaseRXDataSource, UITableViewDelegate {
     var type:String?
     var contactCellViewModel:ContactCellViewModel?
     var typeStatus:String?
+    var alerts:[AlertCellViewModel]?
+    var remarks:[RemarkCellViewModel]?
+    var latestPurchaseDateCellViewModel:LatestPurchaseCellViewModel?
     
     override func subscribeToProvider (){
         self.contentProvider.results.asObservable().subscribeNext { object in
@@ -69,7 +72,20 @@ class PNRDataSource: BaseRXDataSource, UITableViewDelegate {
         for car in pnrInfo.cars {
             self.cars?.append(CarCellViewModel(model: car))
         }
-    
+        
+        self.alerts = [AlertCellViewModel]()
+        for alert in pnrInfo.alerts {
+            self.alerts?.append(AlertCellViewModel(model: alert))
+        }
+        
+        self.remarks = [RemarkCellViewModel]()
+        for remark in pnrInfo.remarks {
+            self.remarks?.append(RemarkCellViewModel(model: remark))
+        }
+        
+        if let date = pnrInfo.last_purchase_date {
+            self.latestPurchaseDateCellViewModel = LatestPurchaseCellViewModel(date: date)
+        }
     }
     
     // MARK: - Table view data source
@@ -77,20 +93,22 @@ class PNRDataSource: BaseRXDataSource, UITableViewDelegate {
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         switch indexPath.section {
         case 0:
+            return 26
+        case 3:
             if self.type != "RP"{
                 return 50
             } else {
                 return 87
             }
-        case 1:
-            return 62
-        case 2:
-            return self.passengers?.count > 0 ? 61 : 0
-        case 3:
-            return self.flights?.count > 0 ? 93 : 0
         case 4:
-            return self.hotels?.count > 0 ? 114 : 0
+            return 62
         case 5:
+            return self.passengers?.count > 0 ? 61 : 0
+        case 6:
+            return self.flights?.count > 0 ? 93 : 0
+        case 7:
+            return self.hotels?.count > 0 ? 114 : 0
+        case 8:
             return self.cars?.count > 0 ? 193 : 0
         default:
             return 44
@@ -99,25 +117,65 @@ class PNRDataSource: BaseRXDataSource, UITableViewDelegate {
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return self.contentProvider?.results.value?.count > 0 ? 6 : 0
+        return self.contentProvider?.results.value?.count > 0 ? 9 : 0
+    }
+    
+    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        switch section {
+        case 0:
+            return CGFloat.min
+        case 1, 2:
+            return CGFloat.min
+        default:
+            return tableView.sectionFooterHeight
+        }
+    }
+    
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let cell = tableView.dequeueReusableCellWithIdentifier("HeaderView") as! HeaderView
+        switch section {
+        case 0, 1, 2:
+            cell.textTitle = nil
+        case 3:
+            if self.type != "RP"{
+                cell.textTitle = self.contactCellViewModel != nil ? " CONTACT" : nil
+            }
+            cell.textTitle = " STATUS"
+        case 4:
+            cell.textTitle = self.pnrCellViewModel != nil ? " PNR DATA" : nil
+        case 5:
+            cell.textTitle = self.passengers?.count > 0 ? " PASSENGERS" : nil
+        case 6:
+            cell.textTitle = self.flights?.count > 0 ? " FLIGHT" : nil
+        case 7:
+            cell.textTitle = self.hotels?.count > 0 ? " HOTEL" : nil
+        case 8:
+            cell.textTitle = self.cars?.count > 0 ? " CAR RENTAL" : nil
+        default:
+            cell.textTitle = nil
+        }
+
+        return cell
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
-        case 0:
+        case 0, 1, 2:
+            return nil
+        case 3:
             if self.type != "RP"{
                 return self.contactCellViewModel != nil ? " CONTACT" : nil
             }
             return " STATUS"
-        case 1:
-            return self.pnrCellViewModel != nil ? " PNR DATA" : nil
-        case 2:
-            return self.passengers?.count > 0 ? " PASSENGERS" : nil
-        case 3:
-            return self.flights?.count > 0 ? " FLIGHT" : nil
         case 4:
-            return self.hotels?.count > 0 ? " HOTEL" : nil
+            return self.pnrCellViewModel != nil ? " PNR DATA" : nil
         case 5:
+            return self.passengers?.count > 0 ? " PASSENGERS" : nil
+        case 6:
+            return self.flights?.count > 0 ? " FLIGHT" : nil
+        case 7:
+            return self.hotels?.count > 0 ? " HOTEL" : nil
+        case 8:
             return self.cars?.count > 0 ? " CAR RENTAL" : nil
         default:
             return ""
@@ -128,19 +186,25 @@ class PNRDataSource: BaseRXDataSource, UITableViewDelegate {
         // #warning Incomplete implementation, return the number of rows
         switch section {
         case 0:
+            return self.latestPurchaseDateCellViewModel != nil ? 1 : 0
+        case 1:
+            return self.alerts?.count ?? 0
+        case 2:
+            return self.remarks?.count ?? 0
+        case 3:
             if self.type != "RP"{
                 return self.contactCellViewModel != nil ? 1 : 0
             }
             return 1
-        case 1:
-            return self.pnrCellViewModel != nil ? 1 : 0
-        case 2:
-            return self.passengers?.count ?? 0
-        case 3:
-            return self.flights?.count ?? 0
         case 4:
-            return self.hotels?.count ?? 0
+            return self.pnrCellViewModel != nil ? 1 : 0
         case 5:
+            return self.passengers?.count ?? 0
+        case 6:
+            return self.flights?.count ?? 0
+        case 7:
+            return self.hotels?.count ?? 0
+        case 8:
             return self.cars?.count ?? 0
         default:
             return 0
@@ -152,6 +216,18 @@ class PNRDataSource: BaseRXDataSource, UITableViewDelegate {
         
         switch indexPath.section {
         case 0:
+            let cell = tableView.dequeueReusableCellWithIdentifier("PNRLatestPurchaseCell", forIndexPath: indexPath) as! PNRLatestPurchaseCell
+            cell.viewModel = self.latestPurchaseDateCellViewModel
+            cellForReturn = cell
+        case 1:
+            let cell = tableView.dequeueReusableCellWithIdentifier("PNRAlertCell", forIndexPath: indexPath) as! PNRAlertCell
+            cell.viewModel = self.alerts![indexPath.row]
+            cellForReturn = cell
+        case 2:
+            let cell = tableView.dequeueReusableCellWithIdentifier("PNRRemarkCell", forIndexPath: indexPath) as! PNRRemarkCell
+            cell.viewModel = self.remarks![indexPath.row]
+            cellForReturn = cell
+        case 3:
             if self.type != "RP"{
                 let cell = tableView.dequeueReusableCellWithIdentifier("PNRContactCell", forIndexPath: indexPath) as! PNRContactCell
                 cell.viewModel = self.contactCellViewModel
@@ -161,23 +237,23 @@ class PNRDataSource: BaseRXDataSource, UITableViewDelegate {
                 cell.viewModel = self.statusCellViewModel
                 cellForReturn = cell
             }
-        case 1:
+        case 4:
             let cell = tableView.dequeueReusableCellWithIdentifier("PNRCell", forIndexPath: indexPath) as! PNRCell
             cell.viewModel = self.pnrCellViewModel
             cellForReturn = cell
-        case 2:
+        case 5:
             let cell = tableView.dequeueReusableCellWithIdentifier("PNRPassengerCell", forIndexPath: indexPath) as! PNRPassengerCell
             cell.viewModel = self.passengers![indexPath.row]
             cellForReturn = cell
-        case 3:
+        case 6:
             let cell = tableView.dequeueReusableCellWithIdentifier("PNRFlightCell", forIndexPath: indexPath) as! PNRFlightCell
             cell.viewModel = self.flights![indexPath.row]
             cellForReturn = cell
-        case 4:
+        case 7:
             let cell = tableView.dequeueReusableCellWithIdentifier("PNRHotelCell", forIndexPath: indexPath) as! PNRHotelCell
             cell.viewModel = self.hotels![indexPath.row]
             cellForReturn = cell
-        case 5:
+        case 8:
             let cell = tableView.dequeueReusableCellWithIdentifier("PNRCarCell", forIndexPath: indexPath) as! PNRCarCell
             cell.viewModel = self.cars![indexPath.row]
             cellForReturn = cell

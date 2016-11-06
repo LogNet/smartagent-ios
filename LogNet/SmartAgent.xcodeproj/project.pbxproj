@@ -16,7 +16,7 @@
 		EA2637521D15BF9000D5988D /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2637511D15BF9000D5988D /* LoginModel.swift */; };
 		EA26375B1D16A1F700D5988D /* LoginModelsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA26375A1D16A1F700D5988D /* LoginModelsFactory.swift */; };
 		EA26375D1D16A4F100D5988D /* ServerParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA26375C1D16A4F100D5988D /* ServerParser.swift */; };
-		EA26375F1D16A59700D5988D /* SmartAgentServerParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA26375E1D16A59700D5988D /* SmartAgentServerParser.swift */; };
+		EA26375F1D16A59700D5988D /* SmartAgentParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA26375E1D16A59700D5988D /* SmartAgentParser.swift */; };
 		EA35A8581D3D6C4F00BE3618 /* UnderlinedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA35A8571D3D6C4F00BE3618 /* UnderlinedTextField.swift */; };
 		EA35A85A1D3D825300BE3618 /* ActivationMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA35A8591D3D825300BE3618 /* ActivationMessageViewController.swift */; };
 		EA35A85F1D3EAE4600BE3618 /* SanFranciscoText-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = EA35A85E1D3EAE4600BE3618 /* SanFranciscoText-Regular.otf */; };
@@ -26,6 +26,12 @@
 		EA35A8671D40025400BE3618 /* SplitListsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA35A8661D40025400BE3618 /* SplitListsViewController.swift */; };
 		EA35A8691D4014FF00BE3618 /* AbstractDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA35A8681D4014FF00BE3618 /* AbstractDataSource.swift */; };
 		EA35A86B1D40152100BE3618 /* AbstractContentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA35A86A1D40152100BE3618 /* AbstractContentProvider.swift */; };
+		EA3FBD841DCE7DEB00D993E8 /* PNRLatestPurchaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3FBD831DCE7DEB00D993E8 /* PNRLatestPurchaseCell.swift */; };
+		EA3FBD861DCE7ECA00D993E8 /* PNRAlertCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3FBD851DCE7ECA00D993E8 /* PNRAlertCell.swift */; };
+		EA3FBD881DCE7F0A00D993E8 /* PNRRemarkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3FBD871DCE7F0A00D993E8 /* PNRRemarkCell.swift */; };
+		EA3FBD8A1DCE81B100D993E8 /* AlertCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3FBD891DCE81B100D993E8 /* AlertCellViewModel.swift */; };
+		EA3FBD8C1DCE81C300D993E8 /* RemarkCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3FBD8B1DCE81C300D993E8 /* RemarkCellViewModel.swift */; };
+		EA3FBD8E1DCE81E400D993E8 /* LatestPurchaseCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3FBD8D1DCE81E400D993E8 /* LatestPurchaseCellViewModel.swift */; };
 		EA42EAF11D438C7600451BB9 /* PNRInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA42EAF01D438C7600451BB9 /* PNRInfoViewController.swift */; };
 		EA7ECA5B1D1BAD780014010A /* RecentNotificationCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7ECA5A1D1BAD780014010A /* RecentNotificationCellViewModel.swift */; };
 		EA7ECA5D1D1BB41E0014010A /* RecentNotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7ECA5C1D1BB41E0014010A /* RecentNotificationCell.swift */; };
@@ -34,6 +40,7 @@
 		EA8C3CFD1D8D6B8C00904E72 /* RepriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8C3CFC1D8D6B8C00904E72 /* RepriceViewController.swift */; };
 		EA8C3CFF1D8D6B9E00904E72 /* CancelledViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8C3CFE1D8D6B9E00904E72 /* CancelledViewController.swift */; };
 		EA8CDA4A1D2C44A50090E9C1 /* SmartAgentServerServise.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8CDA491D2C44A50090E9C1 /* SmartAgentServerServise.swift */; };
+		EA8DBB631DCE9D4D00E337DB /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8DBB621DCE9D4D00E337DB /* HeaderView.swift */; };
 		EA93F1371D68AA2400A12109 /* SearchHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F1361D68AA2400A12109 /* SearchHistoryCell.swift */; };
 		EA93F1391D68AAE000A12109 /* SearchHistoryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F1381D68AAE000A12109 /* SearchHistoryCellViewModel.swift */; };
 		EA93F13B1D68ABF700A12109 /* SearchHistoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA93F13A1D68ABF700A12109 /* SearchHistoryItem.swift */; };
@@ -133,7 +140,7 @@
 		EA2637511D15BF9000D5988D /* LoginModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		EA26375A1D16A1F700D5988D /* LoginModelsFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginModelsFactory.swift; sourceTree = "<group>"; };
 		EA26375C1D16A4F100D5988D /* ServerParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerParser.swift; sourceTree = "<group>"; };
-		EA26375E1D16A59700D5988D /* SmartAgentServerParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmartAgentServerParser.swift; sourceTree = "<group>"; };
+		EA26375E1D16A59700D5988D /* SmartAgentParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmartAgentParser.swift; sourceTree = "<group>"; };
 		EA35A8571D3D6C4F00BE3618 /* UnderlinedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnderlinedTextField.swift; sourceTree = "<group>"; };
 		EA35A8591D3D825300BE3618 /* ActivationMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivationMessageViewController.swift; sourceTree = "<group>"; };
 		EA35A85E1D3EAE4600BE3618 /* SanFranciscoText-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SanFranciscoText-Regular.otf"; sourceTree = "<group>"; };
@@ -143,6 +150,12 @@
 		EA35A8661D40025400BE3618 /* SplitListsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitListsViewController.swift; sourceTree = "<group>"; };
 		EA35A8681D4014FF00BE3618 /* AbstractDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractDataSource.swift; sourceTree = "<group>"; };
 		EA35A86A1D40152100BE3618 /* AbstractContentProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractContentProvider.swift; sourceTree = "<group>"; };
+		EA3FBD831DCE7DEB00D993E8 /* PNRLatestPurchaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNRLatestPurchaseCell.swift; sourceTree = "<group>"; };
+		EA3FBD851DCE7ECA00D993E8 /* PNRAlertCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNRAlertCell.swift; sourceTree = "<group>"; };
+		EA3FBD871DCE7F0A00D993E8 /* PNRRemarkCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNRRemarkCell.swift; sourceTree = "<group>"; };
+		EA3FBD891DCE81B100D993E8 /* AlertCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertCellViewModel.swift; sourceTree = "<group>"; };
+		EA3FBD8B1DCE81C300D993E8 /* RemarkCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemarkCellViewModel.swift; sourceTree = "<group>"; };
+		EA3FBD8D1DCE81E400D993E8 /* LatestPurchaseCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LatestPurchaseCellViewModel.swift; sourceTree = "<group>"; };
 		EA42EAF01D438C7600451BB9 /* PNRInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNRInfoViewController.swift; sourceTree = "<group>"; };
 		EA7ECA5A1D1BAD780014010A /* RecentNotificationCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentNotificationCellViewModel.swift; sourceTree = "<group>"; };
 		EA7ECA5C1D1BB41E0014010A /* RecentNotificationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentNotificationCell.swift; sourceTree = "<group>"; };
@@ -151,6 +164,7 @@
 		EA8C3CFC1D8D6B8C00904E72 /* RepriceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepriceViewController.swift; sourceTree = "<group>"; };
 		EA8C3CFE1D8D6B9E00904E72 /* CancelledViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelledViewController.swift; sourceTree = "<group>"; };
 		EA8CDA491D2C44A50090E9C1 /* SmartAgentServerServise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmartAgentServerServise.swift; sourceTree = "<group>"; };
+		EA8DBB621DCE9D4D00E337DB /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		EA93F1361D68AA2400A12109 /* SearchHistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchHistoryCell.swift; sourceTree = "<group>"; };
 		EA93F1381D68AAE000A12109 /* SearchHistoryCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchHistoryCellViewModel.swift; sourceTree = "<group>"; };
 		EA93F13A1D68ABF700A12109 /* SearchHistoryItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchHistoryItem.swift; sourceTree = "<group>"; };
@@ -370,6 +384,9 @@
 				EA93F15C1D6FF92500A12109 /* HotelCellViewModel.swift */,
 				EA93F15E1D6FF94500A12109 /* CarCellViewModel.swift */,
 				EA93F1611D6FFAC200A12109 /* ContactCellViewModel.swift */,
+				EA3FBD891DCE81B100D993E8 /* AlertCellViewModel.swift */,
+				EA3FBD8B1DCE81C300D993E8 /* RemarkCellViewModel.swift */,
+				EA3FBD8D1DCE81E400D993E8 /* LatestPurchaseCellViewModel.swift */,
 			);
 			name = PNRCellViewModels;
 			sourceTree = "<group>";
@@ -384,6 +401,10 @@
 				EA93F1741D72F22100A12109 /* PNRHotelCell.swift */,
 				EA93F1761D72F23200A12109 /* PNRCarCell.swift */,
 				EA93F1781D73393400A12109 /* PNRContactCell.swift */,
+				EA3FBD831DCE7DEB00D993E8 /* PNRLatestPurchaseCell.swift */,
+				EA3FBD851DCE7ECA00D993E8 /* PNRAlertCell.swift */,
+				EA3FBD871DCE7F0A00D993E8 /* PNRRemarkCell.swift */,
+				EA8DBB621DCE9D4D00E337DB /* HeaderView.swift */,
 			);
 			name = PNRCells;
 			sourceTree = "<group>";
@@ -427,7 +448,7 @@
 			isa = PBXGroup;
 			children = (
 				EA26375C1D16A4F100D5988D /* ServerParser.swift */,
-				EA26375E1D16A59700D5988D /* SmartAgentServerParser.swift */,
+				EA26375E1D16A59700D5988D /* SmartAgentParser.swift */,
 			);
 			name = Parsers;
 			sourceTree = "<group>";
@@ -763,22 +784,28 @@
 				EA93F1551D6FF7F200A12109 /* StatusCellViewModel.swift in Sources */,
 				EAFD28011D5E47D400818E48 /* ContainerViewController.swift in Sources */,
 				EADC600E1D19785000B8743C /* SingleListViewController.swift in Sources */,
+				EA3FBD881DCE7F0A00D993E8 /* PNRRemarkCell.swift in Sources */,
 				EA93F1591D6FF8DF00A12109 /* PassengerCellViewModel.swift in Sources */,
 				EA8C3CFB1D8D69CB00904E72 /* TickeningDueViewController.swift in Sources */,
 				EAAD18791D91D7C6006D6EF7 /* Events.swift in Sources */,
 				EA35A8581D3D6C4F00BE3618 /* UnderlinedTextField.swift in Sources */,
 				EA93F1621D6FFAC200A12109 /* ContactCellViewModel.swift in Sources */,
+				EA8DBB631DCE9D4D00E337DB /* HeaderView.swift in Sources */,
 				EAFD27F91D5C3F7B00818E48 /* RecentDataSource.swift in Sources */,
 				EADC60061D17017E00B8743C /* ServerService.swift in Sources */,
 				EA93F1491D6AC53C00A12109 /* ArrayExtention.swift in Sources */,
 				EA93F1511D6C0A2900A12109 /* PNRInfoStorageRealm.swift in Sources */,
+				EA3FBD841DCE7DEB00D993E8 /* PNRLatestPurchaseCell.swift in Sources */,
 				EA35A8671D40025400BE3618 /* SplitListsViewController.swift in Sources */,
 				EA26374E1D15BE3D00D5988D /* Router.swift in Sources */,
+				EA3FBD8E1DCE81E400D993E8 /* LatestPurchaseCellViewModel.swift in Sources */,
 				EAAD18771D91D607006D6EF7 /* AppAnalytics.swift in Sources */,
 				EAEF7B351D6799C900E00729 /* SearchViewModel.swift in Sources */,
 				EA25E74E1D7781C300EDE80A /* UIViewControllerExtention.swift in Sources */,
 				EA93F1451D68D8AA00A12109 /* SearchDataSource.swift in Sources */,
 				EAFD27FD1D5C43D300818E48 /* RecentViewController.swift in Sources */,
+				EA3FBD8A1DCE81B100D993E8 /* AlertCellViewModel.swift in Sources */,
+				EA3FBD861DCE7ECA00D993E8 /* PNRAlertCell.swift in Sources */,
 				EAECB5A81D5288AD0080ED3D /* Prefences.swift in Sources */,
 				EA93F16A1D7002B900A12109 /* PNRDataSource.swift in Sources */,
 				EA8CDA4A1D2C44A50090E9C1 /* SmartAgentServerServise.swift in Sources */,
@@ -790,7 +817,7 @@
 				EAB680D41D8EA1350027C0BE /* UnreadMessagesInfoModel.swift in Sources */,
 				EAF70C501D8ECA6C002349BB /* Constants.swift in Sources */,
 				EAFD27FF1D5C476100818E48 /* NotificationDataSource.swift in Sources */,
-				EA26375F1D16A59700D5988D /* SmartAgentServerParser.swift in Sources */,
+				EA26375F1D16A59700D5988D /* SmartAgentParser.swift in Sources */,
 				EA93F14B1D6B98AB00A12109 /* PNRInfoModel.swift in Sources */,
 				EAD0C6841D578BED0033B307 /* ErrorUtil.swift in Sources */,
 				EA35A8631D3EC5DE00BE3618 /* NotificationCell.swift in Sources */,
@@ -809,6 +836,7 @@
 				EA8C3CFF1D8D6B9E00904E72 /* CancelledViewController.swift in Sources */,
 				EA93F15B1D6FF90300A12109 /* FlightCellViewModel.swift in Sources */,
 				EA7ECA5B1D1BAD780014010A /* RecentNotificationCellViewModel.swift in Sources */,
+				EA3FBD8C1DCE81C300D993E8 /* RemarkCellViewModel.swift in Sources */,
 				EA93F1731D72F20F00A12109 /* PNRFlightCell.swift in Sources */,
 				EA35A86B1D40152100BE3618 /* AbstractContentProvider.swift in Sources */,
 				EADC60161D1A77AB00B8743C /* AbstractNotificationsStorage.swift in Sources */,

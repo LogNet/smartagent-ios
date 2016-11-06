@@ -1,17 +1,18 @@
 //
-//  PNRContactCell.swift
+//  PNRAlertCell.swift
 //  SmartAgent
 //
-//  Created by Anton Tikhonov on 8/28/16.
+//  Created by Anton Tikhonov on 11/5/16.
 //  Copyright © 2016 Anton Tikhonov. All rights reserved.
 //
 
 import UIKit
 
-class PNRContactCell: UITableViewCell {
-    @IBOutlet weak var contactName: UILabel!
+class PNRAlertCell: UITableViewCell {
     
-    var viewModel:ContactCellViewModel! {
+    @IBOutlet weak var alertTextLabel: UILabel!
+
+    var viewModel:AlertCellViewModel! {
         didSet{
             self.prepareView()
         }
@@ -27,9 +28,8 @@ class PNRContactCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
-    private func prepareView(){
-        self.contactName.text = self.viewModel.name
-    }
 
+    private func prepareView() {
+        self.alertTextLabel.text = self.viewModel.text
+    }
 }

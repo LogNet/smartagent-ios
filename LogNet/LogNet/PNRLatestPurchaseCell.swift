@@ -1,21 +1,23 @@
 //
-//  PNRContactCell.swift
+//  LatestPurchaseCell.swift
 //  SmartAgent
 //
-//  Created by Anton Tikhonov on 8/28/16.
+//  Created by Anton Tikhonov on 11/5/16.
 //  Copyright © 2016 Anton Tikhonov. All rights reserved.
 //
 
 import UIKit
 
-class PNRContactCell: UITableViewCell {
-    @IBOutlet weak var contactName: UILabel!
+class PNRLatestPurchaseCell: UITableViewCell {
+
+    @IBOutlet weak var dateLabel: UILabel!
     
-    var viewModel:ContactCellViewModel! {
+    var viewModel:LatestPurchaseCellViewModel! {
         didSet{
             self.prepareView()
         }
     }
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,7 +31,7 @@ class PNRContactCell: UITableViewCell {
     }
     
     private func prepareView(){
-        self.contactName.text = self.viewModel.name
+        self.dateLabel.text = self.viewModel.latestPutchaseDate
     }
-
+    
 }

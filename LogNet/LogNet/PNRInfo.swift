@@ -9,6 +9,15 @@
 import UIKit
 import RealmSwift
 
+class Alert:Object {
+    dynamic var code:String?
+    dynamic var text:String?
+}
+
+class Remark: Object {
+    dynamic var text:String?
+}
+
 class PNR: Object {
     dynamic var id:String?
     dynamic var pcc:String?
@@ -66,12 +75,27 @@ class PNRInfo: Object {
     dynamic var title:String?
     dynamic var pnr:PNR?
     dynamic var contact:Contact?
-
+    dynamic var last_purchase_date:String?
+    
     let passengers = List<Passenger>()
     let flights = List<Flight>()
     let hotels = List<Hotel>()
     let cars = List<Car>()
-
+    let alerts = List<Alert>()
+    let remarks = List<Remark>()
+    
+    func setAlerts(alerts:[Alert]?) {
+        guard alerts != nil else { return }
+        self.alerts.appendContentsOf(alerts!)
+        print(self.alerts)
+    }
+    
+    func setRemarks(remarks:[Remark]?) {
+        guard remarks != nil else { return }
+        self.remarks.appendContentsOf(remarks!)
+        print(self.remarks)
+    }
+    
     func setPassengers(passengers:[Passenger]?) {
         guard passengers != nil else { return }
         self.passengers.appendContentsOf(passengers!)
@@ -99,10 +123,13 @@ class PNRInfo: Object {
         pnrInfo.notification_id = self.notification_id
         pnrInfo.pnr = self.pnr
         pnrInfo.contact = self.contact
+        pnrInfo.last_purchase_date = self.last_purchase_date
         pnrInfo.passengers.appendContentsOf(self.passengers)
         pnrInfo.hotels.appendContentsOf(self.hotels)
         pnrInfo.cars.appendContentsOf(self.cars)
         pnrInfo.flights.appendContentsOf(self.flights)
+        pnrInfo.alerts.appendContentsOf(self.alerts)
+        pnrInfo.remarks.appendContentsOf(self.remarks)
         return pnrInfo
     }
     

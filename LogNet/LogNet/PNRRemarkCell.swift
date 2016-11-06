@@ -1,17 +1,18 @@
 //
-//  PNRContactCell.swift
+//  PNRRemerkCell.swift
 //  SmartAgent
 //
-//  Created by Anton Tikhonov on 8/28/16.
+//  Created by Anton Tikhonov on 11/5/16.
 //  Copyright © 2016 Anton Tikhonov. All rights reserved.
 //
 
 import UIKit
 
-class PNRContactCell: UITableViewCell {
-    @IBOutlet weak var contactName: UILabel!
+class PNRRemarkCell: UITableViewCell {
     
-    var viewModel:ContactCellViewModel! {
+    @IBOutlet weak var remarkTextLabel: UILabel!
+
+    var viewModel:RemarkCellViewModel! {
         didSet{
             self.prepareView()
         }
@@ -27,9 +28,9 @@ class PNRContactCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
-    private func prepareView(){
-        self.contactName.text = self.viewModel.name
+
+    private func prepareView() {
+        self.remarkTextLabel.text = self.viewModel.text
     }
 
 }
