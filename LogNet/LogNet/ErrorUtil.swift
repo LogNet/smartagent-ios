@@ -13,6 +13,7 @@ enum ApplicationError:ErrorType {
     case FORBIDDEN
     case NOT_ACTIVATED
     case NoInternetConnection
+    case Server
     case Unknown
     
     func getError() -> NSError {
@@ -23,6 +24,8 @@ enum ApplicationError:ErrorType {
             return NSError(domain: APPLICATION_DOMAIN, code: 0, userInfo: [NSLocalizedDescriptionKey : "Account not activated."])
         case .NoInternetConnection:
             return NSError(domain: APPLICATION_DOMAIN, code: 0, userInfo: [NSLocalizedDescriptionKey : "No internet connection."])
+        case .Server:
+            return NSError(domain: APPLICATION_DOMAIN, code: 0, userInfo: [NSLocalizedDescriptionKey : "Server error. Please try again later."])
         default:
             return NSError(domain: APPLICATION_DOMAIN, code: 0, userInfo: [NSLocalizedDescriptionKey : "Unknown error."])
         }
@@ -33,11 +36,13 @@ class ErrorUtil {
     class func ErrorWithMessage(message:String) -> ErrorType {
         switch message {
         case "NOT_ACTIVATED":
-            return ApplicationError.NOT_ACTIVATED
+            return ApplicationError.NOT_ACTIVATED.getError()
         case "FORBIDDEN":
-            return ApplicationError.FORBIDDEN
+            return ApplicationError.FORBIDDEN.getError()
+        case "SERVER_ERROR":
+            return ApplicationError.Server.getError()
         default:
-            return ApplicationError.Unknown
+            return ApplicationError.Unknown.getError()
         }
     }
 }

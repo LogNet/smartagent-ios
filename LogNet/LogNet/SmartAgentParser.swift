@@ -36,19 +36,27 @@ class SmartAgentParser: ServerParser {
         let unreadMessagesInfo = UnreadMessagesInfo()
         
         if let count = dict["RP"] {
-            unreadMessagesInfo.reprice = String(count)
+            if count != 0 {
+                unreadMessagesInfo.reprice = String(count)
+            }
         }
         
         if let count = dict["TD"] {
-            unreadMessagesInfo.ticketingDue = String(count)
+            if count != 0 {
+                unreadMessagesInfo.ticketingDue = String(count)
+            }
         }
         
         if let count = dict["C"] {
-            unreadMessagesInfo.cancelled = String(count)
+            if count != 0 {
+                unreadMessagesInfo.cancelled = String(count)
+            }
         }
         
         if let count = dict["total"] {
-            unreadMessagesInfo.total = String(count)
+            if count != 0 {
+                unreadMessagesInfo.total = String(count)
+            }
         }
         return (unreadMessagesInfo, nil)
     }
