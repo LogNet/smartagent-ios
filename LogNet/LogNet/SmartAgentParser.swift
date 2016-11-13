@@ -129,7 +129,7 @@ class SmartAgentParser: ServerParser {
         notification.notification_time = self.dateFormatter.dateFromString(time!)
         notification.pnr_summary = jsonNotification["pnr_summary"] as? String
         notification.contact_name = jsonNotification["contact_name"] as? String
-        notification.typeStatus = jsonNotification["typeStatus"] as? String
+        notification.typeStatus = jsonNotification["type_status"] as? String
         notification.alert_indicator = jsonNotification["alert_indicator"] as! Bool
         return notification
     }
