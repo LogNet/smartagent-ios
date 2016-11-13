@@ -13,6 +13,6 @@ class LatestPurchaseCellViewModel {
     let latestPutchaseDate:String
     
     init(date:String) {
-        self.latestPutchaseDate = "Last purchase - \(date)"
+        self.latestPutchaseDate = "Last ticketing date - \(date)"
     }
 }
