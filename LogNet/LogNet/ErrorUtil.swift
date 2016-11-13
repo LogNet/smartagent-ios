@@ -36,13 +36,13 @@ class ErrorUtil {
     class func ErrorWithMessage(message:String) -> ErrorType {
         switch message {
         case "NOT_ACTIVATED":
-            return ApplicationError.NOT_ACTIVATED.getError()
+            return ApplicationError.NOT_ACTIVATED
         case "FORBIDDEN":
-            return ApplicationError.FORBIDDEN.getError()
+            return ApplicationError.FORBIDDEN
         case "SERVER_ERROR":
-            return ApplicationError.Server.getError()
+            return ApplicationError.Server
         default:
-            return ApplicationError.Unknown.getError()
+            return ApplicationError.Unknown
         }
     }
 }

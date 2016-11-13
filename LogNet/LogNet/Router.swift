@@ -128,6 +128,7 @@ class Router {
         }
         
         let viewController = self.storyboard.instantiateViewControllerWithIdentifier("TermsViewController") as! TermsViewController
+        viewController.viewModel = self.recentViewController?.viewModel
         let navigationController = UINavigationController(rootViewController: viewController)
         self.recentViewController?.presentViewController(navigationController, animated: false, completion: nil)
     }

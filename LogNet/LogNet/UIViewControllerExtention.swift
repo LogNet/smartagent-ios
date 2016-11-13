@@ -12,16 +12,38 @@ import UIKit
 extension UIViewController {
     func showErrorAlert (error:ErrorType?, action:((UIAlertAction) -> Void)? ) {
         var message = "Something went wrong!"
-        if let ns_error = error as? NSError {
-            message = ns_error.localizedDescription
+        
+        //TODO: Needs refactoring
+        if error != nil {
+            switch error! {
+            case ApplicationError.Server:
+                message = ApplicationError.Server.getError().localizedDescription
+                break
+            case ApplicationError.FORBIDDEN:
+                message = ApplicationError.Server.getError().localizedDescription
+                break
+            case ApplicationError.Unknown:
+                message = ApplicationError.Server.getError().localizedDescription
+                break
+            case ApplicationError.NOT_ACTIVATED:
+                message = ApplicationError.Server.getError().localizedDescription
+                break
+            case ApplicationError.NoInternetConnection:
+                message = ApplicationError.Server.getError().localizedDescription
+                break
+            default:
+                let ns_error = error as! NSError
+                if ns_error.code == -1009 {
+                    message = "No internet connection!"
+                }
+                
+                if let ns_error = error as? NSError {
+                    message = ns_error.localizedDescription
+                }
+            }
+            
         }
         
-        if error != nil {
-            let ns_error = error as! NSError
-            if ns_error.code == -1009 {
-                message = "No internet connection!"
-            }
-        }
         let alert =
             UIAlertController(title: "An error occured.",
                               message: message,

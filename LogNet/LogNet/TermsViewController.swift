@@ -9,7 +9,9 @@
 import UIKit
 
 class TermsViewController: UIViewController {
-
+    
+    var viewModel:SingleListViewModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Terms and conditions"
@@ -23,6 +25,7 @@ class TermsViewController: UIViewController {
     
     @IBAction func agree(sender: AnyObject) {
         Prefences.approveTerms()
+        self.viewModel?.fetchInitial()
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
