@@ -25,7 +25,7 @@ class TermsViewController: UIViewController {
     
     @IBAction func agree(sender: AnyObject) {
         Prefences.approveTerms()
-        self.viewModel?.fetchInitial()
+        self.viewModel?.fetchInitial().subscribeNext{}.dispose()
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
