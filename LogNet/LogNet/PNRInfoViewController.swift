@@ -28,7 +28,7 @@ class PNRInfoViewController: UITableViewController {
             if hasActiveAction == false {
                 self?.navigationItem.rightBarButtonItem = nil
             } else {
-                let item = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Action, target: self, action: #selector(self?.apply))
+                let item = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Action, target: self, action: #selector(self?.openActionSheet))
                 self?.navigationItem.rightBarButtonItem = item
             }
         }.addDisposableTo(self.disposeBag)
@@ -65,6 +65,27 @@ class PNRInfoViewController: UITableViewController {
     
     // MARK: - Private methods
     
+    private func reprice() {
+        HUD.show(.SystemActivity)
+        self.viewModel.reprice().subscribe(onNext: { Void in
+            HUD.hide(animated: true)
+            }, onError: { error in
+                error.logToCrashlytics()
+                HUD.hide(animated: true)
+                self.showErrorAlert(error, action: nil)
+            }, onCompleted: nil, onDisposed: nil)
+            .addDisposableTo(self.disposeBag)
+    }
+    
+    private func share() {
+        guard let text = self.viewModel.getShareText() else {
+            return
+        }
+        AppAnalytics.logEvent(Events.ACTION_SHARE)
+        let activityViewController = UIActivityViewController(activityItems: [text], applicationActivities: [RepriceActivity()])
+        self.navigationController?.presentViewController(activityViewController, animated: true, completion: nil)
+    }
+    
     @IBAction func executePendingOperation(sender: AnyObject) {
         let switchControl = sender as! UISwitch
         switchControl.enabled = false
@@ -83,16 +104,23 @@ class PNRInfoViewController: UITableViewController {
             self.viewModel.callToContact()
     }
     
-    @objc func apply () {
-        HUD.show(.SystemActivity)
-        self.viewModel.reprice().subscribe(onNext: { Void in
-            HUD.hide(animated: true)
-            }, onError: { error in
-                error.logToCrashlytics()
-                HUD.hide(animated: true)
-                self.showErrorAlert(error, action: nil)
-            }, onCompleted: nil, onDisposed: nil)
-            .addDisposableTo(self.disposeBag)
+    @objc func openActionSheet () {
+        let actionSheet = UIAlertController(title: "Choose an action", message:nil, preferredStyle: .ActionSheet)
+        let shareAction = UIAlertAction(title: "Share", style: .Default) { [weak self] (action) in
+            self?.share()
+        }
+        
+        let repriceAction = UIAlertAction(title: "Approve reprice", style: .Default) { [weak self] (action) in
+            self?.reprice()
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        actionSheet.addAction(cancelAction)
+        actionSheet.addAction(repriceAction)
+        actionSheet.addAction(shareAction)
+
+        self.presentViewController(actionSheet, animated: true, completion: nil)
+        
     }
 
     // MARK: - Table view data source

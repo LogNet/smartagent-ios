@@ -33,6 +33,7 @@
 		EA3FBD8C1DCE81C300D993E8 /* RemarkCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3FBD8B1DCE81C300D993E8 /* RemarkCellViewModel.swift */; };
 		EA3FBD8E1DCE81E400D993E8 /* LatestPurchaseCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3FBD8D1DCE81E400D993E8 /* LatestPurchaseCellViewModel.swift */; };
 		EA42EAF11D438C7600451BB9 /* PNRInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA42EAF01D438C7600451BB9 /* PNRInfoViewController.swift */; };
+		EA4BA07C1DD906FE0038683C /* RepriceActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4BA07B1DD906FE0038683C /* RepriceActivity.swift */; };
 		EA7B8DF91DCEAF5F00D3D9A9 /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7B8DF81DCEAF5F00D3D9A9 /* TermsViewController.swift */; };
 		EA7ECA5B1D1BAD780014010A /* RecentNotificationCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7ECA5A1D1BAD780014010A /* RecentNotificationCellViewModel.swift */; };
 		EA7ECA5D1D1BB41E0014010A /* RecentNotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7ECA5C1D1BB41E0014010A /* RecentNotificationCell.swift */; };
@@ -158,6 +159,7 @@
 		EA3FBD8B1DCE81C300D993E8 /* RemarkCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemarkCellViewModel.swift; sourceTree = "<group>"; };
 		EA3FBD8D1DCE81E400D993E8 /* LatestPurchaseCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LatestPurchaseCellViewModel.swift; sourceTree = "<group>"; };
 		EA42EAF01D438C7600451BB9 /* PNRInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNRInfoViewController.swift; sourceTree = "<group>"; };
+		EA4BA07B1DD906FE0038683C /* RepriceActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepriceActivity.swift; sourceTree = "<group>"; };
 		EA7B8DF81DCEAF5F00D3D9A9 /* TermsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
 		EA7ECA5A1D1BAD780014010A /* RecentNotificationCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentNotificationCellViewModel.swift; sourceTree = "<group>"; };
 		EA7ECA5C1D1BB41E0014010A /* RecentNotificationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentNotificationCell.swift; sourceTree = "<group>"; };
@@ -364,6 +366,7 @@
 			children = (
 				EA35A8571D3D6C4F00BE3618 /* UnderlinedTextField.swift */,
 				EA35A8641D3ED28700BE3618 /* NoMessagesView.xib */,
+				EA4BA07B1DD906FE0038683C /* RepriceActivity.swift */,
 			);
 			name = CustomViews;
 			sourceTree = "<group>";
@@ -798,6 +801,7 @@
 				EADC60061D17017E00B8743C /* ServerService.swift in Sources */,
 				EA93F1491D6AC53C00A12109 /* ArrayExtention.swift in Sources */,
 				EA93F1511D6C0A2900A12109 /* PNRInfoStorageRealm.swift in Sources */,
+				EA4BA07C1DD906FE0038683C /* RepriceActivity.swift in Sources */,
 				EA3FBD841DCE7DEB00D993E8 /* PNRLatestPurchaseCell.swift in Sources */,
 				EA35A8671D40025400BE3618 /* SplitListsViewController.swift in Sources */,
 				EA26374E1D15BE3D00D5988D /* Router.swift in Sources */,
