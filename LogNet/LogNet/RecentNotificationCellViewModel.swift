@@ -17,7 +17,7 @@ class RecentNotificationCellViewModel {
         dateFormatter.doesRelativeDateFormatting = true
         return dateFormatter
     }()
-    let rowHeight = CGFloat(77.0)
+    let rowHeight = CGFloat(88.0)
     var title:String?
     var titleMessage:String?
     var contactName:String?
@@ -42,6 +42,7 @@ class RecentNotificationCellViewModel {
         self.pnrSummary = self.notification.pnr_summary
         if let time = self.notification.notification_time {
             self.date = self.dateFormatter.stringFromDate(time)
+//            self.date = self.date?.stringByReplacingOccurrencesOfString(",", withString: "\n")
         }
         if self.notification.status == "READ" {
             self.isRead = true
