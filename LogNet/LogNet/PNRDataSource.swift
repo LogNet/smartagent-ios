@@ -98,7 +98,7 @@ class PNRDataSource: BaseRXDataSource, UITableViewDelegate {
             if self.type != "RP"{
                 return 50
             } else {
-                return 87
+                return 107
             }
         case 4:
             return 62

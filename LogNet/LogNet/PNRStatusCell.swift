@@ -10,7 +10,7 @@ import UIKit
 
 class PNRStatusCell: UITableViewCell {
     
-    @IBOutlet weak var notificationTitle: UILabel!
+    @IBOutlet weak var notificationTitle: UITextView!
     @IBOutlet weak var switchControl: UISwitch!
     
     var viewModel:StatusCellViewModel! {

@@ -2486,11 +2486,11 @@ viii. You will not use the Service to upload, post, transmit, share or otherwise
                                     <outlet property="contactName" destination="mVp-zL-Y77" id="lFr-gY-6z9"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PNRStatusCell" rowHeight="87" id="mPK-W3-Onz" customClass="PNRStatusCell" customModule="SmartAgent" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="313.5" width="375" height="87"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PNRStatusCell" rowHeight="107" id="mPK-W3-Onz" customClass="PNRStatusCell" customModule="SmartAgent" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="313.5" width="375" height="107"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mPK-W3-Onz" id="iRX-mC-xNg">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="87"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="107"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="US Dollar" translatesAutoresizingMaskIntoConstraints="NO" id="F1g-HF-wal">
@@ -2499,8 +2499,8 @@ viii. You will not use the Service to upload, post, transmit, share or otherwise
                                                 <constraint firstAttribute="width" constant="18" id="Dw7-Bb-THi"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kon-Vi-oce">
-                                            <rect key="frame" x="49" y="13" width="279" height="21"/>
+                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kon-Vi-oce">
+                                            <rect key="frame" x="49" y="13" width="279" height="42"/>
                                             <attributedString key="attributedText">
                                                 <fragment content="Saved ">
                                                     <attributes>
@@ -2524,37 +2524,52 @@ viii. You will not use the Service to upload, post, transmit, share or otherwise
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Refund-Black" translatesAutoresizingMaskIntoConstraints="NO" id="SfZ-Xj-uct">
-                                            <rect key="frame" x="14" y="54" width="18" height="18"/>
+                                            <rect key="frame" x="14" y="74" width="18" height="18"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Keep pricing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eg0-fo-hWn">
-                                            <rect key="frame" x="49" y="53" width="171" height="21"/>
+                                            <rect key="frame" x="49" y="73" width="171" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A80-dF-wgD">
-                                            <rect key="frame" x="306" y="48" width="51" height="31"/>
+                                            <rect key="frame" x="306" y="68" width="51" height="31"/>
                                             <connections>
                                                 <action selector="executePendingOperation:" destination="UmQ-6U-jYB" eventType="touchUpInside" id="9N9-xy-cC8"/>
                                             </connections>
                                         </switch>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5tO-qq-GKr">
-                                            <rect key="frame" x="16" y="85.5" width="359" height="1"/>
+                                            <rect key="frame" x="16" y="106" width="359" height="1"/>
                                             <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="1" id="XAf-1j-CFc"/>
                                             </constraints>
                                         </view>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="RNA-kQ-jBV">
+                                            <rect key="frame" x="43" y="4" width="277" height="61"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="61" id="A8J-HQ-3Ya"/>
+                                                <constraint firstAttribute="width" constant="277" id="Grb-oM-acM"/>
+                                            </constraints>
+                                            <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="F1g-HF-wal" firstAttribute="leading" secondItem="iRX-mC-xNg" secondAttribute="leadingMargin" constant="6" id="44f-i5-dMI"/>
+                                        <constraint firstItem="RNA-kQ-jBV" firstAttribute="trailing" secondItem="kon-Vi-oce" secondAttribute="trailing" id="7oq-gC-Rzl"/>
                                         <constraint firstItem="SfZ-Xj-uct" firstAttribute="centerY" secondItem="Eg0-fo-hWn" secondAttribute="centerY" id="8bO-z7-jLg"/>
+                                        <constraint firstItem="RNA-kQ-jBV" firstAttribute="bottom" secondItem="kon-Vi-oce" secondAttribute="bottom" id="AEr-t3-BYR"/>
                                         <constraint firstItem="kon-Vi-oce" firstAttribute="leading" secondItem="Eg0-fo-hWn" secondAttribute="leading" id="Iso-4D-Bo2"/>
-                                        <constraint firstItem="F1g-HF-wal" firstAttribute="centerY" secondItem="kon-Vi-oce" secondAttribute="centerY" id="KyE-XA-TzN"/>
+                                        <constraint firstItem="F1g-HF-wal" firstAttribute="centerY" secondItem="kon-Vi-oce" secondAttribute="centerY" constant="-11" id="KyE-XA-TzN"/>
+                                        <constraint firstItem="RNA-kQ-jBV" firstAttribute="top" secondItem="kon-Vi-oce" secondAttribute="top" constant="-9" id="Q6C-pk-OoC"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="5tO-qq-GKr" secondAttribute="bottom" constant="-8" id="SCl-hr-0hg"/>
+                                        <constraint firstItem="RNA-kQ-jBV" firstAttribute="leading" secondItem="F1g-HF-wal" secondAttribute="trailing" constant="11" id="TDJ-sG-oJH"/>
                                         <constraint firstItem="A80-dF-wgD" firstAttribute="leading" secondItem="Eg0-fo-hWn" secondAttribute="trailing" constant="86" id="V8x-QN-qWE"/>
-                                        <constraint firstItem="A80-dF-wgD" firstAttribute="top" secondItem="kon-Vi-oce" secondAttribute="bottom" constant="14" id="VJb-Ej-Ezt"/>
-                                        <constraint firstItem="SfZ-Xj-uct" firstAttribute="top" secondItem="F1g-HF-wal" secondAttribute="bottom" constant="22" id="XJs-Ib-Zpy"/>
+                                        <constraint firstItem="A80-dF-wgD" firstAttribute="top" secondItem="kon-Vi-oce" secondAttribute="bottom" constant="13" id="VJb-Ej-Ezt"/>
+                                        <constraint firstItem="SfZ-Xj-uct" firstAttribute="top" secondItem="F1g-HF-wal" secondAttribute="bottom" constant="42" id="XJs-Ib-Zpy"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="kon-Vi-oce" secondAttribute="trailing" constant="39" id="ZsZ-FJ-n1f"/>
                                         <constraint firstItem="kon-Vi-oce" firstAttribute="leading" secondItem="F1g-HF-wal" secondAttribute="trailing" constant="17" id="bue-EK-U0h"/>
                                         <constraint firstItem="5tO-qq-GKr" firstAttribute="leading" secondItem="iRX-mC-xNg" secondAttribute="leadingMargin" constant="8" id="daN-tz-G1d"/>
@@ -2562,17 +2577,25 @@ viii. You will not use the Service to upload, post, transmit, share or otherwise
                                         <constraint firstItem="Eg0-fo-hWn" firstAttribute="centerY" secondItem="A80-dF-wgD" secondAttribute="centerY" id="f7t-18-yNo"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="5tO-qq-GKr" secondAttribute="trailing" constant="-8" id="h5F-Af-G9V"/>
                                         <constraint firstItem="F1g-HF-wal" firstAttribute="leading" secondItem="SfZ-Xj-uct" secondAttribute="leading" id="kng-Ey-g4k"/>
+                                        <constraint firstItem="RNA-kQ-jBV" firstAttribute="top" secondItem="iRX-mC-xNg" secondAttribute="topMargin" constant="-4" id="lte-01-nJB"/>
                                         <constraint firstItem="kon-Vi-oce" firstAttribute="top" secondItem="iRX-mC-xNg" secondAttribute="topMargin" constant="5" id="vye-Wo-yVK"/>
+                                        <constraint firstItem="RNA-kQ-jBV" firstAttribute="leading" secondItem="kon-Vi-oce" secondAttribute="leading" constant="-6" id="zHA-t3-FRf"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="7oq-gC-Rzl"/>
+                                            <exclude reference="AEr-t3-BYR"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                 <connections>
-                                    <outlet property="notificationTitle" destination="kon-Vi-oce" id="KDb-XH-8gp"/>
+                                    <outlet property="notificationTitle" destination="RNA-kQ-jBV" id="9sc-GT-RrX"/>
                                     <outlet property="switchControl" destination="A80-dF-wgD" id="pX9-6R-JZl"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="PNRCell" focusStyle="custom" rowHeight="62" id="l5j-L0-nh1" customClass="PNRCell" customModule="SmartAgent" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="400.5" width="375" height="62"/>
+                                <rect key="frame" x="0.0" y="420.5" width="375" height="62"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="l5j-L0-nh1" id="Cya-kt-GOs">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="62"/>
@@ -2654,7 +2677,7 @@ viii. You will not use the Service to upload, post, transmit, share or otherwise
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PNRPassengerCell" rowHeight="61" id="wkK-CX-QqW" customClass="PNRPassengerCell" customModule="SmartAgent" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="462.5" width="375" height="61"/>
+                                <rect key="frame" x="0.0" y="482.5" width="375" height="61"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wkK-CX-QqW" id="n3N-Eg-sCq">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="61"/>
@@ -2699,7 +2722,7 @@ viii. You will not use the Service to upload, post, transmit, share or otherwise
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PNRFlightCell" rowHeight="93" id="gQ0-zS-YBZ" customClass="PNRFlightCell" customModule="SmartAgent" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="523.5" width="375" height="93"/>
+                                <rect key="frame" x="0.0" y="543.5" width="375" height="93"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gQ0-zS-YBZ" id="Fh0-HQ-43O">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="93"/>
@@ -2823,7 +2846,7 @@ viii. You will not use the Service to upload, post, transmit, share or otherwise
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PNRHotelCell" rowHeight="114" id="6Bt-gp-zHs" customClass="PNRHotelCell" customModule="SmartAgent" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="616.5" width="375" height="114"/>
+                                <rect key="frame" x="0.0" y="636.5" width="375" height="114"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6Bt-gp-zHs" id="Axg-P2-8QY">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="114"/>
@@ -2906,7 +2929,7 @@ viii. You will not use the Service to upload, post, transmit, share or otherwise
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PNRCarCell" rowHeight="193" id="yA1-Bm-JJj" customClass="PNRCarCell" customModule="SmartAgent" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="730.5" width="375" height="193"/>
+                                <rect key="frame" x="0.0" y="750.5" width="375" height="193"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yA1-Bm-JJj" id="mwd-tB-MnX">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="193"/>
