@@ -79,6 +79,9 @@ class SmartAgentParser: ServerParser {
         if let payloadDict = JSON["payload"] as? [String: AnyObject] {
             pnrInfo.setAlerts(self.parseAlerts(payloadDict["alerts"] as? Array))
             pnrInfo.setRemarks(self.parseRemarks(payloadDict["remarks"] as? Array))
+            pnrInfo.setSegmentClasses(self.parseSegmentClasses(payloadDict["segment_classes"] as? Array))
+//            pnrInfo.setRemarks(self.parseRemarks(["Test remark 1","Test remark 2", "Test remark 3"]))
+//            pnrInfo.setSegmentClasses(self.parseSegmentClasses(["Test segment 1","Test segment 2", "Test segment 3"]))
             pnrInfo.last_purchase_date = self.parseLastPurchaseDate(payloadDict["last_purchase_date"] as? String)
         }
         
@@ -155,6 +158,19 @@ class SmartAgentParser: ServerParser {
             alert.code = dict["code"]
             alert.text = dict["text"]
             entities.append(alert)
+        }
+        return entities
+    }
+    
+    private func parseSegmentClasses(array:[String]?) -> [SegmentClass]? {
+        guard array != nil else {
+            return nil
+        }
+        var entities:[SegmentClass] = []
+        for string in array! {
+            let segment = SegmentClass()
+            segment.text = string
+            entities.append(segment)
         }
         return entities
     }

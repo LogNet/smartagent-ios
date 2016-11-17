@@ -9,13 +9,29 @@
 import UIKit
 import RealmSwift
 
+protocol TextModel {
+    func getText() -> String?
+}
+
 class Alert:Object {
     dynamic var code:String?
     dynamic var text:String?
 }
 
-class Remark: Object {
+class Remark: Object, TextModel {
     dynamic var text:String?
+    
+    func getText() -> String? {
+        return self.text
+    }
+}
+
+class SegmentClass: Object, TextModel {
+    dynamic var text:String?
+    
+    func getText() -> String? {
+        return self.text
+    }
 }
 
 class PNR: Object {
@@ -83,23 +99,27 @@ class PNRInfo: Object {
     let cars = List<Car>()
     let alerts = List<Alert>()
     let remarks = List<Remark>()
-    
+    let segmentClasses = List<SegmentClass>()
+
     func setAlerts(alerts:[Alert]?) {
         guard alerts != nil else { return }
         self.alerts.appendContentsOf(alerts!)
         print(self.alerts)
     }
     
+    func setSegmentClasses(segmentClasses:[SegmentClass]?) {
+        guard segmentClasses != nil else { return }
+        self.segmentClasses.appendContentsOf(segmentClasses!)
+    }
+    
     func setRemarks(remarks:[Remark]?) {
         guard remarks != nil else { return }
         self.remarks.appendContentsOf(remarks!)
-        print(self.remarks)
     }
     
     func setPassengers(passengers:[Passenger]?) {
         guard passengers != nil else { return }
         self.passengers.appendContentsOf(passengers!)
-        print(self.passengers)
     }
     
     func setFlights(flights:[Flight]?) {
@@ -130,6 +150,7 @@ class PNRInfo: Object {
         pnrInfo.flights.appendContentsOf(self.flights)
         pnrInfo.alerts.appendContentsOf(self.alerts)
         pnrInfo.remarks.appendContentsOf(self.remarks)
+        pnrInfo.segmentClasses.appendContentsOf(self.segmentClasses)
         return pnrInfo
     }
     

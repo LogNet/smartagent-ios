@@ -2360,15 +2360,15 @@ viii. You will not use the Service to upload, post, transmit, share or otherwise
                                     <outlet property="dateLabel" destination="2H4-1x-3vB" id="Yfi-XL-zpo"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PNRAlertCell" rowHeight="44" id="KVE-9A-lZG" customClass="PNRAlertCell" customModule="SmartAgent" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="175.5" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PNRAlertCell" rowHeight="21" id="KVE-9A-lZG" customClass="PNRAlertCell" customModule="SmartAgent" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="175.5" width="375" height="21"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KVE-9A-lZG" id="H1l-eK-qxD">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="21"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W9J-qn-sxa">
-                                            <rect key="frame" x="49" y="11.5" width="294" height="21"/>
+                                            <rect key="frame" x="49" y="0.0" width="294" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="5cc-40-AQc"/>
                                             </constraints>
@@ -2377,7 +2377,7 @@ viii. You will not use the Service to upload, post, transmit, share or otherwise
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="exclamation" translatesAutoresizingMaskIntoConstraints="NO" id="dQc-KH-j2C">
-                                            <rect key="frame" x="14" y="12.5" width="19" height="19"/>
+                                            <rect key="frame" x="14" y="1" width="19" height="19"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="19" id="DO2-FI-wCK"/>
                                                 <constraint firstAttribute="height" constant="19" id="eLd-bi-xQF"/>
@@ -2397,26 +2397,26 @@ viii. You will not use the Service to upload, post, transmit, share or otherwise
                                     <outlet property="alertTextLabel" destination="W9J-qn-sxa" id="Bed-md-vt1"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PNRRemarkCell" rowHeight="44" id="jhd-ZP-qhU" customClass="PNRRemarkCell" customModule="SmartAgent" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="219.5" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PNRRemarkCell" rowHeight="21" id="jhd-ZP-qhU" customClass="PNRRemarkCell" customModule="SmartAgent" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="196.5" width="375" height="21"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jhd-ZP-qhU" id="h0I-um-c9S">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="21"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="olE-7K-aNf">
-                                            <rect key="frame" x="33" y="11.5" width="309" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="olE-7K-aNf">
+                                            <rect key="frame" x="48" y="0.0" width="294" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="JC2-BZ-LbZ"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="SanFranciscoText-Regular" family="San Francisco Text" pointSize="15"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="olE-7K-aNf" firstAttribute="centerY" secondItem="h0I-um-c9S" secondAttribute="centerY" id="80R-eQ-O7M"/>
-                                        <constraint firstItem="olE-7K-aNf" firstAttribute="leading" secondItem="h0I-um-c9S" secondAttribute="leadingMargin" constant="25" id="ACT-rS-CNd"/>
+                                        <constraint firstItem="olE-7K-aNf" firstAttribute="leading" secondItem="h0I-um-c9S" secondAttribute="leadingMargin" constant="40" id="ACT-rS-CNd"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="olE-7K-aNf" secondAttribute="trailing" constant="25" id="qpP-hs-7au"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -2427,7 +2427,7 @@ viii. You will not use the Service to upload, post, transmit, share or otherwise
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PNRContactCell" rowHeight="50" id="hOr-NE-QFC" customClass="PNRContactCell" customModule="SmartAgent" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="263.5" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="217.5" width="375" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hOr-NE-QFC" id="JAA-Ui-Gdd">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
@@ -2487,7 +2487,7 @@ viii. You will not use the Service to upload, post, transmit, share or otherwise
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PNRStatusCell" rowHeight="107" id="mPK-W3-Onz" customClass="PNRStatusCell" customModule="SmartAgent" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="313.5" width="375" height="107"/>
+                                <rect key="frame" x="0.0" y="267.5" width="375" height="107"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mPK-W3-Onz" id="iRX-mC-xNg">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="107"/>
@@ -2595,7 +2595,7 @@ viii. You will not use the Service to upload, post, transmit, share or otherwise
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="PNRCell" focusStyle="custom" rowHeight="62" id="l5j-L0-nh1" customClass="PNRCell" customModule="SmartAgent" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="420.5" width="375" height="62"/>
+                                <rect key="frame" x="0.0" y="374.5" width="375" height="62"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="l5j-L0-nh1" id="Cya-kt-GOs">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="62"/>
@@ -2677,7 +2677,7 @@ viii. You will not use the Service to upload, post, transmit, share or otherwise
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PNRPassengerCell" rowHeight="61" id="wkK-CX-QqW" customClass="PNRPassengerCell" customModule="SmartAgent" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="482.5" width="375" height="61"/>
+                                <rect key="frame" x="0.0" y="436.5" width="375" height="61"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wkK-CX-QqW" id="n3N-Eg-sCq">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="61"/>
@@ -2722,7 +2722,7 @@ viii. You will not use the Service to upload, post, transmit, share or otherwise
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PNRFlightCell" rowHeight="93" id="gQ0-zS-YBZ" customClass="PNRFlightCell" customModule="SmartAgent" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="543.5" width="375" height="93"/>
+                                <rect key="frame" x="0.0" y="497.5" width="375" height="93"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gQ0-zS-YBZ" id="Fh0-HQ-43O">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="93"/>
@@ -2846,7 +2846,7 @@ viii. You will not use the Service to upload, post, transmit, share or otherwise
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PNRHotelCell" rowHeight="114" id="6Bt-gp-zHs" customClass="PNRHotelCell" customModule="SmartAgent" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="636.5" width="375" height="114"/>
+                                <rect key="frame" x="0.0" y="590.5" width="375" height="114"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6Bt-gp-zHs" id="Axg-P2-8QY">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="114"/>
@@ -2929,7 +2929,7 @@ viii. You will not use the Service to upload, post, transmit, share or otherwise
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PNRCarCell" rowHeight="193" id="yA1-Bm-JJj" customClass="PNRCarCell" customModule="SmartAgent" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="750.5" width="375" height="193"/>
+                                <rect key="frame" x="0.0" y="704.5" width="375" height="193"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yA1-Bm-JJj" id="mwd-tB-MnX">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="193"/>

@@ -8,17 +8,18 @@
 
 import Foundation
 
+// Needs to rename this class.
 class RemarkCellViewModel {
     
     var text:String? {
         get {
-            return self.model.text
+            return self.model.getText()
         }
     }
     
-    private let model:Remark
+    private let model:TextModel
     
-    init(model:Remark) {
+    init(model:TextModel) {
         self.model = model
     }
 }
