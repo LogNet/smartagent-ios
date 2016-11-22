@@ -24,14 +24,8 @@ class PNRInfoViewController: UITableViewController {
         self.tableView.delegate = self.dataSource
         self.dataSource.tableView = self.tableView
         self.dataSource.contentProvider = self.viewModel.contentProvider
-        self.viewModel.hasActiveAction.asObservable().subscribeNext { [weak self] hasActiveAction in
-            if hasActiveAction == false {
-                self?.navigationItem.rightBarButtonItem = nil
-            } else {
-                let item = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Action, target: self, action: #selector(self?.openActionSheet))
-                self?.navigationItem.rightBarButtonItem = item
-            }
-        }.addDisposableTo(self.disposeBag)
+        let item = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Action, target: self, action: #selector(self.openActionSheet))
+        self.navigationItem.rightBarButtonItem = item
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -83,7 +77,7 @@ class PNRInfoViewController: UITableViewController {
         }
         AppAnalytics.logEvent(Events.ACTION_SHARE)
         let activityViewController = UIActivityViewController(activityItems: [text], applicationActivities: [RepriceActivity()])
-        self.navigationController?.presentViewController(activityViewController, animated: true, completion: nil)
+        self.presentViewController(activityViewController, animated: true, completion: nil)
     }
     
     @IBAction func executePendingOperation(sender: AnyObject) {
@@ -110,15 +104,19 @@ class PNRInfoViewController: UITableViewController {
             self?.share()
         }
         
-        let repriceAction = UIAlertAction(title: "Approve reprice", style: .Default) { [weak self] (action) in
-            self?.reprice()
-        }
-        
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
         actionSheet.addAction(cancelAction)
-        actionSheet.addAction(repriceAction)
+        
+        // Add action button.
+        if self.viewModel.hasActiveAction == true {
+            let repriceAction = UIAlertAction(title: "Approve reprice", style: .Default) { [weak self] (action) in
+                self?.reprice()
+            }
+            repriceAction.enabled = self.viewModel.activeActionEnabled
+            actionSheet.addAction(repriceAction)
+            
+        }
         actionSheet.addAction(shareAction)
-
         self.presentViewController(actionSheet, animated: true, completion: nil)
         
     }

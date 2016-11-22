@@ -15,7 +15,8 @@ class PNRInfoViewModel: ViewModel {
     private var shareText:String?
     private let disposableBag = DisposeBag()
     private var contactNumber:String?
-    let hasActiveAction = Variable(false)
+    var hasActiveAction = false
+    var activeActionEnabled = false
     var unreadNotificationsModel:UnreadMessagesInfoModel!
     var contentProvider:PNRContentProvider!
     
@@ -74,7 +75,8 @@ class PNRInfoViewModel: ViewModel {
             self.contactNumber = phone
         }
         self.shareText = info.1.getShareText()
-        self.hasActiveAction.value = info.1.type == "RP"
+        self.hasActiveAction = info.1.type == "RP"
+        self.activeActionEnabled = info.1.sub_type == "PENDING"
         return Observable.just()
     }
 }
