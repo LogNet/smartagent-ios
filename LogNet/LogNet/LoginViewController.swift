@@ -25,11 +25,11 @@ class LoginViewController: UIViewController, MRCountryPickerDelegate, UITextFiel
     @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var countryPicker: MRCountryPicker!
+    
     private var isPhoneValid = false
     var loginViewModel: LoginViewModel?
     var loginningNow = false;
     let disposeBag = DisposeBag()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -46,6 +46,23 @@ class LoginViewController: UIViewController, MRCountryPickerDelegate, UITextFiel
     }
 
     // MARK: Methods
+    
+    func setDefaultHost() {
+        let alertController = UIAlertController(title: "Set environment URL", message: nil, preferredStyle: .Alert)
+        alertController.addTextFieldWithConfigurationHandler { textField in
+            textField.placeholder = "URL"
+        }
+        
+        let action = UIAlertAction(title: "Set", style: .Default) { action in
+            let urlTextField = alertController.textFields![0] as UITextField
+            self.loginViewModel?.changeDefaultURL(urlTextField.text)
+        }
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        alertController.addAction(action)
+        alertController.addAction(cancel)
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
     
     func addCountryPicker() {
         self.countryPicker.countryPickerDelegate = self
@@ -78,6 +95,12 @@ class LoginViewController: UIViewController, MRCountryPickerDelegate, UITextFiel
         // Observe email.
         self.emailTextField.rx_text.subscribeNext { (text) in
             self.loginViewModel?.email = text
+        }.addDisposableTo(self.disposeBag)
+        
+        self.loginViewModel?.canSetHost.asObservable().subscribeNext { canSet in
+            if canSet == true {
+                self.setDefaultHost()
+            }
         }.addDisposableTo(self.disposeBag)
     }
     
@@ -186,12 +209,17 @@ class LoginViewController: UIViewController, MRCountryPickerDelegate, UITextFiel
     
     // MARK: IBActions
     
+    @IBAction func tapHostSetter(sender: AnyObject) {
+       self.loginViewModel?.clickToSetHost()
+    }
+    
     @IBAction func showCountries(sender: AnyObject) {
         if self.countryPicker.hidden {
             self.countryPicker.hidden = false
             self.hideKeyboard()
         }
     }
+    
     @IBAction func login(sender: AnyObject) {
         if self.isValidAllFields() {
             self.hideKeyboard()

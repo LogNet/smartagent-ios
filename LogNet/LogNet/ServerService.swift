@@ -24,4 +24,5 @@ protocol ServerService {
     func getUnreadNotificationsCount(phoneNumber phoneNumber:String,
                                                  token:String) -> Observable<AnyObject>
     func executePendingOperation(token: String, phone: String, notificationID:String, op_code:String) -> Observable<AnyObject>
+
 }

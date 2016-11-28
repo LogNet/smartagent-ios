@@ -7,15 +7,24 @@
 //
 
 import Foundation
+import RxSwift
 
 class LoginViewModel:ViewModel {
     
+    private let environmentSetter = EnvironmentSetter(maxTapsCount: 20)
+
     // MARK: Public Variables
+
     var full_name:String?
     var phoneNumber:String?
     var email:String?
+    var canSetHost:Variable<Bool> {
+        get {
+            return self.environmentSetter.openHostSettings
+        }
+    }
     // MARK: Private Variables
-
+    
     private var loginModel:LoginModel
     
     init (loginModel:LoginModel, router:Router) {
@@ -37,4 +46,11 @@ class LoginViewModel:ViewModel {
         
     }
     
+    func clickToSetHost() {
+        self.environmentSetter.tap()
+    }
+    
+    func changeDefaultURL(url:String?) {
+        EnvironmentSetter.setDefaultURL(url)
+    }
 }

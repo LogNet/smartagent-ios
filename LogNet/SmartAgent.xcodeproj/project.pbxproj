@@ -34,6 +34,7 @@
 		EA3FBD8E1DCE81E400D993E8 /* LatestPurchaseCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3FBD8D1DCE81E400D993E8 /* LatestPurchaseCellViewModel.swift */; };
 		EA42EAF11D438C7600451BB9 /* PNRInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA42EAF01D438C7600451BB9 /* PNRInfoViewController.swift */; };
 		EA4BA07C1DD906FE0038683C /* RepriceActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4BA07B1DD906FE0038683C /* RepriceActivity.swift */; };
+		EA75FC591DECD9130013C4EF /* EnvironmentSetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA75FC581DECD9130013C4EF /* EnvironmentSetter.swift */; };
 		EA7B8DF91DCEAF5F00D3D9A9 /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7B8DF81DCEAF5F00D3D9A9 /* TermsViewController.swift */; };
 		EA7ECA5B1D1BAD780014010A /* RecentNotificationCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7ECA5A1D1BAD780014010A /* RecentNotificationCellViewModel.swift */; };
 		EA7ECA5D1D1BB41E0014010A /* RecentNotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7ECA5C1D1BB41E0014010A /* RecentNotificationCell.swift */; };
@@ -160,6 +161,7 @@
 		EA3FBD8D1DCE81E400D993E8 /* LatestPurchaseCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LatestPurchaseCellViewModel.swift; sourceTree = "<group>"; };
 		EA42EAF01D438C7600451BB9 /* PNRInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNRInfoViewController.swift; sourceTree = "<group>"; };
 		EA4BA07B1DD906FE0038683C /* RepriceActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepriceActivity.swift; sourceTree = "<group>"; };
+		EA75FC581DECD9130013C4EF /* EnvironmentSetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentSetter.swift; sourceTree = "<group>"; };
 		EA7B8DF81DCEAF5F00D3D9A9 /* TermsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
 		EA7ECA5A1D1BAD780014010A /* RecentNotificationCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentNotificationCellViewModel.swift; sourceTree = "<group>"; };
 		EA7ECA5C1D1BB41E0014010A /* RecentNotificationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentNotificationCell.swift; sourceTree = "<group>"; };
@@ -475,6 +477,7 @@
 				EA93F1651D70003400A12109 /* BaseRXContentProvider.swift */,
 				EA93F1671D70017E00A12109 /* BaseRXDataSource.swift */,
 				EA93F1691D7002B900A12109 /* PNRDataSource.swift */,
+				EA75FC581DECD9130013C4EF /* EnvironmentSetter.swift */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -784,6 +787,7 @@
 				EAB680D21D8E9E1C0027C0BE /* UnreadMessagesInfo.swift in Sources */,
 				EADC60201D1B125C00B8743C /* NotificationsStorageRealm.swift in Sources */,
 				EADC60181D1A782B00B8743C /* RecentModelFactory.swift in Sources */,
+				EA75FC591DECD9130013C4EF /* EnvironmentSetter.swift in Sources */,
 				EA93F14F1D6C088700A12109 /* AbstractPNRInfoStorage.swift in Sources */,
 				EA7ECA5D1D1BB41E0014010A /* RecentNotificationCell.swift in Sources */,
 				EADC601D1D1A8EFC00B8743C /* Notification.swift in Sources */,

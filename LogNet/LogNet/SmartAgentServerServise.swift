@@ -14,7 +14,12 @@ class SmartAgentServerServise: ServerService {
     
     static let ERROR_DOMAIN = "lognet.LogNet.SmartAgentServerService"
     
-    let baseURLString = "https://www.lognet-smartagent.com/"
+    // TODO: - Needs refactoring.
+    var baseURLString:String {
+        get {
+            return EnvironmentSetter.getDefaultURL()
+        }
+    }
     
     private lazy var manager : Alamofire.Manager = {
         // Create the server trust policies
@@ -164,6 +169,7 @@ class SmartAgentServerServise: ServerService {
                              "chunk":self.validParameter(chunks_size)]
             let headers = ["SA-DN":phoneNumber, "SA-REGID":token]
             print(headers)
+            print(self.baseURLString)
             let request = self.manager.request(.GET, self.baseURLString + "getNotificationList",
                                             parameters: parameters, headers: headers)
                 
