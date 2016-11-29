@@ -540,10 +540,24 @@
                                 <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FtQ-5j-1Fa">
+                                <rect key="frame" x="203" y="550" width="195" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="B1M-b7-TjB"/>
+                                    <constraint firstAttribute="width" constant="195" id="kzO-at-Sg2"/>
+                                </constraints>
+                                <state key="normal" title="I haven't received my email ">
+                                    <color key="titleColor" red="0.36740301720000001" green="0.54761240700000002" blue="0.83472521550000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetCredentials:" destination="1d8-kI-cqe" eventType="touchUpInside" id="2EY-lf-C1L"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="6K0-h8-PaX" firstAttribute="leading" secondItem="I2J-R1-LlY" secondAttribute="leading" id="8Io-NA-oyb"/>
+                            <constraint firstItem="jMM-Ft-39c" firstAttribute="top" secondItem="FtQ-5j-1Fa" secondAttribute="bottom" constant="20" id="IlQ-PS-APZ"/>
                             <constraint firstItem="6K0-h8-PaX" firstAttribute="trailing" secondItem="I2J-R1-LlY" secondAttribute="trailing" id="KxW-R8-u1U"/>
                             <constraint firstItem="I2J-R1-LlY" firstAttribute="top" secondItem="6K0-h8-PaX" secondAttribute="bottom" constant="8" symbolic="YES" id="PbB-gg-ePU"/>
                             <constraint firstItem="J7T-MR-kse" firstAttribute="leading" secondItem="tFE-en-n2N" secondAttribute="leadingMargin" constant="10" id="Qwk-RJ-MBf"/>
@@ -556,6 +570,7 @@
                             <constraint firstItem="J7T-MR-kse" firstAttribute="top" secondItem="ErO-xQ-Dzl" secondAttribute="bottom" constant="180" id="hyx-5t-bdD"/>
                             <constraint firstItem="J7T-MR-kse" firstAttribute="leading" secondItem="6K0-h8-PaX" secondAttribute="leading" id="tcj-Zf-Unc"/>
                             <constraint firstItem="QNX-mr-iQD" firstAttribute="top" secondItem="tFE-en-n2N" secondAttribute="top" id="uUr-4w-Q19"/>
+                            <constraint firstItem="FtQ-5j-1Fa" firstAttribute="centerX" secondItem="tFE-en-n2N" secondAttribute="centerX" id="uvN-UJ-8Vl"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Smart Agent" id="sQh-nL-hJx"/>

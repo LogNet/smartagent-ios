@@ -18,6 +18,16 @@ let CHUNK_SIZE = 20
 
 class Prefences {
     
+    class func reset() {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setBool(false, forKey: TERMS_APPROVED)
+        defaults.setObject(nil, forKey: PHONE_KEY)
+        defaults.setObject(nil, forKey: EMAIL_KEY)
+        defaults.setObject(nil, forKey: FULL_NAME_KEY)
+        defaults.setObject(nil, forKey: TOKEN_KEY)
+        defaults.synchronize()
+    }
+    
     class func termsApproved() -> Bool{
         let defaults = NSUserDefaults.standardUserDefaults()
         return defaults.boolForKey(TERMS_APPROVED)

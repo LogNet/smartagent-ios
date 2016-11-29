@@ -52,10 +52,17 @@ class ActivationMessageViewController: UIViewController {
     }
 
     func applicationDidBecomeActive() {
-        self.viewModel?.isUserActivated().subscribeNext{ activated in
-            self.viewModel?.sendNotificationToken()
-            self.dismissViewControllerAnimated(true, completion: nil)
+        self.viewModel?.isUserActivated().subscribeNext{ [weak self] activated in
+            self?.viewModel?.sendNotificationToken()
+            self?.dismissViewControllerAnimated(true, completion: nil)
             }.addDisposableTo(self.disposableBag)
+    }
+    
+    // MARK: - @IBAction
+    
+    @IBAction func resetCredentials(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+        self.viewModel?.resetCredentials()
     }
     
     /*

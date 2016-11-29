@@ -33,4 +33,10 @@ class ActivationViewModel: NSObject {
         }
 
     }
+    
+    func resetCredentials() {
+        Prefences.reset()
+        // This will cause Unregistered error and application will show login screen.
+        NSNotificationCenter.defaultCenter().postNotificationName(UpdateContentNotification, object: nil)
+    }
 }
