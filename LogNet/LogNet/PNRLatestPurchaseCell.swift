@@ -31,7 +31,12 @@ class PNRLatestPurchaseCell: UITableViewCell {
     }
     
     private func prepareView(){
-        self.dateLabel.text = self.viewModel.latestPutchaseDate
+        if self.viewModel.isTicketed == true {
+            self.dateLabel.textColor = UIColor.redColor()
+            self.dateLabel.text = "This PNR is ticketed!"
+        } else {
+            self.dateLabel.text = self.viewModel.latestPutchaseDate
+        }
     }
     
 }

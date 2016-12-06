@@ -17,6 +17,7 @@ class PNRInfoViewModel: ViewModel {
     private var contactNumber:String?
     var hasActiveAction = false
     var activeActionEnabled = false
+    var isTicketed:Bool?
     var unreadNotificationsModel:UnreadMessagesInfoModel!
     var contentProvider:PNRContentProvider!
     
@@ -77,6 +78,7 @@ class PNRInfoViewModel: ViewModel {
         self.shareText = info.1.getShareText()
         self.hasActiveAction = info.1.type == "RP"
         self.activeActionEnabled = info.1.sub_type == "PENDING"
+        self.isTicketed = info.0.pnr?.is_ticketed?.toBool()
         return Observable.just()
     }
 }

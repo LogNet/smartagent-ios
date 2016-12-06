@@ -66,7 +66,7 @@ class SmartAgentParser: ServerParser {
         let pnrInfo = PNRInfo()
         
         if let jsonDict = JSON["data"] as? [String: AnyObject] {
-            pnrInfo.pnr = self.parsePNR(jsonDict["pnr"] as? Dictionary)
+            pnrInfo.pnr = self.parsePNR(jsonDict["pnr"] as? [String: AnyObject])
             pnrInfo.contact = self.parseContact(jsonDict["contact"] as? Dictionary)
             pnrInfo.setPassengers(self.parsePassengers(jsonDict["passengers"] as? Array))
             pnrInfo.setFlights(self.parseFlights(jsonDict["flights"] as? Array))
@@ -80,8 +80,6 @@ class SmartAgentParser: ServerParser {
             pnrInfo.setAlerts(self.parseAlerts(payloadDict["alerts"] as? Array))
             pnrInfo.setRemarks(self.parseRemarks(payloadDict["remarks"] as? Array))
             pnrInfo.setSegmentClasses(self.parseSegmentClasses(payloadDict["segment_classes"] as? Array))
-//            pnrInfo.setRemarks(self.parseRemarks(["Test remark 1","Test remark 2", "Test remark 3"]))
-//            pnrInfo.setSegmentClasses(self.parseSegmentClasses(["Test segment 1","Test segment 2", "Test segment 3"]))
             pnrInfo.last_purchase_date = self.parseLastPurchaseDate(payloadDict["last_purchase_date"] as? String)
         }
         
@@ -258,6 +256,7 @@ class SmartAgentParser: ServerParser {
         var entities:[Flight] = []
         for dict in array! {
             let flight = Flight()
+            flight.airline = dict["airline"]
             flight.from = dict["from"]
             flight.to = dict["to"]
             if let dateString = dict["departure"]{
@@ -305,14 +304,15 @@ class SmartAgentParser: ServerParser {
         return contact
     }
     
-    private func parsePNR(pnrDict:[String: String]?) -> PNR? {
+    private func parsePNR(pnrDict:[String: AnyObject]?) -> PNR? {
         guard pnrDict != nil else {
             return nil
         }
         let pnr = PNR()
-        pnr.id = pnrDict!["id"]
-        pnr.pcc = pnrDict!["pcc"]
-        pnr.creator = pnrDict!["creator"]
+        pnr.is_ticketed = "1" //pnrDict!["is_ticketed"]
+        pnr.id = pnrDict!["id"] as? String
+        pnr.pcc = pnrDict!["pcc"] as? String
+        pnr.creator = pnrDict!["creator"] as? String
         return pnr
     }
     

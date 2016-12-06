@@ -38,6 +38,7 @@ class PNR: Object {
     dynamic var id:String?
     dynamic var pcc:String?
     dynamic var creator:String?
+    dynamic var is_ticketed:String?
 }
 
 class Contact: Object {
@@ -54,6 +55,7 @@ class Passenger: Object {
 }
 
 class Flight: Object {
+    dynamic var airline:String?
     dynamic var from:String?
     dynamic var to:String?
     dynamic var departure:String?

@@ -48,7 +48,7 @@ class LoginViewController: UIViewController, MRCountryPickerDelegate, UITextFiel
     // MARK: Methods
     
     func setDefaultHost() {
-        let alertController = UIAlertController(title: "Set environment URL", message: nil, preferredStyle: .Alert)
+        let alertController = UIAlertController(title: "Server settings", message: nil, preferredStyle: .Alert)
         alertController.addTextFieldWithConfigurationHandler { textField in
             textField.placeholder = "URL"
         }
@@ -59,7 +59,12 @@ class LoginViewController: UIViewController, MRCountryPickerDelegate, UITextFiel
         }
         
         let cancel = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        
+        let qa_action = UIAlertAction(title: "Use QA", style: .Default) { action in
+            self.loginViewModel?.changeDefaultURL("https://sapre.sabre.co.il:8443/")
+        }
         alertController.addAction(action)
+        alertController.addAction(qa_action)
         alertController.addAction(cancel)
         self.presentViewController(alertController, animated: true, completion: nil)
     }

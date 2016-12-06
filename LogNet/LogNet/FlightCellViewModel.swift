@@ -28,7 +28,12 @@ class FlightCellViewModel {
         self.to = self.model.to
         self.departure = self.model.departure
         self.arrival = self.model.arrival
-        self.flight_number = self.model.flight_number
+        if self.model.flight_number != nil && self.model.airline != nil {
+            self.flight_number = "\(self.model.airline!)\(self.model.flight_number!)"
+        } else {
+            self.flight_number = self.model.flight_number!
+
+        }
         self.flight_class = self.model.flight_class
         self.status = self.model.status
     }

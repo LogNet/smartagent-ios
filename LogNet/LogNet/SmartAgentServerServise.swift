@@ -23,14 +23,49 @@ class SmartAgentServerServise: ServerService {
     
     private lazy var manager : Alamofire.Manager = {
         // Create the server trust policies
-        let manager = Alamofire.Manager.sharedInstance
-
+//        let manager = Alamofire.Manager.sharedInstance
+        let serverTrustPolicies: [String: ServerTrustPolicy] = [
+            "sapre.sabre.co.il:8443": .DisableEvaluation
+        ]
+        
+        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        configuration.HTTPAdditionalHeaders = Alamofire.Manager.defaultHTTPHeaders
+        let manager = Alamofire.Manager(
+            configuration: configuration,
+            serverTrustPolicyManager: ServerTrustPolicyManager(policies: serverTrustPolicies)
+        )
+        
         if let cookie = self.getCookie() {
-            NSHTTPCookieStorage.sharedHTTPCookieStorage().setCookie(cookie)
             manager.session.configuration.HTTPCookieStorage?.setCookie(cookie)
         }
-        
+
         return manager
+
+//        
+//        manager.delegate.sessionDidReceiveChallenge = { session, challenge in
+//            var disposition: NSURLSessionAuthChallengeDisposition = .PerformDefaultHandling
+//            var credential: NSURLCredential?
+//            
+//            if challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust {
+//                disposition = NSURLSessionAuthChallengeDisposition.UseCredential
+//                credential = NSURLCredential(forTrust: challenge.protectionSpace.serverTrust!)
+//                print(credential)
+//            } else {
+//                if challenge.previousFailureCount > 0 {
+//                    disposition = .CancelAuthenticationChallenge
+//                } else {
+//                    credential = manager.session.configuration.URLCredentialStorage?.defaultCredentialForProtectionSpace(challenge.protectionSpace)
+//                    
+//                    if credential != nil {
+//                        disposition = .UseCredential
+//                    }
+//                }
+//            }
+//            
+//            return (disposition, credential)
+//        }
+//        
+//        return manager
     }()
     
     func deleteNotification(phoneNumber:String, token:String, notification_id:String) -> Observable<Void>{

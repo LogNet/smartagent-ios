@@ -91,7 +91,7 @@ class PNRDataSource: BaseRXDataSource, UITableViewDelegate {
         }
         
         if let date = pnrInfo.last_purchase_date {
-            self.latestPurchaseDateCellViewModel = LatestPurchaseCellViewModel(date: date)
+            self.latestPurchaseDateCellViewModel = LatestPurchaseCellViewModel(date: date, is_ticketed: pnrInfo.pnr?.is_ticketed)
         }
     }
     

@@ -2774,16 +2774,16 @@ viii. You will not use the Service to upload, post, transmit, share or otherwise
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LY12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4bo-Q3-sUO">
-                                            <rect key="frame" x="305" y="18" width="55" height="15"/>
+                                            <rect key="frame" x="289" y="18" width="71" height="15"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="55" id="LCh-K2-F64"/>
+                                                <constraint firstAttribute="width" constant="71" id="LCh-K2-F64"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="SanFranciscoText-Regular" family="San Francisco Text" pointSize="16"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Y" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDD-L3-yCP">
-                                            <rect key="frame" x="305" y="36" width="55" height="15"/>
+                                            <rect key="frame" x="289" y="36" width="71" height="15"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="15" id="PBN-n1-a8a"/>
                                             </constraints>
@@ -2792,7 +2792,7 @@ viii. You will not use the Service to upload, post, transmit, share or otherwise
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fOV-2F-DQF">
-                                            <rect key="frame" x="305" y="54" width="55" height="15"/>
+                                            <rect key="frame" x="289" y="54" width="71" height="15"/>
                                             <fontDescription key="fontDescription" name="SanFranciscoText-Regular" family="San Francisco Text" pointSize="16"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>

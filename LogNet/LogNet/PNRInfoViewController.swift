@@ -58,6 +58,16 @@ class PNRInfoViewController: UITableViewController {
     }
     
     // MARK: - Private methods
+    private func showApproveRepriceAlert() {
+        let alert = UIAlertController(title: "Please, approve reprice", message: "Please notice that this PNR is ticketed. Press OK to perform reprice or cancel to abort.", preferredStyle: .Alert)
+        let repriceAction = UIAlertAction(title: "OK", style: .Default) { [weak self] (action) in
+            self?.reprice()
+        }
+        alert.addAction(repriceAction)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        alert.addAction(cancelAction)
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
     
     private func reprice() {
         HUD.show(.SystemActivity)
@@ -110,7 +120,11 @@ class PNRInfoViewController: UITableViewController {
         // Add action button.
         if self.viewModel.hasActiveAction == true {
             let repriceAction = UIAlertAction(title: "Approve reprice", style: .Default) { [weak self] (action) in
-                self?.reprice()
+                if self?.viewModel.isTicketed == true {
+                    self?.showApproveRepriceAlert()
+                } else {
+                    self?.reprice()
+                }
             }
             repriceAction.enabled = self.viewModel.activeActionEnabled
             actionSheet.addAction(repriceAction)

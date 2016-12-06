@@ -11,8 +11,9 @@ import Foundation
 class LatestPurchaseCellViewModel {
     
     let latestPutchaseDate:String
-    
-    init(date:String) {
-        self.latestPutchaseDate = "Last ticketing date - \(date)"
+    let isTicketed:Bool?
+    init(date:String, is_ticketed:String?) {
+        self.latestPutchaseDate = "Last purchase - \(date)"
+        self.isTicketed = is_ticketed?.toBool()
     }
 }

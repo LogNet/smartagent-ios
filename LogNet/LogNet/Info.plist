@@ -44,6 +44,27 @@
 		<true/>
 		<key>NSExceptionDomains</key>
 		<dict>
+			<key>sapre.sabre.co.il:8443</key>
+			<dict>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+				<false/>
+				<key>NSExceptionRequiresForwardSecrecy</key>
+				<false/>
+				<key>NSThirdPartyExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSTemporaryExceptionMinimumTLSVersion</key>
+				<string>TLSv1.1</string>
+				<key>NSThirdPartyExceptionMinimumTLSVersion</key>
+				<string>TLSv1.1</string>
+				<key>NSRequiresCertificateTransparency</key>
+				<false/>
+			</dict>
 			<key>62.90.233.18:8080</key>
 			<dict>
 				<key>NSExceptionAllowsInsecureHTTPLoads</key>
