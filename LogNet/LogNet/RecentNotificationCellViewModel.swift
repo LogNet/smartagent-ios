@@ -42,7 +42,6 @@ class RecentNotificationCellViewModel {
         self.pnrSummary = self.notification.pnr_summary
         if let time = self.notification.notification_time {
             self.date = self.dateFormatter.stringFromDate(time)
-//            self.date = self.date?.stringByReplacingOccurrencesOfString(",", withString: "\n")
         }
         if self.notification.status == "READ" {
             self.isRead = true

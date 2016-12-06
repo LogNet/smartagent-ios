@@ -35,6 +35,7 @@ class PNRLatestPurchaseCell: UITableViewCell {
             self.dateLabel.textColor = UIColor.redColor()
             self.dateLabel.text = "This PNR is ticketed!"
         } else {
+            self.dateLabel.textColor = UIColor.blackColor()
             self.dateLabel.text = self.viewModel.latestPutchaseDate
         }
     }
