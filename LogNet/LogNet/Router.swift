@@ -33,6 +33,15 @@ class Router {
         self.ticketingDueViewController?.navigationController?.tabBarItem.badgeValue = unreadNotificationsInfo.ticketingDue
         self.recentViewController?.navigationController?.tabBarItem.badgeValue = unreadNotificationsInfo.total
         self.cancelledViewController?.navigationController?.tabBarItem.badgeValue = unreadNotificationsInfo.cancelled
+        guard let total = unreadNotificationsInfo.total else {
+            UIApplication.sharedApplication().applicationIconBadgeNumber = 0
+            return
+        }
+        guard let unread = Int(total) else {
+            UIApplication.sharedApplication().applicationIconBadgeNumber = 0
+            return
+        }
+        UIApplication.sharedApplication().applicationIconBadgeNumber = unread
     }
     
     func setupTicketingDueViewControler() {
