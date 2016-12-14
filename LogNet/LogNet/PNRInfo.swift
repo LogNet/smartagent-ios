@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 
 protocol TextModel {
-    func getText() -> String?
+    func getTextValue() -> String?
 }
 
 class Alert:Object {
@@ -21,7 +21,7 @@ class Alert:Object {
 class Remark: Object, TextModel {
     dynamic var text:String?
     
-    func getText() -> String? {
+    func getTextValue() -> String? {
         return self.text
     }
 }
@@ -29,8 +29,11 @@ class Remark: Object, TextModel {
 class SegmentClass: Object, TextModel {
     dynamic var text:String?
     
-    func getText() -> String? {
-        return self.text
+    func getTextValue() -> String? {
+        if let class_text = self.text {
+            return "Class \(class_text)"
+        }
+        return nil
     }
 }
 

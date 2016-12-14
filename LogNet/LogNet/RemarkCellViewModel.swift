@@ -13,7 +13,7 @@ class RemarkCellViewModel {
     
     var text:String? {
         get {
-            return self.model.getText()
+            return self.model.getTextValue()
         }
     }
     
