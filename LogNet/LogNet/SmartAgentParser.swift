@@ -309,7 +309,9 @@ class SmartAgentParser: ServerParser {
             return nil
         }
         let pnr = PNR()
-        pnr.is_ticketed = pnrDict!["is_ticketed"] as? String
+        if let ticketed = pnrDict!["is_ticketed"] {
+            pnr.is_ticketed = String(ticketed)
+        }
         pnr.id = pnrDict!["id"] as? String
         pnr.pcc = pnrDict!["pcc"] as? String
         pnr.creator = pnrDict!["creator"] as? String
