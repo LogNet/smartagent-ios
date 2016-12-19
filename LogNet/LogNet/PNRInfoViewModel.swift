@@ -15,7 +15,7 @@ class PNRInfoViewModel: ViewModel {
     private var shareText:String?
     private let disposableBag = DisposeBag()
     private var contactNumber:String?
-    var hasActiveAction = false
+    var type:String?
     var activeActionEnabled = false
     var isTicketed:Bool?
     var unreadNotificationsModel:UnreadMessagesInfoModel!
@@ -33,6 +33,12 @@ class PNRInfoViewModel: ViewModel {
     
     func reprice() -> Observable<Void> {
         return self.model.executePendingOperation(self.notification_id, action: PNROperationAction.Reprice).flatMap{ result in
+            self.parseInfo(result)
+        }
+    }
+    
+    func remove() -> Observable<Void> {
+        return self.model.executePendingOperation(self.notification_id, action: PNROperationAction.Cancel).flatMap{ result in
             self.parseInfo(result)
         }
     }
@@ -76,7 +82,7 @@ class PNRInfoViewModel: ViewModel {
             self.contactNumber = phone
         }
         self.shareText = info.1.getShareText()
-        self.hasActiveAction = info.1.type == "RP"
+        self.type = info.1.type
         self.activeActionEnabled = info.1.sub_type == "PENDING"
         self.isTicketed = info.0.pnr?.is_ticketed?.toBool()
         return Observable.just()

@@ -58,6 +58,19 @@ class PNRInfoViewController: UITableViewController {
     }
     
     // MARK: - Private methods
+    
+    private func removeOperation() {
+        HUD.show(.SystemActivity)
+        self.viewModel.remove().subscribe(onNext: { Void in
+            HUD.hide(animated: true)
+            }, onError: { error in
+                error.logToCrashlytics()
+                HUD.hide(animated: true)
+                self.showErrorAlert(error, action: nil)
+            }, onCompleted: nil, onDisposed: nil)
+            .addDisposableTo(self.disposeBag)
+    }
+    
     private func showApproveRepriceAlert() {
         let alert = UIAlertController(title: "Please, approve reprice", message: "Please notice that this PNR is ticketed. Press OK to perform reprice or cancel to abort.", preferredStyle: .Alert)
         let repriceAction = UIAlertAction(title: "OK", style: .Default) { [weak self] (action) in
@@ -118,7 +131,7 @@ class PNRInfoViewController: UITableViewController {
         actionSheet.addAction(cancelAction)
         
         // Add action button.
-        if self.viewModel.hasActiveAction == true {
+        if self.viewModel.type == "RP" {
             let repriceAction = UIAlertAction(title: "Approve reprice", style: .Default) { [weak self] (action) in
                 if self?.viewModel.isTicketed == true {
                     self?.showApproveRepriceAlert()
@@ -129,6 +142,12 @@ class PNRInfoViewController: UITableViewController {
             repriceAction.enabled = self.viewModel.activeActionEnabled
             actionSheet.addAction(repriceAction)
             
+        } else if self.viewModel.type == "C" {
+            let repriceAction = UIAlertAction(title: "Remove", style: .Default) { [weak self] (action) in
+                self?.removeOperation()
+            }
+            repriceAction.enabled = true
+            actionSheet.addAction(repriceAction)
         }
         actionSheet.addAction(shareAction)
         self.presentViewController(actionSheet, animated: true, completion: nil)
