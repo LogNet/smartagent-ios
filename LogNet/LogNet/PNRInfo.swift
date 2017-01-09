@@ -31,7 +31,7 @@ class SegmentClass: Object, TextModel {
     
     func getTextValue() -> String? {
         if let class_text = self.text {
-            return "Class \(class_text)"
+            return class_text
         }
         return nil
     }

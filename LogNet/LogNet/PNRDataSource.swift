@@ -86,9 +86,19 @@ class PNRDataSource: BaseRXDataSource, UITableViewDelegate {
         }
         
         self.segmentClasses = [RemarkCellViewModel]()
+        let segment_for_view = SegmentClass()
         for segment in pnrInfo.segmentClasses {
-            self.segmentClasses?.append(RemarkCellViewModel(model: segment))
+            if let text = segment.text {
+                if segment_for_view.text == nil {
+                    segment_for_view.text = text
+                } else {
+                    segment_for_view.text! += ", \(text)"
+                }
+            }
         }
+        
+        self.segmentClasses?.append(RemarkCellViewModel(model: segment_for_view))
+
         
         if let date = pnrInfo.last_purchase_date {
             self.latestPurchaseDateCellViewModel = LatestPurchaseCellViewModel(date: date, is_ticketed: pnrInfo.pnr?.is_ticketed)

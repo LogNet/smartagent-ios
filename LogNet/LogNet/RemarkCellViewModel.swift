@@ -13,7 +13,10 @@ class RemarkCellViewModel {
     
     var text:String? {
         get {
-            return self.model.getTextValue()
+            if let text = self.model.getTextValue() {
+                return "Class \(text)"
+            }
+            return nil
         }
     }
     
