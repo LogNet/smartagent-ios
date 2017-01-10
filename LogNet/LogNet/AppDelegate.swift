@@ -78,7 +78,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // this callback will not be fired till the user taps on the notification launching the application.
         // Print full message.
         FIRMessaging.messaging().appDidReceiveMessage(userInfo)
-        if application.applicationState != UIApplicationState.Active {
+        if application.applicationState != UIApplicationState.Background {
             if let id = userInfo["notification_id"] as? String {
                 self.router?.openPNRFromRemouteNotification(id)
             }
