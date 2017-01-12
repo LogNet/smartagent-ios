@@ -86,8 +86,7 @@ class LoginViewController: UIViewController, MRCountryPickerDelegate, UITextFiel
                     phone = String(text.characters.dropFirst())
                 }
             }
-            let phoneLength = 9
-            self.isPhoneValid = phone.characters.count == phoneLength
+            self.isPhoneValid = phone.characters.count > 0
             self.loginViewModel?.phoneNumber = self.codeLabel.text! + phone
             print(self.loginViewModel?.phoneNumber)
         }.addDisposableTo(self.disposeBag)
